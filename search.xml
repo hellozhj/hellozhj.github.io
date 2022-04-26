@@ -8,7 +8,7 @@
       <link href="/2022/04/26/h5-yi-wang-dian/"/>
       <url>/2022/04/26/h5-yi-wang-dian/</url>
       
-        <content type="html"><![CDATA[<p>呃呃呃呃<br>我的第一篇博客<br>怎么写的这是</p>]]></content>
+        <content type="html"><![CDATA[<p><code>text-align</code> 并不控制块元素自己的对齐，只控制它的行内内容的对齐；</p>]]></content>
       
       
       
