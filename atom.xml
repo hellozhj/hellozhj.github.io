@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-04-25T10:00:55.311Z</updated>
+  <updated>2022-04-26T14:04:10.316Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>H5遗忘点</title>
+    <link href="https://hellozhj.github.io/2022/04/26/h5-yi-wang-dian/"/>
+    <id>https://hellozhj.github.io/2022/04/26/h5-yi-wang-dian/</id>
+    <published>2022-04-26T14:01:00.000Z</published>
+    <updated>2022-04-26T14:04:10.316Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;呃呃呃呃&lt;br&gt;我的第一篇博客&lt;br&gt;怎么写的这是&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
