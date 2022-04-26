@@ -8,7 +8,7 @@
       <link href="/2022/04/26/h5-yi-wang-dian/"/>
       <url>/2022/04/26/h5-yi-wang-dian/</url>
       
-        <content type="html"><![CDATA[<p><code>text-align</code> 并不控制块元素自己的对齐，只控制它的行内内容的对齐；</p>]]></content>
+        <content type="html"><![CDATA[<p><code>text-align</code> 并不控制块元素自己的对齐，只控制它的行内内容的对齐；</p><p><code>line-height </code>如果要使文字居中,<code>line-heigh</code> 无疑是你最好的选择。只需将她的值改为其父元素的高度即可；</p><p><code>margin: auto</code>让盒子居中的方法其实很简单，自身给个宽高，给自己用上<code>margin: auto</code>；</p><p>用上<code>text-align</code> 亦可将盒子里面的元素在盒子里水平居中，用上<code>line-height </code>更能垂直居中。</p>]]></content>
       
       
       
