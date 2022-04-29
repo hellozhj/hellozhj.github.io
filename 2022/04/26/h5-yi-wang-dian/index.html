@@ -5,9 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="H5遗忘点, Hexo">
-    <meta name="description" content="text-align 并不控制块元素自己的对齐，只控制它的行内内容的对齐；
+    <meta name="description" content="text-align 设置在父级元素里，有宽高的块级元素；
+并不控制块元素自己的对齐，只控制它的行内内容的对齐。
 line-height 如果要使文字居中,line-heigh 无疑是你最好的选择。只需将她的值改为其父元素的高度即可；
-margin: auto让盒子居中的方法其">
+li">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -456,7 +457,7 @@ margin: auto让盒子居中的方法其">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    124
+                    259
                 </div>
                 
 
@@ -473,10 +474,16 @@ margin: auto让盒子居中的方法其">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><code>text-align</code> 并不控制块元素自己的对齐，只控制它的行内内容的对齐；</p>
+                <p><code>text-align</code> 设置在父级元素里，有宽高的块级元素；</p>
+<p>并不控制块元素自己的对齐，只控制它的行内内容的对齐。</p>
 <p><code>line-height </code>如果要使文字居中,<code>line-heigh</code> 无疑是你最好的选择。只需将她的值改为其父元素的高度即可；</p>
-<p><code>margin: auto</code>让盒子居中的方法其实很简单，自身给个宽高，给自己用上<code>margin: auto</code>；</p>
+<p><code>line-height</code>最好放置其父元素中。使里面的元素垂直居中。</p>
+<p><code>margin: auto</code>让盒子居中的方法其实很简单，自身给个宽，给自己用上<code>margin: auto</code>；</p>
 <p>用上<code>text-align</code> 亦可将盒子里面的元素在盒子里水平居中，用上<code>line-height </code>更能垂直居中。</p>
+<p>基线：看那个元素影响了文字，就在影响文字的元素里设置 vertical-align:middle(中)，就可以使文字在盒子春之·垂直居中。</p>
+<p><code>padding：</code>如果不设置宽的话，<code>padding</code>是不会影响盒子宽度的（即不会扩大宽度）</p>
+<p>​					如果设置了宽，就需要计算一下；</p>
+<p><code>padding</code>写在内容与边框中间，写在内容里面；</p>
 
                 
             </div>
@@ -969,7 +976,7 @@ margin: auto让盒子居中的方法其">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">197</span>
+                        class="white-color">332</span>
             
             
             
