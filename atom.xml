@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-04-29T03:57:02.210Z</updated>
+  <updated>2022-04-30T09:23:28.907Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="https://hellozhj.github.io/2022/04/26/h5-yi-wang-dian/"/>
     <id>https://hellozhj.github.io/2022/04/26/h5-yi-wang-dian/</id>
     <published>2022-04-26T14:01:00.000Z</published>
-    <updated>2022-04-29T03:57:02.210Z</updated>
+    <updated>2022-04-30T09:23:28.907Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;code&gt;text-align&lt;/code&gt; 设置在父级元素里，有宽高的块级元素；&lt;/p&gt;
-&lt;p&gt;并不控制块元素自己的对齐，只控制它的行内内容的对齐。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;line-height</summary>
+    <summary type="html">&lt;p&gt;&lt;code&gt;块级元素&lt;/code&gt;，宽度默认网页宽度，设置高度才有显示，没有高度就默认内容高度，如果连内容都没有就不显示&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text-align&lt;/code&gt;</summary>
         
       
     
