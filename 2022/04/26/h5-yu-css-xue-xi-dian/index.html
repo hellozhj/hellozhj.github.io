@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="H5与css学习点, Hexo">
+    <meta name="description" content="盒子居中margin: 0 auto让盒子居中，自身给个宽度，给自己用上margin: 0 auto；
+用上text-align可将盒子里面的元素在盒子里水平居中（大盒包小盒，小盒在里面被居中）；
+用上line-height  在有高度的前">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
 
     
 
-    <title>Hello World | Hexo</title>
+    <title>H5与css学习点 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">H5与css学习点</h1>
                 </div>
             </div>
         </div>
@@ -445,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-25
+                    2022-04-26
                 </div>
                 
 
@@ -454,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    821
                 </div>
                 
 
@@ -471,20 +473,65 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+                <h4 id="盒子居中"><a href="#盒子居中" class="headerlink" title="盒子居中"></a>盒子居中</h4><p><code>margin: 0 auto</code>让盒子居中，<strong>自身给个宽度</strong>，给<em>自己</em>用上<code>margin: 0 auto</code>；</p>
+<p>用上<code>text-align</code>可将盒子里面的元素在盒子里水平居中<em>（大盒包小盒，小盒在里面被居中）</em>；</p>
+<p>用上<code>line-height </code> <strong>在有高度的前提下</strong>能垂直居中。</p>
+<br>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p><strong>宽度</strong>默认浏览器宽度，里面无内容，只有设置<strong>高度</strong>才有显示；</p>
+<p>没有设置高度就<strong>默认高度为内容高度</strong>，<strong>如果没有内容也没高度</strong>，盒子<strong>不显示</strong>。</p>
+<br>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="padding-内边距"><a href="#padding-内边距" class="headerlink" title="padding(内边距)"></a>padding(内边距)</h4><p><code>语法：padding:上右下左/上 左右 下/上下 左右/全</code></p>
+<p><code>padding</code>盒子如果<strong>没设置宽</strong>的话*(就继承父盒子的宽)<em>，<code>padding</code>是不会影响盒子宽度的*<em>（即不会撑大盒子）</em></em>;</p>
+<p>如果盒子<strong>设置了宽</strong>，还给<code>padding</code>会撑大盒子，<em>不想盒子突出父盒子</em>，就需要计算一下；<strong>（高度同理）</strong></p>
+<p><code>padding</code>写在内容与边框中间，写在<strong>内容标签里面</strong>；</p>
+<br>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="margin-盒子塌陷问题"><a href="#margin-盒子塌陷问题" class="headerlink" title="margin(盒子塌陷问题)"></a>margin(盒子塌陷问题)</h4><p><strong>(1) 相邻块元素垂直外边距塌陷</strong></p>
+<p>·当上下相邻的两个块元素相遇时，如果上面的元素有下外边距<code>margin-bottom</code></p>
+<p>·下面的元素有上外边距<code>margin-top</code>，则他们之间的垂直间距<strong>不是</strong><code>margin-bottom</code>与<code>margin-top</code><strong>之和</strong></p>
+<p>·<strong>取两个值中的较大者</strong>这种现象被称为相邻块元素垂直外边距的合并(也称外边距塌陷)。</p>
+<img src="/.io//Blog\source\images\margin嵌套块元素塌陷.png" alt="你是？" style="zoom: 80%;">
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><img src="/.io//Blog\source\images\margin相邻块元素塌陷.png" alt="傻卵" title="鹅鹅鹅饿"></p>
+<br>
 
+<p>·<strong>取两个值中的较大者</strong>这种现象被称为相邻块元素垂直外边距的合并(也称外边距塌陷)。</p>
+<h4 id="text-align-常用于水平居中"><a href="#text-align-常用于水平居中" class="headerlink" title="text-align(常用于水平居中)"></a>text-align(常用于水平居中)</h4><p><code>text-align</code> 设置在父级元素里<strong>或者</strong>在其他块级元素里<em>（宽给默认浏览器宽，高给不给随意）</em>；</p>
+<p>并<em>不控制块元素自己的对齐</em>，只控制它<strong>里面的内容</strong>对齐。</p>
+<br>
+
+<h4 id="line-height-常用于文字垂直居中"><a href="#line-height-常用于文字垂直居中" class="headerlink" title="line-height(常用于文字垂直居中)"></a>line-height(常用于文字垂直居中)</h4><p>如果要使文字垂直居中,<code>line-heigh</code> 无疑是你最好的选择。只需将她的<strong>值改为其父元素的高度</strong>即可；</p>
+<p><code>line-height</code>最好<strong>放置其父元素中</strong>。使里面的文字(或者元素)垂直居中。</p>
+<br>
+
+
+
+
+
+<p><code>基线</code>：看那个元素影响了文字，就在影响文字的元素里设置 vertical-align:middle(中)，就可以使文字在盒子春之·垂直居中。</p>
+<br>
+
+<h4 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h4><p>浮动的元素已经具有行内块的属性，即可以设宽高又可在一行内。已经脱离了标准流。</p>
+<p><code>清除浮动</code>：为什么？</p>
+<p>因为父级盒子如果不方便给高度，其子盒子已经浮动(不占位置)，会使父级盒子高度为0；</p>
+<p>从而影响了下面标准流的盒子。</p>
+<p><code>方法</code></p>
+<ol>
+<li>选择器{clear:属性值;}	属性值：left/right/both</li>
+<li>额外标签法</li>
+<li>父级元素添加overflow属性</li>
+</ol>
+<p><strong>想让浮动占位，给浮动一个有高的父元素</strong></p>
+<p><strong>清除浮动，会让浮动占位但不会改变浮动的位置</strong></p>
+<br>
+
+<h4 id="浮动和定位"><a href="#浮动和定位" class="headerlink" title="浮动和定位:"></a>浮动和定位:</h4><p>1.浮动可以让多个块级盒子一行没有缝隙排列显示， 经常用于横向排列盒子。</p>
+<p>2.定位则是可以让盒子自由的在某个盒子内移动位置或者固定屏幕中某个位置，并且可以压住其他盒子。</p>
+<br>
+
+<h5 id="position"><a href="#position" class="headerlink" title="position"></a><code>position</code></h5>
                 
             </div>
             <hr/>
@@ -510,7 +557,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellozhj.github.io/2022/04/25/hello-world/">https://hellozhj.github.io/2022/04/25/hello-world/</a>
+                    <a href="https://hellozhj.github.io/2022/04/26/h5-yu-css-xue-xi-dian/">https://hellozhj.github.io/2022/04/26/h5-yu-css-xue-xi-dian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -719,9 +766,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/04/26/h5-yu-css-xue-xi-dian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="H5与css学习点">
+                        
+                        <span class="card-title">H5与css学习点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Evedward
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/04/26/h5-yi-wang-dian/">
                     <div class="card-image">
@@ -739,45 +825,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Evedward
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/04/25/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
                             </span>
                         <span class="publish-author">
                             
@@ -787,7 +836,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
