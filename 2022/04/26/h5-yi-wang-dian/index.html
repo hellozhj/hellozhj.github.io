@@ -5,10 +5,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="H5遗忘点, Hexo">
-    <meta name="description" content="块级元素，宽度默认网页宽度，设置高度才有显示，没有高度就默认内容高度，如果连内容都没有就不显示
+    <meta name="description" content="块级元素，宽度默认网页宽度，设置高度才有显示，没有高度就默认内容高度，如果连内容都没有就不显示。
+
+
 text-align 设置在父级元素里，有宽高的块级元素；
 并不控制块元素自己的对齐，只控制它的行内内容的对齐。
-line-height 如果要">
+
+
+line-heigh">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -457,7 +461,7 @@ line-height 如果要">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    550
+                    547
                 </div>
                 
 
@@ -474,32 +478,46 @@ line-height 如果要">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><code>块级元素</code>，宽度默认网页宽度，设置高度才有显示，没有高度就默认内容高度，如果连内容都没有就不显示</p>
+                <p><code>块级元素</code>，宽度默认网页宽度，设置高度才有显示，没有高度就默认内容高度，如果连内容都没有就不显示。</p>
+<br>
+
 <p><code>text-align</code> 设置在父级元素里，有宽高的块级元素；</p>
 <p>并不控制块元素自己的对齐，只控制它的行内内容的对齐。</p>
+<br>
+
 <p><code>line-height </code>如果要使文字居中,<code>line-heigh</code> 无疑是你最好的选择。只需将她的值改为其父元素的高度即可；</p>
 <p><code>line-height</code>最好放置其父元素中。使里面的元素垂直居中。</p>
+<br>
+
 <p><code>margin: auto</code>让盒子居中的方法其实很简单，自身给个宽，给自己用上<code>margin: auto</code>；</p>
-<p>用上<code>text-align</code> 亦可将盒子里面的元素在盒子里水平居中，用上<code>line-height </code>更能垂直居中。</p>
+<p>用上<code>text-align</code> 亦可将盒子里面的元素在盒子里水平居中，用上<code>line-height </code>更能垂直居中。<br></p>
 <p><code>基线</code>：看那个元素影响了文字，就在影响文字的元素里设置 vertical-align:middle(中)，就可以使文字在盒子春之·垂直居中。</p>
+<br>
+
 <p><code>padding：</code>如果不设置宽的话，<code>padding</code>是不会影响盒子宽度的（即不会扩大宽度）</p>
 <p>​					如果设置了宽，就需要计算一下；（高度同理）</p>
 <p><code>padding</code>写在内容与边框中间，写在内容里面；</p>
-<p><code>浮动</code>浮动的元素已经具有行内块的属性，即可以设宽高又可在一行内。已经脱离了标准流。</p>
+<br>
+
+<h4 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h4><p>浮动的元素已经具有行内块的属性，即可以设宽高又可在一行内。已经脱离了标准流。</p>
 <p><code>清除浮动</code>：为什么？</p>
 <p>因为父级盒子如果不方便给高度，其子盒子已经浮动(不占位置)，会使父级盒子高度为0；</p>
 <p>从而影响了下面标准流的盒子。</p>
 <p><code>方法</code></p>
-<p>1.选择器{clear:属性值;}	属性值：left/right/both</p>
-<p>2.额外标签法</p>
-<p>3.父级元素添加overflow属性</p>
-<p>想让浮动占位，给浮动一个有高的父元素</p>
-<p>清除浮动，会让浮动占位但不会改变浮动的位置</p>
-<p><code>浮动和定位</code>:</p>
-<p>1.浮动可以让多个块级盒子一行没有缝隙排列显示， 经常用于横向排列盒子。</p>
-<p>2.定位则是可以让盒子自由的在某个盒子内移动位置或者固定屏幕中某个位置，并且可以压住其他盒子。</p>
-<p><code>position</code></p>
+<ol>
+<li>选择器{clear:属性值;}	属性值：left/right/both</li>
+<li>额外标签法</li>
+<li>父级元素添加overflow属性</li>
+</ol>
+<p><strong>想让浮动占位，给浮动一个有高的父元素</strong></p>
+<p><strong>清除浮动，会让浮动占位但不会改变浮动的位置</strong></p>
+<br>
 
+<h3 id="浮动和定位"><a href="#浮动和定位" class="headerlink" title="浮动和定位:"></a><code>浮动和定位</code>:</h3><p>1.浮动可以让多个块级盒子一行没有缝隙排列显示， 经常用于横向排列盒子。</p>
+<p>2.定位则是可以让盒子自由的在某个盒子内移动位置或者固定屏幕中某个位置，并且可以压住其他盒子。</p>
+<br>
+
+<h5 id="position"><a href="#position" class="headerlink" title="position"></a><code>position</code></h5>
                 
             </div>
             <hr/>
@@ -991,7 +1009,7 @@ line-height 如果要">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">623</span>
+                        class="white-color">620</span>
             
             
             
