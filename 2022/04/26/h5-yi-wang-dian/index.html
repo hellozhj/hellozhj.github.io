@@ -5,11 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="H5与css学习点, Hexo">
-    <meta name="description" content="块级元素宽度默认浏览器宽度，里面无内容，只有设置高度才有显示；
-没有设置高度就默认高度为内容高度，如果没有内容也没高度，盒子不显示。
-
-
-text-align(常用于水平居中)text-align 设置在父级元素里或者在其他块级元素里（宽给">
+    <meta name="description" content="盒子居中margin: 0 auto让盒子居中，自身给个宽度，给自己用上margin: 0 auto；
+用上text-align可将盒子里面的元素在盒子里水平居中（大盒包小盒，小盒在里面被居中）；
+用上line-height  在有高度的前">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -458,7 +456,7 @@ text-align(常用于水平居中)text-align 设置在父级元素里或者在其
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    673
+                    821
                 </div>
                 
 
@@ -475,10 +473,31 @@ text-align(常用于水平居中)text-align 设置在父级元素里或者在其
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p><strong>宽度</strong>默认浏览器宽度，里面无内容，只有设置<strong>高度</strong>才有显示；</p>
+                <h4 id="盒子居中"><a href="#盒子居中" class="headerlink" title="盒子居中"></a>盒子居中</h4><p><code>margin: 0 auto</code>让盒子居中，<strong>自身给个宽度</strong>，给<em>自己</em>用上<code>margin: 0 auto</code>；</p>
+<p>用上<code>text-align</code>可将盒子里面的元素在盒子里水平居中<em>（大盒包小盒，小盒在里面被居中）</em>；</p>
+<p>用上<code>line-height </code> <strong>在有高度的前提下</strong>能垂直居中。</p>
+<br>
+
+<h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p><strong>宽度</strong>默认浏览器宽度，里面无内容，只有设置<strong>高度</strong>才有显示；</p>
 <p>没有设置高度就<strong>默认高度为内容高度</strong>，<strong>如果没有内容也没高度</strong>，盒子<strong>不显示</strong>。</p>
 <br>
 
+<h4 id="padding-内边距"><a href="#padding-内边距" class="headerlink" title="padding(内边距)"></a>padding(内边距)</h4><p><code>语法：padding:上右下左/上 左右 下/上下 左右/全</code></p>
+<p><code>padding</code>盒子如果<strong>没设置宽</strong>的话*(就继承父盒子的宽)<em>，<code>padding</code>是不会影响盒子宽度的*<em>（即不会撑大盒子）</em></em>;</p>
+<p>如果盒子<strong>设置了宽</strong>，还给<code>padding</code>会撑大盒子，<em>不想盒子突出父盒子</em>，就需要计算一下；<strong>（高度同理）</strong></p>
+<p><code>padding</code>写在内容与边框中间，写在<strong>内容标签里面</strong>；</p>
+<br>
+
+<h4 id="margin-盒子塌陷问题"><a href="#margin-盒子塌陷问题" class="headerlink" title="margin(盒子塌陷问题)"></a>margin(盒子塌陷问题)</h4><p><strong>(1) 相邻块元素垂直外边距塌陷</strong></p>
+<p>·当上下相邻的两个块元素相遇时，如果上面的元素有下外边距<code>margin-bottom</code></p>
+<p>·下面的元素有上外边距<code>margin-top</code>，则他们之间的垂直间距<strong>不是</strong><code>margin-bottom</code>与<code>margin-top</code><strong>之和</strong></p>
+<p>·<strong>取两个值中的较大者</strong>这种现象被称为相邻块元素垂直外边距的合并(也称外边距塌陷)。</p>
+<img src="D:\Blog\source\images\margin嵌套块元素塌陷.png" alt="你是？" style="zoom: 80%;">
+
+<p><img src="D:\Blog\source\images\margin相邻块元素塌陷.png" alt="傻卵" title="鹅鹅鹅饿"></p>
+<br>
+
+<p>·<strong>取两个值中的较大者</strong>这种现象被称为相邻块元素垂直外边距的合并(也称外边距塌陷)。</p>
 <h4 id="text-align-常用于水平居中"><a href="#text-align-常用于水平居中" class="headerlink" title="text-align(常用于水平居中)"></a>text-align(常用于水平居中)</h4><p><code>text-align</code> 设置在父级元素里<strong>或者</strong>在其他块级元素里<em>（宽给默认浏览器宽，高给不给随意）</em>；</p>
 <p>并<em>不控制块元素自己的对齐</em>，只控制它<strong>里面的内容</strong>对齐。</p>
 <br>
@@ -487,16 +506,9 @@ text-align(常用于水平居中)text-align 设置在父级元素里或者在其
 <p><code>line-height</code>最好<strong>放置其父元素中</strong>。使里面的文字(或者元素)垂直居中。</p>
 <br>
 
-<h4 id="盒子居中"><a href="#盒子居中" class="headerlink" title="盒子居中"></a>盒子居中</h4><p><code>margin: 0 auto</code>让盒子居中，<strong>自身给个宽度</strong>，给<em>自己</em>用上<code>margin: 0 auto</code>；</p>
-<p>用上<code>text-align</code>可将盒子里面的元素在盒子里水平居中<em>（大盒包小盒，小盒在里面被居中）</em>；</p>
-<p>用上<code>line-height </code> <strong>在有高度的前提下</strong>能垂直居中。</p>
-<br>
 
-<h4 id="padding-内边距"><a href="#padding-内边距" class="headerlink" title="padding(内边距)"></a>padding(内边距)</h4><p><code>语法：padding:上右下左/上 左右 下/上下 左右/全</code>&amp;emsp;</p>
-<p><code>padding</code>盒子如果<strong>没设置宽</strong>的话*(就继承父盒子的宽)<em>，<code>padding</code>是不会影响盒子宽度的*<em>（即不会撑大盒子）</em></em>;</p>
-<p>如果盒子<strong>设置了宽</strong>，还给<code>padding</code>会撑大盒子，<em>不想盒子突出父盒子</em>，就需要计算一下；<strong>（高度同理）</strong></p>
-<p><code>padding</code>写在内容与边框中间，写在<strong>内容标签里面</strong>；</p>
-<br>
+
+
 
 <p><code>基线</code>：看那个元素影响了文字，就在影响文字的元素里设置 vertical-align:middle(中)，就可以使文字在盒子春之·垂直居中。</p>
 <br>
@@ -1011,7 +1023,7 @@ text-align(常用于水平居中)text-align 设置在父级元素里或者在其
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">746</span>
+                        class="white-color">894</span>
             
             
             
