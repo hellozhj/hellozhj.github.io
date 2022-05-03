@@ -456,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    821
+                    898
                 </div>
                 
 
@@ -491,8 +491,13 @@
 <h4 id="margin-盒子塌陷问题"><a href="#margin-盒子塌陷问题" class="headerlink" title="margin(盒子塌陷问题)"></a>margin(盒子塌陷问题)</h4><p><strong>(1) 相邻块元素垂直外边距塌陷</strong></p>
 <p>·当上下相邻的两个块元素相遇时，如果上面的元素有下外边距<code>margin-bottom</code></p>
 <p>·下面的元素有上外边距<code>margin-top</code>，则他们之间的垂直间距<strong>不是</strong><code>margin-bottom</code>与<code>margin-top</code><strong>之和</strong></p>
-<p>·<strong>取两个值中的较大者</strong>这种现象被称为相邻块元素垂直外边距的合并(也称外边距塌陷)。</p>
+<p>·<strong>取两个值中的较大者</strong>这种现象被称为相邻块元素垂直外边距的合并(也称==外边距塌陷==)。</p>
 <p><img src="/../images/margin%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%A1%8C%E9%99%B7-1651562735747.png" alt="相邻块元素塌陷"></p>
+<p><strong>(2) 嵌套块元素垂直外边距的塌陷</strong></p>
+<p>·对于两个嵌套关系的块元素，如果父元素没有上内边距及边框</p>
+<p>·父元素的上外边距会与子元素的上外边距发生合并</p>
+<p>·合并后的外边距为两者中的较大者</p>
+<p><img src="/../images/margin%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%A1%8C%E9%99%B7-1651563539693.png" alt="嵌套块元素"></p>
 <br>
 
 <p>·<strong>取两个值中的较大者</strong>这种现象被称为相邻块元素垂直外边距的合并(也称外边距塌陷)。</p>
@@ -1022,7 +1027,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">821</span>
+                        class="white-color">898</span>
             
             
             
