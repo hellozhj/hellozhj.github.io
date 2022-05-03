@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-05-03T04:55:34.965Z</updated>
+  <updated>2022-05-03T05:37:00.253Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -17,21 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>H5遗忘点</title>
+    <title>H5与css学习点</title>
     <link href="https://hellozhj.github.io/2022/04/26/h5-yi-wang-dian/"/>
     <id>https://hellozhj.github.io/2022/04/26/h5-yi-wang-dian/</id>
     <published>2022-04-26T14:01:00.000Z</published>
-    <updated>2022-05-03T04:55:34.965Z</updated>
+    <updated>2022-05-03T05:37:00.253Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;code&gt;块级元素&lt;/code&gt;，宽度默认网页宽度，设置高度才有显示，没有高度就默认内容高度，如果连内容都没有就不显示。&lt;/p&gt;
-&lt;br&gt;
-
-&lt;p&gt;&lt;code&gt;text-align&lt;/code&gt;</summary>
+    <summary type="html">&lt;h4 id=&quot;块级元素&quot;&gt;&lt;a href=&quot;#块级元素&quot; class=&quot;headerlink&quot;</summary>
         
       
     

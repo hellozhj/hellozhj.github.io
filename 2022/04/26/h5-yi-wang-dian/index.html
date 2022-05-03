@@ -4,15 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="H5遗忘点, Hexo">
-    <meta name="description" content="块级元素，宽度默认网页宽度，设置高度才有显示，没有高度就默认内容高度，如果连内容都没有就不显示。
+    <meta name="keywords" content="H5与css学习点, Hexo">
+    <meta name="description" content="块级元素宽度默认浏览器宽度，里面无内容，只有设置高度才有显示；
+没有设置高度就默认高度为内容高度，如果没有内容也没高度，盒子不显示。
 
 
-text-align 设置在父级元素里，有宽高的块级元素；
-并不控制块元素自己的对齐，只控制它的行内内容的对齐。
-
-
-line-heigh">
+text-align(常用于水平居中)text-align 设置在父级元素里或者在其他块级元素里（宽给">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +23,7 @@ line-heigh">
 
     
 
-    <title>H5遗忘点 | Hexo</title>
+    <title>H5与css学习点 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -324,7 +321,7 @@ line-heigh">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">H5遗忘点</h1>
+                    <h1 class="description center-align post-title">H5与css学习点</h1>
                 </div>
             </div>
         </div>
@@ -461,7 +458,7 @@ line-heigh">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    547
+                    612
                 </div>
                 
 
@@ -478,19 +475,23 @@ line-heigh">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><code>块级元素</code>，宽度默认网页宽度，设置高度才有显示，没有高度就默认内容高度，如果连内容都没有就不显示。</p>
+                <h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p><strong>宽度</strong>默认浏览器宽度，里面无内容，只有设置<strong>高度</strong>才有显示；</p>
+<p>没有设置高度就<strong>默认高度为内容高度</strong>，<strong>如果没有内容也没高度</strong>，盒子<strong>不显示</strong>。</p>
 <br>
 
-<p><code>text-align</code> 设置在父级元素里，有宽高的块级元素；</p>
-<p>并不控制块元素自己的对齐，只控制它的行内内容的对齐。</p>
+<h4 id="text-align-常用于水平居中"><a href="#text-align-常用于水平居中" class="headerlink" title="text-align(常用于水平居中)"></a>text-align(常用于水平居中)</h4><p><code>text-align</code> 设置在父级元素里<strong>或者</strong>在其他块级元素里<em>（宽给默认浏览器宽，高给不给随意）</em>；</p>
+<p>并<em>不控制块元素自己的对齐</em>，只控制它<strong>里面的内容</strong>对齐。</p>
 <br>
 
-<p><code>line-height </code>如果要使文字居中,<code>line-heigh</code> 无疑是你最好的选择。只需将她的值改为其父元素的高度即可；</p>
-<p><code>line-height</code>最好放置其父元素中。使里面的元素垂直居中。</p>
+<h4 id="line-height-常用于文字垂直居中"><a href="#line-height-常用于文字垂直居中" class="headerlink" title="line-height(常用于文字垂直居中)"></a>line-height(常用于文字垂直居中)</h4><p>如果要使文字垂直居中,<code>line-heigh</code> 无疑是你最好的选择。只需将她的<strong>值改为其父元素的高度</strong>即可；</p>
+<p><code>line-height</code>最好<strong>放置其父元素中</strong>。使里面的元素垂直居中。</p>
 <br>
 
-<p><code>margin: auto</code>让盒子居中的方法其实很简单，自身给个宽，给自己用上<code>margin: auto</code>；</p>
-<p>用上<code>text-align</code> 亦可将盒子里面的元素在盒子里水平居中，用上<code>line-height </code>更能垂直居中。<br></p>
+<h4 id="盒子居中"><a href="#盒子居中" class="headerlink" title="盒子居中"></a>盒子居中</h4><p><code>margin: 0 auto</code>让盒子居中的方法其实很简单，<strong>自身给个宽度</strong>，给自己用上<code>margin: 0 auto</code>；</p>
+<p>用上<code>text-align</code>可将盒子里面的元素在盒子里水平居中；</p>
+<p>用上<code>line-height </code> <strong>在有高度的前提下</strong>更能垂直居中。</p>
+<br>
+
 <p><code>基线</code>：看那个元素影响了文字，就在影响文字的元素里设置 vertical-align:middle(中)，就可以使文字在盒子春之·垂直居中。</p>
 <br>
 
@@ -513,7 +514,7 @@ line-heigh">
 <p><strong>清除浮动，会让浮动占位但不会改变浮动的位置</strong></p>
 <br>
 
-<h3 id="浮动和定位"><a href="#浮动和定位" class="headerlink" title="浮动和定位:"></a><code>浮动和定位</code>:</h3><p>1.浮动可以让多个块级盒子一行没有缝隙排列显示， 经常用于横向排列盒子。</p>
+<h4 id="浮动和定位"><a href="#浮动和定位" class="headerlink" title="浮动和定位:"></a>浮动和定位:</h4><p>1.浮动可以让多个块级盒子一行没有缝隙排列显示， 经常用于横向排列盒子。</p>
 <p>2.定位则是可以让盒子自由的在某个盒子内移动位置或者固定屏幕中某个位置，并且可以压住其他盒子。</p>
 <br>
 
@@ -761,9 +762,9 @@ line-heigh">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="H5遗忘点">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="H5与css学习点">
                         
-                        <span class="card-title">H5遗忘点</span>
+                        <span class="card-title">H5与css学习点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1009,7 +1010,7 @@ line-heigh">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">620</span>
+                        class="white-color">685</span>
             
             
             
