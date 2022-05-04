@@ -456,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.8k
                 </div>
                 
 
@@ -505,7 +505,7 @@
 <p><strong>解决方案：</strong></p>
 <p>·可以为父元素定义<code>上边框</code>。</p>
 <p>·可以为父元素定义上<code>内边距</code>。</p>
-<p>·可以为父元素添加<code>overflow: hidden</code>。</p>
+<p>·可以为父元素添加<code>overflow: hidden</code>。**(常用的解决方法)**</p>
 <p><em>还有其他方法，比如浮动、固定、绝对定位的盒子不会有问题，后面咱们再总结。</em></p>
 <br>
 
@@ -514,7 +514,8 @@
 <p>并<em>不控制块元素自己的对齐</em>，只控制它<strong>里面的内容</strong>对齐。</p>
 <br>
 
-<h4 id="line-height-常用于文字垂直居中"><a href="#line-height-常用于文字垂直居中" class="headerlink" title="line-height(常用于文字垂直居中)"></a>line-height(常用于文字垂直居中)</h4><p><code>line-heigh</code> 文字垂直居中。只需将她的<strong>值改为其父元素的高度</strong>即可；</p>
+<h4 id="line-height-常用于文字垂直居中"><a href="#line-height-常用于文字垂直居中" class="headerlink" title="line-height(常用于文字垂直居中)"></a>line-height(常用于文字垂直居中)</h4><p><code>line-heigh</code>是上文字到下文字的距离，块级元素里可以直接用<code>line-heigh</code>使文字间的上下距离变大。</p>
+<p><code>line-heigh</code> 文字垂直居中。只需将她的<strong>值改为其父元素的高度</strong>即可；</p>
 <p><code>line-height</code>最好<strong>放置其父元素中</strong>。使里面的文字(或者元素)垂直居中。</p>
 <br>
 
@@ -623,6 +624,12 @@
 <li>不会出现外边距塌陷的情况;</li>
 <li>无法使用margin: 0 auto;</li>
 </ol>
+<br>
+
+<h4 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h4><p>给固定的<strong>高</strong>，只显示部分图片。</p>
+<h5 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h5><p>:hover没办法修改<strong>给定颜色</strong>的标签，解决办法：</p>
+<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span>{</span><br><span class="line">    <span class="attribute">color</span>:black;</span><br><span class="line">}</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>{</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">}</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">span</span>{</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
 
                 
             </div>
@@ -1116,7 +1123,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.7k</span>
+                        class="white-color">1.8k</span>
             
             
             
