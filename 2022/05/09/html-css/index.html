@@ -36,9 +36,9 @@ img图片居中，可以套在一个有宽高盒子里（或者将其转换为�
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.1.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 
@@ -700,7 +700,7 @@ visibility: hidden;  }
     <span class="token property">top</span><span class="token punctuation">:</span> -5px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
-<p>外边框:outline</p>
+<p><strong>外边框</strong>:<code>outline</code></p>
 <p><strong>设置多行文字省略</strong></p>
 <pre class="language-css" data-language="css"><code class="language-css"><span class="token punctuation">(</span>设置多行文字省略<span class="token punctuation">)</span>
             <span class="token comment">/**对象作为伸缩盒子模型显示**/</span>
@@ -712,6 +712,16 @@ visibility: hidden;  }
             <span class="token comment">/*英文强制换行*/</span>
             <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
 </code></pre>
+
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p><code>label</code><strong>标签</strong></p>
+<p>关联<strong>文字和表单元素</strong></p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- label标签是关联表单选项和文字 --&gt;</span>
+<span class="token comment">&lt;!-- 方法一 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gender<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 男士
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- 方法二 label for id--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gender<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>female<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>female<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>女士<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span></code></pre>
 
 
 
@@ -1206,7 +1216,7 @@ visibility: hidden;  }
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.4k</span>
+                        class="white-color">2.9k</span>
             
             
             
