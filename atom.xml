@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-05-09T06:20:39.458Z</updated>
+  <updated>2022-05-09T09:40:05.267Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -21,19 +21,21 @@
     <link href="https://hellozhj.github.io/2022/05/09/selector/"/>
     <id>https://hellozhj.github.io/2022/05/09/selector/</id>
     <published>2022-05-09T06:19:14.000Z</published>
-    <updated>2022-05-09T06:20:39.458Z</updated>
+    <updated>2022-05-09T09:40:05.267Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;选择器&quot;&gt;&lt;a href=&quot;#选择器&quot; class=&quot;headerlink&quot; title=&quot;选择器&quot;&gt;&lt;/a&gt;选择器&lt;/h2&gt;&lt;h4 id=&quot;后代选择器&quot;&gt;&lt;a href=&quot;#后代选择器&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;复合选择器表格总结&quot;&gt;&lt;a href=&quot;#复合选择器表格总结&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
+    
+    <category term="HTML" scheme="https://hellozhj.github.io/tags/HTML/"/>
     
   </entry>
   
@@ -42,11 +44,23 @@
     <link href="https://hellozhj.github.io/2022/05/09/html5-css3/"/>
     <id>https://hellozhj.github.io/2022/05/09/html5-css3/</id>
     <published>2022-05-09T04:03:38.000Z</published>
-    <updated>2022-05-09T06:20:10.016Z</updated>
+    <updated>2022-05-15T06:46:46.079Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;技巧&quot;&gt;&lt;a href=&quot;#技巧&quot; class=&quot;headerlink&quot; title=&quot;技巧&quot;&gt;&lt;/a&gt;技巧&lt;/h3&gt;&lt;p&gt;属性值跟属性名相同，属性值可以不写&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;css书写规律：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre</summary>
+        
+      
     
     
     
     
+    <category term="HTML" scheme="https://hellozhj.github.io/tags/HTML/"/>
     
   </entry>
   
@@ -55,7 +69,7 @@
     <link href="https://hellozhj.github.io/2022/05/09/html-css/"/>
     <id>https://hellozhj.github.io/2022/05/09/html-css/</id>
     <published>2022-05-09T03:55:37.000Z</published>
-    <updated>2022-05-09T04:55:42.536Z</updated>
+    <updated>2022-05-10T12:50:09.438Z</updated>
     
     
       
@@ -68,6 +82,8 @@
     
     
     
+    
+    <category term="HTML" scheme="https://hellozhj.github.io/tags/HTML/"/>
     
   </entry>
   
