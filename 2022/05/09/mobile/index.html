@@ -4,30 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML选择器, Hexo">
-    <meta name="description" content="复合选择器表格总结
-
-
-选择器
-作用
-特征
-使用情况
-隔开符号及用法
-
-
-
-后代选择器
-用来选择元素后代
-是选择所有的子孙后代
-较多
-符号是空格 .nav    a
-
-
-子代选择器
-选择 最近一级元素
-只选亲儿子
-较少
-符号是**&amp;gt;*">
+    <meta name="keywords" content="移动端, Hexo">
+    <meta name="description" content="移动端禁止移动端视口缩放&amp;lt;!-- viewport视口的意思 --&amp;gt;
+   &amp;lt;!-- 手机端浏览器自带一个功能 会把整个屏幕缩小到980px --&amp;gt;
+   &amp;lt;!-- 禁止手机端的浏览器缩小页面  简约版--&amp;g">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -41,7 +21,7 @@
 
     
 
-    <title>HTML选择器 | Hexo</title>
+    <title>移动端 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -334,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HTML选择器</h1>
+                    <h1 class="description center-align post-title">移动端</h1>
                 </div>
             </div>
         </div>
@@ -480,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    828
                 </div>
                 
 
@@ -500,198 +480,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="复合选择器表格总结"><a href="#复合选择器表格总结" class="headerlink" title="复合选择器表格总结"></a>复合选择器表格总结</h3><table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>作用</th>
-<th>特征</th>
-<th>使用情况</th>
-<th>隔开符号及用法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>后代选择器</td>
-<td>用来选择元素后代</td>
-<td>是选择所有的子孙后代</td>
-<td>较多</td>
-<td>符号是<strong>空格</strong> .nav    a</td>
-</tr>
-<tr>
-<td>子代选择器</td>
-<td>选择 最近一级元素</td>
-<td>只选亲儿子</td>
-<td>较少</td>
-<td>符号是**&gt;**   .nav&gt;p</td>
-</tr>
-<tr>
-<td>交集选择器</td>
-<td>选择两个标签交集的部分</td>
-<td>既是 又是</td>
-<td>较少</td>
-<td><strong>没有符号</strong>  p.one</td>
-</tr>
-<tr>
-<td>并集选择器</td>
-<td>选择某些相同样式的选择器</td>
-<td>可以用于集体声明</td>
-<td>较多</td>
-<td>符号是<strong>逗号</strong> .nav, .header</td>
-</tr>
-<tr>
-<td>链接伪类选择器</td>
-<td>给链接更改状态</td>
-<td></td>
-<td>较多</td>
-<td>重点记住 a{} 和 a:hover  实际开发的写法</td>
-</tr>
-</tbody></table>
-<h4 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h4><p>外层标签写在前面，内层标签写在后面，中间用<strong>空格</strong>分隔</p>
-<pre class="language-none"><code class="language-none">父级 子级{属性:属性值;属性:属性值;}</code></pre>
+                <h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><h4 id="禁止移动端视口缩放"><a href="#禁止移动端视口缩放" class="headerlink" title="禁止移动端视口缩放"></a>禁止移动端视口缩放</h4><pre class="language-css" data-language="css"><code class="language-css">&lt;!-- viewport视口的意思 --&gt;
+   &lt;!-- 手机端浏览器自带一个功能 会把整个屏幕缩小到980px --&gt;
+   &lt;!-- 禁止手机端的浏览器缩小页面  简约版--&gt;
+   &lt;!-- &lt;meta name=<span class="token string">"viewport"</span> content=<span class="token string">"width=device-width, initial-scale=1.0"</span>&gt; --&gt;
 
-<h4 id="子集选择器"><a href="#子集选择器" class="headerlink" title="子集选择器"></a>子集选择器</h4><p>只能选择包<strong>含在里</strong>的某个**子元素(亲儿子)**的元素。</p>
-<p>父级标签写在前面，子级标签写在后面，中间一个 <code>&gt;</code> </p>
-<pre class="language-none"><code class="language-none">父级&gt;子级{属性:属性值;属性:属性值;}</code></pre>
+   &lt;!-- width=device-width 视口的宽等于设备的宽 --&gt;
+   &lt;!-- initial-scale=1.0 初始缩放比例是1--&gt;
+   &lt;!-- maximum-scale=1 最大缩放比例是1 --&gt;
+   &lt;!-- minimum-scale=1 最小缩放比例是1 --&gt;
+   &lt;!-- user-scalable=no 禁止用户缩放 --&gt;
 
-<h4 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h4><p>其中<strong>第一个为标签选择器</strong>，<strong>第二个为class选择器</strong>，两个选择器之间<strong>不能有空格</strong>，如：h3.special。</p>
-<h4 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h4><p>并集选择器通常用于<strong>集体声明</strong>  ，<strong>逗号隔开的</strong>，所有选择器都会执行后面样式，逗号可以理解为 和的意思。</p>
-<pre class="language-none"><code class="language-none">比如：.one, p , #test {color: #F00;}  
-表示：.one 和 p  和 #test 这三个选择器都会执行颜色为红色。 
-通常用于集体声明。  </code></pre>
+   &lt;!-- 禁止手机端的浏览器缩小页面 完整版 --&gt;
+   &lt;meta name=<span class="token string">"viewport"</span>content=<span class="token string">"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"</span>&gt;</code></pre>
 
-<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><p>向某些选择器<strong>添加特殊的效果</strong></p>
-<p><code>伪类 </code>用 2个点 就是 <strong>冒号</strong>  比如  <code>:link{}</code>    <em>伪娘</em> </p>
-<p><strong>1. 链接伪类选择器</strong></p>
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token comment">/* 写的时候，按照  lvha 的顺序，顺序不要颠倒 */</span>
-<span class="token property">a</span><span class="token punctuation">:</span>link      <span class="token comment">/* 未访问的链接 */</span>
-<span class="token property">a</span><span class="token punctuation">:</span>visited   <span class="token comment">/* 已访问的链接 */</span>
-<span class="token property">a</span><span class="token punctuation">:</span>hover     <span class="token comment">/* 鼠标移动到链接上 */</span>
-<span class="token property">a</span><span class="token punctuation">:</span>active    <span class="token comment">/* 选定的链接 */</span></code></pre>
+<h4 id="Emmet-语法总结"><a href="#Emmet-语法总结" class="headerlink" title="Emmet 语法总结"></a>Emmet 语法总结</h4><pre class="language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- ul&gt;li*17&gt;a[href=#]&gt;img[src=images/nav$.png]+p{天猫新品} --&gt;</span>
+<span class="token comment">&lt;!-- 标签属性[k=v] --&gt;</span>
+<span class="token comment">&lt;!-- $数字 1 2 3..... --&gt;</span>
+<span class="token comment">&lt;!-- {}盒子里面放内容 --&gt;</span>
+<span class="token comment">&lt;!-- &gt; 嵌套关系 --&gt;</span>
+<span class="token comment">&lt;!-- +同级关系 --&gt;</span>
+<span class="token comment">&lt;!-- * 生成个数 --&gt;</span>
+</code></pre>
 
-<p><strong>2. 结构伪类选择器</strong></p>
-<p><strong>2.1 child系列</strong></p>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>例子</th>
-<th>例子描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>:first-child</td>
-<td>p:first-child</td>
-<td>选择父元素的第一个子元素中的每个 <p> 元素。</p></td>
-</tr>
-<tr>
-<td>:last-child</td>
-<td>p:last-child</td>
-<td>选择其父元素最后一个子元素中的每个 <p> 元素。</p></td>
-</tr>
-<tr>
-<td>:nth-child(<em>n</em>)</td>
-<td>p:nth-child(2)</td>
-<td>选择其父元素的第二个子元素中的每个 <p> 元素。</p></td>
-</tr>
-<tr>
-<td>:nth-last-child(<em>n</em>)</td>
-<td>p:nth-last-child(2)</td>
-<td>同上，从最后一个子元素开始计数。</td>
-</tr>
-</tbody></table>
-<p><code>n</code>:</p>
-<ul>
-<li>可以是整数值(1,2,3,4);</li>
-<li>也可以是表达式(2n+1、-n+5);</li>
-<li>(<strong>odd/2n+1/2n-1奇数</strong>，<strong>even/2n偶数</strong>);</li>
-<li>但参数n的起始值始终是1，而不是0。</li>
-</ul>
-<p><strong>注意：</strong></p>
-<p>当“:nth-child(n)”选择器中的n为一个<strong>表达式</strong>时，其中n是<strong>从0开始计算</strong>，当表达式的<strong>值为0或小于0</strong>的时候，<strong>不选择任何匹配</strong>的元素。</p>
-<p>nth-child的选择器是<strong>先找位置</strong>，然后<strong>再找标签</strong>，如果<em>标签和位置对不上</em>，那么这个选择器就是<em>错误的</em>。</p>
-<p><strong>2.2 nth-of-type系列</strong></p>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>例子</th>
-<th>例子描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>:first-of-type</td>
-<td>p:first-of-type</td>
-<td>选择属于其父元素的首个 <p> 元素的每个 </p><p> 元素。</p></td>
-</tr>
-<tr>
-<td>:last-of-type</td>
-<td>p:last-of-type</td>
-<td>选择属于其父元素的最后 <p> 元素的每个 </p><p> 元素。</p></td>
-</tr>
-<tr>
-<td>:nth-of-type(<em>n</em>)</td>
-<td>p:nth-of-type(2)</td>
-<td>选择属于其父元素第二个 <p> 元素的每个 </p><p> 元素。</p></td>
-</tr>
-<tr>
-<td>:nth-last-of-type(<em>n</em>)</td>
-<td>p:nth-last-of-type(2)</td>
-<td>同上，但是从最后一个子元素开始计数。</td>
-</tr>
-</tbody></table>
-<p>与<code>nth-child</code>的区别是，这个伪类选择器的位置，是<strong>先找元素</strong>找到后，<strong>再从上往下排位置</strong>。</p>
-<br>
 
-<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><p>根据<strong>不同的属性</strong>去选择标签，常用用来<strong>选择不同类型的表单</strong></p>
-<pre class="language-html" data-language="html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
-        <span class="token comment">/* 可以根据不同的属性去选择标签 经常用来选择不同类型的表单*/</span>
-        <span class="token comment">/* 格式  选择器[属性="值"]   */</span>
-        <span class="token selector">input[type="text"]</span><span class="token punctuation">{</span>
-           <span class="token property">background-color</span><span class="token punctuation">:</span>pink<span class="token punctuation">;</span> 
-        <span class="token punctuation">}</span>
-        
-        <span class="token comment">/* 格式  选择器[属性名] 表示选中带有这个属性名的标签 */</span>
-        <span class="token selector">a[target]</span><span class="token punctuation">{</span>
-            <span class="token property">background-color</span><span class="token punctuation">:</span> tan<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
-    <span class="token comment">&lt;!-- 文本输入框 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token comment">&lt;!-- 密码输入框 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token comment">&lt;!-- 超链接 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>超链接<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>超链接<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
 
-<br>
+<p>大部分的手机屏幕宽度不超过540px</p>
+<p>body设置最大宽度  540px  再设置居中 </p>
+<p>用 px 单位注意，分区的盒子要使用<strong>百分比</strong>结合弹性布局来布局，里面的小部分（图片尺寸 文字大小等）可以使用具体像素值。</p>
+<h4 id="rem适配和百分比适配区别："><a href="#rem适配和百分比适配区别：" class="headerlink" title="rem适配和百分比适配区别："></a><strong>rem适配和百分比适配区别：</strong></h4><p>rem能随着屏幕变大 尺寸发生变化（开发的时候可以根据设计稿量了多少尺寸就给多少，减轻计算宽度工作量，也能适配不同屏幕）</p>
+<p>px固定的，不会再变化(好处：屏幕大的手机就能看到更多内容)</p>
+<h2 id="rem适配方案"><a href="#rem适配方案" class="headerlink" title="rem适配方案"></a>rem适配方案</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p><strong>不管用户使用的是什么样尺寸的手机屏幕，我们要保证设计稿是能够等比例的还原在屏幕上的</strong></p>
+<h3 id="已知"><a href="#已知" class="headerlink" title="已知"></a>已知</h3><p>1rem = 页面中 html 的font-size值</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
+<li><p>假设把750的设计稿、划分为<strong>10</strong>等份<br>那么   1个格子  =  750/10 = 75px</p>
+</li>
+<li><p>所以我们要在750的屏幕使用rem单位等比例还原设计稿的时，也要使用等比例切割，把页面划分为10等分</p>
+<p>即给html设置font-size值为：75px；   </p>
+<p>即  1rem = 75px； ====&gt;   1px  = 1/75rem =0.0133rem ;</p>
+<p><strong>验证</strong></p>
+<p>如果在750的屏幕下，100px * 100px  的盒子     与    1.33rem * 1.33rem 的盒子是等大的，那么证明我们的推理是正确的</p>
+</li>
+</ol>
+<p>3.假设我们能自动获取到当前的屏幕宽度winW，把winW依然按照10等份划分，</p>
+<p>把winW/10 的数值，设置为html的font-size值， </p>
+<p>那么根据 rem会自动相对html的font-size值计算的这个特点，就能实现不同屏幕下等比例还原设计稿了</p>
+<p><strong>下面这段js代码的作用，就是自动获取屏幕的</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> winW <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span> <span class="token comment">// 获取屏幕宽度  </span>
+<span class="token keyword">var</span> htmlFont <span class="token operator">=</span> winW<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">// 屏幕宽度/ 10</span>
+<span class="token comment">// 把屏幕宽/10 的结果设置给html的font-size</span>
+document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> htmlFont<span class="token operator">+</span><span class="token string">'px'</span><span class="token punctuation">;</span></code></pre>
 
-<h4 id="补充选择器"><a href="#补充选择器" class="headerlink" title="补充选择器"></a>补充选择器</h4><p><strong>点击输入框下面出现选择框</strong></p>
-<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>con<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>手机<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>手机<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>手机<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>手机<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
-
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.con</span><span class="token punctuation">{</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
-    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #ccc<span class="token punctuation">;</span>
-    <span class="token property">margin-top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment">/* :focus得到焦点的样式 */</span>
-<span class="token comment">/* + 选择同级后面一个的标签 */</span>
-<span class="token selector">input:focus+.con</span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-
+<p>现在，在不同的机型下，html的字体大小就不同，即1个rem所表示的像素就不同。所以把元素的宽度、字体大小等属性单位写成rem，就可以动态设置这些属性。在不同的浏览器分辨率下有最好的展示（按照设计图比例）。</p>
 
                 
             </div>
@@ -718,7 +560,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellozhj.github.io/2022/05/09/selector/">https://hellozhj.github.io/2022/05/09/selector/</a>
+                    <a href="https://hellozhj.github.io/2022/05/09/mobile/">https://hellozhj.github.io/2022/05/09/mobile/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -931,18 +773,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/09/selector/">
+                <a href="/2022/05/09/html5-css3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="HTML选择器">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="HTML5+CSS3">
                         
-                        <span class="card-title">HTML选择器</span>
+                        <span class="card-title">HTML5+CSS3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -952,9 +793,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -963,7 +804,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -982,13 +822,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/05/09/html5-css3/">
+                <a href="/2022/05/09/js-zhong-dui-xiang-qu-zhi-de-dian-yu-fa-he-zhong-gua-hao-yu-fa-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="HTML5+CSS3">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="js中对象取值的点语法和中括号语法的区别">
                         
-                        <span class="card-title">HTML5+CSS3</span>
+                        <span class="card-title">js中对象取值的点语法和中括号语法的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1012,8 +852,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>
