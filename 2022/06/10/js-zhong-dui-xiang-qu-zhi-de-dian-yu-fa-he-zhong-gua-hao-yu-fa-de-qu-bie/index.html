@@ -4,11 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="网页布局总结, Hexo">
-    <meta name="description" content="网页布局总结pc端固定像素px + 标准流 浮动 定位（ie低版本不兼容弹性布局）pc端如果忽略ie10以下的兼容，可以使用弹性布局
+    <meta name="keywords" content="js中对象取值的点语法和中括号语法的区别, Hexo">
+    <meta name="description" content="js中对象取值的点语法和中括号语法的区别中括号语法: 任何时候 场合都可使用  适用范围很广;
+点语法: 较有局限性, 一下说一下;
+eg1:
+let obj = {
+    a: 123
+}
 
-响应式百分比单位 + 媒体查询实现屏幕变小，通过修改样式去适配三个。
-单位可以使用百分比 像素值，重点是">
+console.log(obj.a)    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +26,7 @@
 
     
 
-    <title>网页布局总结 | Hexo</title>
+    <title>js中对象取值的点语法和中括号语法的区别 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -315,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">网页布局总结</h1>
+                    <h1 class="description center-align post-title">js中对象取值的点语法和中括号语法的区别</h1>
                 </div>
             </div>
         </div>
@@ -436,8 +440,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML/">
-                                <span class="chip bg-color">HTML</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -452,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-09
+                    2022-06-10
                 </div>
                 
 
@@ -461,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    704
+                    245
                 </div>
                 
 
@@ -481,44 +485,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="网页布局总结"><a href="#网页布局总结" class="headerlink" title="网页布局总结"></a>网页布局总结</h1><h3 id="pc端"><a href="#pc端" class="headerlink" title="pc端"></a>pc端</h3><h4 id="固定像素px-标准流-浮动-定位（ie低版本不兼容弹性布局）"><a href="#固定像素px-标准流-浮动-定位（ie低版本不兼容弹性布局）" class="headerlink" title="固定像素px + 标准流 浮动 定位（ie低版本不兼容弹性布局）"></a>固定像素px + 标准流 浮动 定位（ie低版本不兼容弹性布局）</h4><h4 id="pc端如果忽略ie10以下的兼容，可以使用弹性布局"><a href="#pc端如果忽略ie10以下的兼容，可以使用弹性布局" class="headerlink" title="pc端如果忽略ie10以下的兼容，可以使用弹性布局"></a>pc端如果忽略ie10以下的兼容，可以使用弹性布局</h4><br>
+                <h1 id="js中对象取值的点语法和中括号语法的区别"><a href="#js中对象取值的点语法和中括号语法的区别" class="headerlink" title="js中对象取值的点语法和中括号语法的区别"></a>js中对象取值的点语法和中括号语法的区别</h1><p>中括号语法: 任何时候 场合都可使用  适用范围很广;</p>
+<p>点语法: 较有局限性, 一下说一下;</p>
+<p>eg1:</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span>
 
-<h3 id="响应式"><a href="#响应式" class="headerlink" title="响应式"></a>响应式</h3><p><strong>百分比单位 + 媒体查询实现屏幕变小，通过修改样式去适配三个。</strong></p>
-<p><strong>单位可以使用百分比 像素值</strong>，重点是小屏移动端的时候要修改部分样式：</p>
-<ul>
-<li><strong>例如高度如果写死要释放auto；</strong></li>
-<li><strong>水平排列要改成竖着排，修改盒子百分比</strong></li>
-<li><strong>如果全部竖着排可以直接取消弹性布局(display:block;或者display:inline)或者取消浮动（float:none;）</strong></li>
-</ul>
-<h3 id="哪些网站可以使用响应式？"><a href="#哪些网站可以使用响应式？" class="headerlink" title="哪些网站可以使用响应式？"></a>哪些网站可以使用响应式？</h3><p><strong>网站类型来决定：</strong></p>
-<p>如果网站内容不多，布局简单，隐藏一些结构也不影响太多效率，可以使用响应式。例如一些企业官网可以使用响应式，因为企业官网大多数是一些高清大图，布局不算复杂。</p>
-<p><strong>内容比较多</strong>而且<strong>布局复杂繁琐</strong>的，<strong>不建议做响应式</strong>，例如电商网站，内容多的其他类型网站 最好专门定制，pc端做一套，移动端做一套，根据屏幕尺寸特点专门定制，展示的内容更合理，更侧重于不同终端的用户体验。</p>
-<h2 id="标准流"><a href="#标准流" class="headerlink" title="标准流"></a>标准流</h2><p>标签默认的显示,块级竖直排列,行内水平排列,行内块水平排列</p>
-<p>但是有缺陷:</p>
-<p>同级关系的垂直方向外边距会合并(只设置一个方向)</p>
-<p>嵌套关系的垂直外边距塌陷(加上边框/上内边距/父盒子加超出隐藏)</p>
-<p><strong>行内标签的上下内外边距不能生效</strong></p>
-<p>行内块实现的<strong>水平排列不</strong>是严格的对齐,识别<strong>换行空格</strong></p>
-<h2 id="浮动流"><a href="#浮动流" class="headerlink" title="浮动流"></a>浮动流</h2><p>float  可以实现任何标签水平排列,并且是一种严格对齐的水平排列,忽略换行,空格</p>
-<p>特点:</p>
-<p>脱离标准流,在标准流不占位</p>
-<p>标签性质都变成了由内容撑开宽高,可以设置宽高</p>
-<h3 id="对标准流影响"><a href="#对标准流影响" class="headerlink" title="对标准流影响:"></a>对标准流影响:</h3><p><strong>不占位,影响正常标准流,解决方法:</strong></p>
-<p>1 隔墙法在浮动标签后面加一个块级标签,设置clear:both;  可见性和高度设置成隐藏(为了更保险)</p>
-<p>2 直接给受到浮动影响的标签加clear:both; </p>
-<p>3 推荐做法:在浮动标签外面套一个盒子,并且设置高度</p>
-<p>4  推荐做法:高度不能确定  伪元素在浮动盒子后面添加</p>
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::after</span> <span class="token punctuation">{</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"."</span><span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
-    <span class="token comment">/* 为了更保障,视觉上也设置隐藏 */</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-    <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>a<span class="token punctuation">)</span>              <span class="token comment">// 123</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>           <span class="token comment">// 123</span></code></pre>
 
- <span class="token punctuation">}</span></code></pre>
+<p> 点语法和中括号语法都没问题  正常;</p>
+<p>eg2:</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">''</span><span class="token operator">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span>
 
-<p>5 给浮动盒子的父标签设置超出隐藏属性去检查浮动的</p>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token string">''</span><span class="token punctuation">)</span>              <span class="token comment">// SyntaxError</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token string">''</span><span class="token punctuation">]</span><span class="token punctuation">)</span>           <span class="token comment">// 123</span></code></pre>
+
+<p>key为空字符串时, 中括号可正常取值, 点语法报错; 其实编辑器就提示你了. 中括号用双字符串也可取值</p>
+<p>eg3:</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token number">1</span><span class="token operator">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token number">1</span><span class="token punctuation">)</span>              <span class="token comment">// SyntaxError</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>           <span class="token comment">// 123</span></code></pre>
+
+<p>结果同上, key为number类型时, 点语法也无法取值</p>
+<p>eg4:</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'1'</span><span class="token operator">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token string">'1'</span><span class="token punctuation">)</span>              <span class="token comment">// SyntaxError</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>           <span class="token comment">// 123</span></code></pre>
+
+<p>结果同上, key为数字字符串时 点语法也无法取值</p>
+<p>eg5:</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'a'</span><span class="token operator">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> value <span class="token operator">=</span> <span class="token string">'a'</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>value<span class="token punctuation">)</span>              <span class="token comment">// undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token punctuation">)</span>           <span class="token comment">// 123</span></code></pre>
+
+<p> 当key为变量时, 点语法无法取值, 中括号语法可正常取值;</p>
 
                 
             </div>
@@ -545,7 +560,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellozhj.github.io/2022/05/09/wang-ye-bu-ju-zong-jie/">https://hellozhj.github.io/2022/05/09/wang-ye-bu-ju-zong-jie/</a>
+                    <a href="https://hellozhj.github.io/2022/06/10/js-zhong-dui-xiang-qu-zhi-de-dian-yu-fa-he-zhong-gua-hao-yu-fa-de-qu-bie/">https://hellozhj.github.io/2022/06/10/js-zhong-dui-xiang-qu-zhi-de-dian-yu-fa-he-zhong-gua-hao-yu-fa-de-qu-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,8 +598,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTML/">
-                                    <span class="chip bg-color">HTML</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -762,13 +777,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/09/js-zhong-dui-xiang-qu-zhi-de-dian-yu-fa-he-zhong-gua-hao-yu-fa-de-qu-bie/">
+                <a href="/2022/06/10/javascript-ji-chu-jie-duan-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="js中对象取值的点语法和中括号语法的区别">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript 基础阶段总结">
                         
-                        <span class="card-title">js中对象取值的点语法和中括号语法的区别</span>
+                        <span class="card-title">JavaScript 基础阶段总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -779,7 +794,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-10
                         </span>
                         <span class="publish-author">
                             
@@ -792,8 +807,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -807,13 +822,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/05/09/fan-hui-zhi/">
+                <a href="/2022/06/10/mobile/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="返回值">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Mobile">
                         
-                        <span class="card-title">返回值</span>
+                        <span class="card-title">Mobile</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -824,7 +839,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-10
                             </span>
                         <span class="publish-author">
                             
@@ -837,8 +852,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
                 </div>
@@ -1029,7 +1044,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32.3k</span>
+                        class="white-color">32.2k</span>
             
             
             
