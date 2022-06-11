@@ -461,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.1k
+                    11.3k
                 </div>
                 
 
@@ -670,13 +670,46 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 <h3 id="自增与自减"><a href="#自增与自减" class="headerlink" title="自增与自减"></a>自增与自减</h3><p><strong>自增</strong></p>
-<pre class="language-js" data-language="js"><code class="language-js">i<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">//i++ 相当于i = i + 1 (先赋值再自增)</span>
-<span class="token operator">++</span>i<span class="token punctuation">;</span> <span class="token comment">//++i 相当于i = i + 1 (先自增再赋值)</span></code></pre>
+<pre class="language-js" data-language="js"><code class="language-js">i<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">//i++ 相当于i = i + 1 (先计算，后自增)</span>
+<span class="token operator">++</span>i<span class="token punctuation">;</span> <span class="token comment">//++i 相当于i = i + 1 (先自增，后计算)</span></code></pre>
 
 <p><strong>两者的不同点在于：参与运算的过程中，++在前面是先自增，在计算，++在后面先计算后自增</strong></p>
+<p><strong>如果一行代码只有i++或者++i，其效果都是i+1。</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+i<span class="token operator">++</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//2</span>
+<span class="token operator">++</span>i<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//3</span></code></pre>
+
+<p><strong>一旦参与了其他运算，二者就有区别了</strong></p>
+<p><strong>i++</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> i <span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span>i<span class="token operator">++</span>  <span class="token operator">+</span>  <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token comment">//i++参与运算时，先参与运算，然后自身再+1，故代码可以改写为：b=i+5;i=i+1;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//6</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//2</span></code></pre>
+
+<p><strong>++i</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token operator">++</span>i <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//7</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>  <span class="token comment">// 2</span>
+<span class="token comment">//++i参与运算时，先自身再+1，然后再参与运算，故代码可以改写为：i=i+1;b=i+1+5;</span></code></pre>
+
 <p>eg:</p>
-<pre class="language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token operator">++</span> <span class="token operator">+</span> <span class="token operator">++</span>num <span class="token operator">+</span> num<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//10 + 12 + 12</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//13</span></code></pre>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span>    a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>
+    b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span>
+    c <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+<span class="token comment">//不参与运算二者效果是一样的，都是+1</span>
+<span class="token operator">++</span>a<span class="token punctuation">;</span> <span class="token comment">//11</span>
+a<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">//12</span>
+e <span class="token operator">=</span> <span class="token operator">++</span>a <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">++</span>b<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>c<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">+</span> a<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token number">13</span> <span class="token operator">+</span>    <span class="token number">21</span>   <span class="token operator">+</span>   <span class="token number">30</span>  <span class="token operator">+</span> <span class="token number">13</span>
+<span class="token comment">//     ++a参与运算，故先+1再运算，</span>
+<span class="token comment">//    ++b参与运算，故先+1再运算</span>
+<span class="token comment">//    c++参与运算，先参与运算，自身再+1；</span>
+<span class="token comment">//     a++参与运算，先参与运算，自身再+1，前面++a已经改变了a的值为13</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//77</span></code></pre>
 
 <p><strong>自减和自增一样</strong></p>
 <h3 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h3><ul>
@@ -2629,7 +2662,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32.2k</span>
+                        class="white-color">32.6k</span>
             
             
             

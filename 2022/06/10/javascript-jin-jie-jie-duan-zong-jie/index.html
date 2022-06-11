@@ -463,7 +463,7 @@ for(var i = 0; i&amp;lt;">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.8k
+                    11.9k
                 </div>
                 
 
@@ -827,6 +827,27 @@ _lis<span class="token punctuation">.</span><span class="token function">forEach
 <span class="token punctuation">}</span></code></pre>
 
 <p><strong>里面的for循环必须发生在	点击按钮的事件中，给按钮加上背景色之前，去掉每一个按钮的背景色</strong></p>
+<h3 id="排他的其他写法-事件委托的排他"><a href="#排他的其他写法-事件委托的排他" class="headerlink" title="排他的其他写法(事件委托的排他)"></a>排他的其他写法(事件委托的排他)</h3><p><strong>tips：创建一个变量来储存上一个点击的元素</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> box <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#box"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 创建一个变量来存储上一个点击的元素</span>
+<span class="token keyword">var</span> prev <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+box<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果点击的目标元素不是box这个对象</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>target <span class="token operator">!==</span> box<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 如果存在上一次点击的元素</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>prev<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 就去掉背景色</span>
+            prev<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 再给目标元素添加背景色</span>
+        e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background <span class="token operator">=</span> <span class="token string">"tan"</span><span class="token punctuation">;</span>
+        <span class="token comment">// 添加完之后把这个目标元素设置为上一次点击的元素</span>
+        prev <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+
 <h3 id="数组-或者字符串中-出现次数最多-出现了多少次"><a href="#数组-或者字符串中-出现次数最多-出现了多少次" class="headerlink" title="数组(或者字符串中)出现次数最多 出现了多少次"></a>数组(或者字符串中)出现次数最多 出现了多少次</h3><ol>
 <li>先把数组转化成字符串，<code>str[下标]</code>可以得到每一个字</li>
 <li>新建一个空的对象来储存每一个字的属性，和每个字出现次数的值</li>
@@ -2926,7 +2947,7 @@ btn<span class="token punctuation">.</span><span class="token function-variable 
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32.2k</span>
+                        class="white-color">32.6k</span>
             
             
             
