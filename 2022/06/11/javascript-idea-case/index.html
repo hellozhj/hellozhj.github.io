@@ -856,7 +856,7 @@ btn<span class="token punctuation">.</span><span class="token function-variable 
 
 <span class="token comment">// 给四个li绑定鼠标移上事件onmouseover</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> tabTopLis<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 给上面的四个li定义了一个自定义的对象属性</span>
+    <span class="token comment">// 给上面的四个li定义了一个自定义的对象属性(新建对象属性的方法)</span>
     tabTopLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index <span class="token operator">=</span> i<span class="token punctuation">;</span>
     <span class="token comment">// 输出看看</span>
     <span class="token comment">// console.dir(tabTopLis[i]);</span>
@@ -883,7 +883,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// 给四个li绑定鼠标移上事件onmouseover</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> tabTopLis<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-    <span class="token comment">// 设置自定义属性</span>
+    <span class="token comment">// 设置自定义属性(创建标签属性的方法)</span>
     tabTopLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"data-index"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     tabTopLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onmouseover</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
