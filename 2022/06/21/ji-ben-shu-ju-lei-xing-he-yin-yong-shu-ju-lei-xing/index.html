@@ -4,10 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Mobile, Blog">
-    <meta name="description" content="移动端禁止移动端视口缩放&amp;lt;!-- viewport视口的意思 --&amp;gt;
-   &amp;lt;!-- 手机端浏览器自带一个功能 会把整个屏幕缩小到980px --&amp;gt;
-   &amp;lt;!-- 禁止手机端的浏览器缩小页面  简约版--&amp;g">
+    <meta name="keywords" content="基本数据类型和引用数据类型, Blog">
+    <meta name="description" content="基本数据类型和引用数据类型js中的变量都是保存到栈内存中的，
+基本数据类型String Number Boolean Null
+基本数据类型的值直接在栈内存中存储，值与值之间是独立存在，修改一个变量不会影响其他的变量
+
+eg:
+
+数字类型
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +26,7 @@
 
     
 
-    <title>Mobile | Blog</title>
+    <title>基本数据类型和引用数据类型 | Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -314,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Mobile</h1>
+                    <h1 class="description center-align post-title">基本数据类型和引用数据类型</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +440,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML/">
-                                <span class="chip bg-color">HTML</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -451,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-10
+                    2022-06-21
                 </div>
                 
 
@@ -460,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    827
+                    466
                 </div>
                 
 
@@ -480,60 +485,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><h4 id="禁止移动端视口缩放"><a href="#禁止移动端视口缩放" class="headerlink" title="禁止移动端视口缩放"></a>禁止移动端视口缩放</h4><pre class="language-css" data-language="css"><code class="language-css">&lt;!-- viewport视口的意思 --&gt;
-   &lt;!-- 手机端浏览器自带一个功能 会把整个屏幕缩小到980px --&gt;
-   &lt;!-- 禁止手机端的浏览器缩小页面  简约版--&gt;
-   &lt;!-- &lt;meta name=<span class="token string">"viewport"</span> content=<span class="token string">"width=device-width, initial-scale=1.0"</span>&gt; --&gt;
-
-   &lt;!-- width=device-width 视口的宽等于设备的宽 --&gt;
-   &lt;!-- initial-scale=1.0 初始缩放比例是1--&gt;
-   &lt;!-- maximum-scale=1 最大缩放比例是1 --&gt;
-   &lt;!-- minimum-scale=1 最小缩放比例是1 --&gt;
-   &lt;!-- user-scalable=no 禁止用户缩放 --&gt;
-
-   &lt;!-- 禁止手机端的浏览器缩小页面 完整版 --&gt;
-   &lt;meta name=<span class="token string">"viewport"</span>content=<span class="token string">"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"</span>&gt;</code></pre>
-
-<h4 id="Emmet-语法总结"><a href="#Emmet-语法总结" class="headerlink" title="Emmet 语法总结"></a>Emmet 语法总结</h4><pre class="language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- ul&gt;li*17&gt;a[href=#]&gt;img[src=images/nav$.png]+p{天猫新品} --&gt;</span>
-<span class="token comment">&lt;!-- 标签属性[k=v] --&gt;</span>
-<span class="token comment">&lt;!-- $数字 1 2 3..... --&gt;</span>
-<span class="token comment">&lt;!-- {}盒子里面放内容 --&gt;</span>
-<span class="token comment">&lt;!-- &gt; 嵌套关系 --&gt;</span>
-<span class="token comment">&lt;!-- +同级关系 --&gt;</span>
-<span class="token comment">&lt;!-- * 生成个数 --&gt;</span>
-</code></pre>
-
-
-
-
-
-<p>大部分的手机屏幕宽度不超过540px</p>
-<p>body设置最大宽度  540px  再设置居中 </p>
-<p>用 px 单位注意，分区的盒子要使用<strong>百分比</strong>结合弹性布局来布局，里面的小部分（图片尺寸 文字大小等）可以使用具体像素值。</p>
-<h4 id="rem适配和百分比适配区别："><a href="#rem适配和百分比适配区别：" class="headerlink" title="rem适配和百分比适配区别："></a><strong>rem适配和百分比适配区别：</strong></h4><p>rem能随着屏幕变大 尺寸发生变化（开发的时候可以根据设计稿量了多少尺寸就给多少，减轻计算宽度工作量，也能适配不同屏幕）</p>
-<p>px固定的，不会再变化(好处：屏幕大的手机就能看到更多内容)</p>
-<h2 id="rem适配方案"><a href="#rem适配方案" class="headerlink" title="rem适配方案"></a>rem适配方案</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p><strong>不管用户使用的是什么样尺寸的手机屏幕，我们要保证设计稿是能够等比例的还原在屏幕上的</strong></p>
-<h3 id="已知"><a href="#已知" class="headerlink" title="已知"></a>已知</h3><p>1rem = 页面中 html 的font-size值</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
-<li><p>假设把750的设计稿划分为<strong>10</strong>等份<br>那么   1个格子  =  750/10 = 75px</p>
-</li>
-<li><p>所以我们要在750的屏幕使用rem单位等比例还原设计稿的时，也要使用等比例切割，把页面划分为10等分</p>
-<p>即给html设置font-size值为：75px；   </p>
-<p>即  1rem = 75px； ====&gt;   1px  = 1/75rem =0.0133rem ;</p>
-<p><strong>验证</strong></p>
-<p>如果在750的屏幕下，100px * 100px  的盒子     与    1.33rem * 1.33rem 的盒子是等大的，那么证明我们的推理是正确的</p>
-</li>
+                <h1 id="基本数据类型和引用数据类型"><a href="#基本数据类型和引用数据类型" class="headerlink" title="基本数据类型和引用数据类型"></a>基本数据类型和引用数据类型</h1><p><strong>js中的变量都是保存到栈内存中的，</strong></p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p><strong>String Number Boolean Null</strong></p>
+<p>基本数据类型的值直接在栈内存中存储，<br>值与值之间是独立存在，修改一个变量不会影响其他的变量</p>
+<p><img src="/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/image-20220621001903137.png" alt="image-20220621001903137"></p>
+<p>eg:</p>
+<ol>
+<li>数字类型</li>
 </ol>
-<p>3.假设我们能自动获取到当前的屏幕宽度winW，把winW依然按照10等份划分，</p>
-<p>把winW/10 的数值，设置为html的font-size值， </p>
-<p>那么根据 rem会自动相对html的font-size值计算的这个特点，就能实现不同屏幕下等比例还原设计稿了</p>
-<p><strong>下面这段js代码的作用，就是自动获取屏幕的</strong></p>
-<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> winW <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span> <span class="token comment">// 获取屏幕宽度  </span>
-<span class="token keyword">var</span> htmlFont <span class="token operator">=</span> winW<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">// 屏幕宽度/ 10</span>
-<span class="token comment">// 把屏幕宽/10 的结果设置给html的font-size</span>
-document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> htmlFont<span class="token operator">+</span><span class="token string">'px'</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n <span class="token operator">=</span> m<span class="token punctuation">;</span>
+n<span class="token operator">++</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 1001</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1000</span></code></pre>
 
-<p>现在，在不同的机型下，html的字体大小就不同，即1个rem所表示的像素就不同。所以把元素的宽度、字体大小等属性单位写成rem，就可以动态设置这些属性。在不同的浏览器分辨率下有最好的展示（按照设计图比例）。</p>
+<p>2.字符串类型</p>
+<pre class="language-none"><code class="language-none">var str = "qwer";
+var newstr = str;
+newstr += "tyu";
+console.log(newstr); // qwertyu
+console.log(str);	 // qwer</code></pre>
+
+<p>3.布尔类型</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> bool <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newbool <span class="token operator">=</span> bool<span class="token punctuation">;</span>
+newbool <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newbool<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bool<span class="token punctuation">)</span><span class="token punctuation">;</span>	  <span class="token comment">// true</span></code></pre>
+
+
+
+
+
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><p><strong>object</strong></p>
+<p>对象是保存到堆内存中的，每创建一个新的对象，就会在堆内存中开辟出一个新的空间,而变量保存的是对象的内存地址（对象的引用)如果两个变量保存的是同一个对象引用,当一个通过一个变量修改属性时，另一个也会受到影响</p>
+<p><img src="/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/image-20220621001950641.png" alt="image-20220621001950641"></p>
+<p><img src="/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/image-20220621002133556.png" alt="image-20220621002133556"></p>
+<p>当比较两个基本数据类型的值时，就是比较值。<br>而比较两个引用数据类型时，它是比较的对象的内存地址，<br>如果两个对象是一摸—样的，但是地址不同，它也会返回false</p>
+<p><img src="/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/image-20220621002028022.png" alt="image-20220621002028022"></p>
+<p>eg:</p>
+<ol>
+<li>数组类型</li>
+</ol>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newarr <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> newarr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>		 <span class="token comment">// [2, 3, 4]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newarr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 5]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>	 <span class="token comment">// [1, 5]</span>
+
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> x <span class="token keyword">in</span> arr<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    newarr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> newarr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> 	 <span class="token comment">// [2, 3, 4]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newarr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 5]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> 	 <span class="token comment">// [1, 2, 3, 4, 5]</span></code></pre>
+
+<p>2.对象类型</p>
+<pre class="language-none"><code class="language-none">var obj = {"name":"zhangsan","age":10,"sex":"nan"};
+var newobj = obj;
+newobj.name = "lisi";
+console.log(newobj); // {name: "lisi", age: 10, sex: "nan"}
+console.log(obj);	 // {name: "lisi", age: 10, sex: "nan"}
+
+var obj = {"name":"zhangsan","age":10,"sex":"nan"};
+for(var x in obj){
+newobj[x] = obj[x];
+}
+newobj.name = "lisi";
+console.log(newobj); // {name: "lisi", age: 10, sex: "nan"}
+console.log(obj);	 // {name: "zhangsan", age: 10, sex: "nan"}</code></pre>
+
 
                 
             </div>
@@ -560,7 +585,7 @@ document<span class="token punctuation">.</span><span class="token function">get
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellozhj.github.io/2022/06/10/mobile/">https://hellozhj.github.io/2022/06/10/mobile/</a>
+                    <a href="https://hellozhj.github.io/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/">https://hellozhj.github.io/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -598,8 +623,8 @@ document<span class="token punctuation">.</span><span class="token function">get
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTML/">
-                                    <span class="chip bg-color">HTML</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -777,13 +802,13 @@ document<span class="token punctuation">.</span><span class="token function">get
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/10/js-zhong-dui-xiang-qu-zhi-de-dian-yu-fa-he-zhong-gua-hao-yu-fa-de-qu-bie/">
+                <a href="/2022/06/21/yin-shi-zhuan-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="js中对象取值的点语法和中括号语法的区别">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="隐式转化">
                         
-                        <span class="card-title">js中对象取值的点语法和中括号语法的区别</span>
+                        <span class="card-title">隐式转化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -794,7 +819,7 @@ document<span class="token punctuation">.</span><span class="token function">get
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-21
                         </span>
                         <span class="publish-author">
                             
@@ -822,13 +847,13 @@ document<span class="token punctuation">.</span><span class="token function">get
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/10/wang-ye-bu-ju-zong-jie/">
+                <a href="/2022/06/11/javascript-idea-case/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="网页布局总结">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="JavaScript-Idea-Case">
                         
-                        <span class="card-title">网页布局总结</span>
+                        <span class="card-title">JavaScript-Idea-Case</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -839,7 +864,7 @@ document<span class="token punctuation">.</span><span class="token function">get
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-11
                             </span>
                         <span class="publish-author">
                             
@@ -852,8 +877,8 @@ document<span class="token punctuation">.</span><span class="token function">get
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>

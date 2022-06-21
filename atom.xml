@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-06-12T06:05:26.311Z</updated>
+  <updated>2022-06-21T11:01:12.456Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>隐式转化</title>
+    <link href="https://hellozhj.github.io/2022/06/21/yin-shi-zhuan-hua/"/>
+    <id>https://hellozhj.github.io/2022/06/21/yin-shi-zhuan-hua/</id>
+    <published>2022-06-21T10:58:54.000Z</published>
+    <updated>2022-06-21T11:01:12.456Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;隐式转化&quot;&gt;&lt;a href=&quot;#隐式转化&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="JavaScript" scheme="https://hellozhj.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基本数据类型和引用数据类型</title>
+    <link href="https://hellozhj.github.io/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/"/>
+    <id>https://hellozhj.github.io/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/</id>
+    <published>2022-06-21T10:58:03.000Z</published>
+    <updated>2022-06-21T11:02:21.701Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基本数据类型和引用数据类型&quot;&gt;&lt;a href=&quot;#基本数据类型和引用数据类型&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="JavaScript" scheme="https://hellozhj.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript-Idea-Case</title>
@@ -67,7 +113,7 @@
     <link href="https://hellozhj.github.io/2022/06/11/notice/"/>
     <id>https://hellozhj.github.io/2022/06/11/notice/</id>
     <published>2022-06-11T10:24:44.000Z</published>
-    <updated>2022-06-11T10:26:10.340Z</updated>
+    <updated>2022-06-21T10:56:30.113Z</updated>
     
     
       
@@ -75,7 +121,7 @@
         
         
     <summary type="html">&lt;h1 id=&quot;注意&quot;&gt;&lt;a href=&quot;#注意&quot; class=&quot;headerlink&quot; title=&quot;注意&quot;&gt;&lt;/a&gt;注意&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt;</summary>
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt;</summary>
         
       
     
