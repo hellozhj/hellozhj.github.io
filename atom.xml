@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-06-22T06:02:54.782Z</updated>
+  <updated>2022-06-30T14:40:40.282Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript-高级</title>
+    <link href="https://hellozhj.github.io/2022/06/30/javascript-gao-ji/"/>
+    <id>https://hellozhj.github.io/2022/06/30/javascript-gao-ji/</id>
+    <published>2022-06-30T14:35:54.000Z</published>
+    <updated>2022-06-30T14:40:40.282Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;声明变量的关键字区别：var与let-的区别&quot;&gt;&lt;a href=&quot;#声明变量的关键字区别：var与let-的区别&quot; class=&quot;headerlink&quot; title=&quot;声明变量的关键字区别：var	与	let	</summary>
+        
+      
+    
+    
+    
+    
+    <category term="JavaScript" scheme="https://hellozhj.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript图</title>
