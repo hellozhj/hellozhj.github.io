@@ -5,10 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="编程题, Evedward">
-    <meta name="description" content="1.目的：最终输出：[‘员工张三，29岁，工作于百度’, ‘员工李四，26岁，工作于阿里巴巴’,…]var employees = [
+    <meta name="description" content="1.多表关联id查询目的：最终输出：[‘员工张三，29岁，工作于百度’, ‘员工李四，26岁，工作于阿里巴巴’,…]
+var employees = [
     {
         name: &#34;张三&#34;, // 员工名字
-        empId: 0, ">
+        e">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -481,7 +482,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1-目的：最终输出：-‘员工张三，29岁，工作于百度’-‘员工李四，26岁，工作于阿里巴巴’-…"><a href="#1-目的：最终输出：-‘员工张三，29岁，工作于百度’-‘员工李四，26岁，工作于阿里巴巴’-…" class="headerlink" title="1.目的：最终输出：[‘员工张三，29岁，工作于百度’, ‘员工李四，26岁，工作于阿里巴巴’,…]"></a>1.目的：最终输出：[‘员工张三，29岁，工作于百度’, ‘员工李四，26岁，工作于阿里巴巴’,…]</h4><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> employees <span class="token operator">=</span> <span class="token punctuation">[</span>
+                <h3 id="1-多表关联id查询"><a href="#1-多表关联id查询" class="headerlink" title="1.多表关联id查询"></a>1.多表关联id查询</h3><p><strong>目的：最终输出：[‘员工张三，29岁，工作于百度’, ‘员工李四，26岁，工作于阿里巴巴’,…]</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> employees <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>
         <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token comment">// 员工名字</span>
         <span class="token literal-property property">empId</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 员工id</span>
@@ -547,7 +549,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-<h4 id="2-目的：-‘苹果’-’胡萝卜’-‘花生’-‘梨’-‘西芹’-‘坚果’-…"><a href="#2-目的：-‘苹果’-’胡萝卜’-‘花生’-‘梨’-‘西芹’-‘坚果’-…" class="headerlink" title="2.目的： [[‘苹果’,’胡萝卜’, ‘花生’], [‘梨’, ‘西芹’, ‘坚果’]….]"></a>2.目的： [[‘苹果’,’胡萝卜’, ‘花生’], [‘梨’, ‘西芹’, ‘坚果’]….]</h4><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> basket <span class="token operator">=</span> <span class="token punctuation">[</span>
+<h3 id="2-数组对象转二维数组"><a href="#2-数组对象转二维数组" class="headerlink" title="2.数组对象转二维数组"></a>2.数组对象转二维数组</h3><p><strong>目的： [[‘苹果’,’胡萝卜’, ‘花生’], [‘梨’, ‘西芹’, ‘坚果’]….]</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> basket <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span> <span class="token literal-property property">fruit</span><span class="token operator">:</span> <span class="token string">"苹果"</span><span class="token punctuation">,</span> <span class="token literal-property property">veg</span><span class="token operator">:</span> <span class="token string">"胡萝卜"</span><span class="token punctuation">,</span> <span class="token literal-property property">nut</span><span class="token operator">:</span> <span class="token string">"花生"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span> <span class="token literal-property property">fruit</span><span class="token operator">:</span> <span class="token string">"梨"</span><span class="token punctuation">,</span> <span class="token literal-property property">veg</span><span class="token operator">:</span> <span class="token string">"西芹"</span><span class="token punctuation">,</span> <span class="token literal-property property">nut</span><span class="token operator">:</span> <span class="token string">"坚果"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span> <span class="token literal-property property">fruit</span><span class="token operator">:</span> <span class="token string">"香蕉"</span><span class="token punctuation">,</span> <span class="token literal-property property">veg</span><span class="token operator">:</span> <span class="token string">"土豆"</span><span class="token punctuation">,</span> <span class="token literal-property property">nut</span><span class="token operator">:</span> <span class="token string">"杏仁"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -579,7 +582,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-<h4 id="3-程序实现-对数据统计其出现的次数并-按出现次数-进行排序，-1-4-2-1-3-2-1-4-作为参数（参数可变）传入js方法中，控制台输出如下结果"><a href="#3-程序实现-对数据统计其出现的次数并-按出现次数-进行排序，-1-4-2-1-3-2-1-4-作为参数（参数可变）传入js方法中，控制台输出如下结果" class="headerlink" title="3.程序实现  对数据统计其出现的次数并  按出现次数  进行排序，[1, 4, 2, 1, 3, 2, 1, 4] 作为参数（参数可变）传入js方法中，控制台输出如下结果"></a>3.程序实现  对数据统计其出现的次数并  按出现次数  进行排序，[1, 4, 2, 1, 3, 2, 1, 4] 作为参数（参数可变）传入js方法中，控制台输出如下结果</h4><pre class="language-js" data-language="js"><code class="language-js"><span class="token number">1</span> 出现了 <span class="token number">3</span> 次
+<h3 id="3-数据统计"><a href="#3-数据统计" class="headerlink" title="3.数据统计"></a>3.数据统计</h3><p><strong>程序实现  对数据统计其出现的次数并  按出现次数  进行排序，[1, 4, 2, 1, 3, 2, 1, 4] 作为参数（参数可变）传入js方法中，控制台输出如下结果</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token number">1</span> 出现了 <span class="token number">3</span> 次
 <span class="token number">2</span> 出现了 <span class="token number">2</span> 次
 <span class="token number">4</span> 出现了 <span class="token number">2</span> 次
 <span class="token number">3</span> 出现了 <span class="token number">1</span> 次</code></pre>
@@ -660,7 +664,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-<h4 id="4-实现二维数组-行转列"><a href="#4-实现二维数组-行转列" class="headerlink" title="4.实现二维数组 行转列"></a>4.实现二维数组 行转列</h4><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>
+<h3 id="4-实现二维数组-行转列"><a href="#4-实现二维数组-行转列" class="headerlink" title="4.实现二维数组 行转列"></a>4.实现二维数组 行转列</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">[</span><span class="token string">"前端"</span><span class="token punctuation">,</span> <span class="token string">"3人"</span><span class="token punctuation">,</span> <span class="token string">"8-15k"</span><span class="token punctuation">,</span> <span class="token string">"本科"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token punctuation">[</span><span class="token string">"后端"</span><span class="token punctuation">,</span> <span class="token string">"5人"</span><span class="token punctuation">,</span> <span class="token string">"10-25k"</span><span class="token punctuation">,</span> <span class="token string">"研究生"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token punctuation">[</span><span class="token string">"UI"</span><span class="token punctuation">,</span> <span class="token string">"2人"</span><span class="token punctuation">,</span> <span class="token string">"9-11k"</span><span class="token punctuation">,</span> <span class="token string">"大专"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -705,7 +709,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-<h4 id="5-对以下数据-取出每人-name-最大的销售量-sales-数据-对sales排序对name去重"><a href="#5-对以下数据-取出每人-name-最大的销售量-sales-数据-对sales排序对name去重" class="headerlink" title="5.对以下数据 取出每人(name)最大的销售量(sales)数据 ( 对sales排序对name去重)"></a>5.对以下数据 取出每人(name)最大的销售量(sales)数据 ( 对sales排序对name去重)</h4><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>
+<h3 id="5-对象数组去重排序"><a href="#5-对象数组去重排序" class="headerlink" title="5.对象数组去重排序"></a>5.对象数组去重排序</h3><p><strong>对以下数据 取出每人(name)最大的销售量(sales)数据 ( 对sales排序对name去重)</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"小明"</span><span class="token punctuation">,</span> <span class="token literal-property property">year</span><span class="token operator">:</span> <span class="token number">2019</span><span class="token punctuation">,</span> <span class="token literal-property property">sales</span><span class="token operator">:</span> <span class="token number">53</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"小明"</span><span class="token punctuation">,</span> <span class="token literal-property property">year</span><span class="token operator">:</span> <span class="token number">2020</span><span class="token punctuation">,</span> <span class="token literal-property property">sales</span><span class="token operator">:</span> <span class="token number">234</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"小明"</span><span class="token punctuation">,</span> <span class="token literal-property property">year</span><span class="token operator">:</span> <span class="token number">2018</span><span class="token punctuation">,</span> <span class="token literal-property property">sales</span><span class="token operator">:</span> <span class="token number">24</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -746,7 +751,7 @@ arr<span class="token punctuation">.</span><span class="token function">forEach<
 
 
 
-<h4 id="数组扁平化"><a href="#数组扁平化" class="headerlink" title="数组扁平化"></a>数组扁平化</h4><ul>
+<h3 id="数组扁平化"><a href="#数组扁平化" class="headerlink" title="数组扁平化"></a>数组扁平化</h3><ul>
 <li>数组扁平化:主要是方便操作数据的</li>
 <li>实现思路:递归:遍历数组,对遍历完的数据项进行判断  是数组继续遍历  否则将数据项添加到新的数组中</li>
 </ul>
