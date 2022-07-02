@@ -4,15 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="返回值, Evedward">
-    <meta name="description" content="返回值无其余返回（即不改变原来，除非将其引用或赋值输出）数字对象（Math）Math.PI
-Math.random()
-Math.max()
-Math.min()
-Math.floor()
-Math.ceil()
-Math.round()
-">
+    <meta name="keywords" content="this指向, Evedward">
+    <meta name="description" content="this 指向问题① 在普通函数中，this指向window
+② 在构造函数中，this指向创建的对象
+③ 在方法声明中，this指向调用者
+④ 在定时器中， this指向window
+⑤ 在事件中，this 指向事件源
+（1）在全局环境中">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +24,7 @@ Math.round()
 
     
 
-    <title>返回值 | Evedward</title>
+    <title>this指向 | Evedward</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -319,12 +317,12 @@ Math.round()
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">返回值</h1>
+                    <h1 class="description center-align post-title">this指向</h1>
                 </div>
             </div>
         </div>
@@ -456,7 +454,7 @@ Math.round()
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-10
+                    2022-07-02
                 </div>
                 
 
@@ -465,7 +463,7 @@ Math.round()
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    417
+                    760
                 </div>
                 
 
@@ -485,35 +483,150 @@ Math.round()
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h1><h2 id="无其余返回（即不改变原来，除非将其引用或赋值输出）"><a href="#无其余返回（即不改变原来，除非将其引用或赋值输出）" class="headerlink" title="无其余返回（即不改变原来，除非将其引用或赋值输出）"></a>无其余返回（即不改变原来，除非将其引用或赋值输出）</h2><h3 id="数字对象（Math）"><a href="#数字对象（Math）" class="headerlink" title="数字对象（Math）"></a>数字对象（Math）</h3><pre class="language-js" data-language="js"><code class="language-js">Math<span class="token punctuation">.</span><span class="token constant">PI</span>
-Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+                <h1 id="this-指向问题"><a href="#this-指向问题" class="headerlink" title="this 指向问题"></a>this 指向问题</h1><p>① 在普通函数中，this指向window</p>
+<p>② 在构造函数中，this指向创建的对象</p>
+<p>③ 在方法声明中，this指向调用者</p>
+<p>④ 在定时器中， this指向window</p>
+<p>⑤ 在事件中，this 指向事件源</p>
+<h3 id="（1）在全局环境中的this——window"><a href="#（1）在全局环境中的this——window" class="headerlink" title="（1）在全局环境中的this——window"></a>（1）在全局环境中的this——window</h3><p><strong>无论是否在严格模式下</strong>，在全局执行环境中（在任何函数体外部）<code>this</code> 都指向全局对象。</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">"use strict"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//window</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">===</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span></code></pre>
 
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><pre class="language-js" data-language="js"><code class="language-js">数组名<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">//join("连接字符") 可以通过一个连接字符，把数组连成一个字符串并返回，但没有改变原数组</span>
-数组名<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">// includes 是查找数组中是否有该数据，有就返回true没有就返回false</span>
-数组名<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">// indexOf 是查找数组中是否有该数据，有就返回第一次出现的下标，没有就返回-1</span></code></pre>
+<h3 id="（2）在函数中的this——window"><a href="#（2）在函数中的this——window" class="headerlink" title="（2）在函数中的this——window"></a>（2）在函数中的this——window</h3><p>在函数内部，<code>this</code>的值取决于函数被调用的方式。</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//window</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">===</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+<span class="token punctuation">}</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">===</span>window<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span></code></pre>
 
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><pre class="language-js" data-language="js"><code class="language-js">字符串变量名<span class="token punctuation">.</span>length		<span class="token comment">//返回字符串的个数</span>
-字符串变量名<span class="token punctuation">[</span><span class="token punctuation">]</span>			<span class="token comment">//第0个字符</span>
-字符串变量名<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment">//第0个字符</span>
-字符串变量名<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	</code></pre>
+<p>因为定义的函数在全局作用域下定义的 </p>
+<h3 id="（3）函数在严格模式下——undefined"><a href="#（3）函数在严格模式下——undefined" class="headerlink" title="（3）函数在严格模式下——undefined"></a>（3）函数在严格模式下——undefined</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">"use strict"</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//undefined</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">===</span> window<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
+<p>上面的f是直接调用的指向undefined </p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">"use strict"</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//window</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">===</span> window<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span>
+<span class="token punctuation">}</span>
+window<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
+<p>有一些浏览器最初在支持严格模式时没有正确实现这个功能，于是它们错误地返回了<code>window</code>对象。</p>
+<h3 id="（4）对象中的this——指向调用者"><a href="#（4）对象中的this——指向调用者" class="headerlink" title="（4）对象中的this——指向调用者"></a>（4）对象中的this——指向调用者</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">fn</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+obj<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//指向obj这个对象</span></code></pre>
 
-<h1 id="有其余返回"><a href="#有其余返回" class="headerlink" title="有其余返回"></a>有其余返回</h1><h3 id="（即改变了原来，将原来的-名-直接输出就可，将其引用只会返回不同的数据）"><a href="#（即改变了原来，将原来的-名-直接输出就可，将其引用只会返回不同的数据）" class="headerlink" title="（即改变了原来，将原来的  ..名  直接输出就可，将其引用只会返回不同的数据）"></a>（即改变了原来，将原来的  ..名  直接输出就可，将其引用只会返回不同的数据）</h3><h3 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h3><pre class="language-js" data-language="js"><code class="language-js">数组名<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment">//push方法可以在数组的最后增加数据，并且返回新数组的个数/长度</span>
-数组名<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">//unshift在数组的最前面追加数据，并且返回新数组的个数</span>
-数组名<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment">//pop删除数组中的最后一个数据，并且返回被删除的数据</span>
-数组名<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment">//shift删除数组中的第一个数据，并且返回被删除的数据</span>
-数组名<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">// splice(删除数据的下标，删掉的个数，增加的元素1，增加的元素2.....)改变原数组，返回了被删除元素数组</span>
-数组名<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">// reverse() 数组反转,改变原数组，返回值也是改变之后的数组</span></code></pre>
+<p><strong>eg1</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'奥特曼'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">fn</span><span class="token operator">:</span> fun
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"怪兽"</span>
+obj<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//奥特曼</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">//怪兽</span></code></pre>
 
+<p>obj.fn() 是obj 调用的所以去找obj里面的name </p>
+<p>fun是window调用的所以去找全局里面的this.name</p>
+<p><strong>eg2</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'怪兽'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">f</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'姓名:'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'奥特曼'</span>
+<span class="token punctuation">}</span>
+obj2<span class="token punctuation">.</span>f <span class="token operator">=</span> obj1<span class="token punctuation">.</span>f
+obj1<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//姓名:怪兽</span>
+obj2<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//姓名:奥特曼</span></code></pre>
+
+<p>把obj1.赋值给obj2.f obj2也有了f 方法 </p>
+<p><strong>eg3</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">a</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">fn</span><span class="token operator">:</span>foo
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> obj1<span class="token operator">=</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">a</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">o1</span><span class="token operator">:</span>obj2
+<span class="token punctuation">}</span>
+obj1<span class="token punctuation">.</span>o1<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//2</span></code></pre>
+
+<p>obj1里面的o1是obj2 obj2里的fn是foo函数  在obj2里面调用的拿到obj2中的a</p>
+<h3 id="（8）事件绑定中的this"><a href="#（8）事件绑定中的this" class="headerlink" title="（8）事件绑定中的this"></a>（8）事件绑定中的this</h3><pre class="language-html" data-language="html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">Hclick</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>点击事件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+       <span class="token keyword">function</span> <span class="token function">Hclick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p> 由于还是在当前window环境下运行的还是指向window</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>button onclick<span class="token operator">=</span><span class="token string">"console.log(this)"</span><span class="token operator">&gt;</span>点击事件<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span></code></pre>
+
+<p>运行在节点对象中 指向当前dom</p>
+<h3 id="（9）动态绑定"><a href="#（9）动态绑定" class="headerlink" title="（9）动态绑定"></a>（9）动态绑定</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>动态绑定<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+       <span class="token keyword">let</span> btn<span class="token operator">=</span>  document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+       <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code></pre>
+
+<p>指向当前dom</p>
+<h3 id="（10）addEventlistenr——当前dom"><a href="#（10）addEventlistenr——当前dom" class="headerlink" title="（10）addEventlistenr——当前dom"></a>（10）addEventlistenr——当前dom</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<p>指向当前dom<code> &lt;button&gt;动态绑定&lt;/button&gt;</code></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<p>换成箭头函数后 this指向当前作用域下的上级作用域的this  window </p>
+<h3 id="（11）构造函数中的this——当前实例化对象"><a href="#（11）构造函数中的this——当前实例化对象" class="headerlink" title="（11）构造函数中的this——当前实例化对象"></a>（11）构造函数中的this——当前实例化对象</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Pro</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token operator">=</span><span class="token string">'1'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">y</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pro</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span><span class="token function">y</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<p>通过构造函数创建了一个新的实例对象 所以当前的this指向新的实例对象</p>
+<h3 id="（12）定时器中的this——window"><a href="#（12）定时器中的this——window" class="headerlink" title="（12）定时器中的this——window"></a>（12）定时器中的this——window</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span></code></pre>
+
+<p>this指向当前window</p>
+<p><strong>小扩展</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">MyClass</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> myClass <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'myClass:'</span><span class="token punctuation">,</span> myClass<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>当有了返回值以后</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">MyClass</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token number">2</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> myClass <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'myClass:'</span><span class="token punctuation">,</span> myClass<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>会把return的内容放在构造函数中</p>
+<p>s</p>
 
                 
             </div>
@@ -540,7 +653,7 @@ Math<span class="token punctuation">.</span><span class="token function">pow</sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellozhj.github.io/2022/06/10/fan-hui-zhi/">https://hellozhj.github.io/2022/06/10/fan-hui-zhi/</a>
+                    <a href="https://hellozhj.github.io/2022/07/02/this-zhi-xiang/">https://hellozhj.github.io/2022/07/02/this-zhi-xiang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -753,17 +866,18 @@ Math<span class="token punctuation">.</span><span class="token function">pow</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/06/10/wang-ye-bu-ju-zong-jie/">
+                <a href="/2022/07/02/this-zhi-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="网页布局总结">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="this指向">
                         
-                        <span class="card-title">网页布局总结</span>
+                        <span class="card-title">this指向</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -773,9 +887,9 @@ Math<span class="token punctuation">.</span><span class="token function">pow</sp
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -784,11 +898,12 @@ Math<span class="token punctuation">.</span><span class="token function">pow</sp
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -802,13 +917,13 @@ Math<span class="token punctuation">.</span><span class="token function">pow</sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/05/09/selector/">
+                <a href="/2022/07/01/shu-ju-chu-li-chang-yong-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="HTML选择器">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="数据处理常用方法">
                         
-                        <span class="card-title">HTML选择器</span>
+                        <span class="card-title">数据处理常用方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -819,7 +934,7 @@ Math<span class="token punctuation">.</span><span class="token function">pow</sp
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-01
                             </span>
                         <span class="publish-author">
                             
@@ -832,8 +947,8 @@ Math<span class="token punctuation">.</span><span class="token function">pow</sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>

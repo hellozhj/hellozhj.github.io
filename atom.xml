@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-07-01T14:30:28.652Z</updated>
+  <updated>2022-07-02T13:58:01.844Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>this指向</title>
+    <link href="https://hellozhj.github.io/2022/07/02/this-zhi-xiang/"/>
+    <id>https://hellozhj.github.io/2022/07/02/this-zhi-xiang/</id>
+    <published>2022-07-02T13:57:22.000Z</published>
+    <updated>2022-07-02T13:58:01.844Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;this-指向问题&quot;&gt;&lt;a href=&quot;#this-指向问题&quot; class=&quot;headerlink&quot; title=&quot;this 指向问题&quot;&gt;&lt;/a&gt;this 指向问题&lt;/h1&gt;&lt;p&gt;① 在普通函数中，this指向window&lt;/p&gt;
+&lt;p&gt;②</summary>
+        
+      
+    
+    
+    
+    
+    <category term="JavaScript" scheme="https://hellozhj.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>数据处理常用方法</title>
