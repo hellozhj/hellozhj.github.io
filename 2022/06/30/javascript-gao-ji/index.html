@@ -1133,6 +1133,12 @@ $<span class="token punctuation">.</span><span class="token function">ajax</span
 
 <h3 id="Promise-语法"><a href="#Promise-语法" class="headerlink" title="Promise  语法"></a>Promise  语法</h3><p><strong>属于内置对象 Promise  Object  Data  用new来实例化</strong></p>
 <p>Promise里面接收一个回调函数  回调函数接受两个参数   <code>resolve</code>   <code>reject</code></p>
+<p><strong><code>promise</code> 本身 —同步</strong></p>
+<p>promis对象本身是同步</p>
+<p><strong><code>promise</code>的回调函数<code>then</code> —异步</strong></p>
+<p>promise.then()—回调函数中的内容是异步函数</p>
+<p><strong>一旦状态改变，就不会再变</strong></p>
+<p>Promise 只能 resolve/reject 一次，剩下的调用都会被忽略。</p>
 <p><strong>resolve  reject  这两个参数也是方法</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token comment">// 调用resolve  函数fulfilled</span>
@@ -3858,7 +3864,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">65.1k</span>
+                        class="white-color">65.2k</span>
             
             
             
