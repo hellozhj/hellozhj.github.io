@@ -467,7 +467,7 @@ var b ">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    15.1k
+                    15.3k
                 </div>
                 
 
@@ -1161,8 +1161,8 @@ $<span class="token punctuation">.</span><span class="token function">ajax</span
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
-
-
+<p><code>Promise.resolve</code> 方法的参数如果是一个原始值，或者是一个不具有 <code>then</code> 方法的对象，则 <code>Promise.resolve</code> 方法返回一个新的 <code>Promise</code> 对象，状态为<code>resolved</code>，<code>Promise.resolve</code> 方法的参数，会同时传给回调函数。</p>
+<p><code>then</code> 方法接受的参数是函数，而如果传递的并非是一个函数，它实际上会将其解释为 <code>then(null)</code>，这就会导致前一个 <code>Promise</code> 的结果会穿透下面。</p>
 <h3 id="模仿-ajax-成功与失败"><a href="#模仿-ajax-成功与失败" class="headerlink" title="模仿 ajax 成功与失败"></a>模仿 ajax 成功与失败</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 实例一个Promise对象</span>
 <span class="token keyword">var</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>   <span class="token comment">//表示ajax的成功和失败  true表示成功 调用resolve()  false表示失败   调用reject()</span>
 <span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -3864,7 +3864,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">65.2k</span>
+                        class="white-color">65.3k</span>
             
             
             
