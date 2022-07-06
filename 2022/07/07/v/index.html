@@ -5,7 +5,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="v, Evedward">
-    <meta name="description" content="vue2-总结Vue 简介">
+    <meta name="description" content="vue2-总结Vue 简介vue思想：用数据来控制(驱动)界面
+所有样式的切换都是数据的修改控制
+Vue 实例基本格式：
+new Vue({
+    el:&#34;要绑定的元素&#34;，
+    data:{
+    数据1：值1，
+    数据2：值">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -454,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6
+                    121
                 </div>
                 
 
@@ -474,7 +481,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="vue2-总结"><a href="#vue2-总结" class="headerlink" title="vue2-总结"></a>vue2-总结</h1><h2 id="Vue-简介"><a href="#Vue-简介" class="headerlink" title="Vue 简介"></a>Vue 简介</h2>
+                <h1 id="vue2-总结"><a href="#vue2-总结" class="headerlink" title="vue2-总结"></a>vue2-总结</h1><h2 id="Vue-简介"><a href="#Vue-简介" class="headerlink" title="Vue 简介"></a>Vue 简介</h2><p><strong>vue思想：用数据来控制(驱动)界面</strong></p>
+<p>所有样式的切换都是数据的修改控制</p>
+<p><strong>Vue 实例基本格式：</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">el</span><span class="token operator">:</span><span class="token string">"要绑定的元素"</span>，
+    <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    数据<span class="token number">1</span>：值<span class="token number">1</span>，
+    数据<span class="token number">2</span>：值<span class="token number">2</span>，
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token function">方法名1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    xxxx
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">方法名2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        xxxx
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>注意 js 运行环境来考虑加不加   引号，不加引号就是data里面声明了的；</li>
+<li>methods 对象里面需要 data 对象 里面的值，需要加<code>this.</code></li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -974,7 +1006,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">65.3k</span>
+                        class="white-color">65.4k</span>
             
             
             
