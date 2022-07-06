@@ -461,7 +461,7 @@ new Vue({
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    121
+                    190
                 </div>
                 
 
@@ -506,6 +506,23 @@ new Vue({
 <li>注意 js 运行环境来考虑加不加   引号，不加引号就是data里面声明了的；</li>
 <li>methods 对象里面需要 data 对象 里面的值，需要加<code>this.</code></li>
 </ul>
+<p><strong>负责界面 视图 (view)</strong></p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{num}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+	{{str}}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p><strong>负责数据 模型(model)</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">"#app"</span><span class="token punctuation">,</span>     <span class="token comment">// 告诉Vue 这个对象是来管理#app 盒子的内部的数据</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">21</span><span class="token punctuation">,</span>    <span class="token comment">// 定义一个变量num 值是21</span>
+        <span class="token literal-property property">str</span><span class="token operator">:</span> <span class="token string">"hello"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+
+
 
                 
             </div>
@@ -1006,7 +1023,7 @@ new Vue({
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">65.4k</span>
+                        class="white-color">65.5k</span>
             
             
             
