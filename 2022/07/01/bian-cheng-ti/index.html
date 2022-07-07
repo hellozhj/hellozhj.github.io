@@ -462,7 +462,7 @@ var employees = [
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    3.3k
                 </div>
                 
 
@@ -751,7 +751,7 @@ arr<span class="token punctuation">.</span><span class="token function">forEach<
 
 
 
-<h3 id="数组扁平化"><a href="#数组扁平化" class="headerlink" title="数组扁平化"></a>数组扁平化</h3><ul>
+<h3 id="6-数组扁平化"><a href="#6-数组扁平化" class="headerlink" title="6.数组扁平化"></a>6.数组扁平化</h3><ul>
 <li>数组扁平化:主要是方便操作数据的</li>
 <li>实现思路:递归:遍历数组,对遍历完的数据项进行判断  是数组继续遍历  否则将数据项添加到新的数组中</li>
 </ul>
@@ -771,6 +771,396 @@ arr<span class="token punctuation">.</span><span class="token function">forEach<
 <span class="token punctuation">}</span>
 <span class="token function">deep</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h3 id="7-字符串反转"><a href="#7-字符串反转" class="headerlink" title="7.字符串反转"></a>7.字符串反转</h3><p>  需求：请自定义一个函数，实现字符串的反转</p>
+<p>  ‘abcdefg’ =&gt; ‘gfedcba’</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"请输入一串字符串可以实现反转"</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">reStr</span><span class="token punctuation">(</span><span class="token parameter">cStr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// 字符串转成数组反转后再变字符串</span>
+    <span class="token keyword">return</span> cStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">reStr</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h3 id="8-利用对象-key-不重复-数组对象，相同属性去重或相加"><a href="#8-利用对象-key-不重复-数组对象，相同属性去重或相加" class="headerlink" title="8.利用对象 key 不重复 (数组对象，相同属性去重或相加)"></a>8.利用对象 key 不重复 (数组对象，相同属性去重或相加)</h3><p>统计零食店所有零食的库存总数量</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> shopsLists <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"你好零食店-天河分店"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">areaid</span><span class="token operator">:</span> <span class="token number">33</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">provice</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">"广州市天河区"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">status</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">storage</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token comment">// 库存</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"饼干"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">106</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"牛奶"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">290</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"可乐"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">157</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"辣条"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">457</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"你好零食店-黄埔分店"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">areaid</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">provice</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">"广州市黄埔区"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">status</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">storage</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"饼干"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"瓜子"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">99</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"棒棒糖"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">75</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"面包"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">75</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"你好零食店-海珠分店"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">areaid</span><span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">provice</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">"广州市海珠区"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">status</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">storage</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"可乐"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">155</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"牛奶"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"棒棒糖"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">41</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"面包"</span><span class="token punctuation">,</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">317</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// 转换 =&gt;</span>
+<span class="token comment">// [{id: 44, name: '可乐', count: 312}, {id: 90, name: '面包', count: 392}.........]</span></code></pre>
+
+<p><strong>法1：</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">//思路：可以用对象 key 不重复</span>
+
+<span class="token comment">// 声明一个空对象</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+shopsLists<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 拿到每一项的零食</span>
+    item<span class="token punctuation">.</span>storage<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">[</span>item<span class="token punctuation">.</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 对象.num +上重复项的num</span>
+            obj<span class="token punctuation">[</span>item<span class="token punctuation">.</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span>num <span class="token operator">+=</span> item<span class="token punctuation">.</span>num<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 可乐: {id: 44, name: '可乐', num: 312}</span>
+            <span class="token comment">// ...</span>
+            obj<span class="token punctuation">[</span>item<span class="token punctuation">.</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// console.log(obj);</span>
+
+<span class="token comment">// 新建一个数组</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// 对obj进行循环遍历</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// 将对象的值取出，合成数组</span>
+<span class="token comment">// console.log(Object.values(obj));</span></code></pre>
+
+<p><strong>法2：</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 声明一个数组</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// 将每一个商店的商品全部拿出来，存进数组里面</span>
+shopsLists<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    item<span class="token punctuation">.</span>storage<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// console.log(arr);</span>
+
+<span class="token comment">/* 
+    达到的效果是：
+    arr = [
+    {id: 23, name: '饼干', num: 106},
+    {id: 26, name: '牛奶', num: 290},
+    {id: 44, name: '可乐', num: 157},
+    {id: 80, name: '辣条', num: 457},
+    {id: 23, name: '饼干', num: 30},
+    {id: 55, name: '瓜子', num: 99},
+    {id: 45, name: '棒棒糖', num: 75},
+    {id: 90, name: '面包', num: 75},
+    {id: 44, name: '可乐', num: 155},
+    {id: 26, name: '牛奶', num: 70},
+    {id: 45, name: '棒棒糖', num: 41},
+    {id: 90, name: '面包', num: 317}
+    ]
+    */</span>
+
+<span class="token comment">// 进行深拷贝，为了不改变原数组</span>
+<span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 声明一个空数组存结果</span>
+<span class="token keyword">var</span> newArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// 声明空对象</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 遍历数组     去重 值相加</span>
+arr1<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// findIndex(fn)返回 数组中  第一个  匹配fn函数中条件的  索引, 没有则返回-1</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> newArr<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token parameter">ele</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 当检测到id名相同时候，返回对应ele的索引</span>
+        <span class="token keyword">return</span> item<span class="token punctuation">.</span>id <span class="token operator">===</span> ele<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 新数组有的</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newArr<span class="token punctuation">[</span>res<span class="token punctuation">]</span><span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 将原有的 ele.num + 重复的num</span>
+        newArr<span class="token punctuation">[</span>res<span class="token punctuation">]</span><span class="token punctuation">.</span>num <span class="token operator">=</span> newArr<span class="token punctuation">[</span>res<span class="token punctuation">]</span><span class="token punctuation">.</span>num <span class="token operator">+</span> item<span class="token punctuation">.</span>num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 新数组没有零食对象的，就推进新数组里面</span>
+        newArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 输出新数组</span>
+<span class="token comment">// console.log(newArr);</span></code></pre>
+
+
+
+<h3 id="9-数组对象删除不符合条件的对象"><a href="#9-数组对象删除不符合条件的对象" class="headerlink" title="9.数组对象删除不符合条件的对象"></a>9.数组对象删除不符合条件的对象</h3><p><strong>剔除不及格的学生,得到一个新的学生数组</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">groupname</span><span class="token operator">:</span> <span class="token string">"小组1"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">students</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"张小娴"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"李小宏"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"吴小说"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">40</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"五小加"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">99</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">groupname</span><span class="token operator">:</span> <span class="token string">"小组2"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">students</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"问小世"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">60</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"萨小斯"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"权小韦"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"离小天"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">55</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">groupname</span><span class="token operator">:</span> <span class="token string">"小组3"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">students</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"世小想"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"邓小睿"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">78</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"沃小考"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"沙小酱"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">59</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// 转换 =&gt;</span>
+<span class="token comment">/* let newArr = [
+                  {
+                    id: 1,
+                    groupname: "小组1",
+                    students: [
+                      { id: 1, name: "张小娴", score: 90 },
+                      { id: 2, name: "李小宏", score: 70 },
+                      { id: 4, name: "五小加", score: 99 },
+                    ],
+                  },
+                  {
+                    id: 1,
+                    groupname: "小组2",
+                    students: [
+                      { id: 5, name: "问小世", score: 60 },
+                      { id: 7, name: "权小韦", score: 80 },
+                    ],
+                  },
+                  {
+                    id: 1,
+                    groupname: "小组3",
+                    students: [
+                      { id: 9, name: "世小想", score: 70 },
+                      { id: 10, name: "邓小睿", score: 78 },
+                      { id: 11, name: "沃小考", score: 90 },
+                    ],
+                  },
+                ]; */</span></code></pre>
+
+<p><strong>法1</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr1<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>score <span class="token operator">&lt;</span> <span class="token number">60</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 将学生数组里面 分数不及格的删除</span>
+            arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p><strong>法2</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 声明一个新的学生数组</span>
+<span class="token keyword">let</span> newArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// item 为每一个小组对象</span>
+arr1<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// item 为每一个 学生对象   过滤学生对象中的不及格 返回及格学生的数组</span>
+    newArr <span class="token operator">=</span> item<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> item<span class="token punctuation">.</span>score <span class="token operator">&gt;=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 将每一个小组对象中的 学生数组换为新的学生数组</span>
+    item<span class="token punctuation">.</span>students <span class="token operator">=</span> newArr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 输出</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h3 id="10-数组对象-挑选出符合条件的对象【重点理解掌握】"><a href="#10-数组对象-挑选出符合条件的对象【重点理解掌握】" class="headerlink" title="10.数组对象 挑选出符合条件的对象【重点理解掌握】"></a>10.数组对象 挑选出符合条件的对象【重点理解掌握】</h3><p>根据数组挑选出每个小组留下来的学生信息</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">groupname</span><span class="token operator">:</span> <span class="token string">"小组1"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">students</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"张小四"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"李小宏"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"吴小说"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">40</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"五小加"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">99</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">groupname</span><span class="token operator">:</span> <span class="token string">"小组2"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">students</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"问小世"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">60</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"萨小斯"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"权小韦"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"离小天"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">55</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">groupname</span><span class="token operator">:</span> <span class="token string">"小组3"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">students</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"世小想"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"邓小睿"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">78</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"沃小考"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"沙小酱"</span><span class="token punctuation">,</span> <span class="token literal-property property">score</span><span class="token operator">:</span> <span class="token number">59</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// 转换 =&gt;</span>
+<span class="token comment">/* let newArr = [
+          {
+            id: 1,
+            groupname: "小组1",
+            students: [
+              { id: 1, name: "张小四", score: 90 },
+              { id: 3, name: "吴小说", score: 40 },
+              { id: 4, name: "五小加", score: 99 },
+            ],
+          },
+          {
+            id: 2,
+            groupname: "小组2",
+            students: [
+              { id: 5, name: "问小世", score: 60 },
+              { id: 6, name: "萨小斯", score: 50 },
+            ],
+          },
+          {
+            id: 3,
+            groupname: "小组3",
+            students: [{ id: 11, name: "沃小考", score: 90 }],
+          },
+        ]; */</span></code></pre>
+
+<p><strong>法1</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 新建一个数组</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr2<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 每一个学生对象</span>
+    arr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 遍历数组</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> arr1<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">===</span> item<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 将 对应的 学生id 对象推入数组</span>
+                arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 第一种方法：将 arr数组深拷贝 将值拷贝到新数组后，再将自身清空</span>
+    <span class="token comment">// arr2[i].students.splice(0, arr2[i].students.length);</span>
+    <span class="token comment">// arr2[i].students = JSON.parse(JSON.stringify(arr));</span>
+    <span class="token comment">// arr.splice(0, arr.length);</span>
+    <span class="token comment">// console.log(arr2[i].students);</span>
+
+    <span class="token comment">// 第二种方法：清除 arr中堆内存的旧数据 将删除的数据推入学生数组中</span>
+    arr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>students <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// console.log(arr2[i].students);</span>
+
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p><strong>法二</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 通过id 拿到对应的学生对象</span>
+<span class="token keyword">function</span> <span class="token function">getStu</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr2<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> arr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>students<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>students<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token operator">==</span> num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> arr2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>students<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// console.log(getStu(9));</span>
+
+<span class="token comment">// 将对应id的学生对象取出来，放进一个新的数组 newStu 中</span>
+<span class="token keyword">var</span> newStu <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token function">getStu</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+   * 判断每个学生对象是否存在于 newStu 中
+   * 如果存在 放回存在的学生对象
+   * 替换原 students 数组
+  */</span>
+
+<span class="token keyword">var</span> newArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr2<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    newArr <span class="token operator">=</span> item<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 如果在选中的学生对象数组中 有对应的学生对象，就将对应的对象返回给 newArr 数组</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>newStu<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> item<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 将新数组 newArr 替换原先的学生数组</span>
+    item<span class="token punctuation">.</span>students <span class="token operator">=</span> newArr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h3 id="11-根据序号排序"><a href="#11-根据序号排序" class="headerlink" title="11.根据序号排序"></a>11.根据序号排序</h3><pre class="language-js" data-language="js"><code class="language-js">需求：假设有如下字符串“<span class="token constant">A12</span>”，其中“<span class="token constant">A</span>”表示数据类型（<span class="token constant">A</span><span class="token operator">-</span><span class="token constant">Z</span>），“<span class="token number">12</span>”表示数据序号（<span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span>）。
+现在需要对一组数据 先按照  数据序号 再按照  <span class="token function">数据类型</span><span class="token punctuation">(</span>字母<span class="token punctuation">)</span>进行排序。
+例如：<span class="token punctuation">[</span><span class="token string">"B3"</span><span class="token punctuation">,</span><span class="token string">"D2"</span><span class="token punctuation">,</span><span class="token string">"F1"</span><span class="token punctuation">,</span><span class="token string">"A9"</span><span class="token punctuation">,</span><span class="token string">"D12"</span><span class="token punctuation">,</span><span class="token string">"A2"</span><span class="token punctuation">,</span><span class="token string">"C1"</span><span class="token punctuation">,</span><span class="token string">"Z0"</span><span class="token punctuation">,</span><span class="token string">"B1"</span><span class="token punctuation">]</span><span class="token operator">=&gt;</span><span class="token punctuation">[</span><span class="token string">"Z0"</span><span class="token punctuation">,</span><span class="token string">"B1"</span><span class="token punctuation">,</span><span class="token string">"C1"</span><span class="token punctuation">,</span><span class="token string">"F1"</span><span class="token punctuation">,</span><span class="token string">"A2"</span><span class="token punctuation">,</span><span class="token string">"D2"</span><span class="token punctuation">,</span><span class="token string">"B3"</span><span class="token punctuation">,</span><span class="token string">"A9"</span><span class="token punctuation">,</span><span class="token string">"D12"</span><span class="token punctuation">]</span></code></pre>
+
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 思路：先对首字母排序，再对数字排序</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"B3"</span><span class="token punctuation">,</span> <span class="token string">"D2"</span><span class="token punctuation">,</span> <span class="token string">"F1"</span><span class="token punctuation">,</span> <span class="token string">"A9"</span><span class="token punctuation">,</span> <span class="token string">"D12"</span><span class="token punctuation">,</span> <span class="token string">"A2"</span><span class="token punctuation">,</span> <span class="token string">"C1"</span><span class="token punctuation">,</span> <span class="token string">"Z0"</span><span class="token punctuation">,</span> <span class="token string">"B1"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 首字母排序</span>
+numArr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 数组排序</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// slice() 数组截取,从索引1开始到最后</span>
+    <span class="token keyword">return</span> a<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">-</span> b<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numArr<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
 
                 
@@ -1282,7 +1672,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">69.5k</span>
+                        class="white-color">71.4k</span>
             
             
             
