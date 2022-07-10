@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: NodeJs, Evedward">
+    <meta name="keywords" content="Evedward">
     <meta name="description" content="关注嘉然，顿顿解馋">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -19,7 +19,7 @@
 
     
 
-    <title>标签: NodeJs | Evedward</title>
+    <title>Evedward</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -308,6 +308,7 @@
 
 </header>
 
+    
     <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
@@ -356,98 +357,43 @@
     </div>
 </div>
 
+
 <main class="content">
 
     
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/HTML/" title="HTML: 5">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="HTML" style="background-color: #F9EBEA;">HTML
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/jQuery/" title="jQuery: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="jQuery" style="background-color: #F5EEF8;">jQuery
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/JavaScript/" title="JavaScript: 12">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="JavaScript" style="background-color: #D5F5E3;">JavaScript
-                        <span class="tag-length">12</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/NodeJs/" title="NodeJs: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="NodeJs" style="background-color: #E8F8F5;">NodeJs
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Notice/" title="Notice: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Notice" style="background-color: #FEF9E7;">Notice
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Vue/" title="Vue: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Vue" style="background-color: #F8F9F9;">Vue
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
     
 
+    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row tags-posts">
+        <div class="row article-row">
             
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="NodeJs" data-aos="fade-up">
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/07/07/nodejs/">
-                        <div class="card-image tag-image">
+                    <a href="/2022/05/09/html-css/">
+                        <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="NodeJs">
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="HTML+CSS">
                             
-                            <span class="card-title">NodeJs</span>
+                            <span class="card-title">HTML+CSS</span>
                         </div>
                     </a>
+
                     <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                技巧盒子里的内容先考虑能不能先水平居中和垂直居中;
+盒子没有宽度可以先给padding水平移动;
+浮动与定位两者选其一；
+盒子居中先给宽在给margin：auto；
+img图片居中，可以套在一个有宽高盒子里（或者将其转换为块级元素），再给m
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
                             </span>
                             <span class="publish-author">
                                 
@@ -457,12 +403,48 @@
                             </span>
                         </div>
                     </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/HTML/">
+                            <span class="chip bg-color">HTML</span>
+                        </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
         </div>
     </article>
+
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a href="/page/2/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">3 / 3</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a class="right btn-floating btn-large disabled">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
 
 
 

@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-07-07T02:46:13.654Z</updated>
+  <updated>2022-07-10T06:57:19.325Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue2</title>
+    <link href="https://hellozhj.github.io/2022/07/10/vue2/"/>
+    <id>https://hellozhj.github.io/2022/07/10/vue2/</id>
+    <published>2022-07-10T06:56:28.000Z</published>
+    <updated>2022-07-10T06:57:19.325Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Vue" scheme="https://hellozhj.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>NodeJs</title>
@@ -448,29 +471,6 @@
     <summary type="html">&lt;h3 id=&quot;技巧&quot;&gt;&lt;a href=&quot;#技巧&quot; class=&quot;headerlink&quot; title=&quot;技巧&quot;&gt;&lt;/a&gt;技巧&lt;/h3&gt;&lt;p&gt;属性值跟属性名相同，属性值可以不写&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;css书写规律：&lt;/strong&gt;&lt;/p&gt;
 &lt;pre</summary>
-        
-      
-    
-    
-    
-    
-    <category term="HTML" scheme="https://hellozhj.github.io/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML+CSS</title>
-    <link href="https://hellozhj.github.io/2022/05/09/html-css/"/>
-    <id>https://hellozhj.github.io/2022/05/09/html-css/</id>
-    <published>2022-05-09T03:55:37.000Z</published>
-    <updated>2022-05-21T03:39:52.197Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;技巧&quot;&gt;&lt;a href=&quot;#技巧&quot; class=&quot;headerlink&quot;</summary>
         
       
     
