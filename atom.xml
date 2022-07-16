@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-07-16T11:57:16.631Z</updated>
+  <updated>2022-07-16T12:05:03.308Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hellozhj.github.io/2022/07/16/vue2-ji-chu/"/>
     <id>https://hellozhj.github.io/2022/07/16/vue2-ji-chu/</id>
     <published>2022-07-16T11:45:35.000Z</published>
-    <updated>2022-07-16T11:57:16.631Z</updated>
+    <updated>2022-07-16T12:05:03.308Z</updated>
     
     
       
@@ -34,6 +34,8 @@
     
     
     
+    
+    <category term="vue2" scheme="https://hellozhj.github.io/tags/vue2/"/>
     
   </entry>
   
