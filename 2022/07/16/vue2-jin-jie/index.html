@@ -459,7 +459,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.7k
+                    7.8k
                 </div>
                 
 
@@ -1335,61 +1335,71 @@ export default {
 </blockquote>
 <h3 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h3><p><strong>beforeDestroy：</strong>实例销毁之前调用，在这一步，实例让然完全可用。</p>
 <p><strong>destroyed：</strong>实例销毁后调用，调用后，Vue实例指向的所以东西会被解绑，所有的事件监听器会被移除，所有的子实力也会被销毁。</p>
-<pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
-  &lt;div&gt;
-    &lt;p id="op" ref="myp"&gt;{{num}}&lt;/p&gt;
-    &lt;button id="obtn" @click="btnClick"&gt;按钮&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 
+生命周期钩子函数： vue实例从创建到销毁过程中自动执行的函数。
+创建 beforeCreate created
+挂载 beforeMount  mounted
+更新 beforeUpdate updated
+销毁 beforeDestroy destroyed
+作用：能在阶段做什么事情。
 
-&lt;script&gt;
-export default {
-  data() {
-    return {
-      num:20
-    };
-  },
-  methods:{
-      fn(){
-          return 999
-      },
-      btnClick(){
-          this.num++
-      }
-  },
-  beforeCreate() {
-    console.log("1.1---------------beforeCreate");
-    console.log(1.1, this.num, this.fn, document.getElementById("op"));
-  },
-  created() {
-    console.log("1.2-------------created");
-    console.log(1.2, this.num, this.fn, document.getElementById("op"));
-  },
-  beforeMount() {
-    console.log("2.1---------------beforeMount");
-    console.log(2.1, this.num, this.fn, document.getElementById("op"));
-  },
-  mounted() {
-    console.log("2.2-------------mounted");
-    console.log(2.2, this.num, this.fn, document.getElementById("op"));
-  },
-  beforeUpdate(){  //视图跟新之前
-    console.log("3.1-------------beforeUpdate");
-    console.log(3.1, this.num, this.$refs.myp.innerHTML);
-  },
-  updated(){  //视图跟新之后
-    console.log("3.2-------------updated");
-    console.log(3.2, this.num, this.$refs.myp.innerHTML);
-  },
-  beforeDestory(){  
-    
-  },
-  destoryed(){
-     
-  }
-};
-&lt;/script&gt;
-</code></pre>
+*名称！ 什么时候执行，顺序！
+--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>msg<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>myp<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{{msg}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+        <span class="token keyword">let</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">"#app"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">"hello"</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">arr</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">beforeCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token string">"-------------beforeCreate-----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"el"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">,</span> <span class="token string">"msg:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token string">"p："</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//el undefined msg: undefined p： undefined</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token string">"-------------created-----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"el"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">,</span> <span class="token string">"msg:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token string">"p："</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//el undefined msg: hello p： undefined</span>
+                <span class="token comment">//发起异步请求，请求数据。（提前） 体验更好</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">beforeMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token string">"-------------beforeMount-----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"el"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">,</span> <span class="token string">"msg:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token string">"p："</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//  this.$el 有值，但是并未渲染msg数据    msg: hello p： undefined</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token string">"-------------mounted-----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"el"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">,</span> <span class="token string">"msg:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token string">"p："</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">// 都有值</span>
+                <span class="token comment">//滚动条数据。获取dom数据</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">beforeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token string">"-------------beforeUpdate-----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"el"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">,</span> <span class="token string">"msg:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token string">"p："</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">updated</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token string">"-------------updated-----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"el"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">,</span> <span class="token string">"msg:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token string">"p："</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">beforeDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token string">"-------------beforeDestroy-----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"el"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">,</span> <span class="token string">"msg:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token string">"p："</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//清除事件</span>
+                <span class="token comment">//清除定时器</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">destroyed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token string">"-------------destroyed-----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"el"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">,</span> <span class="token string">"msg:"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">,</span> <span class="token string">"p："</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
 
 <h3 id="生命周期解读"><a href="#生命周期解读" class="headerlink" title="生命周期解读"></a>生命周期解读</h3><p><img src="/2022/07/16/vue2-jin-jie/1657703403507.png" alt="1657703403507"></p>
 <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p><img src="/2022/07/16/vue2-jin-jie/1657703241013.png" alt="1657703241013"></p>
@@ -2131,7 +2141,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">93.3k</span>
+                        class="white-color">93.4k</span>
             
             
             
