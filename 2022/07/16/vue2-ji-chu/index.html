@@ -528,13 +528,13 @@ new Vue({
 
 
 
-<h2 id="语法-—-指令"><a href="#语法-—-指令" class="headerlink" title="语法 — 指令"></a>语法 — 指令</h2><h4 id="插值语法-x2F-模板语法-x2F-胡子语法-看成是一个js的书写环境"><a href="#插值语法-x2F-模板语法-x2F-胡子语法-看成是一个js的书写环境" class="headerlink" title="插值语法/模板语法/胡子语法 { {} } 看成是一个js的书写环境"></a>插值语法/模板语法/胡子语法 { {} } 看成是一个js的书写环境</h4><pre class="language-none"><code class="language-none">&lt;p&gt;{{num1}}&lt;/p&gt;
-&lt;p&gt;{{num2}}&lt;/p&gt;
-&lt;p&gt;
+<h2 id="语法-—-指令"><a href="#语法-—-指令" class="headerlink" title="语法 — 指令"></a>语法 — 指令</h2><h4 id="插值语法-x2F-模板语法-x2F-胡子语法-看成是一个js的书写环境"><a href="#插值语法-x2F-模板语法-x2F-胡子语法-看成是一个js的书写环境" class="headerlink" title="插值语法/模板语法/胡子语法 { {} } 看成是一个js的书写环境"></a>插值语法/模板语法/胡子语法 { {} } 看成是一个js的书写环境</h4><pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{num1}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{num2}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
     num1和num2中比较最大是数字是：{{num1&gt;num2?num1:num2}}
-&lt;/p&gt;
-&lt;!-- vue思想：用数据来控制(驱动)界面 --&gt;
-&lt;p&gt;{{str2.split("").reverse().join("")}}&lt;/p&gt;</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- vue思想：用数据来控制(驱动)界面 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{str2.split("").reverse().join("")}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
 
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">"#app"</span><span class="token punctuation">,</span>
