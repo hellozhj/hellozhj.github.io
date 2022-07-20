@@ -4,30 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML选择器, Evedward">
-    <meta name="description" content="复合选择器表格总结
-
-
-选择器
-作用
-特征
-使用情况
-隔开符号及用法
-
-
-
-后代选择器
-用来选择元素后代
-是选择所有的子孙后代
-较多
-符号是空格 .nav    a
-
-
-子代选择器
-选择 最近一级元素
-只选亲儿子
-较少
-符号是**&amp;gt;*">
+    <meta name="keywords" content="git, Evedward">
+    <meta name="description" content="Git
+三、Git概念Git是一个免费的开源分布式版本控制系统，它可以快速高效地处理从小型到大型的项目。
+简单点说就是：git分布式版本控制工具（管理代码版本）。
+常见版本控制系统：git、svn等
+我们常用的Git代码托管平台有：Gite">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -41,7 +23,7 @@
 
     
 
-    <title>HTML选择器 | Evedward</title>
+    <title>git | Evedward</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -334,12 +316,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HTML选择器</h1>
+                    <h1 class="description center-align post-title">git</h1>
                 </div>
             </div>
         </div>
@@ -455,8 +437,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML/">
-                                <span class="chip bg-color">HTML</span>
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
                             </a>
                         
                     </div>
@@ -471,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-09
+                    2022-07-21
                 </div>
                 
 
@@ -480,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.7k
                 </div>
                 
 
@@ -500,198 +482,143 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="复合选择器表格总结"><a href="#复合选择器表格总结" class="headerlink" title="复合选择器表格总结"></a>复合选择器表格总结</h3><table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>作用</th>
-<th>特征</th>
-<th>使用情况</th>
-<th>隔开符号及用法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>后代选择器</td>
-<td>用来选择元素后代</td>
-<td>是选择所有的子孙后代</td>
-<td>较多</td>
-<td>符号是<strong>空格</strong> .nav    a</td>
-</tr>
-<tr>
-<td>子代选择器</td>
-<td>选择 最近一级元素</td>
-<td>只选亲儿子</td>
-<td>较少</td>
-<td>符号是**&gt;**   .nav&gt;p</td>
-</tr>
-<tr>
-<td>交集选择器</td>
-<td>选择两个标签交集的部分</td>
-<td>既是 又是</td>
-<td>较少</td>
-<td><strong>没有符号</strong>  p.one</td>
-</tr>
-<tr>
-<td>并集选择器</td>
-<td>选择某些相同样式的选择器</td>
-<td>可以用于集体声明</td>
-<td>较多</td>
-<td>符号是<strong>逗号</strong> .nav, .header</td>
-</tr>
-<tr>
-<td>链接伪类选择器</td>
-<td>给链接更改状态</td>
-<td></td>
-<td>较多</td>
-<td>重点记住 a{} 和 a:hover  实际开发的写法</td>
-</tr>
-</tbody></table>
-<h4 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h4><p>外层标签写在前面，内层标签写在后面，中间用<strong>空格</strong>分隔</p>
-<pre class="language-none"><code class="language-none">父级 子级{属性:属性值;属性:属性值;}</code></pre>
-
-<h4 id="子集选择器"><a href="#子集选择器" class="headerlink" title="子集选择器"></a>子集选择器</h4><p>只能选择包<strong>含在里</strong>的某个**子元素(亲儿子)**的元素。</p>
-<p>父级标签写在前面，子级标签写在后面，中间一个 <code>&gt;</code> </p>
-<pre class="language-none"><code class="language-none">父级&gt;子级{属性:属性值;属性:属性值;}</code></pre>
-
-<h4 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h4><p>其中<strong>第一个为标签选择器</strong>，<strong>第二个为class选择器</strong>，两个选择器之间<strong>不能有空格</strong>，如：h3.special。</p>
-<h4 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h4><p>并集选择器通常用于<strong>集体声明</strong>  ，<strong>逗号隔开的</strong>，所有选择器都会执行后面样式，逗号可以理解为 和的意思。</p>
-<pre class="language-none"><code class="language-none">比如：.one, p , #test {color: #F00;}  
-表示：.one 和 p  和 #test 这三个选择器都会执行颜色为红色。 
-通常用于集体声明。  </code></pre>
-
-<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><p>向某些选择器<strong>添加特殊的效果</strong></p>
-<p><code>伪类 </code>用 2个点 就是 <strong>冒号</strong>  比如  <code>:link{}</code>    <em>伪娘</em> </p>
-<p><strong>1. 链接伪类选择器</strong></p>
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token comment">/* 写的时候，按照  lvha 的顺序，顺序不要颠倒 */</span>
-<span class="token property">a</span><span class="token punctuation">:</span>link      <span class="token comment">/* 未访问的链接 */</span>
-<span class="token property">a</span><span class="token punctuation">:</span>visited   <span class="token comment">/* 已访问的链接 */</span>
-<span class="token property">a</span><span class="token punctuation">:</span>hover     <span class="token comment">/* 鼠标移动到链接上 */</span>
-<span class="token property">a</span><span class="token punctuation">:</span>active    <span class="token comment">/* 选定的链接 */</span></code></pre>
-
-<p><strong>2. 结构伪类选择器</strong></p>
-<p><strong>2.1 child系列</strong></p>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>例子</th>
-<th>例子描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>:first-child</td>
-<td>p:first-child</td>
-<td>选择父元素的第一个子元素中的每个 <p> 元素。</p></td>
-</tr>
-<tr>
-<td>:last-child</td>
-<td>p:last-child</td>
-<td>选择其父元素最后一个子元素中的每个 <p> 元素。</p></td>
-</tr>
-<tr>
-<td>:nth-child(<em>n</em>)</td>
-<td>p:nth-child(2)</td>
-<td>选择其父元素的第二个子元素中的每个 <p> 元素。</p></td>
-</tr>
-<tr>
-<td>:nth-last-child(<em>n</em>)</td>
-<td>p:nth-last-child(2)</td>
-<td>同上，从最后一个子元素开始计数。</td>
-</tr>
-</tbody></table>
-<p><code>n</code>:</p>
-<ul>
-<li>可以是整数值(1,2,3,4);</li>
-<li>也可以是表达式(2n+1、-n+5);</li>
-<li>(<strong>odd/2n+1/2n-1奇数</strong>，<strong>even/2n偶数</strong>);</li>
-<li>但参数n的起始值始终是1，而不是0。</li>
+                <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><img src="/2022/07/21/git/1-1658334412898.png" alt="1"></p>
+<h2 id="三、Git概念"><a href="#三、Git概念" class="headerlink" title="三、Git概念"></a>三、Git概念</h2><p>Git是一个免费的开源<strong>分布式</strong>版本控制系统，它可以快速高效地处理从小型到大型的项目。</p>
+<p>简单点说就是：git分布式版本控制工具（管理代码版本）。</p>
+<p>常见版本控制系统：git、svn等</p>
+<p>我们常用的Git代码托管平台有：<strong>Gitee</strong>(码云)、GitLab、<strong>GitHub</strong>等。</p>
+<h2 id="四、集中式和分布式"><a href="#四、集中式和分布式" class="headerlink" title="四、集中式和分布式"></a>四、集中式和分布式</h2><p>集中式：(SVN)<br><img src="/2022/07/21/git/1649402056467.png" style="width:30%"></p>
+<p>分布式:(Git)<br><img src="/2022/07/21/git/1649402072687.png" style="width:30%"></p>
+<h3 id="4-1-对比"><a href="#4-1-对比" class="headerlink" title="4.1 对比"></a>4.1 对比</h3><p>1）Git是分布式的，SVN集中式<br>2）Git每个历史版本存储完整的文件，SVN存储文件的差异<br>3）Git可离线完成大部分操作，SVN则必须与中央服务器进行网络交互<br>4）Git有着优雅的分支和合并功能<br>5）Git有着更强的撤销修改和修改版本历史的能力<br>6）Git速度更快，效率更高</p>
+<h2 id="五、Git使用"><a href="#五、Git使用" class="headerlink" title="五、Git使用"></a>五、Git使用</h2><h3 id="5-1、下载及安装Git"><a href="#5-1、下载及安装Git" class="headerlink" title="5.1、下载及安装Git"></a>5.1、下载及安装Git</h3><p>这里提供Git下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p>安装，next-&gt;next …</p>
+<p>（其他文件夹中已提供安装包）</p>
+<p>安装成功后</p>
+<p>检查方式一： win+R , cmd  , git –version</p>
+<p>检查方式二： 右键出现两个git菜单</p>
+<h3 id="5-2、Git全局配置"><a href="#5-2、Git全局配置" class="headerlink" title="5.2、Git全局配置"></a>5.2、Git全局配置</h3><blockquote>
+<p>基本配置 ： user.name &amp; user.email<br>git config –global user.name “Your Name”<br>git config –global user.email “<a href="mailto:email@example.com">email@example.com</a>“<br>这台机器上所有的Git仓库都会使用这个配置</p>
+<p>查看配置 ： git config –list</p>
+<p><a href="mailto:18802582132@163.com">18802582132@163.com</a></p>
+</blockquote>
+<h3 id="5-3、Gitee远程创建仓库"><a href="#5-3、Gitee远程创建仓库" class="headerlink" title="5.3、Gitee远程创建仓库"></a>5.3、Gitee远程创建仓库</h3><p>注册（用邮箱注册）<a target="_blank" rel="noopener" href="https://gitee.com/%EF%BC%8C%E5%B9%B6%E7%99%BB%E5%BD%95%E5%88%B0Gitee%E3%80%82">https://gitee.com/，并登录到Gitee。</a></p>
+<p>新建仓库：<br><img src="/2022/07/21/git/1649406074069.png" style="width:40%"><br>添加仓库信息：<br><img src="/2022/07/21/git/1649406678473.png" style="width:60%"></p>
+<h3 id="5-4、Gitee中配置SSH公钥"><a href="#5-4、Gitee中配置SSH公钥" class="headerlink" title="5.4、Gitee中配置SSH公钥"></a>5.4、Gitee中配置SSH公钥</h3><ul>
+<li>注册（用邮箱注册）<a target="_blank" rel="noopener" href="https://gitee.com/%EF%BC%8C%E5%B9%B6%E7%99%BB%E5%BD%95%E5%88%B0Gitee%E5%90%8E%EF%BC%8C%E9%BC%A0%E6%A0%87%E7%A7%BB%E8%87%B3%E5%8F%B3%E4%B8%8A%E8%A7%92%E5%A4%B4%E5%83%8F%EF%BC%8C%E4%B8%8B%E6%8B%89%E9%80%89%E9%A1%B9%E4%B8%AD%E9%80%89%E6%8B%A9">https://gitee.com/，并登录到Gitee后，鼠标移至右上角头像，下拉选项中选择</a> <code>设置</code></li>
+<li>左侧菜单栏中选择SSH公钥，在右侧添加公钥</li>
+<li>怎么生成本机的公钥？请查看：<a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4181">https://gitee.com/help/articles/4181</a></li>
 </ul>
-<p><strong>注意：</strong></p>
-<p>当“:nth-child(n)”选择器中的n为一个<strong>表达式</strong>时，其中n是<strong>从0开始计算</strong>，当表达式的<strong>值为0或小于0</strong>的时候，<strong>不选择任何匹配</strong>的元素。</p>
-<p>nth-child的选择器是<strong>先找位置</strong>，然后<strong>再找标签</strong>，如果<em>标签和位置对不上</em>，那么这个选择器就是<em>错误的</em>。</p>
-<p><strong>2.2 nth-of-type系列</strong></p>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>例子</th>
-<th>例子描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>:first-of-type</td>
-<td>p:first-of-type</td>
-<td>选择属于其父元素的首个 <p> 元素的每个 </p><p> 元素。</p></td>
-</tr>
-<tr>
-<td>:last-of-type</td>
-<td>p:last-of-type</td>
-<td>选择属于其父元素的最后 <p> 元素的每个 </p><p> 元素。</p></td>
-</tr>
-<tr>
-<td>:nth-of-type(<em>n</em>)</td>
-<td>p:nth-of-type(2)</td>
-<td>选择属于其父元素第二个 <p> 元素的每个 </p><p> 元素。</p></td>
-</tr>
-<tr>
-<td>:nth-last-of-type(<em>n</em>)</td>
-<td>p:nth-last-of-type(2)</td>
-<td>同上，但是从最后一个子元素开始计数。</td>
-</tr>
-</tbody></table>
-<p>与<code>nth-child</code>的区别是，这个伪类选择器的位置，是<strong>先找元素</strong>找到后，<strong>再从上往下排位置</strong>。</p>
-<br>
+<blockquote>
+<p>创建ssh key  ： ssh-keygen -t rsa -C <a href="mailto:youremail@example.com">youremail@example.com</a><br>按照提示完成三次回车，即可生成 ssh key。<br>本地用户目录下,找到本地文件id_rsa.pub文件的内容<br>复制生成后的 ssh key，设置-&gt; 安全设置 -&gt; SSH公钥 把添加生成的 public key 添加到仓库中。</p>
+</blockquote>
+<h3 id="5-5、Git日常操作"><a href="#5-5、Git日常操作" class="headerlink" title="5.5、Git日常操作"></a>5.5、Git日常操作</h3><pre class="language-shell" data-language="shell"><code class="language-shell">1、 克隆代码（把远程仓库拉取到本地）： git clone 仓库地址
 
-<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><p>根据<strong>不同的属性</strong>去选择标签，常用用来<strong>选择不同类型的表单</strong></p>
-<pre class="language-html" data-language="html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
-        <span class="token comment">/* 可以根据不同的属性去选择标签 经常用来选择不同类型的表单*/</span>
-        <span class="token comment">/* 格式  选择器[属性="值"]   */</span>
-        <span class="token selector">input[type="text"]</span><span class="token punctuation">{</span>
-           <span class="token property">background-color</span><span class="token punctuation">:</span>pink<span class="token punctuation">;</span> 
-        <span class="token punctuation">}</span>
-        
-        <span class="token comment">/* 格式  选择器[属性名] 表示选中带有这个属性名的标签 */</span>
-        <span class="token selector">a[target]</span><span class="token punctuation">{</span>
-            <span class="token property">background-color</span><span class="token punctuation">:</span> tan<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
-    <span class="token comment">&lt;!-- 文本输入框 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+2、 查看仓库状态: git status
 
-    <span class="token comment">&lt;!-- 密码输入框 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+3、 提交工作区代码到暂存区 ： git add 文件路径 或者 .(所有文件)  或者 --all
 
-    <span class="token comment">&lt;!-- 超链接 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>超链接<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>超链接<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
+4、 提交暂存区代码到本地仓库（历史记录）区： git commit -m '本次提交的信息提示'
 
-<br>
+5、 提交本地仓库（历史记录）区的提交记录到远程仓库： git push origin 分支名称
 
-<h4 id="补充选择器"><a href="#补充选择器" class="headerlink" title="补充选择器"></a>补充选择器</h4><p><strong>点击输入框下面出现选择框</strong></p>
-<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>con<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>手机<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>手机<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>手机<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>手机<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+6、 查看提交的历史记录：： git log 或  git log --pretty=oneline
 
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.con</span><span class="token punctuation">{</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
-    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #ccc<span class="token punctuation">;</span>
-    <span class="token property">margin-top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment">/* :focus得到焦点的样式 */</span>
-<span class="token comment">/* + 选择同级后面一个的标签 */</span>
-<span class="token selector">input:focus+.con</span><span class="token punctuation">{</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+7、 简洁查看所有分支的所有操作记录： git reflog</code></pre>
 
+<p>注意点 ：<font color="red">git提示的信息里面只要有<strong>fatal</strong> 或者<strong>error</strong>这两个词随便一个，都是执行git命令失败了</font></p>
+<h3 id="5-6、工作区、暂存区、主分支"><a href="#5-6、工作区、暂存区、主分支" class="headerlink" title="5.6、工作区、暂存区、主分支"></a>5.6、工作区、暂存区、主分支</h3><img src="/2022/07/21/git/1649410687843.png" style="width:50%">
+工作区：电脑中能够看到的目录，例如gitDemo文件夹就是一个工作区
+版本库：工作区有一个隐藏目录.git,这就是Git版本库。 版本库中有一个暂存区stage自动一个master分支，指向一个Head
+
+<h3 id="5-7、分支"><a href="#5-7、分支" class="headerlink" title="5.7、分支"></a>5.7、分支</h3><p>分支使用场景：</p>
+<p>3月刚发布一个v1.0版本的项目，发布完之后张三开始继续开发A功能当开发到50%，发现v1.0版本项目出bug了，需要立即修复… 如果张三改的正好就是v1.0版本代码，这就必须把代码删掉了，先修复bug 。解决方案：分支</p>
+<p>语法：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">查看分支： git branch
+创建分支： git branch &lt;name&gt;
+切换分支： git checkout &lt;name&gt;
+创建&amp;切换分支： git checkout -b &lt;name&gt;
+删除分支： git branch -d &lt;名称&gt;</code></pre>
+
+<p>在gitee中创建项目(例如创建了 <code>demo0630</code> 这个项目)，执行以下命令：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">// 克隆仓库到本地
+git clone git@gitee.com:codesohigh/demo0630.git
+// 检查当前分支
+git branch</code></pre>
+
+<p>一般此时是master分支，但我们开发阶段一般用dev等其他分支，所以我们：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">//创建并切换到dev分支
+git checkout -b dev</code></pre>
+
+<ul>
+<li>第一个注意的点：</li>
+</ul>
+<blockquote>
+<p>在仓库没有初始化前，如果需要检查分支，一定要记住这句话：未曾commit的仓库是无法检查分支的！</p>
+</blockquote>
+<ul>
+<li>第二个注意点：</li>
+</ul>
+<blockquote>
+<p>切分支之前保证工作树是干净的。</p>
+</blockquote>
+<ul>
+<li>第三个注意点：</li>
+</ul>
+<blockquote>
+<p>实际上使用git switch 也可以实现创建和切换分支功能：</p>
+<pre class="language-js" data-language="js"><code class="language-js">git <span class="token keyword">switch</span> <span class="token operator">-</span>c dev   <span class="token comment">// 创建并切换到新的dev分支</span>
+git <span class="token keyword">switch</span> dev		<span class="token comment">// 切换到已有的dev分支</span></code></pre>
+</blockquote>
+<ul>
+<li><strong>不同分支下，提交文件方式相同，git add . , git commit -m ‘’ , git push origin dev</strong></li>
+</ul>
+<p>此时你会发现，<code>git checkout master</code> 切回master分支后，dev分支下修改的内容看不见，因为当前分支不存在这个修改动作。</p>
+<h3 id="5-8、合并分支"><a href="#5-8、合并分支" class="headerlink" title="5.8、合并分支"></a>5.8、合并分支</h3><p>假设当前项目已经完成，我们想要把dev分支合并到master，可以在master分支下使用：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">git merge dev</code></pre>
+
+<p>此时，你会看到，项目中又有 <code>index.js</code> 了。</p>
+<h3 id="5-9、合并时冲突解决"><a href="#5-9、合并时冲突解决" class="headerlink" title="5.9、合并时冲突解决"></a>5.9、合并时冲突解决</h3><p>在master分支下和dev分支下同时对index.js文件进行修改，并提交到本地仓库。 </p>
+<p>切换到master分支中合并dev分支，由于都修改了同样的问题，此时出现冲突</p>
+<img src="/2022/07/21/git/1649414769324.png" style="width:50%">
+
+<h3 id="5-10、版本回滚"><a href="#5-10、版本回滚" class="headerlink" title="5.10、版本回滚"></a>5.10、版本回滚</h3><p>使用 <code>git switch -c dev1</code> 创建新的dev1分支，稍微修改dev1中的index.js，并且提交到远程仓库。</p>
+<p>我们提交完成后，发现自己不想用当前代码，想回滚到上一次的代码，怎么办呢？</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">// 查看当前项目提交过的所有版本（含所有分支的操作）
+git log
+// 显示很详细的信息，如果我们只想简单看看版本号，可以使用
+git log --pretty=oneline</code></pre>
+
+<p>我们会得到：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">b2ff1beb92bd3ac425dac2fa519d4b8191438be9</span> <span class="token punctuation">(</span><span class="token constant">HEAD</span> <span class="token operator">-</span><span class="token operator">&gt;</span> dev1<span class="token punctuation">)</span> <span class="token string">'123456'</span>
+<span class="token function">c9efd011b471765fc9fdd6eefaadf75b3b36153b</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev1<span class="token punctuation">)</span> <span class="token string">'12345'</span>
+80f6cb77a9b13cd471b725b5ef66901150bf57bb <span class="token string">'提交'</span>
+<span class="token number">47</span><span class="token function">d676dbf6d0687d76f059ee9ed044c4c378ed30</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>master<span class="token punctuation">,</span> origin<span class="token operator">/</span><span class="token constant">HEAD</span><span class="token punctuation">)</span> <span class="token string">'dev1的首次提交'</span>
+<span class="token function">d5c756afd04abfdbc9bb2299064eab34b30ede5f</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev<span class="token punctuation">,</span> dev<span class="token punctuation">)</span> <span class="token string">'修改了index.js'</span>
+65f4c72f6c8e2c272d4e284c103e249c65ebff32 Initial commit</code></pre>
+
+<p>如果我们只想回滚到指定版本，可以使用：</p>
+<pre class="language-js" data-language="js"><code class="language-js">git reset <span class="token operator">--</span>hard c9efd</code></pre>
+
+<p>这里只需要写id号的前几个字母与数字就行，没必要全写，git会自动去检索。</p>
+<p>但此时，我们再一次查看所有版本，发现：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">c9efd011b471765fc9fdd6eefaadf75b3b36153b</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev1<span class="token punctuation">)</span> <span class="token string">'12345'</span>
+80f6cb77a9b13cd471b725b5ef66901150bf57bb <span class="token string">'提交'</span>
+<span class="token number">47</span><span class="token function">d676dbf6d0687d76f059ee9ed044c4c378ed30</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>master<span class="token punctuation">,</span> origin<span class="token operator">/</span><span class="token constant">HEAD</span><span class="token punctuation">)</span> <span class="token string">'dev1的首次提交'</span>
+<span class="token function">d5c756afd04abfdbc9bb2299064eab34b30ede5f</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev<span class="token punctuation">,</span> dev<span class="token punctuation">)</span> <span class="token string">'修改了index.js'</span>
+65f4c72f6c8e2c272d4e284c103e249c65ebff32 Initial commit</code></pre>
+
+<p>最新写的那个丢失了。但我此时又后悔了，怎么办？</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">// 重新reset即可找回
+git reset --hard b2ff1</code></pre>
+
+<p>现在，就可以退回最新版本了。</p>
+<p>但这个方法前提是你当前这个控制台不曾关掉，如果已经关掉了，你是没法知道版本号的，这时候要怎么办呢？</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">// Git提供了一个命令git reflog用来记录你的每一次命令
+git reflog</code></pre>
+
+
+
+<p>补充：远程仓库删除<br><img src="/2022/07/21/git/1649416441474.png" alt="1649416441474"></p>
 
                 
             </div>
@@ -718,7 +645,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellozhj.github.io/2022/05/09/selector/">https://hellozhj.github.io/2022/05/09/selector/</a>
+                    <a href="https://hellozhj.github.io/2022/07/21/git/">https://hellozhj.github.io/2022/07/21/git/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -756,8 +683,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTML/">
-                                    <span class="chip bg-color">HTML</span>
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
                                 </a>
                             
                         </div>
@@ -931,17 +858,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/06/10/fan-hui-zhi/">
+                <a href="/2022/07/21/git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="返回值">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
                         
-                        <span class="card-title">返回值</span>
+                        <span class="card-title">git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -951,9 +879,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -962,11 +890,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -980,13 +909,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/05/09/html5-css3/">
+                <a href="/2022/07/19/vue2-an-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="HTML5+CSS3">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="vue2-案例">
                         
-                        <span class="card-title">HTML5+CSS3</span>
+                        <span class="card-title">vue2-案例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -997,7 +926,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-19
                             </span>
                         <span class="publish-author">
                             
@@ -1010,8 +939,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
