@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-07-20T16:29:10.058Z</updated>
+  <updated>2022-07-24T13:57:27.964Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue2项目</title>
+    <link href="https://hellozhj.github.io/2022/07/24/vue2-xiang-mu/"/>
+    <id>https://hellozhj.github.io/2022/07/24/vue2-xiang-mu/</id>
+    <published>2022-07-24T13:55:30.000Z</published>
+    <updated>2022-07-24T13:57:27.964Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/07/24/vue2-xiang-mu/day01%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8A%A0%E5%A4%B4%E9%83%A8.png&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://hellozhj.github.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>git</title>
@@ -446,29 +469,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;移动端&quot;&gt;&lt;a href=&quot;#移动端&quot; class=&quot;headerlink&quot; title=&quot;移动端&quot;&gt;&lt;/a&gt;移动端&lt;/h1&gt;&lt;h4 id=&quot;禁止移动端视口缩放&quot;&gt;&lt;a href=&quot;#禁止移动端视口缩放&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="HTML" scheme="https://hellozhj.github.io/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网页布局总结</title>
-    <link href="https://hellozhj.github.io/2022/06/10/wang-ye-bu-ju-zong-jie/"/>
-    <id>https://hellozhj.github.io/2022/06/10/wang-ye-bu-ju-zong-jie/</id>
-    <published>2022-06-10T05:59:30.000Z</published>
-    <updated>2022-06-10T06:00:44.325Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;网页布局总结&quot;&gt;&lt;a href=&quot;#网页布局总结&quot; class=&quot;headerlink&quot; title=&quot;网页布局总结&quot;&gt;&lt;/a&gt;网页布局总结&lt;/h1&gt;&lt;h3 id=&quot;pc端&quot;&gt;&lt;a href=&quot;#pc端&quot; class=&quot;headerlink&quot;</summary>
         
       
     
