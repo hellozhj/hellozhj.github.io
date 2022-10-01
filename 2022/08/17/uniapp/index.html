@@ -1,0 +1,1816 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="uniapp, Evedward">
+    <meta name="description" content="Uni-Appday04-uni-app语法一. 什么是uniappuni-app 是一个使用 Vue.js开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>uniapp | Evedward</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Evedward" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Evedward</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Evedward</div>
+        <div class="logo-desc">
+            
+            关注嘉然，顿顿解馋
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/hellozhj" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/hellozhj" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">uniapp</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/uniapp/">
+                                <span class="chip bg-color">uniapp</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-17
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Uni-App"><a href="#Uni-App" class="headerlink" title="Uni-App"></a>Uni-App</h1><h1 id="day04-uni-app语法"><a href="#day04-uni-app语法" class="headerlink" title="day04-uni-app语法"></a>day04-uni-app语法</h1><h2 id="一-什么是uniapp"><a href="#一-什么是uniapp" class="headerlink" title="一. 什么是uniapp"></a>一. 什么是uniapp</h2><p><code>uni-app</code> 是一个使用 <a target="_blank" rel="noopener" href="https://vuejs.org/">Vue.js</a>开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。</p>
+<p>为了实现多端兼容，综合考虑编译速度、运行性能等因素，<code>uni-app</code> 约定了如下开发规范：</p>
+<ul>
+<li>页面文件遵循 <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/zh/spec.html">Vue 单文件组件 (SFC) 规范(opens new window)</a>，可以用vuex，默认不支持vue-router</li>
+<li>组件标签靠近小程序规范，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/component/">uni-app 组件规范</a></li>
+<li>接口能力（JS API）靠近微信小程序规范，但需将前缀 <code>wx</code> 替换为 <code>uni</code>，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/">uni-app接口规范</a></li>
+<li>数据绑定及事件处理同 <code>Vue.js</code> 规范，同时补充了App及页面的生命周期（生命周期见4.1）</li>
+<li>为兼容多端运行，建议使用flex布局进行开发</li>
+</ul>
+<p>但是，每个端，有每个端的管理规则，这不是uni-app在技术层面上可以抹平的：</p>
+<ul>
+<li>比如H5端的浏览器有跨域限制；</li>
+<li>比如微信小程序会强制要求https链接，并且所有要联网的服务器域名都要配到微信的白名单中；</li>
+<li>比如App端，iOS对隐私控制和虚拟支付控制非常严格；</li>
+<li>比如App端，Android、国产rom各种兼容性差异，尤其是因为谷歌服务被墙，导致的push、定位等开发混乱的坑；</li>
+</ul>
+<h2 id="二-跨端注意"><a href="#二-跨端注意" class="headerlink" title="二. 跨端注意"></a>二. 跨端注意</h2><p><strong>每个端有每个端的特点，有的能被抹平，有的不可能被抹平。</strong></p>
+<p><strong>注意：跨端，不是把web的习惯迁移到全平台。而是按照uni的写法，然后全平台使用。</strong></p>
+<h3 id="2-1-H5正常但App异常的可能性"><a href="#2-1-H5正常但App异常的可能性" class="headerlink" title="2.1 H5正常但App异常的可能性"></a>2.1 H5正常但App异常的可能性</h3><h4 id="2-1-1-CSS异常"><a href="#2-1-1-CSS异常" class="headerlink" title="2.1.1 CSS异常"></a>2.1.1 CSS异常</h4><ul>
+<li>不支持的选择器</li>
+</ul>
+<p>非H5端不支持*选择器；</p>
+<p>body的元素选择器请改为page，同样，div和ul和li等改为view、span和font改为text、a改为navigator、img改为image…</p>
+<ul>
+<li>组件和页面样式相互影响</li>
+</ul>
+<p>非H5端默认并未启用 scoped，如需要隔离组件样式可以在 style 标签增加 scoped 属性，H5端为了隔离页面间的样式默认启用了 scoped。<strong>不要写scoped，小程序样式有问题</strong></p>
+<ul>
+<li>webview浏览器兼容性</li>
+</ul>
+<p>vue页面在App端，默认是被系统的webview渲染的（不是手机自带浏览器，是rom的webview），在较老的手机上，比如Android4.4、5.0或iOS8，很多css是不支持的，所以不要使用太新的css，会导致界面异常。</p>
+<p>注意这不意味着不能使用flex，Android4.4也支持flex，只是不要使用太新的css。</p>
+<ul>
+<li>原生组件层级问题 H5没有原生组件概念问题，非H5端有原生组件并引发了原生组件层级高于前端组件的概念，要遮挡video、map等原生组件，请使用cover-view组件。</li>
+</ul>
+<h4 id="2-1-2-使用了非H5端不支持的API"><a href="#2-1-2-使用了非H5端不支持的API" class="headerlink" title="2.1.2 使用了非H5端不支持的API"></a>2.1.2 使用了非H5端不支持的API</h4><p>小程序和App的js运行在jscore下而不是浏览器里，没有浏览器专用的js对象，比如document、xmlhttp、cookie、window、location、navigator、localstorage、websql、indexdb、webgl等对象。</p>
+<p>如果你的代码没有直接使用这些，那很可能是引入的三方库使用了这些。如果是后者，去<a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/">插件市场</a>搜索替代方案。</p>
+<h3 id="2-2-H5正常但小程序异常的可能性"><a href="#2-2-H5正常但小程序异常的可能性" class="headerlink" title="2.2  H5正常但小程序异常的可能性"></a>2.2  H5正常但小程序异常的可能性</h3><ol>
+<li>同上</li>
+<li><strong>v-html</strong>在h5和app-vue均支持，但小程序不支持</li>
+<li>小程序要求连接的网址都要配白名单</li>
+</ol>
+<h3 id="2-3-小程序正常但App异常的可能性"><a href="#2-3-小程序正常但App异常的可能性" class="headerlink" title="2.3 小程序正常但App异常的可能性"></a>2.3 小程序正常但App异常的可能性</h3><p>vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏览器，是rom的webview），在较老的手机上，比如Android4.4、5.0或iOS8，一些新出的css语法是不支持的。注意这不意味着不能使用flex，Android4.4也支持flex，只是不要使用太新的css。可以找Android4.4手机或使用pc模拟器实际测试下，大多数国产Android模拟器都是4.4或5.0。</p>
+<p>小程序不存在浏览器兼容问题，它内置了几十M自己的定制webview。所以如果你的H5和小程序界面正常，而App界面异常，大多是因为css兼容性。</p>
+<p>解决这类问题：</p>
+<ol>
+<li>放弃老款手机支持</li>
+<li>不用使用太新的css语法，可以在caniuse查询</li>
+<li>从 uni-app 2.5.3 起，Android端支持引入腾讯x5浏览器内核，可以抹平低端Android的浏览器兼容性问题，<a target="_blank" rel="noopener" href="https://ask.dcloud.net.cn/article/36806">详见x5使用指南</a></li>
+</ol>
+<h3 id="2-4-小程序或App正常，但H5异常的可能性"><a href="#2-4-小程序或App正常，但H5异常的可能性" class="headerlink" title="2.4 小程序或App正常，但H5异常的可能性"></a>2.4 小程序或App正常，但H5异常的可能性</h3><ol>
+<li>在 uni-app 2.4.7 以前，H5端不支持微信小程序自定义组件，即wxcomponets下的组件，此时可能产生兼容问题。从 2.4.7 起，H5也支持微信自定义组件，不再存在这这方面兼容问题。</li>
+<li>App端使用了App特有的API和功能，比如plus、Native.js、subNVue、原生插件等</li>
+<li>使用了小程序专用的功能，比如微信卡券、小程序插件、微信小程序云开发。对于云开发，建议使用可跨端的uniCloud。</li>
+</ol>
+<h3 id="2-5-H5-开发注意"><a href="#2-5-H5-开发注意" class="headerlink" title="2.5 H5 开发注意"></a>2.5 H5 开发注意</h3><ul>
+<li><p>APP 和小程序的导航栏和 <code>tabbar</code> 均是原生控件，元素区域坐标是不包含原生导航栏和 <code>tabbar</code> 的；而 H5 里导航栏和 <code>tabbar</code> 是 div 模拟实现的，所以元素坐标会包含导航栏和tabbar的高度。为了优雅的解决多端高度定位问题，<code>uni-app</code> 新增了2个css变量：<code>--window-top</code> 和 <code>--window-bottom</code>，这代表了页面的内容区域距离顶部和底部的距离。举个实例，如果你想在原生<code>tabbar</code> 上方悬浮一个菜单，之前写 <code>bottom:0</code>。这样的写法编译到 h5 后，这个菜单会和 <code>tabbar</code> 重叠，位于屏幕底部。而改为使用 <code>bottom:var(--window-bottom)</code>，则不管在 app 下还是在h5下，这个菜单都是悬浮在 <code>tabbar</code> 上浮的。这就避免了写条件编译代码。当然仍然也可以使用 H5 的条件编译处理界面的不同。</p>
+<pre class="language-Vue" data-language="Vue"><code class="language-Vue">&lt;template&gt;
+    &lt;view class="content"&gt;
+      	&lt;div class="bottom"&gt;bottom&lt;/div&gt;
+    &lt;/view&gt;
+&lt;/template&gt;
+
+&lt;style lang="scss"&gt;
+  page{
+	  .bottom{
+		  position:fixed;
+		  left:0;
+		  right:0;
+		  bottom:calc(var(--window-bottom) + 50rpx);
+	  }
+  }
+&lt;/style&gt;</code></pre></li>
+</ul>
+<h3 id="2-6-跨端兼容"><a href="#2-6-跨端兼容" class="headerlink" title="2.6 跨端兼容"></a>2.6 跨端兼容</h3><p>uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-app 规范开发即可保证多平台兼容，大部分业务均可直接满足。</p>
+<p>但每个平台有自己的一些特性，因此会存在一些无法跨平台的情况。</p>
+<ul>
+<li>大量写 if else，会造成代码执行性能低下和管理混乱。</li>
+<li>编译到不同的工程后二次修改，会让后续升级变的很麻烦。</li>
+</ul>
+<p>在 C 语言中，通过 #ifdef、#ifndef 的方式，为 windows、mac 等不同 os 编译不同的代码。 <code>uni-app</code> 参考这个思路，为 <code>uni-app</code> 提供了条件编译手段，在一个工程里优雅的完成了平台个性化实现。</p>
+<p>条件编译是用特殊的注释作为标记，在编译时根据这些特殊的注释，将注释里面的代码编译到不同平台。</p>
+<p><strong>写法：</strong>以 #ifdef 或 #ifndef 加 <strong>%PLATFORM%</strong> 开头，以 #endif 结尾。</p>
+<ul>
+<li>#ifdef：if defined 仅在某平台存在</li>
+<li>#ifndef：if not defined 除了某平台均存在</li>
+<li>**%PLATFORM%**：平台名称</li>
+</ul>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span>
+
+<span class="token comment">// #ifndef VUE3</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+App<span class="token punctuation">.</span>mpType <span class="token operator">=</span> <span class="token string">'app'</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token operator">...</span>App
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// #endif</span>
+
+<span class="token comment">// #ifdef VUE3</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createSSRApp <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">createSSRApp</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    app
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// #endif</span></code></pre>
+
+
+
+
+
+
+
+<h2 id="三-工程目录"><a href="#三-工程目录" class="headerlink" title="三. 工程目录"></a>三. 工程目录</h2><p>下载HBuilder X、创建项目后，点击运行到内置浏览器即可实现代码在浏览器的热更新，点击运行到小程序模拟器，会提示错误，是因为微信开发者工具的安全设置没有开启服务端口。</p>
+<img src="../../../真 · 学习资料/狼/上课视频代码笔记作业/微信小程序/41期笔记/day05-uni-app/images/1.1.png" width="600">
+
+
+
+<p>在菜单右键新建页面。<code>uni-app</code>会将<code>pages.json -&gt; pages</code>配置项中的第一个页面，作为当前工程的首页（启动页）。</p>
+<p>工程目录如下：</p>
+<pre class="language-none"><code class="language-none">┌─uniCloud              云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb（详见uniCloud）
+│─components            符合vue组件规范的uni-app组件目录
+│  └─comp-a.vue         可复用的a组件
+├─hybrid                App端存放本地html文件的目录，详见
+├─platforms             存放各平台专用页面的目录，详见
+├─pages                 业务页面文件存放的目录
+│  ├─index
+│  │  └─index.vue       index页面
+│  └─list
+│     └─list.vue        list页面
+├─static                存放应用引用的本地静态资源（如图片、视频等）的目录，注意：静态资源只能存放于此
+├─uni_modules           存放[uni_module](/uni_modules)。
+├─wxcomponents          存放小程序组件的目录，详见
+├─nativeplugins         App原生插件 详见
+├─unpackage             非工程代码，一般存放运行或发行的编译结果
+├─main.js               Vue初始化入口文件
+├─App.vue               应用配置，用来配置App全局样式以及监听 应用生命周期
+├─manifest.json         配置应用名称、appid、logo、版本等打包信息，详见
+├─pages.json            配置页面路由、导航条、选项卡等页面类信息，详见
+└─uni.scss              这里是uni-app内置的常用样式变量 
+	</code></pre>
+
+
+
+
+
+<h2 id="四-页面相关内容"><a href="#四-页面相关内容" class="headerlink" title="四. 页面相关内容"></a>四. 页面相关内容</h2><h3 id="4-1-应用、页面、组件生命周期"><a href="#4-1-应用、页面、组件生命周期" class="headerlink" title="4.1 应用、页面、组件生命周期"></a>4.1 应用、页面、组件生命周期</h3><p>应用（app.vue）生命周期：</p>
+<table>
+<thead>
+<tr>
+<th align="left">函数名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onLaunch</td>
+<td align="left">当<code>uni-app</code> 初始化完成时触发（全局只触发一次）</td>
+</tr>
+<tr>
+<td align="left">onShow</td>
+<td align="left">当 <code>uni-app</code> 启动，或从后台进入前台显示</td>
+</tr>
+<tr>
+<td align="left">onHide</td>
+<td align="left">当 <code>uni-app</code> 从前台进入后台</td>
+</tr>
+<tr>
+<td align="left">onError</td>
+<td align="left">当 <code>uni-app</code> 报错时触发</td>
+</tr>
+<tr>
+<td align="left">onUniNViewMessage</td>
+<td align="left">对 <code>nvue</code> 页面发送的数据进行监听，可参考 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/tutorial/nvue-api?id=communication">nvue 向 vue 通讯(opens new window)</a></td>
+</tr>
+<tr>
+<td align="left">onUnhandledRejection</td>
+<td align="left">对未处理的 Promise 拒绝事件监听函数（2.8.1+）</td>
+</tr>
+<tr>
+<td align="left">onPageNotFound</td>
+<td align="left">页面不存在监听函数</td>
+</tr>
+<tr>
+<td align="left">onThemeChange</td>
+<td align="left">监听系统主题变化</td>
+</tr>
+</tbody></table>
+<p>页面（pages文件夹下的.vue文件）生命周期是小程序的页面生命周期。</p>
+<table>
+<thead>
+<tr>
+<th align="left">函数名</th>
+<th align="left">说明</th>
+<th align="left">平台差异说明</th>
+<th align="left">最低版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onInit</td>
+<td align="left">监听页面初始化，其参数同 onLoad 参数，为上个页面传递的数据，参数类型为 Object（用于页面传参），触发时机早于 onLoad</td>
+<td align="left">百度小程序</td>
+<td align="left">3.1.0+</td>
+</tr>
+<tr>
+<td align="left">onLoad</td>
+<td align="left">监听页面加载，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router#navigateto">示例</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onShow</td>
+<td align="left">监听页面显示。页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onReady</td>
+<td align="left">监听页面初次渲染完成。注意如果渲染速度快，会在页面进入动画完成前触发</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onHide</td>
+<td align="left">监听页面隐藏</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onUnload</td>
+<td align="left">监听页面卸载</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onResize</td>
+<td align="left">监听窗口尺寸变化</td>
+<td align="left">App、微信小程序、快手小程序</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onPullDownRefresh</td>
+<td align="left">监听用户下拉动作，一般用于下拉刷新，参考<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/ui/pulldown">示例</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onReachBottom</td>
+<td align="left">页面滚动到底部的事件（不是scroll-view滚到底），常用于下拉下一页数据。具体见下方注意事项</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onTabItemTap</td>
+<td align="left">点击 tab 时触发，参数为Object，具体见下方注意事项</td>
+<td align="left">微信小程序、QQ小程序、支付宝小程序、百度小程序、H5、App、快手小程序、京东小程序</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onShareAppMessage</td>
+<td align="left">用户点击右上角分享</td>
+<td align="left">微信小程序、QQ小程序、支付宝小程序、字节小程序、飞书小程序、快手小程序、京东小程序</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onPageScroll</td>
+<td align="left">监听页面滚动，参数为Object</td>
+<td align="left">nvue暂不支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onNavigationBarButtonTap</td>
+<td align="left">监听原生标题栏按钮点击事件，参数为Object</td>
+<td align="left">App、H5</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onBackPress</td>
+<td align="left">监听页面返回，返回 event = {from:backbutton、 navigateBack} ，backbutton 表示来源是左上角返回按钮或 android 返回键；navigateBack表示来源是 uni.navigateBack ；详细说明及使用：<a target="_blank" rel="noopener" href="http://ask.dcloud.net.cn/article/35120">onBackPress 详解 (opens new window)</a>。支付宝小程序只有真机能触发，只能监听非navigateBack引起的返回，不可阻止默认行为。</td>
+<td align="left">app、H5、支付宝小程序</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onNavigationBarSearchInputChanged</td>
+<td align="left">监听原生标题栏搜索输入框输入内容变化事件</td>
+<td align="left">App、H5</td>
+<td align="left">1.6.0</td>
+</tr>
+<tr>
+<td align="left">onNavigationBarSearchInputConfirmed</td>
+<td align="left">监听原生标题栏搜索输入框搜索事件，用户点击软键盘上的“搜索”按钮时触发。</td>
+<td align="left">App、H5</td>
+<td align="left">1.6.0</td>
+</tr>
+<tr>
+<td align="left">onNavigationBarSearchInputClicked</td>
+<td align="left">监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）</td>
+<td align="left">App、H5</td>
+<td align="left">1.6.0</td>
+</tr>
+<tr>
+<td align="left">onShareTimeline</td>
+<td align="left">监听用户点击右上角转发到朋友圈</td>
+<td align="left">微信小程序</td>
+<td align="left">2.8.1+</td>
+</tr>
+<tr>
+<td align="left">onAddToFavorites</td>
+<td align="left">监听用户点击右上角收藏</td>
+<td align="left">微信小程序</td>
+<td align="left">2.8.1+</td>
+</tr>
+</tbody></table>
+<p>组件（components文件夹下的.vue文件）的生命周期与vue标准组件的生命周期相同，这里没有页面级的onLoad等生命周期：</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">函数名</td>
+<td align="left">说明</td>
+<td align="left">平台差异说明</td>
+<td align="left">最低版本</td>
+</tr>
+<tr>
+<td align="left">beforeCreate</td>
+<td align="left">在实例初始化之前被调用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#beforeCreate">详见(opens new window)</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">created</td>
+<td align="left">在实例创建完成后被立即调用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#created">详见(opens new window)</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">beforeMount</td>
+<td align="left">在挂载开始之前被调用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#beforeMount">详见(opens new window)</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">mounted</td>
+<td align="left">挂载到实例上去之后调用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#mounted">详见 (opens new window)</a>注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用<code>$nextTick</code><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#Vue-nextTick">Vue官方文档(opens new window)</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">beforeUpdate</td>
+<td align="left">数据更新时调用，发生在虚拟 DOM 打补丁之前。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#beforeUpdate">详见(opens new window)</a></td>
+<td align="left">仅H5平台支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">updated</td>
+<td align="left">由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#updated">详见(opens new window)</a></td>
+<td align="left">仅H5平台支持</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">beforeDestroy</td>
+<td align="left">实例销毁之前调用。在这一步，实例仍然完全可用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#beforeDestroy">详见(opens new window)</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">destroyed</td>
+<td align="left">Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#destroyed">详见(opens new window)</a></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="4-2-页面通讯"><a href="#4-2-页面通讯" class="headerlink" title="4.2 页面通讯"></a>4.2 页面通讯</h3><h4 id="4-2-1-uni-emit-eventName-OBJECT"><a href="#4-2-1-uni-emit-eventName-OBJECT" class="headerlink" title="4.2.1 uni.$emit(eventName,OBJECT)"></a>4.2.1 uni.$emit(eventName,OBJECT)</h4><p>触发全局的自定义事件。附加参数都会传给监听器回调。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eventName</td>
+<td>String</td>
+<td>事件名</td>
+</tr>
+<tr>
+<td>OBJECT</td>
+<td>Object</td>
+<td>触发事件携带的附加参数</td>
+</tr>
+</tbody></table>
+<p><strong>代码示例</strong></p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">uni<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'update'</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token literal-property property">msg</span><span class="token operator">:</span><span class="token string">'页面更新'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+
+
+<h4 id="4-2-2-uni-on-eventName-callback"><a href="#4-2-2-uni-on-eventName-callback" class="headerlink" title="4.2.2 uni.$on(eventName,callback)"></a>4.2.2 uni.$on(eventName,callback)</h4><p>监听全局的自定义事件。事件可以由 uni.$emit 触发，回调函数会接收所有传入事件触发函数的额外参数。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eventName</td>
+<td>String</td>
+<td>事件名</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>事件的回调函数</td>
+</tr>
+</tbody></table>
+<p><strong>代码示例</strong></p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">uni<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'update'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'监听到事件来自 update ，携带参数 msg 为：'</span> <span class="token operator">+</span> data<span class="token punctuation">.</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+
+
+<h4 id="4-2-3-uni-once-eventName-callback"><a href="#4-2-3-uni-once-eventName-callback" class="headerlink" title="4.2.3 uni.$once(eventName,callback)"></a>4.2.3 uni.$once(eventName,callback)</h4><p>监听全局的自定义事件。事件可以由 uni.$emit 触发，但是只触发一次，在第一次触发之后移除监听器。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eventName</td>
+<td>String</td>
+<td>事件名</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>事件的回调函数</td>
+</tr>
+</tbody></table>
+<p><strong>代码示例</strong></p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">uni<span class="token punctuation">.</span><span class="token function">$once</span><span class="token punctuation">(</span><span class="token string">'update'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'监听到事件来自 update ，携带参数 msg 为：'</span> <span class="token operator">+</span> data<span class="token punctuation">.</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+
+
+<h4 id="4-2-4-uni-off-eventName-callback"><a href="#4-2-4-uni-off-eventName-callback" class="headerlink" title="4.2.4 uni.$off([eventName, callback])"></a>4.2.4 uni.$off([eventName, callback])</h4><p>移除全局自定义事件监听器。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eventName</td>
+<td>Array＜String＞</td>
+<td>事件名</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>事件的回调函数</td>
+</tr>
+</tbody></table>
+<p><strong>Tips</strong></p>
+<ul>
+<li>如果没有提供参数，则移除所有的事件监听器；</li>
+<li>如果只提供了事件，则移除该事件所有的监听器；</li>
+</ul>
+<p>代码实例：</p>
+<pre class="language-Vue" data-language="Vue"><code class="language-Vue">&lt;template&gt;
+  &lt;view class="content"&gt;
+    &lt;button @click="toA"&gt;toA&lt;/button&gt;
+    a页面生成的随机数：{{ num }}
+  &lt;/view&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      num: "",
+    };
+  },
+  onShow() {
+    uni.$once("changeNum", (val) =&gt; {
+      console.log(val);
+      this.num = val;
+      // uni.$off('changeNum')
+    });
+  },
+  methods: {
+    toA() {
+      uni.navigateTo({
+        url: "../a/a",
+      });
+    },
+  },
+};
+&lt;/script&gt;</code></pre>
+
+<pre class="language-Vue" data-language="Vue"><code class="language-Vue">&lt;template&gt;
+  &lt;view&gt;
+    &lt;button @click="generateRandomNum"&gt;生成随机数&lt;/button&gt;
+  &lt;/view&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  methods: {
+    generateRandomNum() {
+      uni.$emit("changeNum", Math.random());
+      uni.navigateBack();
+    },
+  },
+};
+&lt;/script&gt;</code></pre>
+
+
+
+<h3 id="4-3-路由"><a href="#4-3-路由" class="headerlink" title="4.3 路由"></a>4.3 路由</h3><table>
+<thead>
+<tr>
+<th>路由方式</th>
+<th>页面栈表现</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>初始化</td>
+<td>新页面入栈</td>
+<td>uni-app 打开的第一个页面</td>
+</tr>
+<tr>
+<td>打开新页面</td>
+<td>新页面入栈</td>
+<td>调用 API   <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router#navigateto">uni.navigateTo</a>  、使用组件<navigator open-type="navigate"></navigator></td>
+</tr>
+<tr>
+<td>页面重定向</td>
+<td>当前页面出栈，新页面入栈</td>
+<td>调用 API   <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router#redirectto">uni.redirectTo</a>  、使用组件<navigator open-type="redirectTo"></navigator></td>
+</tr>
+<tr>
+<td>页面返回</td>
+<td>页面不断出栈，直到目标返回页</td>
+<td>调用 API  <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router#navigateback">uni.navigateBack</a>   、使用组件<navigator open-type="navigateBack">、用户按左上角返回按钮、安卓用户点击物理back按键</navigator></td>
+</tr>
+<tr>
+<td>Tab 切换</td>
+<td>页面全部出栈，只留下新的 Tab 页面</td>
+<td>调用 API  <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router#switchtab">uni.switchTab</a>  、使用组件<navigator open-type="switchTab">、用户切换 Tab</navigator></td>
+</tr>
+<tr>
+<td>重加载</td>
+<td>页面全部出栈，只留下新的页面</td>
+<td>调用 API  <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router#relaunch">uni.reLaunch</a>  、使用组件<navigator open-type="reLaunch"></navigator></td>
+</tr>
+</tbody></table>
+<h3 id="4-4-页面代码规范"><a href="#4-4-页面代码规范" class="headerlink" title="4.4 页面代码规范"></a>4.4 页面代码规范</h3><p><code>uni-app</code> 支持在 template 模板中嵌套 <code>&lt;template/&gt;</code> 和 <code>&lt;block/&gt;</code>，用来进行 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/tutorial/vue-basics#listrendering">列表渲染</a> 和 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/tutorial/vue-basics#condition">条件渲染</a>。</p>
+<p><code>&lt;template/&gt;</code> 和 <code>&lt;block/&gt;</code> 并不是一个组件，它们仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。</p>
+<p><code>&lt;block/&gt;</code> 在不同的平台表现存在一定差异，推荐统一使用 <code>&lt;template/&gt;</code>。</p>
+<h2 id="五-引用组件"><a href="#五-引用组件" class="headerlink" title="五. 引用组件"></a>五. 引用组件</h2><p>传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。<code>easycom</code>将其精简为一步。 只要组件安装在项目的components目录下，并符合<code>components/组件名称/组件名称.vue</code>目录结构。就可以不用引用、注册，直接在页面中使用。</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>children</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>from parent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>children</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Evedward</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://hellozhj.github.io/2022/08/17/uniapp/">https://hellozhj.github.io/2022/08/17/uniapp/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Evedward</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/uniapp/">
+                                    <span class="chip bg-color">uniapp</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/08/17/uniapp-xiang-mu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="uniapp项目">
+                        
+                        <span class="card-title">uniapp项目</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Evedward
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/uniapp/">
+                        <span class="chip bg-color">uniapp</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/07/wei-xin-xiao-cheng-xu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="微信小程序">
+                        
+                        <span class="card-title">微信小程序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Evedward
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <a href="/about" target="_blank">Evedward</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">182.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hellozhj" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wymail@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2325910627" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2325910627" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

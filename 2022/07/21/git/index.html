@@ -1,0 +1,1388 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="git, Evedward">
+    <meta name="description" content="Git
+
+注意一定要切换到自己git分支上再修改文件
+
+三、Git概念详细教程
+Git是一个免费的开源分布式版本控制系统，它可以快速高效地处理从小型到大型的项目。
+简单点说就是：git分布式版本控制工具（管理代码版本）。
+常见版本控制系统：">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>git | Evedward</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Evedward" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Evedward</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Evedward</div>
+        <div class="logo-desc">
+            
+            关注嘉然，顿顿解馋
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/hellozhj" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/hellozhj" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">git</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-07-21
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><img src="/2022/07/21/git/1-1658334412898.png" alt="1"></p>
+<blockquote>
+<p>注意一定要切换到<strong>自己git分支</strong>上再修改文件</p>
+</blockquote>
+<h2 id="三、Git概念"><a href="#三、Git概念" class="headerlink" title="三、Git概念"></a>三、Git概念</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6974184935804534815">详细教程</a></p>
+<p>Git是一个免费的开源<strong>分布式</strong>版本控制系统，它可以快速高效地处理从小型到大型的项目。</p>
+<p>简单点说就是：git分布式版本控制工具（管理代码版本）。</p>
+<p>常见版本控制系统：git、svn等</p>
+<p>我们常用的Git代码托管平台有：<strong>Gitee</strong>(码云)、GitLab、<strong>GitHub</strong>等。</p>
+<h2 id="四、集中式和分布式"><a href="#四、集中式和分布式" class="headerlink" title="四、集中式和分布式"></a>四、集中式和分布式</h2><p>集中式：(SVN)<br><img src="/2022/07/21/git/1649402056467.png" style="width:30%"></p>
+<p>分布式:(Git)<br><img src="/2022/07/21/git/1649402072687.png" style="width:30%"></p>
+<h3 id="4-1-对比"><a href="#4-1-对比" class="headerlink" title="4.1 对比"></a>4.1 对比</h3><p>1）Git是分布式的，SVN集中式<br>2）Git每个历史版本存储完整的文件，SVN存储文件的差异<br>3）Git可离线完成大部分操作，SVN则必须与中央服务器进行网络交互<br>4）Git有着优雅的分支和合并功能<br>5）Git有着更强的撤销修改和修改版本历史的能力<br>6）Git速度更快，效率更高</p>
+<h2 id="五、Git使用"><a href="#五、Git使用" class="headerlink" title="五、Git使用"></a>五、Git使用</h2><h3 id="5-1、下载及安装Git"><a href="#5-1、下载及安装Git" class="headerlink" title="5.1、下载及安装Git"></a>5.1、下载及安装Git</h3><p>这里提供Git下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p>安装，next-&gt;next …</p>
+<p>（其他文件夹中已提供安装包）</p>
+<p>安装成功后</p>
+<p>检查方式一： win+R , cmd  , git –version</p>
+<p>检查方式二： 右键出现两个git菜单</p>
+<h3 id="5-2、Git全局配置"><a href="#5-2、Git全局配置" class="headerlink" title="5.2、Git全局配置"></a>5.2、Git全局配置</h3><blockquote>
+<p>基本配置 ： user.name &amp; user.email<br>git config –global user.name “Your Name”<br>git config –global user.email “<a href="mailto:email@example.com">email@example.com</a>“<br>这台机器上所有的Git仓库都会使用这个配置</p>
+<p>查看配置 ： git config –list</p>
+<p><a href="mailto:18802582132@163.com">18802582132@163.com</a></p>
+</blockquote>
+<h3 id="5-3、Gitee远程创建仓库"><a href="#5-3、Gitee远程创建仓库" class="headerlink" title="5.3、Gitee远程创建仓库"></a>5.3、Gitee远程创建仓库</h3><p>注册（用邮箱注册）<a target="_blank" rel="noopener" href="https://gitee.com/%EF%BC%8C%E5%B9%B6%E7%99%BB%E5%BD%95%E5%88%B0Gitee%E3%80%82">https://gitee.com/，并登录到Gitee。</a></p>
+<p>新建仓库：<br><img src="/2022/07/21/git/1649406074069.png" style="width:40%"><br>添加仓库信息：<br><img src="/2022/07/21/git/1649406678473.png" style="width:60%"></p>
+<h3 id="5-4、Gitee中配置SSH公钥"><a href="#5-4、Gitee中配置SSH公钥" class="headerlink" title="5.4、Gitee中配置SSH公钥"></a>5.4、Gitee中配置SSH公钥</h3><ul>
+<li>注册（用邮箱注册）<a target="_blank" rel="noopener" href="https://gitee.com/%EF%BC%8C%E5%B9%B6%E7%99%BB%E5%BD%95%E5%88%B0Gitee%E5%90%8E%EF%BC%8C%E9%BC%A0%E6%A0%87%E7%A7%BB%E8%87%B3%E5%8F%B3%E4%B8%8A%E8%A7%92%E5%A4%B4%E5%83%8F%EF%BC%8C%E4%B8%8B%E6%8B%89%E9%80%89%E9%A1%B9%E4%B8%AD%E9%80%89%E6%8B%A9">https://gitee.com/，并登录到Gitee后，鼠标移至右上角头像，下拉选项中选择</a> <code>设置</code></li>
+<li>左侧菜单栏中选择SSH公钥，在右侧添加公钥</li>
+<li>怎么生成本机的公钥？请查看：<a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4181">https://gitee.com/help/articles/4181</a></li>
+</ul>
+<blockquote>
+<p>创建ssh key  ： ssh-keygen -t rsa -C <a href="mailto:youremail@example.com">youremail@example.com</a><br>按照提示完成三次回车，即可生成 ssh key。<br>本地用户目录下,找到本地文件id_rsa.pub文件的内容<br>复制生成后的 ssh key，设置-&gt; 安全设置 -&gt; SSH公钥 把添加生成的 public key 添加到仓库中。</p>
+</blockquote>
+<h3 id="5-5、Git日常操作"><a href="#5-5、Git日常操作" class="headerlink" title="5.5、Git日常操作"></a>5.5、Git日常操作</h3><pre class="language-shell" data-language="shell"><code class="language-shell">1、 克隆代码（把远程仓库拉取到本地）： git clone 仓库地址
+
+2、 查看仓库状态: git status
+
+3、 提交工作区代码到暂存区 ： git add 文件路径 或者 .(所有文件)  或者 --all
+
+4、 提交暂存区代码到本地仓库（历史记录）区： git commit -m '本次提交的信息提示'
+
+5、 提交本地仓库（历史记录）区的提交记录到远程仓库： git push origin 分支名称
+
+6、 查看提交的历史记录：： git log 或  git log --pretty=oneline
+
+7、 简洁查看所有分支的所有操作记录： git reflog
+
+8、 远程仓库更新了, git pull origin 分支名 将远程分支更新到本地，默认合并
+
+9、 </code></pre>
+
+<p>注意点 ：<font color="red">git提示的信息里面只要有<strong>fatal</strong> 或者<strong>error</strong>这两个词随便一个，都是执行git命令失败了</font></p>
+<h3 id="5-6、工作区、暂存区、主分支"><a href="#5-6、工作区、暂存区、主分支" class="headerlink" title="5.6、工作区、暂存区、主分支"></a>5.6、工作区、暂存区、主分支</h3><img src="/2022/07/21/git/1649410687843.png" style="width:50%">
+工作区：电脑中能够看到的目录，例如gitDemo文件夹就是一个工作区
+版本库：工作区有一个隐藏目录.git,这就是Git版本库。 版本库中有一个暂存区stage自动一个master分支，指向一个Head
+
+<h3 id="5-7、分支"><a href="#5-7、分支" class="headerlink" title="5.7、分支"></a>5.7、分支</h3><p>分支使用场景：</p>
+<p>3月刚发布一个v1.0版本的项目，发布完之后张三开始继续开发A功能当开发到50%，发现v1.0版本项目出bug了，需要立即修复… 如果张三改的正好就是v1.0版本代码，这就必须把代码删掉了，先修复bug 。解决方案：分支</p>
+<p>语法：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">查看分支： git branch
+创建分支： git branch &lt;name&gt;
+切换分支： git checkout &lt;name&gt;
+创建&amp;切换分支： git checkout -b &lt;name&gt;
+删除分支： git branch -d &lt;名称&gt;</code></pre>
+
+<p>在gitee中创建项目(例如创建了 <code>demo0630</code> 这个项目)，执行以下命令：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">// 克隆仓库到本地
+git clone git@gitee.com:codesohigh/demo0630.git
+// 检查当前分支
+git branch</code></pre>
+
+<p>一般此时是master分支，但我们开发阶段一般用dev等其他分支，所以我们：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">//创建并切换到dev分支
+git checkout -b dev</code></pre>
+
+<ul>
+<li>第一个注意的点：</li>
+</ul>
+<blockquote>
+<p>在仓库没有初始化前，如果需要检查分支，一定要记住这句话：未曾commit的仓库是无法检查分支的！</p>
+</blockquote>
+<ul>
+<li>第二个注意点：</li>
+</ul>
+<blockquote>
+<p>切分支之前保证工作树是干净的。</p>
+</blockquote>
+<ul>
+<li>第三个注意点：</li>
+</ul>
+<blockquote>
+<p>实际上使用git switch 也可以实现创建和切换分支功能：</p>
+<pre class="language-js" data-language="js"><code class="language-js">git <span class="token keyword">switch</span> <span class="token operator">-</span>c dev   <span class="token comment">// 创建并切换到新的dev分支</span>
+git <span class="token keyword">switch</span> dev		<span class="token comment">// 切换到已有的dev分支</span></code></pre>
+</blockquote>
+<ul>
+<li><strong>不同分支下，提交文件方式相同，git add . , git commit -m ‘’ , git push origin dev</strong></li>
+</ul>
+<p>此时你会发现，<code>git checkout master</code> 切回master分支后，dev分支下修改的内容看不见，因为当前分支不存在这个修改动作。</p>
+<h3 id="5-8、合并分支"><a href="#5-8、合并分支" class="headerlink" title="5.8、合并分支"></a>5.8、合并分支</h3><p>假设当前项目已经完成，我们想要把dev分支合并到master，可以在master分支下使用：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">git merge dev</code></pre>
+
+<p>此时，你会看到，项目中又有 <code>index.js</code> 了。</p>
+<h3 id="5-9、合并时冲突解决"><a href="#5-9、合并时冲突解决" class="headerlink" title="5.9、合并时冲突解决"></a>5.9、合并时冲突解决</h3><p>在master分支下和dev分支下同时对index.js文件进行修改，并提交到本地仓库。 </p>
+<p>切换到master分支中合并dev分支，由于都修改了同样的问题，此时出现冲突</p>
+<img src="/2022/07/21/git/1649414769324.png" style="width:50%">
+
+<h3 id="5-10、版本回滚"><a href="#5-10、版本回滚" class="headerlink" title="5.10、版本回滚"></a>5.10、版本回滚</h3><p>使用 <code>git switch -c dev1</code> 创建新的dev1分支，稍微修改dev1中的index.js，并且提交到远程仓库。</p>
+<p>我们提交完成后，发现自己不想用当前代码，想回滚到上一次的代码，怎么办呢？</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">// 查看当前项目提交过的所有版本（含所有分支的操作）
+git log
+// 显示很详细的信息，如果我们只想简单看看版本号，可以使用
+git log --pretty=oneline</code></pre>
+
+<p>我们会得到：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">b2ff1beb92bd3ac425dac2fa519d4b8191438be9</span> <span class="token punctuation">(</span><span class="token constant">HEAD</span> <span class="token operator">-</span><span class="token operator">&gt;</span> dev1<span class="token punctuation">)</span> <span class="token string">'123456'</span>
+<span class="token function">c9efd011b471765fc9fdd6eefaadf75b3b36153b</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev1<span class="token punctuation">)</span> <span class="token string">'12345'</span>
+80f6cb77a9b13cd471b725b5ef66901150bf57bb <span class="token string">'提交'</span>
+<span class="token number">47</span><span class="token function">d676dbf6d0687d76f059ee9ed044c4c378ed30</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>master<span class="token punctuation">,</span> origin<span class="token operator">/</span><span class="token constant">HEAD</span><span class="token punctuation">)</span> <span class="token string">'dev1的首次提交'</span>
+<span class="token function">d5c756afd04abfdbc9bb2299064eab34b30ede5f</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev<span class="token punctuation">,</span> dev<span class="token punctuation">)</span> <span class="token string">'修改了index.js'</span>
+65f4c72f6c8e2c272d4e284c103e249c65ebff32 Initial commit</code></pre>
+
+<p>如果我们只想回滚到指定版本，可以使用：</p>
+<pre class="language-js" data-language="js"><code class="language-js">git reset <span class="token operator">--</span>hard c9efd</code></pre>
+
+<p>这里只需要写id号的前几个字母与数字就行，没必要全写，git会自动去检索。</p>
+<p>但此时，我们再一次查看所有版本，发现：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">c9efd011b471765fc9fdd6eefaadf75b3b36153b</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev1<span class="token punctuation">)</span> <span class="token string">'12345'</span>
+80f6cb77a9b13cd471b725b5ef66901150bf57bb <span class="token string">'提交'</span>
+<span class="token number">47</span><span class="token function">d676dbf6d0687d76f059ee9ed044c4c378ed30</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>master<span class="token punctuation">,</span> origin<span class="token operator">/</span><span class="token constant">HEAD</span><span class="token punctuation">)</span> <span class="token string">'dev1的首次提交'</span>
+<span class="token function">d5c756afd04abfdbc9bb2299064eab34b30ede5f</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev<span class="token punctuation">,</span> dev<span class="token punctuation">)</span> <span class="token string">'修改了index.js'</span>
+65f4c72f6c8e2c272d4e284c103e249c65ebff32 Initial commit</code></pre>
+
+<p>最新写的那个丢失了。但我此时又后悔了，怎么办？</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">// 重新reset即可找回
+git reset --hard b2ff1</code></pre>
+
+<p>现在，就可以退回最新版本了。</p>
+<p>但这个方法前提是你当前这个控制台不曾关掉，如果已经关掉了，你是没法知道版本号的，这时候要怎么办呢？</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">// Git提供了一个命令git reflog用来记录你的每一次命令
+git reflog</code></pre>
+
+
+
+<p>补充：远程仓库删除<br><img src="/2022/07/21/git/1649416441474.png" alt="1649416441474"></p>
+<ul>
+<li><p>遇到：解决：git pull origin 分支名 –allow-unrelated-histories 强制更新</p>
+<pre class="language-git" data-language="git"><code class="language-git">hint:<span class="token string">'git push ...)'</span></code></pre>
+</li>
+<li></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Evedward</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://hellozhj.github.io/2022/07/21/git/">https://hellozhj.github.io/2022/07/21/git/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Evedward</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/07/24/vue2-xiang-mu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="vue2项目">
+                        
+                        <span class="card-title">vue2项目</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Evedward
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/07/19/vue2-an-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="vue2-案例">
+                        
+                        <span class="card-title">vue2-案例</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Evedward
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <a href="/about" target="_blank">Evedward</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">182.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hellozhj" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wymail@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2325910627" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2325910627" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

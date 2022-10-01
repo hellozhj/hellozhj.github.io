@@ -1,0 +1,2490 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Notice, Evedward">
+    <meta name="description" content="注意排错
+
+控制台报错
+console.log()一下
+代码执行流程
+第三方视角 ， 读代码
+遇到 这个属性每赋值，找属性或者属性前面的代码有问题
+
+
+ 
+width给100%是继承父盒子的宽度，如果再给padding 就会撑出盒子。(外增">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>Notice | Evedward</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Evedward" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Evedward</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Evedward</div>
+        <div class="logo-desc">
+            
+            关注嘉然，顿顿解馋
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/hellozhj" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/hellozhj" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Notice</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Notice/">
+                                <span class="chip bg-color">Notice</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-11
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10.2k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a><strong>注意</strong></h1><p><strong>排错</strong></p>
+<blockquote>
+<p>控制台报错</p>
+<p>console.log()一下</p>
+<p>代码执行流程</p>
+<p>第三方视角 ， 读代码</p>
+<p>遇到 这个属性每赋值，找属性或者属性前面的代码有问题</p>
+</blockquote>
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+width给100%是继承父盒子的宽度，如果再给padding 就会撑出盒子。(外增)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+auto是默认父盒子宽度，给padding不会撑大盒子。（內减）</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+弹性布局：百分比：父元素对于子元素是100%</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+弹性布局：在父盒子是作用于直接子集。(只有亲儿子生效)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+弹性布局，padding、margin起作用</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>定位了要给个宽度</strong>，才能分配空间</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+没给高，不能align居中</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+定位居中，加高？</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+给了标签就不用伪元素，不要多此一举！！！！</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+伪元素是行内元素</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+自适应：用百分比。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+交集选择器：同时有两个类的生效</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+盒子左右布局可以弹性和浮动</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+过渡属性，需要那个元素发生改变，就给那个元素加上</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+text-align: center;只对行内元素和行内块元素有效</p>
+<ul>
+<li><input disabled="" type="checkbox"> 块级居中先想到margin：auto</li>
+</ul>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+img图片和边框下面的间隔用 vertical-align：middle</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+弹性布局，一排显示，如果子盒子加了百分比，就按百分比显示，如果需要盒子间有空隙，就需要宽度calc来计算</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+弹性布局，如果父盒子给了高，那么子盒子只给宽亦有高度</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+margin-方位：要写在margin：auto 后面，否则会被覆盖（就近原则）</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+tab栏全 li 加个透明上边框，每选到一个上边框就不会把文字挤下去</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+outline: none;消除输入框的外边框</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>flex 布局：</strong>给100%需要注意父级元素</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+行内元素在水平方向上设置内外边距是有效的，在垂直方向上设置内外边距是无效的。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+在垂直方向上给行内元素设置内边距，在显示上是将元素范围扩大了，但实际上不会对周围元素有任何影响</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+全屏banner</p>
+<p>全屏的banner宽度是1920px,小分辨率的电脑屏幕只有1334px，所以版心一般不超过1200px。</p>
+<p>全屏banner直接使用img标签，img标签是一个占位图，会把页面撑开横向滚动条，正常来说非响应式的网站屏幕的宽度没有小于版心，不能有横向滚动条。</p>
+<p>所以全屏banner是可以给一个自动auto充满的盒子设置成背景图居中即可。</p>
+<p>非响应式网站，全屏的banner缩小网页的时候，banner变小，内容没有变小，会和内容部分的比例不协调，大屏的时候banner又很大，所以响应式网站才设置img100%的宽度去实现banner，而且要设置最大宽度限制，非响应式全屏banner最方便的方法就是设置背景图居中。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+当animated动画没有效果时，有可能是该元素是行内元素，解决方法：要改变成行内块元素： dsiplay: inline-block;</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+属性选择器 在表单里面常用<code>select[name="perExpendType"]</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+属性选择器 [cloak]{ … }  选择有这个属性的元素</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>display:flex  有时可以替换dispaly：inline-block，掉下来，给父级display:flex，可以解决</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+css3 <code>@import "...";</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+less语法:<code>@变量</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+居中：<code>left:0;top:0;right:0;bottom:0;margin: auto</code>只适合<strong>自身有宽度</strong>的情况下，没有宽度(通用)用 left:50%,transform:translate(-50%)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>input 可能有默认样式，用 box-sizing: border-box; 消除</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<code>nth-of-type(4n)</code>4的倍数，使用场景：li,排序</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+动画效果：不能作用于行内样式</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+一个元素定宽，另一个元素占满给flex：1</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+flex:1不等于100%，100%是完全占满，不留余地</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+写 auto，不能写过渡(确定前后的值)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>遇到的问题：</strong>固定定位给了overflow: auto; 不能滑倒底，给bottom:0 试一试</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>重点 滚动条 问题：如果父盒子给了overflow：hide，给子盒子overflow：auto，如果遇到滚动条到底不能完全显示，给子盒子100%（还有给父盒子弹性布局，纵向定位）</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+页面被盒子顶住的时候可以设置超出隐藏</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>收缩浏览器窗口的时候，不想盒子压缩，像压缩外边距可以给外边距auto，盒子定宽高</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>css隐藏滚动条：</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token punctuation">.</span>element<span class="token operator">:</span><span class="token operator">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>scrollbar <span class="token punctuation">{</span> <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token operator">!</span>important <span class="token punctuation">}</span></code></pre>
+
+
+</li>
+<li><p><input disabled="" type="checkbox"> </p>
+</li>
+</ul>
+<h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><ul>
+<li><p><input disabled="" type="checkbox"> 
+prompt 输入的，都是<strong>字符串型的数据</strong>。</p>
+<blockquote>
+<p>对象</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&gt;</span><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">abc</span><span class="token operator">:</span>”ss”<span class="token punctuation">,</span><span class="token literal-property property">nn</span><span class="token operator">:</span><span class="token number">90</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&gt;</span><span class="token keyword">var</span> v1 <span class="token operator">=</span> obj<span class="token punctuation">.</span>abc<span class="token punctuation">;</span><span class="token comment">//使用点的方式</span>
+<span class="token operator">&gt;</span><span class="token keyword">var</span> v2 <span class="token operator">=</span> obj<span class="token punctuation">[</span>“abc”<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//使用中括号的方式</span>
+
+<span class="token operator">&gt;</span>在实际项目中一般使用点，会方便许多，但是如果key是变量的话就不能使用点了，js会理解变量为对象的key值，造成混淆
+<span class="token operator">&gt;</span><span class="token keyword">var</span> v3 <span class="token operator">=</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//key是一个变量</span></code></pre>
+</blockquote>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+取余：<code>前数</code>%<code>后数</code>，(如果前数小于后数，值取前数)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+对象在循环外新增属性(一定要先定义)，在遍历中循环添加属性的数据</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+DOM元素中的事件绑定函数需要<code>()</code>,写在js里面的事件绑定函数不需要<code>()</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+如果声明的函数需要计算的，就需要初始化；如var sum = 0,这种</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+switch 如果要判断范围，参数为true   case  判断条件 为true  执行     switch case语句在比较的时候用的是全等，即condition === case</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+注意从0开始的，有顺序的，整数的一串连续的数字，可以当成是数组下标，从而求出数组的值</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+数组的遍历，循环，var 一个 i 变量，i = 0 ，判断语句是 i &lt; 数组的长度(数组的下标加1)，i++</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+如果数组内容是字符，如果求和，记得取值时要把值转数据型。</p>
+<pre class="language-js" data-language="js"><code class="language-js">sum <span class="token operator">+=</span> <span class="token operator">+</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+牢记数组取值写法，别忘了；</p>
+<pre class="language-js" data-language="js"><code class="language-js">arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+return 是写在函数内第一层。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+字符串对象.indexOf()    方法   判断参数是否有在字符串里面   没有就返回-1</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+for…in…for in 可循环遍历数组、对象（非数组对象上遍历也称枚举）、字符串</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+数组.map(item=&gt;{return …})   如果是<code>{}</code>里面就要return ， 如果是<code>()</code>就不需要return</p>
+</li>
+<li><p><input disabled="" type="checkbox"> </p>
+<pre><code class="js">(Math.random() * 5) + 4		// 取到4至8
+<pre class="language-none"><code class="language-none">
+- [ ] Array()只有一个参数就是数组的长度
+
+- [ ] ```css
+  jsx：里面写html的标签用`()`,html的标签里面用js用`{}`
+  在jsx中，书写js代码，需要加{}
+  刚好样式要求书写成对象格式
+  书写类名的时候，需要用className来书写
+  书写1abe1标签的for属性的时候，需要写成htmlFor</code></pre>
+</code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> </p>
+<h5 id="深拷贝和浅拷贝："><a href="#深拷贝和浅拷贝：" class="headerlink" title="深拷贝和浅拷贝："></a>深拷贝和浅拷贝：</h5><p><strong>整块赋值是指向同一块内存空间，每个值单独赋予为深拷贝</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span> 数组 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [1, 2, 3, 4] 浅拷贝</span>
+
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    b<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+a<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [1, 2, 3] 深拷贝</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span> 对象 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">13</span> <span class="token punctuation">}</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+a<span class="token punctuation">.</span>sy <span class="token operator">=</span> <span class="token string">'aa'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// {name: '张三', age: 13, sy: 'aa'}  浅拷贝</span>
+
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">13</span> <span class="token punctuation">}</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token keyword">in</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    b<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>k<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+a<span class="token punctuation">.</span>jy <span class="token operator">=</span> <span class="token string">'aa'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// {name: '张三', age: 13} 深拷贝</span></code></pre>
+
+<p><strong>扩展运算符( … )：一层数据属于是深拷贝，多层属于是浅拷贝。</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> </p>
+</li>
+</ul>
+<h3 id="一些-有返回值-但没-改变原来对象-的方法"><a href="#一些-有返回值-但没-改变原来对象-的方法" class="headerlink" title="一些  有返回值  但没   改变原来对象   的方法"></a>一些  有返回值  但没   改变原来对象   的方法</h3><p>输出： 整串输出    或者      赋值给一个变量(或者自己)再输出</p>
+<pre class="language-js" data-language="js"><code class="language-js">字符串变量<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+数组名<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+数组名<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+数组名<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+字符串变量<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+字符串变量<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"替换的字符"</span><span class="token punctuation">,</span><span class="token string">"替换成的字符"</span><span class="token punctuation">)</span>
+字符串变量<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+字符串变量<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="数组-下标-x3D-值"><a href="#数组-下标-x3D-值" class="headerlink" title="数组[下标] = 值"></a>数组[下标] = 值</h3><h3 id="对象-属性-x3D-值"><a href="#对象-属性-x3D-值" class="headerlink" title="对象[属性] = 值"></a>对象[属性] = 值</h3><ul>
+<li><p><input disabled="" type="checkbox"> 
+<strong>开关思想：</strong>点击一个按钮(一个事件)控制两种不同的状态，先声明一个flag变量，记得每次判断完要将flag变量：变相反  <strong>开了之后可以关回来</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>排他思想：</strong>点击哪一个，就只有那一个生效，<strong>其他的不生效</strong>。在事件执行函数里面，在该点击生效之前，先清除所有的元素的效果</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+注意查看是否需要<strong>非空校验</strong>              非空校验先将不符合规范的先if写出来，然后return   下面是符合规范的</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+非空校验 条件里面  可以取反简写</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+在事件执行函数里面注意<strong>活用this</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>1. 普通的this始终指向调用者</strong><br><strong>2. 而箭头函数的this由上下文决定</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+数组和字符串(重点)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+取随机数注意取到的是<strong>随机数还是数组下标</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+使用<strong>for循环</strong>时，注意：<strong>你想要</strong>取到的是<strong>下标</strong>还是<strong>次数</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>注意：</strong>中括号运算符总是能代替点运算符。但点运算符却不一定能全部代替中括号运算符。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+点和中括号方式的<strong>区别</strong><br>1.点方法后面跟的必须是一个指定的属性名称，中括号里面可以是变量<br>2.中括号里面的属性可以是数字，点方法后面的属性名不能是数字<br>3.动态为对象添加属性是，只能用中括号</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+定时器，看看情况声明num，用于计算num++,num–</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+本来不存在HTML的标签，是后面添加上的，不能用于绑定其他事件，要给他存在于html的父级标签添加委托才能绑定事件</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+函数的实参可以是任何的数据类型</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>有 return 返回值的需要打印</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+在5px-50px之间的随机值   <code>Math.floor(Math.random() * (50 - 5 + 1) + 5)</code>    (最大-最小 + 1)+最小（+1可以取到两边）</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+clientX 事件属性返回当事件被触发时鼠标指针相对于浏览器页面（或客户区）的水平坐标。</p>
+<pre class="language-js" data-language="js"><code class="language-js">event<span class="token punctuation">.</span>clientX</code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+获取 <strong>body</strong> 元素</p>
+<pre class="language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span>body</code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+获取 <strong>html</strong> 元素</p>
+<pre class="language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span>html</code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>注意：</strong>在JavaScript中，划分作用域也是用大括号划分的， 但是在 JS 之中能够有效限定作用域的大括号只有<strong>函数大括号</strong>!</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+if()…..小括号里面的<strong>i</strong>声明都是全局变量</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+注意：<strong>事件</strong> 和 <strong>声明变量初始化</strong>之间的关系；(全局或者局部)(声明在事件里面，事件发生时，是否会<strong>再次初始化</strong>)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+创建的标签，要插入已经存在的标签里面</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+注意调用函数有没有返回值,需不需要返回值            undefind是没有返回值</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+return 无法打断forEach</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>数据处理：</strong> 1：可利用对象属性的不可重复性；2：可将对象推进数组，使用数组的方法。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>遍历：</strong> 对象：for…in;        数组：arr.forEach()……. 不能return，与遍历伪数组 ；for循环；var newArr = arr.map()方法会自动声明一个新数组，将旧数组每一项返回新数组；</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>谁调用这个函数或方法,this关键字就指向谁</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>引用数据类型 ，进行循环时，留意堆内存的清空  可以 splice 清空堆内存，将清空的数据返回给一个新容器，还要留意如果直接赋值，是否可以使用深拷贝的问题</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+单是返回一个 return 就是什么都不做</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>filter 可以用来进行群体删除。（返回的新数组可以是自己本身）</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+```js<br>函数：<br>1.什么时候执行的<br>2.传入什么参数<br>3.return 什么</p>
+<pre class="language-none"><code class="language-none">
+- [ ] es5中合并两对象
+
+```js
+const obj1 = {
+  a:1,
+}
+const obj2 = {
+  b:1,
+}
+const obj = Object.assign({}, obj1, obj2);//{</code></pre>
+
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+嵌套三级以上用<strong>递归</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> </p>
+<blockquote>
+<p>事件=函数()：没有触发事件，函数也不会执行，<code>()</code>只是用来传参，默认没有参数，不是事件对象；</p>
+<p>事件=函数：没有触发事件，函数不会执行，默认第一个参数是事件对象；</p>
+</blockquote>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+如果是两个事件（确定和取消）共用一个方法，(确定)需要请求，可以在方法里面给一个可选参数，调用的时候按需传参</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>函数的形参，直接写就行</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">parentId</span><span class="token operator">:</span> number<span class="token punctuation">,</span> pageNum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> pageSize <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> adminListRes <span class="token operator">=</span> <span class="token keyword">await</span> smsHomeAdvertise<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>parentId<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    pageNum<span class="token punctuation">,</span>
+    pageSize<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>adminListRes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> pageNum<span class="token punctuation">,</span> pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+传参有序，函数内参数随便用</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="js中的异步操作"><a href="#js中的异步操作" class="headerlink" title="js中的异步操作"></a><strong>js中的异步操作</strong></h2>  <pre class="language-js" data-language="js"><code class="language-js"><span class="token number">1.</span> setTimeout、setInterval
+
+<span class="token number">2.</span> Ajax请求一般采用异步，当然也可以设置为同步
+
+<span class="token number">3.</span> promise<span class="token punctuation">.</span>then
+
+<span class="token number">4.</span> <span class="token function">回调函数可以理解为异步，但不是严格的异步操作</span><span class="token punctuation">(</span>其实回调函数和异步同步没有直接的关系，同步函数也可以写回调<span class="token punctuation">,</span>要看调用者是同步的还是异步的<span class="token punctuation">,</span>只有在异步函数里的回调函数才是异步<span class="token punctuation">)</span>
+
+<span class="token number">5.</span>事件监听。即监听某个事件，当事件发生时，再执行相应的操作（比如点击、mouseover等）
+一，事件监听，
+二，对象<span class="token punctuation">.</span>on方法，
+三，直接在行内写
+事件监听有两种方法，一种是addlisenerevent
+一种是attachevent</code></pre>
+
+<ul>
+<li><input disabled="" type="checkbox"> ES5中的数据结构，主要是用Array和Object。在ES6中主要新增了Set和Map数据结构。到目前为止，常用的数据结构有四种Array、Object、Set、Map。下面话不多说了，来一起看看详细的介绍吧。</li>
+</ul>
+<h2 id="ES6-实际开发"><a href="#ES6-实际开发" class="headerlink" title="ES6-实际开发"></a><strong>ES6-实际开发</strong></h2><ul>
+<li><p><input disabled="" type="checkbox"> 
+<strong>后台响应</strong>回来的数据进行<strong>结构</strong>的时候注意：</p>
+<blockquote>
+<p>可以通过<strong>结构的时候修改自己想要的变量名</strong></p>
+<p>结构对象不能为<code>undefined</code>、<code>null</code>，可以给被解构对象一个默认值</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>e<span class="token punctuation">}</span> <span class="token operator">=</span> obj <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+</blockquote>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>合并对象数组</strong>用扩展运算符号(顺便new Set去重)</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>模板字符串</strong>中的<code>${}</code>中间可以放入任何js表达式，结合三元运算</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>includes</strong>的活用</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>列表搜索</strong>：精确搜索、模糊搜索</p>
+<blockquote>
+<p>平常利用<code>filter</code>方法</p>
+<p>精确搜索：可以利用<code>find</code>方法，找到就不会再遍历数组</p>
+</blockquote>
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+<strong>扁平化</strong><code>flat</code>方法</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>获取对象属性值（可选链操作符）</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 返回的数据是否存在</span>
+<span class="token keyword">let</span> dataList <span class="token operator">=</span> <span class="token punctuation">(</span>res <span class="token operator">&amp;&amp;</span> res<span class="token punctuation">.</span>data <span class="token operator">&amp;&amp;</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>dataList<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span>
+<span class="token comment">// 可选链操作符</span>
+<span class="token keyword">let</span> dataList <span class="token operator">=</span> res<span class="token operator">?.</span>data<span class="token operator">?.</span>dataList <span class="token operator">||</span> <span class="token number">0</span></code></pre></li>
+</ul>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>给对象添加属性时，如果属性名是动态变化的</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">topic</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>index<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'话题内容'</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>非空校验(空值合并运算符)</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 是一个逻辑操作符，当左侧的操作数为 null 或者 undefined 时，返回其右侧操作数，否则返回左侧操作数。</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token operator">??</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+**异步函数 **  async 和 await </p>
+<blockquote>
+<p><strong>并发请求</strong>时，还是要用到<code>Promise.all()</code></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&gt;</span><span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+<span class="token operator">&gt;</span>Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// [1,2]</span>
+<span class="token operator">&gt;</span><span class="token punctuation">}</span><span class="token punctuation">)</span> 
+<span class="token operator">&gt;</span><span class="token punctuation">}</span>
+
+<span class="token operator">&gt;</span><span class="token comment">// 如果并发请求时，只要其中一个异步函数处理完成，就返回结果，要用到Promise.race()</span></code></pre>
+</blockquote>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>??=</strong></p>
+<blockquote>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&gt;</span>config<span class="token punctuation">.</span>headers <span class="token operator">=</span> config<span class="token punctuation">.</span>headers <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>	<span class="token comment">// 短路</span>
+<span class="token operator">&gt;</span>config<span class="token punctuation">.</span>headers <span class="token operator">=</span> config<span class="token punctuation">.</span>headers <span class="token operator">??</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>	<span class="token comment">// 前面是否存在，存在用自身，否者就是后面</span>
+<span class="token operator">&gt;</span><span class="token comment">// 可以简写成</span>
+<span class="token operator">&gt;</span>config<span class="token punctuation">.</span>headers <span class="token operator">??=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></blockquote>
+</li>
+</ul>
+<h1 id="VUE-2-6"><a href="#VUE-2-6" class="headerlink" title="VUE 2.6"></a>VUE 2.6</h1><ul>
+<li><p><input disabled="" type="checkbox"> 
+所有样式的切换都是数据的修改控制</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>重置样式：npm i reset-css。在入口文件进行导入，import ‘reset-css’</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>样式做相关动效可以添加类和style，更加具体的条件判断</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<code>::v-deep 选择器</code>修改深度作用选择器</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+v-show 和 display 也是不能做过渡效果的</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+活用<code>overflow: hidden</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+原生属性加<code>:</code>就把<code>""</code>里面的变成js环境，标签外面变成<code>{{}}</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+注意 js 运行环境来考虑加不加   引号；</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+谁要不断的出现，v-for 就加在谁身上</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+要么 这样  要么  那样 ———— 三元运输符</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+self：:key 属性，修改时，原来那些属性不会变的就写那个  ；不修改，用index，修改时，用item.id</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+隐藏的元素 考虑 ：v-show 或者 v-if</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+要么你在，要么我在，v-if  v-else   </p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+v-for 里面或用 index</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>箭头函数的this指向的是VueComponent实例对象<br>普通函数的this指向的调用者Vue实例对象</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>注意可以定义：data 里面的变量 ，用来存其他需求需要的数据</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+数组，字符串，对象问题，先不要想着遍历方法，<strong>先想相关的方法</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+可以给底层数据每一项添加需要的新数据</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>v-model : 如果是多选框，可以使用true或者false</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>多选框联动全选框，先声明一个 flag=true 默认全选，遍历每一项多选框是否选中</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+全选全不选可以利用<code>every(fn)</code>方法，数组中是否所有元素都满足fn函数中的条件</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+多选框 v-model=”…”  如果底层数据中，每一项数据都带有一个状态属性，就可以使用<code>item.</code>  ,如果没有这个状态属性，就声明一个数组变量，<code>...[index]</code>为每一项的选中状态🤔</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+计算属性的第二种写法：计算变量为对象，里面有<strong>get方法和set方法</strong>👍</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+reduce遍历方法，有两个参数，一个是回调函数，<strong>第二个是pre 的初始值(常见为0)<strong>，</strong>记得写第二个参数，（切记，切记，切记）</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+如果打印出来的是数组，想去掉两边的框，join成字符串就行了，真不需要遍历出来😅</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+还有记得 reduce、filter、map等方法是<strong>有返回值的，可以在遍历的前头定义</strong>如果不想创建一个新数组，<strong>就将遍历之后的返回值返回给原来的数组</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+父传子，子拿到父的数据，不论是数组还是对象，都可以拿到里面的属性，props定义了的标签属性，在子底层数据里面使用也要<code>this.为前缀</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+一个值的结果受其他值的影响，用computed </p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+一个值的变化将时刻影响其他值，用watch</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+活用 <strong>includes</strong> </p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+查询可以用 给每一项数据一个 属性为<code>true </code> 然后，每一项 v-show 指令控制显示，<code>includes</code>根据输入框输入的字符是否存在数据项种，修改 显示属性</p>
+</li>
+<li><p><input disabled="" type="checkbox"> </p>
+<pre><code class="js">let ret = this.books.reduce((pre, cur) =&gt; {
+    if (cur.isShow) {
+        return pre + cur.price * cur.count;
+    } else {
+        return pre;
+    }
+}, 0)
+
+// 简写
+return this.books.reduce((pre, cur) =&gt; {
+    return pre + (cur.flag ? cur.price : 0);
+}, 0)
+<pre class="language-none"><code class="language-none">
+
+- [ ] 讲if判断看看能否写成  三元表达式
+
+- [ ] `Error: Can't resolve '...'`可能是路径问题出错
+
+- [ ] /deep/  可以将该样式作用于子组件中
+
+- [ ] 在指令在遍历里面，也可以用item.属性
+
+- [ ] **注意: 父传子过来的值，如果是引用类型，不通过子传父去修改它的值，也能够修改，但是如果是值类型，不通过子传父修改就会报错**
+
+  ```js
+  //父传子过来的值，如果是引用类型，传的是引用地址，子组件，利用引用地址修改的是堆内存的数据，从而父组件的引用类型的值也可被修改</code></pre>
+</code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>传递过来的值,只能拿来用不能拿来修改，修改要在原数据改</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<code>lintOnSave: false</code>  关闭eslint  关闭严格模式</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+:class=”{active: …}”   …值可以是函数方法，直接再下面计算属性中声明声明就可</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>计算属性，调用条件是；代码遇到 方法名就调用，返回的值是return后面的值</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+如果父元素，<strong>不是通过 v-for 渲染的，就给每个元素一个名字，方便后面计算</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+结构相同的，思考是否可以做成<code>插件</code>或者<code>v-for</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+dom更新是异步的</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>添加样式/切换样式  ：  可以三元运算，立一个flag</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+有时候总是就是一个数组的长度；</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+v-for 里面的变量，如果要改的不是全部的，要改选中的一项，需要带上<code>[index]</code>或者<code>item</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+this.$router.replace()   重定向</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>next()</strong> 本身就是一个重定向跳转，里面传入参数，再执行回调函数，里面的参数，是下一次的<code>to</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>v-model 不能进行三元表达式，可以换成 value(可以进行三元表达式) 和 change方法的一个逻辑 ，里面不能用于赋值</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> </p>
+<h3 id="😠【重点注意】循环删除数组问题😡"><a href="#😠【重点注意】循环删除数组问题😡" class="headerlink" title="😠【重点注意】循环删除数组问题😡"></a><strong>😠【重点注意】循环删除数组问题😡</strong></h3><p><strong>正序循环删除：一定要注意索引问题，循环遍历数组，删除对应项，整个数组元素会向前补位，每删除一次，就要将—索引值减1  （forEach循环索引无法减1）</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js">删除操作会使得对应索引值位上的元素清空，整个数组中的元素向前移动一位，补位的元素会填充到执行删除操作的索引值位置上，移位之后如果不进行任何操作继续下一个循环，会导致补位元素跳过遍历，为了防止这种补位元素跳过遍历现象，应该在删除操作后将索引值减<span class="token number">1</span>，对执行删除操作的索引值位置再进行一次遍历
+<span class="token comment">// 正序循环删除，删除操作后将索引值减1</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">// [1, 2, 2, 1]</span></code></pre>
+
+<p><strong>倒序循环删除：与正序循环删除最大区别是，在倒序循环删除中，它的删除操作不会影响还未循环遍历的元素；这就使得即使删除之后数组中元素会向前移动一位，也不会让未遍历的元素跳过遍历</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 倒序循环删除</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">// [1, 2, 2, 1]</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>多选框数组，每一项可以通过created(){}方法生成</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+注意你实现的功能，是否是：<strong>想点击哪一个就，哪一个就实现功能</strong>，请注意<strong>哪一个</strong>。<code>item.</code>或者<code>[index]</code>或者<code>(index)</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+reduce()其实第三个值是index，<strong>可能有用到</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+map() <strong>可以将每一项变成我们想要的东西</strong>,给回我们一个想要的数组</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>添加/切换样式</strong>，<strong>写成对象的形式，可以有多个类</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>template   里面只能有一个div</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>获取数组最后一项</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js">arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span></code></pre>
+
+<p><strong>数组扁平化 : 参数是数组的深度，或者是 Infinity 无限深</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js">arr<span class="token punctuation">.</span><span class="token function">flat</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span></code></pre>
+
+<p><strong>运算符取整取整都是向下取整</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">~</span><span class="token operator">~</span><span class="token number">4.6</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5.6</span> <span class="token operator">&gt;&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5.6</span> <span class="token operator">&lt;&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5.6</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>对象转数组</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js">Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>步进器方法，两个方法结构相同，只是作用于同一个数据，可以写成同一个方法，典型案例：加减数据的方法，</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">stepFn</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">stepFn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">stepFn</span><span class="token punctuation">(</span><span class="token parameter">step<span class="token punctuation">,</span>index</span><span class="token punctuation">)</span><span class="token punctuation">{</span>需要计算的数据 <span class="token operator">+=</span> step<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>给底层数据对象属性的时候，也可以在created函数里面设置<code>this.$set(要修改的数组，要修改的下标(对象的属性创建)，要修改的值(对象的值))</code>方法</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// Object.defineProperty()不支持引用类型数据的数据劫持 (触发不了set)</span></code></pre>
+
+<blockquote>
+<p><strong>👍👍👍在Vue2.0中，单独修改数组的某个元素的时候，触发不了视图层的修改。使用$set()方法来修改元素，才能起到双向数据绑定的作用。</strong></p>
+</blockquote>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>底层数据，引用某个数据时，需要在前面加上<code>this.</code></strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<code>v-for</code>区域中，每一项数据也可以用<code>v-for</code>，<strong>注意：</strong>如果是表格<code>td</code>进行<code>v-for</code>,<code>td</code>会变多，牢记那个需要变多，就在那里<code>v-for</code>,可以在一个<code>td</code>里面<code>span</code>进行<code>v-for</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>双向绑定的时候，可以将底层数据的变量写在模板旁边，看看手动修改是否是对应的值</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>v-model的值可以是数组，数组[index]  绑定</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>单独修改数组的某个元素的时候注意：触发不了视图层的修改。使用$set(要修改的数组,要修改的下标,要修改成的值)方法来修改元素，才能起到双向数据绑定的作用。</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+不能有两个默认导出，默认导出可以也写成按需导出</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+cdn 内容分发网络</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+不能用<code>body</code>做为容器。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+实例化之前是类。</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>hash模式</strong>：<code>#</code>利用的是锚跳转</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>离散数据：0，1</strong>（性别，学历）</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>回归数据：0，0.1，0.2，…，1</strong>（年龄，体重）</p>
+</li>
+</ul>
+<hr>
+<h3 id="路由守卫的相关问题"><a href="#路由守卫的相关问题" class="headerlink" title="路由守卫的相关问题"></a>路由守卫的相关问题</h3><ol>
+<li>一般使用路由守卫的场景是用户权限控制。虽然可以使用组件的生命周期完成这个功能。但使用路由守卫更加的高效。因为它的执行比组件的的实例化更早。也就是说，只要路由守卫不通过，组件连实例化都不会进行。大大的加速控制流程与减少资源的消耗。</li>
+<li>什么路由：通过不同的地址，显示不同的页面或者执行不同的方法。</li>
+<li>Vue的路由就是通过地址，显示不同的页面组件。让用户觉得他已经进行了跳转。实际上是并没有跳转的。也路由是实现单页面多应用的方式。</li>
+</ol>
+<h3 id="😤事件绑定"><a href="#😤事件绑定" class="headerlink" title="😤事件绑定"></a>😤事件绑定</h3><ol>
+<li>直接在绑定的标签上设置事件属性对应用方法</li>
+<li>直接在获取的元素上设置属性方法  如  onclick = function(){}</li>
+<li>给元素添加监听绑定事件： .addEventListener(“click”, function(){})</li>
+</ol>
+<blockquote>
+<p><strong>匿名函数的使用方式之一：当执行语句要当成值来使用时就可以使用匿名函数进行包裹。</strong></p>
+<p><strong>当函数当成值来使用时，就不要加()</strong></p>
+</blockquote>
+<h3 id="refs的使用"><a href="#refs的使用" class="headerlink" title="$refs的使用"></a>$refs的使用</h3><ol>
+<li>给普通的元素添加上ref属性，就可以通this.$refs. 属性名   直接获取它的dom</li>
+<li>给组件元素添加ref属性，就可以通this.$refs. 属性名 直接获取组件对象。  由于这种方法只能是父组去获取子级的，所以它可以直接控制子级组件中的数据。</li>
+</ol>
+<h3 id="Vue开发版本与生产版本的区别"><a href="#Vue开发版本与生产版本的区别" class="headerlink" title="Vue开发版本与生产版本的区别"></a>Vue开发版本与生产版本的区别</h3><p>区别之一在于，使用开发版本时出现“警告”，控制台会有相对应的提示，而生产版本则不会有任何提示</p>
+<p>使用了开发版本，打开控制台会出现以下的提示</p>
+<hr>
+<h3 id="vue2项目"><a href="#vue2项目" class="headerlink" title="vue2项目"></a>vue2项目</h3><ul>
+<li><p><input disabled="" type="checkbox"> 
+辅助函数<code>mapState，mapGetters写在computed，mapMutations和mapActions写在methods</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+main.js⽂件是程序的<strong>⼊⼝⽂件</strong>，加载各种<strong>公共组件</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+两个框<strong>交替出现</strong><code>v-model</code>值取反</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+函数体里调用函数，函数有return，但是不会终止在函数体里面调用函数代码的下面的代码，需要对调用的函数进行判断，<code>return false</code>or <code>return true</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+不是某个组件特有的，就放到app.vue</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<code>import ... from './.../...'</code>   <code>from</code>后面是路径的就是导入其他路径的模板注意是默认导入还是按需导入  ;  <code>from</code>后面是模块名的就是第三方模块；</p>
+<pre class="language-js" data-language="js"><code class="language-js">默认导出
+<span class="token keyword">export</span> <span class="token keyword">default</span> 数据
+默认导入
+<span class="token keyword">import</span> 数据 <span class="token keyword">from</span> <span class="token string">'模块/路径'</span>
+
+按需导出
+<span class="token keyword">export</span> 数据
+按需导入
+<span class="token keyword">import</span> <span class="token punctuation">{</span> 数据 <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'模块/路径'</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> </p>
+<pre><code class="js">封装思路：
+1.调用者需要什么功能（那些参数）
+2.再去书写组件/函数内部的逻辑
+3.尽可能让调用变得简单
+<pre class="language-none"><code class="language-none">
+- [ ] **查看地址栏路径？请求？** `this.$route.属性`  path : 路径`/...` ；query ：拿参数`?`后面的；`location.href`获取url地址
+
+- [ ] **tab 栏显示与隐藏 ，只有两个可以用布尔值控制；多个可以用索引控制**
+
+- [ ] `v-show:值取反`频繁切换，`v-if`不频繁切换
+
+- [ ] **封装函数**：把要复用的代码作为函数体，把不确定的数据作为参数传入。
+
+- [ ] **封装组件**：把要复用的样式代码作为组件，
+</code></pre>
+把不确定的数据作为参数`props`传入(父传子)
+
+把不确定的(是否显示的 图标，显示内容) vuex数据共享
+<pre class="language-none"><code class="language-none">
+- [ ] input `v-model`的**值**可以放入循环直接显示
+
+- [ ] **三元需要两个值，短路之需要一个**
+
+  ```js
+  短路运算符号需求：变量不为空，需要后面的；&amp;&amp;
+      		    变量不为空，需要前面的；||</code></pre>
+</code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+vue 图片路径需要<code>require</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>template</strong> 不会生成标签，但是不能加<code>:key</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<span class="github-emoji"><span>🔑</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f511.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><strong>:key 加在需要遍历的那一项元素里面</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+路由跳转会调用created</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+如果只是<strong>地址栏的参数变化</strong>，组件是不会重新加载，可以<strong>添加监听或者组件重载，组件内更新守卫解决</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+点击类的添加：可以用<code>index</code>与当前的<code>index</code>比较</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+在js中，如果要调用仓库的方法的，先导入<code>store</code>，再异步方法调用<code>dispatch</code>，方法调用<code>commit</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+子路由别加<code>/</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>防抖动是将多次执行变为最后一次执行，节流是将多次执行变成每隔一段时间执行。</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+进度条：是否到达底部可加载的数据位置：视图高度 - 滚动高度 &gt;= 文档高度( -需要到达范围的高度 )</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+给一个标签点击事件 <strong>点击一次切换一种状态，点击第二次切换第二种状态</strong>，可以取反</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<code>router-link</code> 最终会被渲染为a标签，果想让它转换成其他的标签，就需要添加<code>tag</code>属性</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+在入口函数全局注册了，就不需要在组件里再引用了，可以直接使用</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+post 没有缓存</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>导入第三方组件，修改样式，通过控制台进行选中类名修改</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+路由改变，但是组件被复用，可以使用<strong>组件内路由更新守卫</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="this指向的问题"><a href="#this指向的问题" class="headerlink" title="this指向的问题"></a><strong>this指向的问题</strong></h3><ul>
+<li><p><input disabled="" type="checkbox"> 
+<strong>原生的this，注意：</strong>如果返回值是<strong>函数</strong>，里面需要用到外边的数组什么的，记得这个数组是谁的数组，需要<strong>this</strong>，而且这个<strong>this是谁</strong>，需要清楚，被返回的函数内的this，是否有这个数组，没有就在外边，将<code>this_=this</code>。用<code>this_</code></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>vue中的this，注意</strong>：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">//1.ES5的普通函数写法，这里的this指向app,指向vue实例</span>
+<span class="token comment">// 调用时被决定。根据调用我的人（谁调用我，我的this就指向谁）</span>
+<span class="token comment">// 当函数被作为某个对象的方法调用时，this就等于那个对象</span>
+
+<span class="token comment">//2.ES6的箭头函数写法，箭头函数没有自己的this,它的this事继承来的，指向在定义它时所处的宿主对象，在这里this指向window。</span>
+<span class="token comment">// 定义时被决定。根据所在的环境（我在哪个环境中，this就指向谁)</span>
+
+<span class="token comment">//3.在匿名函数中，这里的this不指向vue实例，这里的this指向window，在严格模式下，this指向undefined ，要使用this，可以直接用app（即vue实例）</span>
+<span class="token comment">// 匿名函数的执行环境是全局性的。匿名函数中this指向window</span>
+<span class="token comment">// 匿名函数的this是执行时的上下文</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>sList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>app<span class="token punctuation">.</span>sResultList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//4.既是匿名函数又是箭头函数中的this，匿名函数没有自己的this，它的this继承来的，也可以说这里的this指向跟上一级的this指向相同，即vue实例</span>
+<span class="token comment">// 箭头函数是定义时的父级执行上下文。</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>sList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>sResultList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>fn.apply(this) 将fn里面的this指向，指向括号里面的，参数是传给拥有着的(括号外的fn)</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>fn.bind()()，只是改变this指向,如果需要调用函数的时候，就需要在后面加上()</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>fn.apple()和fn.call()如果是用方法的话，就会直接调用。</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>this指向，如果是多重的嵌套，就取最近调用的那个变量</strong></p>
+<blockquote>
+<p>定时器里面的回调函数如果是<strong>匿名函数</strong>：this指向window；(可以在外层将this指向that)</p>
+<p>定时器里面的回调函数如果是<strong>箭头函数</strong>：this指向外层作用域；</p>
+</blockquote>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5d199f99f90d4a1093a4a6253d5991a4~tplv-k3u1fbpfcp-zoom-1.image" alt="img"></p>
+<hr>
+<h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><p>需求：一个请求发完响应回来，发第二个，响应回来，发第三个…(回调地狱)</p>
+<p>Promise：来解决回调地狱的问题，请求返回成功就调用resolve，失败调用reject，他们不做处理，给将成功暴露给then方法，失败暴露给catch方法</p>
+<p>async 修饰函数表示这是一个异步函数，，await 是在 async 里面进行同步化，await 后面的异步执行完毕，才执行后续的同步代码。</p>
+<p>使用场景：常用于上一个await 的返回值需要代入成为下一个await的参数</p>
+<p>只有promise调用then的时候，then里面的函数才会被推入微任务中；</p>
+<p>若 async 定义的函数有返回值，return 123;相当于Promise.resolve(123)</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">demo01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">demo01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">val</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 123</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>没有声明式的 return则相当于执行了Promise.resolve();</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">demo01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"withOut return"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">demo01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">val</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// undefined</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>如果 await 的是 promise对象，await 会暂停 async 函数内后面的代码，先执行 async 函数外的同步代码（注意，promise 内的同步代码会先执行），等着 Promise 对象 fulfilled，然后把 resolve 的参数作为 await 表达式的运算结果返回后，再继续执行 async 函数内后面的代码</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token parameter">second</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">' enough sleep~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> second<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">awaitDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 两秒之后会被打印出来</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"主线程1"</span><span class="token punctuation">)</span>
+<span class="token function">awaitDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"主线程2"</span><span class="token punctuation">)</span>
+<span class="token comment">//主线程1</span>
+<span class="token comment">//主线程2</span>
+<span class="token comment">//enough sleep~</span></code></pre>
+
+<p>如果 await 的不是一个 promise ，而是一个表达式。await 会暂停 async 函数内后面的代码执行，先执行 async 函数外的同步代码（注意，此时会先执行完 await 后面的表达式后再执行 async 函数外的同步代码）</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token parameter">second</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ 	<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">' enough sleep~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> second<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">normalFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'normalFunc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">awaitDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">normalFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'something, ~~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 两秒之后会被打印出来</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"主线程1"</span><span class="token punctuation">)</span>
+<span class="token function">awaitDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"主线程2"</span><span class="token punctuation">)</span>
+<span class="token comment">//主线程1</span>
+<span class="token comment">//normalFunc</span>
+<span class="token comment">//主线程2</span>
+<span class="token comment">//something, ~~</span>
+<span class="token comment">//enough sleep~</span></code></pre>
+
+<hr>
+<h3 id="宏任务与微任务"><a href="#宏任务与微任务" class="headerlink" title="宏任务与微任务"></a>宏任务与微任务</h3><p>只有promise调用then的时候，then里面的函数才会被推入微任务中；</p>
+<p><strong>微任务队列，如果谁先结束，谁先执行，如果条件相同，谁先进入队列，谁先执行.</strong></p>
+<p><strong>遇到await会阻塞后面的代码，先执行async外面的同步代码，同步代码执行完，再回到async内部，继续执行await后面的代码。</strong>(好好理解一下上面的说明。也就是说，await只会阻塞当前async方法内的代码，不会影响外部代码的执行)</p>
+<img src="../../../aaa/Typora/images/宏任务与微任务-1662046097409.png" alt="宏任务与微任务" style="zoom:50%;">
+
+<p>遇到微任务就推入微任务队列，遇到宏任务就推入宏任务队列</p>
+<p>同步代码→微任务队列→宏任务队列</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">async1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'async1 start'</span><span class="token punctuation">)</span><span class="token comment">// 2  主线程async1()调用</span>
+  <span class="token keyword">await</span> <span class="token function">async2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'async1 end'</span><span class="token punctuation">)</span>  <span class="token comment">// 6 主线程内同步代码执行完毕后接着执行await函数内后面的代码（至此主线程内同步代码都执行完毕）</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">async2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'async2'</span><span class="token punctuation">)</span><span class="token comment">// 3 主线程async1() =&gt; async2()  await 会先执行完async2()内的代码</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'script start'</span><span class="token punctuation">)</span><span class="token comment">// 1  主线程同步代码</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setTimeout'</span><span class="token punctuation">)</span> <span class="token comment">// 8 setTimeout放入宏队列中下次轮询执行</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token function">async1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  
+<span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">resolve</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'promise1'</span><span class="token punctuation">)</span> <span class="token comment">// 4 promise内的同步代码会在主线程内先执行</span>
+  <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'promise2'</span><span class="token punctuation">)</span> <span class="token comment">// 7 promise回调会放入微队列中，主线程代码执行完毕后执行</span>
+<span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'script end'</span><span class="token punctuation">)</span> <span class="token comment">// 5 主线程同步代码</span>
+<span class="token comment">//script start</span>
+<span class="token comment">//async1 start</span>
+<span class="token comment">//async2</span>
+<span class="token comment">//promise1</span>
+<span class="token comment">//script end</span>
+<span class="token comment">//async1 end</span>
+<span class="token comment">//promise2</span>
+<span class="token comment">//setTimeout</span></code></pre>
+
+<hr>
+<h3 id="Uni-App"><a href="#Uni-App" class="headerlink" title="Uni-App"></a>Uni-App</h3><ul>
+<li><p><input disabled="" type="checkbox"> 
+微信小程序：触发事件的方法不能传递参数，需要<code>data-</code>，或者利用事件对象取值。而 uni-app 可以直接()传值</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>某些组件只是用作渲染的框架，数据多在父组件</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+函数(没有function)也可以直接用</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+page页面，用小程序的生命函数，组件用vue生命函数</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+标签的属性和方法是vue</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+组件不需要注册与显示</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+props第二种写法，默认值是空数组，需要写成函数返回空数组</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+不同的事件触发的结果相同，可考虑用同一个方法调用</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+样式：父盒子给高度为<code>0</code>，上内边距为<code>100%</code>，里面子盒子给绝对定位，可以放图片</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=uniapp&amp;spm=1001.2101.3001.7020">uniapp</a>置顶滚动条。自定义页面滚动条的位置：</p>
+<pre class="language-js" data-language="js"><code class="language-js">uni<span class="token punctuation">.</span><span class="token function">pageScrollTo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">scrollTop</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">duration</span><span class="token operator">:</span> <span class="token number">300</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+const可以改变里面的单个值，但是不能修改整个</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<code>$event</code> <strong>是自带的一个事件对象(可用于是否需要传递自己需要的参数，同时还要有事件对象)</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+微信小程序的背景图片：只能是网络路径</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<code>vue</code>图片引用：切记<code>require</code>（uniapp同）</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+微信小程序：<code>100%</code>的问题</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+微信小程序：props对象写法，第二属性的<code>key:</code>是value；uniapp的第二属性<code>key</code>：是default</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="react"><a href="#react" class="headerlink" title="react"></a>react</h1><p>  <strong>事件的三种格式</strong></p>
+<pre><code>1. on事件类型 = {this.函数名.bind(this)}
+2. on事件类型 = {this.函数名}，在 constructor 中添加 this，函数名 = this.函数名.bind(this)
+3. on事件类型 = {() =&gt; this.函数名}    （使用箭头函数）
+</code></pre>
+<h1 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h1><ul>
+<li><p>withDefaults(defineProps，默认值)；默认值：如果是<strong>引用数据类型</strong>，就要写成函数</p>
+</li>
+<li><p>watch函数的第一个参数需要是响应式，如果是<strong>引用数据类型</strong>需要监听里面的属性就要写成函数，或者是deep：true</p>
+</li>
+<li><p>模板自动给响应式加上**.value**</p>
+</li>
+<li><p>组件上的事件和方法分清楚</p>
+<blockquote>
+<p>方法：要拿到组件实例去调用</p>
+<p>事件：触发后，执行对应的方法</p>
+</blockquote>
+</li>
+<li><p><code>* as 对象名字</code>  直接<code>export</code>表示引入并且导出，通过<code>import</code>导入的是一个对象。</p>
+</li>
+<li><p>请求时看清请求方式，是<code>body</code>（参数data）还是<code>query</code>（参数params），有时get参数也有可能是<code>query</code></p>
+</li>
+<li><p>响应式数据看插件</p>
+</li>
+<li><p><strong>标签的属性</strong>有大写的建议用<code>-</code>，数据层<code>setData</code>，模板属性<code>set-data</code></p>
+</li>
+<li><p><strong>父子传值注意引用数据类型，因为指向的是同一个内存地址，子组件修改，父组件的值也会发生改变</strong></p>
+<blockquote>
+<p>解决办法：先切断父子组件传值的联系，监听传过来的值，赋值给新值</p>
+<p>同时对传过来的值，赋值前进行<strong>浅/深</strong>拷贝</p>
+</blockquote>
+</li>
+<li><p>组件销毁的话，可以在子组件发送请求</p>
+</li>
+<li><p>setup 在dom创建之前执行，比create还早，<strong>拿不到DOM</strong></p>
+</li>
+</ul>
+<hr>
+<h1 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h1><ul>
+<li><blockquote>
+<p>父类型：广；子类型：具体	（解决办法：）</p>
+</blockquote>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token literal-property property">a</span><span class="token operator">:</span>number<span class="token punctuation">;</span>           <span class="token comment">// 子类型</span>
+<span class="token keyword">let</span> <span class="token literal-property property">b</span><span class="token operator">:</span>number <span class="token operator">|</span> string<span class="token punctuation">;</span>  <span class="token comment">// 父类型</span>
+a <span class="token operator">=</span> b<span class="token punctuation">;</span>	<span class="token comment">// 	父类型给子类型 不可以</span>
+b <span class="token operator">=</span> a<span class="token punctuation">;</span>  <span class="token comment">//  子类型给父类型 会协变  可以</span></code></pre>
+</li>
+<li><blockquote>
+<p>兄弟类型 ，类型不同也不可以</p>
+</blockquote>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token literal-property property">a</span><span class="token operator">:</span>number <span class="token operator">|</span> boolean<span class="token punctuation">;</span> 
+<span class="token keyword">let</span> <span class="token literal-property property">b</span><span class="token operator">:</span>number <span class="token operator">|</span> string<span class="token punctuation">;</span>  
+a <span class="token operator">=</span> b<span class="token punctuation">;</span>	
+b <span class="token operator">=</span> a<span class="token punctuation">;</span>  </code></pre>
+</li>
+<li><blockquote>
+<p>父： 广； 子： 具体(协变)</p>
+</blockquote>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> string <span class="token punctuation">}</span><span class="token punctuation">;</span>				<span class="token comment">// 父类型</span>
+<span class="token keyword">let</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> string<span class="token punctuation">;</span> age<span class="token operator">:</span> number <span class="token punctuation">}</span><span class="token punctuation">;</span>	 <span class="token comment">// 子类型</span>
+a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+b <span class="token operator">=</span> a<span class="token punctuation">;</span>	<span class="token comment">// 	父类型给子类型 不可以</span></code></pre>
+</li>
+<li><blockquote>
+<p>逆变 <strong>函数参数</strong>   父可以赋值给子</p>
+</blockquote>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">p</span><span class="token operator">:</span> <span class="token keyword">typeof</span> a</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>				<span class="token comment">// 父类型</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">fn1</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">p</span><span class="token operator">:</span> <span class="token keyword">typeof</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>			<span class="token comment">// 子类型</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+fn <span class="token operator">=</span> fn1<span class="token punctuation">;</span>	<span class="token comment">//  子类型给父类型 不可以</span>
+fn1 <span class="token operator">=</span> fn<span class="token punctuation">;</span> 	<span class="token comment">// 	父类型给子类型 可以</span></code></pre>
+
+
+</li>
+<li><p><code>变量!</code>排除null，undefined的情况</p>
+</li>
+<li><p>出现类型错误，观察前面的同名变量类型是否一样，不一样可以鼠标悬浮在同名变量上复制上面的类型给出错的那部分</p>
+</li>
+<li><p>Partial 工具类型，为每一个属性都添加一个问号</p>
+</li>
+<li><p><strong>拿到的类型必须是什么什么什么什么什么什么类型</strong></p>
+</li>
+<li><p>如果是直接将对象或者数组覆盖的，用ref</p>
+</li>
+<li><p>type类型别名用<code>extend</code>是约束，interface接口用<code>extend</code>是继承</p>
+</li>
+</ul>
+<h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><ul>
+<li><p>dependencies 与 devDependencies</p>
+<blockquote>
+<p><strong>dependencies</strong> 生产阶段的依赖,也就是项目运行时的依赖</p>
+<p><strong><code>devDependencies</code></strong> 开发阶段的依赖，就是我们在开发过程中需要的依赖，只在开发阶段起作用的</p>
+</blockquote>
+<p><strong>说明</strong></p>
+<blockquote>
+<p><strong><code>i</code></strong> 是 <strong><code>install</code></strong> 的简写</p>
+<p><strong><code>-g</code></strong> 是全局安装，不带 <strong><code>-g</code></strong> 会安装在个人文件夹</p>
+<p><strong><code>-S</code></strong> 与 <strong><code>--save</code></strong> 的简写，安装包信息会写入 <strong><code>dependencies</code>(生产依赖)</strong> 中</p>
+<p><strong><code>-D</code></strong> 与 <strong><code>--save-dev</code></strong> 的简写，安装包写入 <strong><code>devDependencies</code>(开发依赖)</strong> 中</p>
+</blockquote>
+<pre class="language-js" data-language="js"><code class="language-js">你写 <span class="token constant">ES6</span> 代码，需要 babel 转换成 es5 ，转换完成后，我们只需要转换后的代码，上线的时候，直接把转换后的代码部署到生产环境，不需要 bebal 了，生产环境不需要。这就可以安装到 devDependencies ，再比如说代码提示工具，也可以安装到 devDependencies 。
+
+如果你用了 Element<span class="token operator">-</span><span class="token constant">UI</span>，由于发布到生产后还是依赖 Element<span class="token operator">-</span><span class="token constant">UI</span>，这就可以安装到 dependencies 。</code></pre>
+
+<hr>
+<h1 id="element"><a href="#element" class="headerlink" title="element"></a>element</h1><ul>
+<li><p><strong>关注是否需要<code>:</code>来动态绑定</strong>（单选框：label）</p>
+</li>
+<li><p>组件上的事件和方法分清楚</p>
+<blockquote>
+<p>方法：要拿到组件实例去调用</p>
+<p>事件：触发后，执行对应的方法</p>
+</blockquote>
+</li>
+<li><p>```js<br>Set operation on key “xxx“ failed: target is readonly.VUE3+element-plus 引起的警告</p>
+<p>v-model     改为          :model-value</p>
+<pre class="language-none"><code class="language-none">
+- **表单验证：**
+
+  ```js
+  const rules = reactive({
+    username:{ validator: valiUsername, trigger: "blur" },
+  });
+  // 校验账号的函数
+  function valiUsername(
+    rule: unknown,
+    value: string | undefined,
+    cb: (msg?: string) =&gt; void
+  ) {
+    if (value &amp;&amp; value.length &gt; 3) {
+      cb();
+    } else {
+      cb("用户名不能少于3个字符");
+    }
+  }</code></pre></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul>
+<li><p>遇到：解决：git pull origin 分支名 –allow-unrelated-histories 强制更新</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token literal-property property">hint</span><span class="token operator">:</span><span class="token string">'git push ...'</span></code></pre></li>
+</ul>
+<hr>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p><strong>迭代：</strong>从一个数据集合中按照一定顺序，不断地取数据的过程</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Evedward</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://hellozhj.github.io/2022/06/11/notice/">https://hellozhj.github.io/2022/06/11/notice/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Evedward</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Notice/">
+                                    <span class="chip bg-color">Notice</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/06/11/jquery/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="JQuery">
+                        
+                        <span class="card-title">JQuery</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Evedward
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/jQuery/">
+                        <span class="chip bg-color">jQuery</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/10/javascript-jin-jie-jie-duan-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JavaScript-进阶-阶段总结">
+                        
+                        <span class="card-title">JavaScript-进阶-阶段总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Evedward
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <a href="/about" target="_blank">Evedward</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">182.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hellozhj" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wymail@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2325910627" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2325910627" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
