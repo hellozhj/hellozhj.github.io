@@ -36,9 +36,9 @@ IE：内容 = content + padding + border
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0">
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Evedward" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Evedward" type="application/atom+xml">
 </head>
 
 
@@ -462,7 +462,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    24.5k
+                    24.6k
                 </div>
                 
 
@@ -2105,11 +2105,12 @@ git status 检测更改</code></pre>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+<span class="token function">getCookie</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>	<span class="token comment">// 传入键名name，函数返回对应的值</span></code></pre>
 
 <hr>
 <h4 id="如何设置cookie的过期时间？"><a href="#如何设置cookie的过期时间？" class="headerlink" title="如何设置cookie的过期时间？"></a>如何设置cookie的过期时间？</h4><p><code>{expires}</code></p>
-<p>cookie默认按天来算的<code>Cookies.set('name', 'value', { expires: 7 })</code></p>
+<p>cookie默认<strong>按天</strong>来算的<code>Cookies.set('name', 'value', { expires: 7 })</code></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 当您希望 cookie 在 15 分钟后过期时</span>
 <span class="token keyword">var</span> inFifteenMinutes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">15</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 Cookies<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -2123,9 +2124,9 @@ Cookies<span class="token punctuation">.</span><span class="token function">set<
 </ol>
 <hr>
 <h4 id="for…of…"><a href="#for…of…" class="headerlink" title="for…of…"></a>for…of…</h4><ul>
-<li><em>for in遍历的是数组的索引（即键名），而for of遍历的是数组元素值。</em></li>
-<li>for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name</li>
-<li>for..of适用遍历数/数组对象/字符串/map/set等拥有迭代器对象的集合.但是不能遍历对象,因为没有迭代器对象.与forEach()不同的是，它可以正确响应break、continue和return语句</li>
+<li><code>for in</code>遍历的是数组的索引（即键名），而<code>for of</code>遍历的是数组元素值。</li>
+<li>for of遍历的只是数组内的元素，而<strong>不包括数组的原型属性method和索引name</strong></li>
+<li>for..of适用遍历数/数组对象/字符串/map/set等拥有迭代器对象的集合.但是<strong>不能遍历对象</strong>,因为没有迭代器对象.与forEach()不同的是，它可以<strong>正确响应break、continue和return语句</strong></li>
 <li>for-of循环不支持普通对象，但如果你想迭代一个对象的属性，你可以用for-in循环（这也是它的本职工作）或内建的Object.keys()方法</li>
 </ul>
 <hr>
@@ -2136,7 +2137,7 @@ Cookies<span class="token punctuation">.</span><span class="token function">set<
 <p>实例化之前是类。</p>
 <p><strong>hash模式</strong>：<code>#</code>利用的是锚跳转</p>
 <p><strong>路由守卫</strong>：一般使用路由守卫的场景是用户的权限控制，虽然可以使用组件的生命周期完成这个功能，但是使用路由守卫更加高效。因为它的执行比组件的实例化更早，也就是说，只要路由守卫不通过，组件连实例化都不执行。大大的加速控制流程与减少资源的消耗。</p>
-<p><strong>函数当成值来用，不需要加括号</strong></p>
+<p><strong>函数当成值来用，函数名后面不需要加括号</strong></p>
 <p><strong>离散数据：0，1</strong>（性别，学历）</p>
 <p><strong>回归数据：0，0.1，0.2，…，1</strong>（年龄，体重）</p>
 <hr>
@@ -2162,7 +2163,7 @@ Cookies<span class="token punctuation">.</span><span class="token function">set<
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
 <p><strong>fetch和ajax主要有两种方式不同</strong></p>
-<p>从<code>fetch()</code>返回的<code>Promise</code>将不会拒绝<code>http</code>错误状态，即使相应是一个相应是<code>400</code>或者<code>500</code>,它都会安装正常的去解决，并且仅在网络故障时或者任何阻止请求完成时，它才会拒绝，可以做简单的封装。</p>
+<p>从<code>fetch()</code>返回的<code>Promise</code>将不会拒绝<code>http</code>错误状态，即使相应是一个相应是<code>400</code>或者<code>500</code>,它都会按照正常的去解决，并且仅在网络故障时或者任何阻止请求完成时，它才会拒绝，可以做简单的封装。</p>
 <hr>
 <h4 id="私有成员-静态成员"><a href="#私有成员-静态成员" class="headerlink" title="私有成员|静态成员"></a>私有成员|静态成员</h4><ul>
 <li><p>私有成员：</p>
@@ -2190,8 +2191,8 @@ fn<span class="token punctuation">.</span>a <span class="token operator">=</span
 </li>
 </ul>
 <hr>
-<h4 id="scoped的作用功能"><a href="#scoped的作用功能" class="headerlink" title="scoped的作用功能"></a>scoped的作用功能</h4><p>组件的私有化，不对全局造成样式污染，表示当前style属性只属于当前模块。</p>
-<p>从原理可见，之所以scoped可达到类似组件私有化、样式设置”作用域”的效果，其实只是在设置scoped属性的组件上的所有标签添加data开头的属性，且在标签选择器的结尾加上和属性相同的字段，起到唯一性的作用，但是这样如果组件中也引用其他组件就会出现类似下面的问题：</p>
+<h4 id="style中的scoped的作用功能"><a href="#style中的scoped的作用功能" class="headerlink" title="style中的scoped的作用功能"></a>style中的scoped的作用功能</h4><p>组件的私有化，不对全局造成样式污染，表示当前style属性只属于当前模块。</p>
+<p>从原理可见，之所以scoped可达到类似组件私有化、样式设置”作用域”的效果，其实只是在设置scoped属性的组件上的所有标签添加<strong>data开头的属性</strong>，且在标签选择器的结尾加上和属性相同的字段，起到<strong>唯一性的作用</strong>，但是这样如果组件中也引用其他组件就会出现类似下面的问题：</p>
 <ul>
 <li>父组件无scoped属性，组组件带有scoped，父组件是无法操作子组件的样式的，虽然我们可以在全局中通过该类标签的标签选择器设置样式，但会影响到其他组件</li>
 <li>父组件有scoped属性，子组件没有。父组件也无法设置子组件样式，因为父组件的所有标签都带有data-v-469af010唯一标志，但子组件不会带有这个唯一标志属性，与1同理，虽然我们可以在全局中通过该类标签的标签选择器设置样式，但会影响到其他组件</li>
@@ -2297,10 +2298,10 @@ a<span class="token punctuation">.</span>constructor <span class="token operator
 </blockquote>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 5 5 5 5 5</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 5 5 5 5 5</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 5</span></code></pre>
 
 <blockquote>
 <p>假如把var换成let，那么输出结果为0,1,2,3,4；</p>
@@ -2339,9 +2340,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 <hr>
 <h4 id="vue-和-react-的diff算法比较"><a href="#vue-和-react-的diff算法比较" class="headerlink" title="vue 和 react 的diff算法比较"></a>vue 和 react 的diff算法比较</h4><ul>
-<li><p><strong>vue</strong>的diff算法<br>简单来说，就是vue的diff算法在对新老虚拟daom进行对比时，是从节点的两侧向中间对比；如果节点的key值与元素类型相同，属性值不同，就会认为是不同节点，就会删除重建</p>
+<li><p><strong>vue</strong>的diff算法<br>简单来说，就是vue的diff算法在对新老虚拟DOM进行对比时，是从节点的<strong>两侧向中间对比</strong>；如果节点的key值与元素类型相同，属性值不同，就会认为是不同节点，就会删除重建</p>
 </li>
-<li><p><strong>react</strong>的diff算法<br>react的diff算法在对新老虚拟dom进行对比是，是从节点左侧开始对比，就好比将新老虚拟dom放入两个栈中，一对多依次对比；如果节点的key值与元素类型相同，属性值不同，react会认为是同类型节点，只是修改节点属性</p>
+<li><p><strong>react</strong>的diff算法<br>react的diff算法在对新老虚拟dom进行对比是，是从<strong>节点左侧开始对比</strong>，就好比将新老虚拟dom放入两个栈中，一对多依次对比；如果节点的key值与元素类型相同，属性值不同，react会认为是同类型节点，只是修改节点属性</p>
 </li>
 </ul>
 <hr>
@@ -2349,10 +2350,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><p>前端自动化构建工具：<strong>webpack、gulp</strong></p>
 </li>
 <li><p>前端模块化的理解：</p>
-<pre class="language-js" data-language="js"><code class="language-js">我们要写一个实现<span class="token constant">A</span>功能的<span class="token constant">JS</span>代码<span class="token punctuation">,</span>这个功能在项目其他位置也需要用到<span class="token punctuation">,</span>那么我们就可以把这个功能看成一个模块采用一定的方式进行模块化编写<span class="token punctuation">,</span>既能实现复用还可以分而治之<span class="token punctuation">,</span>同理在写样式的时候<span class="token punctuation">,</span>如果我们需要某种特殊的样式<span class="token punctuation">,</span>会在很多地方应用<span class="token punctuation">,</span>那么我们也可以采用一定的方式进行<span class="token constant">CSS</span>的模块化</code></pre></li>
+<blockquote>
+<p>我们要写一个实现A功能的JS代码,这个功能在项目其他位置也需要用到,那么我们就可以把这个功能看成一个模块采用一定的方式进行模块化编写,既能实现复用还可以分而治之,同理在写样式的时候,如果我们需要某种特殊的样式,会在很多地方应用,那么我们也可以采用一定的方式进行CSS的模块化</p>
+</blockquote>
+</li>
 </ul>
 <hr>
-<h4 id="Vue，react，angular的区别"><a href="#Vue，react，angular的区别" class="headerlink" title="Vue，react，angular的区别"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/Berlin_Rome/article/details/94390941">Vue，react，angular的区别</a></h4><hr>
+<h4 id="Vue，react，angular的区别"><a href="#Vue，react，angular的区别" class="headerlink" title="Vue，react，angular的区别"></a>Vue，react，angular的区别</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Berlin_Rome/article/details/94390941">Vue，react，angular的区别</a></p>
+<hr>
 <h4 id="css隐藏元素的几种方法"><a href="#css隐藏元素的几种方法" class="headerlink" title="css隐藏元素的几种方法"></a>css隐藏元素的几种方法</h4><ul>
 <li>overflow:hidden</li>
 <li>opacity:0；</li>
@@ -2366,7 +2371,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 <hr>
 <h4 id="什么是语义化的HTML"><a href="#什么是语义化的HTML" class="headerlink" title="什么是语义化的HTML"></a>什么是语义化的HTML</h4><blockquote>
-<p>语义化的HTML就是正确的标签做正确的事情，能够便于开发者阅读和写出更优雅的代码的同时让网络爬虫很好地解析。</p>
+<p>语义化的HTML就是<strong>正确的标签做正确的事情</strong>，能够便于开发者阅读和写出更优雅的代码的同时让网络爬虫很好地解析。</p>
 </blockquote>
 <p><strong>为什么要做到语义化？</strong></p>
 <p>1、有利于SEO，有利于搜索引擎爬虫更好的理解我们的网页，从而获取更多的有效信息，提升网页的权重。</p>
@@ -2413,12 +2418,18 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 </li>
 <li><p><strong>块级元素：</strong></p>
-</li>
+<ul>
 <li><p><strong>使用定位属性：</strong></p>
-<p>​	<strong>定宽度：</strong>子绝父相，子元素的**top: 50%**，绝对子元素的 <strong>margin-top: -元素高度的一半	px;</strong></p>
-<p>​	<strong>不定宽度：</strong><code>transform: translateY(-50%);</code></p>
+<ul>
+<li><p><strong>定宽度：</strong>子绝父相，子元素的**top: 50%**，绝对子元素的 <strong>margin-top: -元素高度的一半	px;</strong></p>
+</li>
+<li><p><strong>不定宽度：</strong><code>transform: translateY(-50%);</code></p>
+</li>
+</ul>
 </li>
 <li><p><strong>flex布局：</strong>父元素添加属性 <strong>display: flex; align-items: center;</strong></p>
+</li>
+</ul>
 </li>
 </ul>
 <p><strong>水平垂直居中：</strong></p>
@@ -2430,7 +2441,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 <li><strong>未知高度和宽度的元素：</strong><ul>
 <li><strong>使用定位属性：</strong>子绝父相，<strong>left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%);</strong></li>
-<li><strong>使用布局实现：</strong>justify-content: center; align-items: center;</li>
+<li><strong>使用flex布局实现：</strong>justify-content: center; align-items: center;</li>
 </ul>
 </li>
 </ul>
@@ -2438,6 +2449,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h4 id="闭包的使用场景"><a href="#闭包的使用场景" class="headerlink" title="闭包的使用场景"></a>闭包的使用场景</h4><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gg-qq/p/11399152.html">使用场景</a></p>
 <p>闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
 <ul>
+<li><p>典型应用是模块封装，防止变量污染全局。</p>
+</li>
+<li><p>在循环中创建闭包，防止取到意外的值。</p>
+</li>
 <li><p>setTimeout：</p>
 <p>　　原生的setTimeout传递的第一个函数不能带参数，通过闭包可以实现传参效果。</p>
 </li>
@@ -2454,7 +2469,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><p>​			事件代理，原理就是<strong>利用事件冒泡特点</strong>：当子元素的事件发生时，父元素的同名事件也会发生——指定一个事件处理程序,就可以管理某一类型的所有事件。</p>
 <p><strong>优点：</strong>不用给列表的每一个元素绑定事件，只需要<strong>绑定父元素</strong>就可以处理所有子元素的事件，优化性能。</p>
 <hr>
-<h4 id="写一个深度复制数组或者对象的函数"><a href="#写一个深度复制数组或者对象的函数" class="headerlink" title="写一个深度复制数组或者对象的函数"></a>写一个深度复制数组或者对象的函数</h4><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">copyLinearArray</span><span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h4 id="写一个深度复制数组或者对象的函数"><a href="#写一个深度复制数组或者对象的函数" class="headerlink" title="写一个深度复制数组或者对象的函数"></a>写一个深度复制数组或者对象的函数</h4><p><strong>递归 + 类型判断</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">copyLinearArray</span><span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> sourceCopy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
         objectCopy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>source<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Object<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//如果是对象</span>
@@ -2593,11 +2609,13 @@ responseText <span class="token operator">--</span><span class="token operator">
 <li><p><strong>extends 与 implement</strong></p>
 <ul>
 <li><p>extends是继承父类，只要那个类不是声明为final或者那个类定义为abstract的就能继承。</p>
-<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">extends</span>可以继承父类的方法，也可以重写他，但是要注意的是，如果父类是抽象类，内部有抽象的方法，子类在<span class="token keyword">extends</span>的时候，如果子类不是抽象类，那么子类就一定要对父类中的抽象方法进行重写。但如果子类也是抽象类，则可以不可考虑重写。<span class="token keyword">extends</span>支持子类，孙类<span class="token operator">...</span><span class="token operator">...</span>即可以继承多代。</code></pre>
+<blockquote>
+<p>extends可以继承父类的方法，也可以重写他，但是要注意的是，如果父类是抽象类，内部有抽象的方法，子类在extends的时候，如果子类不是抽象类，那么子类就一定要对父类中的抽象方法进行重写。但如果子类也是抽象类，则可以不可考虑重写。extends支持子类，孙类……即可以继承多代。</p>
+</blockquote>
 </li>
 <li><p>继承只能继承一个类，但implements可以实现多个接口，用逗号分开就行了</p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token keyword">extends</span> <span class="token class-name">B</span> <span class="token keyword">implements</span> <span class="token class-name">C</span><span class="token punctuation">,</span><span class="token constant">D</span><span class="token punctuation">,</span><span class="token constant">E</span>
-<span class="token comment">// C,D,E 是interface类型的，且他的里面的方法都是abstract类型的方法。</span></code></pre></li>
+  <span class="token comment">// C,D,E 是interface类型的，且他的里面的方法都是abstract类型的方法。</span></code></pre></li>
 </ul>
 </li>
 </ul>
@@ -2607,6 +2625,15 @@ responseText <span class="token operator">--</span><span class="token operator">
 <li>导出文件或下载文件时，<strong>中途取消</strong></li>
 <li>一个请求请求量比较大，发送新请求时需要<strong>取消上一个请求</strong></li>
 </ol>
+<hr>
+<h4 id="首屏优化"><a href="#首屏优化" class="headerlink" title="首屏优化"></a>首屏优化</h4><ul>
+<li>骨架屏</li>
+<li>路由图片懒加载</li>
+<li>预渲染<code>prerender</code>插件</li>
+<li>SSR</li>
+<li>传输压缩(Gzip)</li>
+<li>浏览器缓存</li>
+</ul>
 
                 
             </div>
@@ -3117,7 +3144,7 @@ responseText <span class="token operator">--</span><span class="token operator">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">197.2k</span>
+                        class="white-color">197.3k</span>
             
             
             
