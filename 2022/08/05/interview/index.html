@@ -462,7 +462,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    24.3k
+                    24.4k
                 </div>
                 
 
@@ -1924,6 +1924,13 @@ git status 检测更改</code></pre>
 <h4 id="Tree-Shaking-摇树"><a href="#Tree-Shaking-摇树" class="headerlink" title="Tree Shaking(摇树)"></a>Tree Shaking(摇树)</h4><p>项目中引入其他模块时，自动将我们用不到的代码，或者永远不会执行的代码摇掉</p>
 <hr>
 <h4 id="强缓存、协商缓存"><a href="#强缓存、协商缓存" class="headerlink" title="强缓存、协商缓存"></a>强缓存、协商缓存</h4><p>强缓存：不会向服务器发送请求，直接从本地获取数据，200</p>
+<blockquote>
+<p>服务器响应  Response Headers  中添加一下:</p>
+</blockquote>
+<ul>
+<li><strong>expires：</strong>服务器给定一个过期时间戳，客户端时间对比过期时间。（客户端时间可能会不准）</li>
+<li><strong>cache-control：</strong>服务器给时间长度，单位秒，在有效时间内使用缓存，不依赖客户端时间。（优先级可能会更高）</li>
+</ul>
 <p>协商缓存：向服务器请求，是否可以使用缓存，304</p>
 <hr>
 <h4 id="为什么封装请求"><a href="#为什么封装请求" class="headerlink" title="为什么封装请求"></a>为什么封装请求</h4><ol>
@@ -3085,7 +3092,7 @@ responseText <span class="token operator">--</span><span class="token operator">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">197k</span>
+                        class="white-color">197.1k</span>
             
             
             
