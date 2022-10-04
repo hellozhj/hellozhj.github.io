@@ -614,7 +614,7 @@ IE：内容 = content + padding + border
 </blockquote>
 <hr>
 <h4 id="浏览器的工作原理：7"><a href="#浏览器的工作原理：7" class="headerlink" title="浏览器的工作原理：7"></a>浏览器的工作原理：7</h4><p>1.用户界面；2.浏览器引擎；3.数据存储；4.渲染引擎；5.网络；6.js解释器；7.UI后端</p>
-<img src="https://pic4.zhimg.com/80/v2-acb485cbc3d3e140e4ed7863d776abdb_720w.jpg" alt="img" style="zoom:80%;">
+<img src="/2022/08/05/interview/v2-acb485cbc3d3e140e4ed7863d776abdb_720w.jpg" alt="img" style="zoom:80%;">
 
 <hr>
 <h4 id="浏览器内核的理解："><a href="#浏览器内核的理解：" class="headerlink" title="浏览器内核的理解："></a>浏览器内核的理解：</h4><p>渲染引擎：获得网页内容html等，整理，计算页面显示，输出；不同内核不同网页语法，渲染效果不同</p>
@@ -1300,7 +1300,7 @@ IE：内容 = content + padding + border
 <p>2.服务端发回确认包ACK应答</p>
 <p>3.客户端发送ACK确认包</p>
 <p>只有两次，服务器无法确定客户端是否收到</p>
-<img src="https://img2018.cnblogs.com/blog/1672514/201904/1672514-20190430145740399-1189450243.png" alt="img" style="zoom:80%;">
+<img src="/2022/08/05/interview/1672514-20190430145740399-1189450243.png" alt="img" style="zoom:80%;">
 
 <p>TCP四次挥手：</p>
 <ol>
@@ -1309,7 +1309,7 @@ IE：内容 = content + padding + border
 <li>释放连接，向客户端发送报文（FIN）结束会话</li>
 <li>客户端收到报文，ASK应答</li>
 </ol>
-<p><img src="http://xue.cnkdl.cn:8360/static/interview/tcp1.jpeg" alt="img"></p>
+<p><img src="/2022/08/05/interview/tcp1.jpeg" alt="img"></p>
 <hr>
 <h4 id="HTTP-method"><a href="#HTTP-method" class="headerlink" title="HTTP method"></a>HTTP method</h4><ol>
 <li>服务器想要和http1.1兼容，为资源实现GET和HEAD方法</li>
@@ -1392,7 +1392,7 @@ IE：内容 = content + padding + border
 <hr>
 <h4 id="什么是事件循环（EventLoop）"><a href="#什么是事件循环（EventLoop）" class="headerlink" title="什么是事件循环（EventLoop）"></a>什么是事件循环（EventLoop）</h4><p>node中的事件循环和浏览器的不同</p>
 <p>六大阶段：</p>
-<p><img src="https://raw.githubusercontent.com/XQY279/blog/master/image/libuv.png" alt="img"></p>
+<p><img src="/2022/08/05/interview/image-20221004130530261.png" alt="image-20221004130530261"></p>
 <hr>
 <h4 id="什么是内存泄漏，以及常见内存泄漏的原因，和排查的方法"><a href="#什么是内存泄漏，以及常见内存泄漏的原因，和排查的方法" class="headerlink" title="什么是内存泄漏，以及常见内存泄漏的原因，和排查的方法"></a>什么是内存泄漏，以及常见内存泄漏的原因，和排查的方法</h4><p>未能释放已经不再使用的内存的情况</p>
 <p>排查方法：</p>
@@ -1402,7 +1402,7 @@ IE：内容 = content + padding + border
 <h4 id="简述ajax原理和XmlHttpRequest对象"><a href="#简述ajax原理和XmlHttpRequest对象" class="headerlink" title="简述ajax原理和XmlHttpRequest对象"></a>简述ajax原理和XmlHttpRequest对象</h4><p>ajax原理：通过XmlHttpRequest对象来向服务器发起请求，响应回来的数据，可以在js进行处理，用js来操作dom。</p>
 <p>XmlHttpRequest是ajax的核心机制，异步请求，向服务器提出请求和处理响应，不阻塞用户。</p>
 <hr>
-<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="http://xue.cnkdl.cn:8360/static/interview/jwt.jpg" alt="img"></h4><hr>
+<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
 <h4 id="（了解）一个tcp接连能发几个http请求？"><a href="#（了解）一个tcp接连能发几个http请求？" class="headerlink" title="（了解）一个tcp接连能发几个http请求？"></a>（了解）一个tcp接连能发几个http请求？</h4><p>http0.1 默认一次tcp，http请求之后就会断开</p>
 <p>http1.1请求头配置：keep-alive=true，tcp连接不断开(2小时)，一个tcp一时间支持一个http请求</p>
 <p>http2.0 多路复用技术 Multiplexing，tcp并发多个http请求</p>
@@ -1919,7 +1919,7 @@ git status 检测更改</code></pre>
 <hr>
 <h4 id="为什么建议传递给-setState-的参数是一个-callback-而不是一个对象"><a href="#为什么建议传递给-setState-的参数是一个-callback-而不是一个对象" class="headerlink" title="为什么建议传递给 setState 的参数是一个 callback 而不是一个对象"></a>为什么建议传递给 setState 的参数是一个 callback 而不是一个对象</h4><p>因为<code>this.props</code>和<code>this.state</code>的更新可能是异步的，不能依赖他们的值去计算下一个<code>state</code>。</p>
 <hr>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><img src="https://pic4.zhimg.com/80/v2-d64071b050db7a8698eceb03acfccc53_720w.jpg" alt="img"></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><img src="/2022/08/05/interview/v2-d64071b050db7a8698eceb03acfccc53_720w.jpg" alt="img"></p>
 <hr>
 <h4 id="Tree-Shaking-摇树"><a href="#Tree-Shaking-摇树" class="headerlink" title="Tree Shaking(摇树)"></a>Tree Shaking(摇树)</h4><p>项目中引入其他模块时，自动将我们用不到的代码，或者永远不会执行的代码摇掉</p>
 <hr>
@@ -1972,8 +1972,7 @@ git status 检测更改</code></pre>
 <p>在响应拦截器中拦截，先发起请求，接口返回<code>token</code>过期后，调用刷新token接口，再重新请求。</p>
 <hr>
 <h4 id="什么是单点登录-SSO-？单点登录-SSO-到底什么意思？【附逻辑Demo实例】"><a href="#什么是单点登录-SSO-？单点登录-SSO-到底什么意思？【附逻辑Demo实例】" class="headerlink" title="什么是单点登录(SSO)？单点登录(SSO)到底什么意思？【附逻辑Demo实例】"></a>什么是单点登录(SSO)？单点登录(SSO)到底什么意思？【附逻辑Demo实例】</h4><p>单点登录要解决的就是，用户只需要登录一次就可以访问所有相互信任的应用系统。</p>
-<img src="https://img-blog.csdnimg.cn/20201204153354990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2c1NjQ2NzQ2NzQ2NA==,size_16,color_FFFFFF,t_70#pic_center" alt="单点登录流程图">
-
+<p><img src="/2022/08/05/interview/image-20221004130358035.png" alt="image-20221004130358035"></p>
 <hr>
 <h4 id="for与forEach，哪个更快？为什么？"><a href="#for与forEach，哪个更快？为什么？" class="headerlink" title="for与forEach，哪个更快？为什么？"></a>for与forEach，哪个更快？为什么？</h4><p><strong>for快</strong></p>
 <ul>
@@ -2017,7 +2016,7 @@ git status 检测更改</code></pre>
 </ul>
 <hr>
 <h4 id="TCP与UDP的区别？"><a href="#TCP与UDP的区别？" class="headerlink" title="TCP与UDP的区别？"></a>TCP与UDP的区别？</h4><p><strong>TCP</strong> ：传输控制协议，<strong>UDP</strong> ：用户数据报协议</p>
-<p><img src="https://img2020.cnblogs.com/blog/2580638/202110/2580638-20211024203122288-1643698355.png" alt="img"></p>
+<p><img src="/2022/08/05/interview/2580638-20211024203122288-1643698355.png" alt="img"></p>
 <hr>
 <h4 id="http状态码代表的意思？100？500？301？302？"><a href="#http状态码代表的意思？100？500？301？302？" class="headerlink" title="http状态码代表的意思？100？500？301？302？"></a>http状态码代表的意思？100？500？301？302？</h4><table>
 <thead>
