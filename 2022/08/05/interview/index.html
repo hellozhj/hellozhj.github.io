@@ -1402,7 +1402,7 @@ IE：内容 = content + padding + border
 <h4 id="简述ajax原理和XmlHttpRequest对象"><a href="#简述ajax原理和XmlHttpRequest对象" class="headerlink" title="简述ajax原理和XmlHttpRequest对象"></a>简述ajax原理和XmlHttpRequest对象</h4><p>ajax原理：通过XmlHttpRequest对象来向服务器发起请求，响应回来的数据，可以在js进行处理，用js来操作dom。</p>
 <p>XmlHttpRequest是ajax的核心机制，异步请求，向服务器提出请求和处理响应，不阻塞用户。</p>
 <hr>
-<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id><a href="#" class="headerlink" title></a><img src="http://xue.cnkdl.cn:8360/static/interview/jwt.jpg" alt="img"></h4><hr>
+<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="http://xue.cnkdl.cn:8360/static/interview/jwt.jpg" alt="img"></h4><hr>
 <h4 id="（了解）一个tcp接连能发几个http请求？"><a href="#（了解）一个tcp接连能发几个http请求？" class="headerlink" title="（了解）一个tcp接连能发几个http请求？"></a>（了解）一个tcp接连能发几个http请求？</h4><p>http0.1 默认一次tcp，http请求之后就会断开</p>
 <p>http1.1请求头配置：keep-alive=true，tcp连接不断开(2小时)，一个tcp一时间支持一个http请求</p>
 <p>http2.0 多路复用技术 Multiplexing，tcp并发多个http请求</p>
@@ -1972,6 +1972,8 @@ git status 检测更改</code></pre>
 <p>在响应拦截器中拦截，先发起请求，接口返回<code>token</code>过期后，调用刷新token接口，再重新请求。</p>
 <hr>
 <h4 id="什么是单点登录-SSO-？单点登录-SSO-到底什么意思？【附逻辑Demo实例】"><a href="#什么是单点登录-SSO-？单点登录-SSO-到底什么意思？【附逻辑Demo实例】" class="headerlink" title="什么是单点登录(SSO)？单点登录(SSO)到底什么意思？【附逻辑Demo实例】"></a>什么是单点登录(SSO)？单点登录(SSO)到底什么意思？【附逻辑Demo实例】</h4><p>单点登录要解决的就是，用户只需要登录一次就可以访问所有相互信任的应用系统。</p>
+<img src="https://img-blog.csdnimg.cn/20201204153354990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2c1NjQ2NzQ2NzQ2NA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">
+
 <hr>
 <h4 id="for与forEach，哪个更快？为什么？"><a href="#for与forEach，哪个更快？为什么？" class="headerlink" title="for与forEach，哪个更快？为什么？"></a>for与forEach，哪个更快？为什么？</h4><p><strong>for快</strong></p>
 <ul>
