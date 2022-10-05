@@ -967,14 +967,14 @@ IE：内容 = content + padding + border
 <p>过滤列表中的项目：替换为属性，先过滤在循环</p>
 <p>避免渲染本该被隐藏的列表：v-if 移动到父级容器上</p>
 <hr>
-<h4 id="Vuex-为什么要分模块并且加命名空间"><a href="#Vuex-为什么要分模块并且加命名空间" class="headerlink" title="Vuex 为什么要分模块并且加命名空间"></a>Vuex 为什么要分模块并且加命名空间</h4><p>分模块：单一的状态树，所有状态集中到一个对象，store臃肿；store分割模块，每个模块有自己的 state，mutation，action，getter，嵌套子模块</p>
-<p>命名空间：默认：mutation，action，getter注册全局命名空间，多模块对同一mutation，action做响应；模块封装度和复用性，添加命名，组成，所有mutation，action，getter，根据注册路径进行调整</p>
+<h4 id="Vuex-为什么要分模块并且加命名空间"><a href="#Vuex-为什么要分模块并且加命名空间" class="headerlink" title="Vuex 为什么要分模块并且加命名空间"></a>Vuex 为什么要分模块并且加命名空间</h4><p>分模块：单一的状态树，所有状态集中到一个对象，store臃肿；store分割模块，每个模块有自己的 state，mutation，action，getter，嵌套子模块。</p>
+<p>命名空间：默认：mutation，action，getter注册全局命名空间，多模块对同一mutation，action做响应；模块封装度和复用性，添加命名，注册之后，所有mutation，action，getter，根据注册路径进行调整。</p>
 <hr>
 <h4 id="使用过-Vue-SSR-吗？说说-SSR"><a href="#使用过-Vue-SSR-吗？说说-SSR" class="headerlink" title="使用过 Vue SSR 吗？说说 SSR"></a>使用过 Vue SSR 吗？说说 SSR</h4><p>ssr 服务器端渲染，服务器标签渲染html，html返回给客户端</p>
 <p>优点：seo，首屏加载快</p>
 <p>缺点：开发受限，只支持bC和c两钩子，外部扩展库特殊处理，nodejs运行环境，服务器负载</p>
 <hr>
-<h4 id="vue-中使用了哪些设计模式"><a href="#vue-中使用了哪些设计模式" class="headerlink" title="vue 中使用了哪些设计模式"></a>vue 中使用了哪些设计模式</h4><p>1.工厂(传参创实例)；2.单例(只有一个实例)；3.观察者(响应式数据)；4.发布订阅(vue事件机制)；5.修饰(@)；策略(不同场景不同行为)</p>
+<h4 id="vue-中使用了哪些设计模式"><a href="#vue-中使用了哪些设计模式" class="headerlink" title="vue 中使用了哪些设计模式"></a>vue 中使用了哪些设计模式</h4><p>1.工厂(传参创实例)；2.单例(只有一个实例)；3.观察者(响应式数据)；4.发布订阅(vue事件机制)；5.修饰(@)；6.策略(不同场景不同行为)</p>
 <hr>
 <h4 id="Vue-的性能优化："><a href="#Vue-的性能优化：" class="headerlink" title="Vue 的性能优化："></a>Vue 的性能优化：</h4><ol>
 <li>对象层级不过深</li>
@@ -992,7 +992,8 @@ IE：内容 = content + padding + border
 <li>ssr or 预渲染</li>
 </ol>
 <hr>
-<h4 id="Vue-mixin-的使用场景和原理："><a href="#Vue-mixin-的使用场景和原理：" class="headerlink" title="Vue.mixin 的使用场景和原理："></a>Vue.mixin 的使用场景和原理：</h4><p>原理：不同组件，类似的代码，功能相对独立，抽离；组件初始化，采用策略模式对不同的属性进行合并，同名选项，恰当的方式合并，代码混入在每个组件相对独立；</p>
+<h4 id="Vue-mixin-的使用场景和原理："><a href="#Vue-mixin-的使用场景和原理：" class="headerlink" title="Vue.mixin 的使用场景和原理："></a>Vue.mixin 的使用场景和原理：</h4><p><strong>使用场景：</strong>不同组件，类似的代码，功能相对独立，抽离；</p>
+<p><strong>原理：</strong>类似于<strong>“对象的继承”</strong>，组件初始化，采用策略模式对不同的属性进行合并，同名选项，恰当的方式合并，代码混入在每个组件相对独立；</p>
 <p>mixins和vuex区别：值，变量是否受其他组件影响</p>
 <p>mixins和组件的区别：合并混入成一个新组件，父子组件是相对独立的</p>
 <hr>
@@ -1005,10 +1006,10 @@ IE：内容 = content + padding + border
 <li>响应式对象新增加属性</li>
 <li>数组索引修改数组某项值</li>
 </ol>
-<p>原理：响应式数据，会给对象和数组<code>__ob__</code>属性，表示Observe实例。对象新增加属性，进行响应式跟踪，触发对象<code>__ob__</code>的dep收集到的watcher去更新，当修改数组索引，调用数组本身的splice更新数组</p>
+<p>原理：响应式数据，会给对象和数组<code>__ob__</code>属性，表示Observe实例。对象新增加属性，进行响应式跟踪，触发对象<code>__ob__</code>的dep收集到的watcher去更新，当修改数组索引，调用数组本身的splice更新数组。</p>
 <hr>
 <h4 id="Vue-extend-作用和原理"><a href="#Vue-extend-作用和原理" class="headerlink" title="Vue.extend 作用和原理"></a>Vue.extend 作用和原理</h4><p>官解：使用vue构造器，创建一个子类，参数是包含组件选项的对象</p>
-<p>子类构造器，vue 的核心api，使用原型继承返回vue子类，将传入组件的options和父类options进行合并</p>
+<p><strong>其实</strong>子类构造器，vue 的核心api，<strong>实现思路：</strong>使用原型继承返回vue子类，将传入组件的options和父类options进行合并</p>
 <hr>
 <h4 id="写过自定义指令吗-原理是什么"><a href="#写过自定义指令吗-原理是什么" class="headerlink" title="写过自定义指令吗 原理是什么"></a>写过自定义指令吗 原理是什么</h4><p>本质上：装饰器，vue对html元素的扩展，增加自定义功能，vue编译dom，会找到指令对象，执行相关方法；</p>
 <p>五个生命函数：bind，inserted，update，componentUpdated，unbind</p>
@@ -1402,7 +1403,7 @@ IE：内容 = content + padding + border
 <h4 id="简述ajax原理和XmlHttpRequest对象"><a href="#简述ajax原理和XmlHttpRequest对象" class="headerlink" title="简述ajax原理和XmlHttpRequest对象"></a>简述ajax原理和XmlHttpRequest对象</h4><p>ajax原理：通过XmlHttpRequest对象来向服务器发起请求，响应回来的数据，可以在js进行处理，用js来操作dom。</p>
 <p>XmlHttpRequest是ajax的核心机制，异步请求，向服务器提出请求和处理响应，不阻塞用户。</p>
 <hr>
-<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id><a href="#" class="headerlink" title></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
+<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
 <h4 id="（了解）一个tcp接连能发几个http请求？"><a href="#（了解）一个tcp接连能发几个http请求？" class="headerlink" title="（了解）一个tcp接连能发几个http请求？"></a>（了解）一个tcp接连能发几个http请求？</h4><p>http0.1 默认一次tcp，http请求之后就会断开</p>
 <p>http1.1请求头配置：keep-alive=true，tcp连接不断开(2小时)，一个tcp一时间支持一个http请求</p>
 <p>http2.0 多路复用技术 Multiplexing，tcp并发多个http请求</p>
