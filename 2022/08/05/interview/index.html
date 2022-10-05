@@ -462,7 +462,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    24.8k
+                    25k
                 </div>
                 
 
@@ -1030,7 +1030,7 @@ IE：内容 = content + padding + border
 <p>使用 element asts 生成 render 函数代码字符串(代码生成器)</p>
 </blockquote>
 <hr>
-<h4 id="生命周期钩子是如何实现的"><a href="#生命周期钩子是如何实现的" class="headerlink" title="生命周期钩子是如何实现的"></a>生命周期钩子是如何实现的</h4><p>核心：利用发布订阅模式，把用户传入生命周期钩子订阅好(内用数组存储)，创建组件实例的过程中会执行对应的钩子方法(发布)</p>
+<h4 id="生命周期钩子是如何实现的"><a href="#生命周期钩子是如何实现的" class="headerlink" title="生命周期钩子是如何实现的"></a>生命周期钩子是如何实现的</h4><p>核心：利用<strong>发布订阅模式</strong>，把用户传入生命周期钩子订阅好(内用数组存储)，创建组件实例的过程中会执行对应的钩子方法(发布)</p>
 <hr>
 <h4 id="vue-router如何响应路由参数的变化："><a href="#vue-router如何响应路由参数的变化：" class="headerlink" title="vue-router如何响应路由参数的变化："></a>vue-router如何响应路由参数的变化：</h4><p>路由参数的变化：使用路由参数，<code>/user/foo</code>到<code>/user/bar</code>，组件实例被复用，两个路由渲染同一个组件，复用更高效，组件的钩子函数不调用</p>
 <p>检测路由参数变化的方法：</p>
@@ -1403,7 +1403,7 @@ IE：内容 = content + padding + border
 <h4 id="简述ajax原理和XmlHttpRequest对象"><a href="#简述ajax原理和XmlHttpRequest对象" class="headerlink" title="简述ajax原理和XmlHttpRequest对象"></a>简述ajax原理和XmlHttpRequest对象</h4><p>ajax原理：通过XmlHttpRequest对象来向服务器发起请求，响应回来的数据，可以在js进行处理，用js来操作dom。</p>
 <p>XmlHttpRequest是ajax的核心机制，异步请求，向服务器提出请求和处理响应，不阻塞用户。</p>
 <hr>
-<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
+<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id><a href="#" class="headerlink" title></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
 <h4 id="（了解）一个tcp接连能发几个http请求？"><a href="#（了解）一个tcp接连能发几个http请求？" class="headerlink" title="（了解）一个tcp接连能发几个http请求？"></a>（了解）一个tcp接连能发几个http请求？</h4><p>http0.1 默认一次tcp，http请求之后就会断开</p>
 <p>http1.1请求头配置：keep-alive=true，tcp连接不断开(2小时)，一个tcp一时间支持一个http请求</p>
 <p>http2.0 多路复用技术 Multiplexing，tcp并发多个http请求</p>
@@ -2650,6 +2650,14 @@ responseText <span class="token operator">--</span><span class="token operator">
 <li>官方：<a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html#%E5%BC%82%E6%AD%A5%E6%BB%9A%E5%8A%A8"> scrollBehavior </a>方法<strong>这个功能只在支持 <code>history.pushState</code> 的浏览器中可用。</strong></li>
 <li>可以利用组件内守卫，记录离开时的位置，进入时，通过获取滚动条位置。</li>
 </ul>
+<hr>
+<h4 id="iframe-内嵌框架有那些缺点-？"><a href="#iframe-内嵌框架有那些缺点-？" class="headerlink" title="iframe 内嵌框架有那些缺点 ？"></a>iframe 内嵌框架有那些缺点 ？</h4><p>内联框架 iframe 一般用来包含别的页面，例如 我们可以在我们自己的网站页面加载别人网站的内容，为了更好的效果，可能需要使 iframe 透明效果；</p>
+<ul>
+<li>iframe 会阻塞主页面的 onload 事件；</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于 SEO 搜索引擎优化（Search Engine Optimization）</li>
+<li>iframe 和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</li>
+</ul>
+<p>如果需要使用 iframe，最好是通过 javascript 动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题。</p>
 
                 
             </div>
@@ -3160,7 +3168,7 @@ responseText <span class="token operator">--</span><span class="token operator">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">197.6k</span>
+                        class="white-color">198k</span>
             
             
             
