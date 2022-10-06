@@ -497,150 +497,150 @@ width给100%是继承父盒子的宽度，如果再给padding 就会撑出盒子
 <p>遇到 这个属性每赋值，找属性或者属性前面的代码有问题</p>
 </blockquote>
 <ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 width给100%是继承父盒子的宽度，如果再给padding 就会撑出盒子。(外增)</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 auto是默认父盒子宽度，给padding不会撑大盒子。（內减）</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 弹性布局：百分比：父元素对于子元素是100%</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 弹性布局：在父盒子是作用于直接子集。(只有亲儿子生效)</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 弹性布局，padding、margin起作用</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>定位了要给个宽度</strong>，才能分配空间</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 没给高，不能align居中</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 定位居中，加高？</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 给了标签就不用伪元素，不要多此一举！！！！</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 伪元素是行内元素</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 自适应：用百分比。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 交集选择器：同时有两个类的生效</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 盒子左右布局可以弹性和浮动</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 过渡属性，需要那个元素发生改变，就给那个元素加上</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 text-align: center;只对行内元素和行内块元素有效</p>
 <ul>
-<li><input disabled type="checkbox"> 块级居中先想到margin：auto</li>
+<li><input disabled="" type="checkbox"> 块级居中先想到margin：auto</li>
 </ul>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 img图片和边框下面的间隔用 vertical-align：middle</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 弹性布局，一排显示，如果子盒子加了百分比，就按百分比显示，如果需要盒子间有空隙，就需要宽度calc来计算</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 弹性布局，如果父盒子给了高，那么子盒子只给宽亦有高度</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 margin-方位：要写在margin：auto 后面，否则会被覆盖（就近原则）</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 tab栏全 li 加个透明上边框，每选到一个上边框就不会把文字挤下去</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 outline: none;消除输入框的外边框</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>flex 布局：</strong>给100%需要注意父级元素</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 行内元素在水平方向上设置内外边距是有效的，在垂直方向上设置内外边距是无效的。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 在垂直方向上给行内元素设置内边距，在显示上是将元素范围扩大了，但实际上不会对周围元素有任何影响</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 全屏banner</p>
 <p>全屏的banner宽度是1920px,小分辨率的电脑屏幕只有1334px，所以版心一般不超过1200px。</p>
 <p>全屏banner直接使用img标签，img标签是一个占位图，会把页面撑开横向滚动条，正常来说非响应式的网站屏幕的宽度没有小于版心，不能有横向滚动条。</p>
 <p>所以全屏banner是可以给一个自动auto充满的盒子设置成背景图居中即可。</p>
 <p>非响应式网站，全屏的banner缩小网页的时候，banner变小，内容没有变小，会和内容部分的比例不协调，大屏的时候banner又很大，所以响应式网站才设置img100%的宽度去实现banner，而且要设置最大宽度限制，非响应式全屏banner最方便的方法就是设置背景图居中。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 当animated动画没有效果时，有可能是该元素是行内元素，解决方法：要改变成行内块元素： dsiplay: inline-block;</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 属性选择器 在表单里面常用<code>select[name="perExpendType"]</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 属性选择器 [cloak]{ … }  选择有这个属性的元素</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>display:flex  有时可以替换dispaly：inline-block，掉下来，给父级display:flex，可以解决</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 css3 <code>@import "...";</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 less语法:<code>@变量</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 居中：<code>left:0;top:0;right:0;bottom:0;margin: auto</code>只适合<strong>自身有宽度</strong>的情况下，没有宽度(通用)用 left:50%,transform:translate(-50%)</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>input 可能有默认样式，用 box-sizing: border-box; 消除</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <code>nth-of-type(4n)</code>4的倍数，使用场景：li,排序</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 动画效果：不能作用于行内样式</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 一个元素定宽，另一个元素占满给flex：1</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 flex:1不等于100%，100%是完全占满，不留余地</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 写 auto，不能写过渡(确定前后的值)</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>遇到的问题：</strong>固定定位给了overflow: auto; 不能滑倒底，给bottom:0 试一试</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>重点 滚动条 问题：如果父盒子给了overflow：hide，给子盒子overflow：auto，如果遇到滚动条到底不能完全显示，给子盒子100%（还有给父盒子弹性布局，纵向定位）</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 页面被盒子顶住的时候可以设置超出隐藏</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>收缩浏览器窗口的时候，不想盒子压缩，像压缩外边距可以给外边距auto，盒子定宽高</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>css隐藏滚动条：</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token punctuation">.</span>element<span class="token operator">:</span><span class="token operator">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>scrollbar <span class="token punctuation">{</span> <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token operator">!</span>important <span class="token punctuation">}</span></code></pre>
 
 
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><input disabled="" type="checkbox"> </p>
 </li>
 </ul>
 <h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 prompt 输入的，都是<strong>字符串型的数据</strong>。</p>
 <blockquote>
 <p>对象</p>
@@ -652,49 +652,49 @@ prompt 输入的，都是<strong>字符串型的数据</strong>。</p>
 <span class="token operator">&gt;</span><span class="token keyword">var</span> v3 <span class="token operator">=</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//key是一个变量</span></code></pre>
 </blockquote>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 取余：<code>前数</code>%<code>后数</code>，(如果前数小于后数，值取前数)</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 对象在循环外新增属性(一定要先定义)，在遍历中循环添加属性的数据</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 DOM元素中的事件绑定函数需要<code>()</code>,写在js里面的事件绑定函数不需要<code>()</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 如果声明的函数需要计算的，就需要初始化；如var sum = 0,这种</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 switch 如果要判断范围，参数为true   case  判断条件 为true  执行     switch case语句在比较的时候用的是全等，即condition === case</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 注意从0开始的，有顺序的，整数的一串连续的数字，可以当成是数组下标，从而求出数组的值</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 数组的遍历，循环，var 一个 i 变量，i = 0 ，判断语句是 i &lt; 数组的长度(数组的下标加1)，i++</p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 如果数组内容是字符，如果求和，记得取值时要把值转数据型。</p>
 <pre class="language-js" data-language="js"><code class="language-js">sum <span class="token operator">+=</span> <span class="token operator">+</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 牢记数组取值写法，别忘了；</p>
 <pre class="language-js" data-language="js"><code class="language-js">arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 return 是写在函数内第一层。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 字符串对象.indexOf()    方法   判断参数是否有在字符串里面   没有就返回-1</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 for…in…for in 可循环遍历数组、对象（非数组对象上遍历也称枚举）、字符串</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 数组.map(item=&gt;{return …})   如果是<code>{}</code>里面就要return ， 如果是<code>()</code>就不需要return</p>
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><input disabled="" type="checkbox"> </p>
 <pre><code class="js">(Math.random() * 5) + 4		// 取到4至8
 <pre class="language-none"><code class="language-none">
 - [ ] Array()只有一个参数就是数组的长度
@@ -707,7 +707,7 @@ for…in…for in 可循环遍历数组、对象（非数组对象上遍历也�
   书写1abe1标签的for属性的时候，需要写成htmlFor</code></pre>
 </code></pre>
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><input disabled="" type="checkbox"> </p>
 <h5 id="深拷贝和浅拷贝："><a href="#深拷贝和浅拷贝：" class="headerlink" title="深拷贝和浅拷贝："></a>深拷贝和浅拷贝：</h5><p><strong>整块赋值是指向同一块内存空间，每个值单独赋予为深拷贝</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span> 数组 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
 <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
@@ -738,7 +738,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <p><strong>扩展运算符( … )：一层数据属于是深拷贝，多层属于是浅拷贝。</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><input disabled="" type="checkbox"> </p>
 </li>
 </ul>
 <h3 id="一些-有返回值-但没-改变原来对象-的方法"><a href="#一些-有返回值-但没-改变原来对象-的方法" class="headerlink" title="一些  有返回值  但没   改变原来对象   的方法"></a>一些  有返回值  但没   改变原来对象   的方法</h3><p>输出： 整串输出    或者      赋值给一个变量(或者自己)再输出</p>
@@ -752,106 +752,106 @@ console<span class="token punctuation">.</span><span class="token function">log<
 字符串变量<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
 <h3 id="数组-下标-x3D-值"><a href="#数组-下标-x3D-值" class="headerlink" title="数组[下标] = 值"></a>数组[下标] = 值</h3><h3 id="对象-属性-x3D-值"><a href="#对象-属性-x3D-值" class="headerlink" title="对象[属性] = 值"></a>对象[属性] = 值</h3><ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>开关思想：</strong>点击一个按钮(一个事件)控制两种不同的状态，先声明一个flag变量，记得每次判断完要将flag变量：变相反  <strong>开了之后可以关回来</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>排他思想：</strong>点击哪一个，就只有那一个生效，<strong>其他的不生效</strong>。在事件执行函数里面，在该点击生效之前，先清除所有的元素的效果</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 注意查看是否需要<strong>非空校验</strong>              非空校验先将不符合规范的先if写出来，然后return   下面是符合规范的</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 非空校验 条件里面  可以取反简写</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 在事件执行函数里面注意<strong>活用this</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>1. 普通的this始终指向调用者</strong><br><strong>2. 而箭头函数的this由上下文决定</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 数组和字符串(重点)</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 取随机数注意取到的是<strong>随机数还是数组下标</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 使用<strong>for循环</strong>时，注意：<strong>你想要</strong>取到的是<strong>下标</strong>还是<strong>次数</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>注意：</strong>中括号运算符总是能代替点运算符。但点运算符却不一定能全部代替中括号运算符。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 点和中括号方式的<strong>区别</strong><br>1.点方法后面跟的必须是一个指定的属性名称，中括号里面可以是变量<br>2.中括号里面的属性可以是数字，点方法后面的属性名不能是数字<br>3.动态为对象添加属性是，只能用中括号</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 定时器，看看情况声明num，用于计算num++,num–</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 本来不存在HTML的标签，是后面添加上的，不能用于绑定其他事件，要给他存在于html的父级标签添加委托才能绑定事件</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 函数的实参可以是任何的数据类型</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>有 return 返回值的需要打印</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 在5px-50px之间的随机值   <code>Math.floor(Math.random() * (50 - 5 + 1) + 5)</code>    (最大-最小 + 1)+最小（+1可以取到两边）</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 clientX 事件属性返回当事件被触发时鼠标指针相对于浏览器页面（或客户区）的水平坐标。</p>
 <pre class="language-js" data-language="js"><code class="language-js">event<span class="token punctuation">.</span>clientX</code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 获取 <strong>body</strong> 元素</p>
 <pre class="language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span>body</code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 获取 <strong>html</strong> 元素</p>
 <pre class="language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span>html</code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>注意：</strong>在JavaScript中，划分作用域也是用大括号划分的， 但是在 JS 之中能够有效限定作用域的大括号只有<strong>函数大括号</strong>!</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 if()…..小括号里面的<strong>i</strong>声明都是全局变量</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 注意：<strong>事件</strong> 和 <strong>声明变量初始化</strong>之间的关系；(全局或者局部)(声明在事件里面，事件发生时，是否会<strong>再次初始化</strong>)</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 创建的标签，要插入已经存在的标签里面</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 注意调用函数有没有返回值,需不需要返回值            undefind是没有返回值</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 return 无法打断forEach</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>数据处理：</strong> 1：可利用对象属性的不可重复性；2：可将对象推进数组，使用数组的方法。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>遍历：</strong> 对象：for…in;        数组：arr.forEach()……. 不能return，与遍历伪数组 ；for循环；var newArr = arr.map()方法会自动声明一个新数组，将旧数组每一项返回新数组；</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>谁调用这个函数或方法,this关键字就指向谁</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>引用数据类型 ，进行循环时，留意堆内存的清空  可以 splice 清空堆内存，将清空的数据返回给一个新容器，还要留意如果直接赋值，是否可以使用深拷贝的问题</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 单是返回一个 return 就是什么都不做</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>filter 可以用来进行群体删除。（返回的新数组可以是自己本身）</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 ```js<br>函数：<br>1.什么时候执行的<br>2.传入什么参数<br>3.return 什么</p>
 <pre class="language-none"><code class="language-none">
 - [ ] es5中合并两对象
@@ -866,19 +866,19 @@ const obj2 = {
 const obj = Object.assign({}, obj1, obj2);//{</code></pre>
 
 <ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 嵌套三级以上用<strong>递归</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><input disabled="" type="checkbox"> </p>
 <blockquote>
 <p>事件=函数()：没有触发事件，函数也不会执行，<code>()</code>只是用来传参，默认没有参数，不是事件对象；</p>
 <p>事件=函数：没有触发事件，函数不会执行，默认第一个参数是事件对象；</p>
 </blockquote>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 如果是两个事件（确定和取消）共用一个方法，(确定)需要请求，可以在方法里面给一个可选参数，调用的时候按需传参</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>函数的形参，直接写就行</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">parentId</span><span class="token operator">:</span> number<span class="token punctuation">,</span> pageNum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> pageSize <span class="token operator">=</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> adminListRes <span class="token operator">=</span> <span class="token keyword">await</span> smsHomeAdvertise<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>parentId<span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -889,7 +889,7 @@ const obj = Object.assign({}, obj1, obj2);//{</code></pre>
 <span class="token punctuation">}</span>
 <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> pageNum<span class="token punctuation">,</span> pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 传参有序，函数内参数随便用</p>
 </li>
 </ul>
@@ -911,10 +911,10 @@ const obj = Object.assign({}, obj1, obj2);//{</code></pre>
 一种是attachevent</code></pre>
 
 <ul>
-<li><input disabled type="checkbox"> ES5中的数据结构，主要是用Array和Object。在ES6中主要新增了Set和Map数据结构。到目前为止，常用的数据结构有四种Array、Object、Set、Map。下面话不多说了，来一起看看详细的介绍吧。</li>
+<li><input disabled="" type="checkbox"> ES5中的数据结构，主要是用Array和Object。在ES6中主要新增了Set和Map数据结构。到目前为止，常用的数据结构有四种Array、Object、Set、Map。下面话不多说了，来一起看看详细的介绍吧。</li>
 </ul>
 <h2 id="ES6-实际开发"><a href="#ES6-实际开发" class="headerlink" title="ES6-实际开发"></a><strong>ES6-实际开发</strong></h2><ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>后台响应</strong>回来的数据进行<strong>结构</strong>的时候注意：</p>
 <blockquote>
 <p>可以通过<strong>结构的时候修改自己想要的变量名</strong></p>
@@ -922,26 +922,26 @@ const obj = Object.assign({}, obj1, obj2);//{</code></pre>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">{</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>e<span class="token punctuation">}</span> <span class="token operator">=</span> obj <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 </blockquote>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>合并对象数组</strong>用扩展运算符号(顺便new Set去重)</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>模板字符串</strong>中的<code>${}</code>中间可以放入任何js表达式，结合三元运算</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>includes</strong>的活用</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>列表搜索</strong>：精确搜索、模糊搜索</p>
 <blockquote>
 <p>平常利用<code>filter</code>方法</p>
 <p>精确搜索：可以利用<code>find</code>方法，找到就不会再遍历数组</p>
 </blockquote>
 <ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>扁平化</strong><code>flat</code>方法</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>获取对象属性值（可选链操作符）</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 返回的数据是否存在</span>
 <span class="token keyword">let</span> dataList <span class="token operator">=</span> <span class="token punctuation">(</span>res <span class="token operator">&amp;&amp;</span> res<span class="token punctuation">.</span>data <span class="token operator">&amp;&amp;</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>dataList<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span>
@@ -949,20 +949,20 @@ const obj = Object.assign({}, obj1, obj2);//{</code></pre>
 <span class="token keyword">let</span> dataList <span class="token operator">=</span> res<span class="token operator">?.</span>data<span class="token operator">?.</span>dataList <span class="token operator">||</span> <span class="token number">0</span></code></pre></li>
 </ul>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>给对象添加属性时，如果属性名是动态变化的</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 obj<span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">topic</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>index<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'话题内容'</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>非空校验(空值合并运算符)</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 是一个逻辑操作符，当左侧的操作数为 null 或者 undefined 时，返回其右侧操作数，否则返回左侧操作数。</span>
 <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token operator">??</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">//...</span>
 <span class="token punctuation">}</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 **异步函数 **  async 和 await </p>
 <blockquote>
 <p><strong>并发请求</strong>时，还是要用到<code>Promise.all()</code></p>
@@ -975,7 +975,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token operator">&gt;</span><span class="token comment">// 如果并发请求时，只要其中一个异步函数处理完成，就返回结果，要用到Promise.race()</span></code></pre>
 </blockquote>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>??=</strong></p>
 <blockquote>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&gt;</span>config<span class="token punctuation">.</span>headers <span class="token operator">=</span> config<span class="token punctuation">.</span>headers <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>	<span class="token comment">// 短路</span>
@@ -985,100 +985,100 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ul>
 <h1 id="VUE-2-6"><a href="#VUE-2-6" class="headerlink" title="VUE 2.6"></a>VUE 2.6</h1><ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 所有样式的切换都是数据的修改控制</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>重置样式：npm i reset-css。在入口文件进行导入，import ‘reset-css’</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>样式做相关动效可以添加类和style，更加具体的条件判断</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <code>::v-deep 选择器</code>修改深度作用选择器</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 v-show 和 display 也是不能做过渡效果的</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 活用<code>overflow: hidden</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 原生属性加<code>:</code>就把<code>""</code>里面的变成js环境，标签外面变成<code>{{}}</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 注意 js 运行环境来考虑加不加   引号；</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 谁要不断的出现，v-for 就加在谁身上</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 要么 这样  要么  那样 ———— 三元运输符</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 self：:key 属性，修改时，原来那些属性不会变的就写那个  ；不修改，用index，修改时，用item.id</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 隐藏的元素 考虑 ：v-show 或者 v-if</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 要么你在，要么我在，v-if  v-else   </p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 v-for 里面或用 index</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>箭头函数的this指向的是VueComponent实例对象<br>普通函数的this指向的调用者Vue实例对象</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>注意可以定义：data 里面的变量 ，用来存其他需求需要的数据</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 数组，字符串，对象问题，先不要想着遍历方法，<strong>先想相关的方法</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 可以给底层数据每一项添加需要的新数据</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>v-model : 如果是多选框，可以使用true或者false</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>多选框联动全选框，先声明一个 flag=true 默认全选，遍历每一项多选框是否选中</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 全选全不选可以利用<code>every(fn)</code>方法，数组中是否所有元素都满足fn函数中的条件</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 多选框 v-model=”…”  如果底层数据中，每一项数据都带有一个状态属性，就可以使用<code>item.</code>  ,如果没有这个状态属性，就声明一个数组变量，<code>...[index]</code>为每一项的选中状态🤔</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 计算属性的第二种写法：计算变量为对象，里面有<strong>get方法和set方法</strong>👍</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 reduce遍历方法，有两个参数，一个是回调函数，<strong>第二个是pre 的初始值(常见为0)<strong>，</strong>记得写第二个参数，（切记，切记，切记）</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 如果打印出来的是数组，想去掉两边的框，join成字符串就行了，真不需要遍历出来😅</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 还有记得 reduce、filter、map等方法是<strong>有返回值的，可以在遍历的前头定义</strong>如果不想创建一个新数组，<strong>就将遍历之后的返回值返回给原来的数组</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 父传子，子拿到父的数据，不论是数组还是对象，都可以拿到里面的属性，props定义了的标签属性，在子底层数据里面使用也要<code>this.为前缀</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 一个值的结果受其他值的影响，用computed </p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 一个值的变化将时刻影响其他值，用watch</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 活用 <strong>includes</strong> </p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 查询可以用 给每一项数据一个 属性为<code>true </code> 然后，每一项 v-show 指令控制显示，<code>includes</code>根据输入框输入的字符是否存在数据项种，修改 显示属性</p>
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><input disabled="" type="checkbox"> </p>
 <pre><code class="js">let ret = this.books.reduce((pre, cur) =&gt; {
     if (cur.isShow) {
         return pre + cur.price * cur.count;
@@ -1107,46 +1107,46 @@ return this.books.reduce((pre, cur) =&gt; {
   //父传子过来的值，如果是引用类型，传的是引用地址，子组件，利用引用地址修改的是堆内存的数据，从而父组件的引用类型的值也可被修改</code></pre>
 </code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>传递过来的值,只能拿来用不能拿来修改，修改要在原数据改</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <code>lintOnSave: false</code>  关闭eslint  关闭严格模式</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 :class=”{active: …}”   …值可以是函数方法，直接再下面计算属性中声明声明就可</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>计算属性，调用条件是；代码遇到 方法名就调用，返回的值是return后面的值</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 如果父元素，<strong>不是通过 v-for 渲染的，就给每个元素一个名字，方便后面计算</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 结构相同的，思考是否可以做成<code>插件</code>或者<code>v-for</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 dom更新是异步的</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>添加样式/切换样式  ：  可以三元运算，立一个flag</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 有时候总是就是一个数组的长度；</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 v-for 里面的变量，如果要改的不是全部的，要改选中的一项，需要带上<code>[index]</code>或者<code>item</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 this.$router.replace()   重定向</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>next()</strong> 本身就是一个重定向跳转，里面传入参数，再执行回调函数，里面的参数，是下一次的<code>to</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>v-model 不能进行三元表达式，可以换成 value(可以进行三元表达式) 和 change方法的一个逻辑 ，里面不能用于赋值</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><input disabled="" type="checkbox"> </p>
 <h3 id="😠【重点注意】循环删除数组问题😡"><a href="#😠【重点注意】循环删除数组问题😡" class="headerlink" title="😠【重点注意】循环删除数组问题😡"></a><strong>😠【重点注意】循环删除数组问题😡</strong></h3><p><strong>正序循环删除：一定要注意索引问题，循环遍历数组，删除对应项，整个数组元素会向前补位，每删除一次，就要将—索引值减1  （forEach循环索引无法减1）</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js">删除操作会使得对应索引值位上的元素清空，整个数组中的元素向前移动一位，补位的元素会填充到执行删除操作的索引值位置上，移位之后如果不进行任何操作继续下一个循环，会导致补位元素跳过遍历，为了防止这种补位元素跳过遍历现象，应该在删除操作后将索引值减<span class="token number">1</span>，对执行删除操作的索引值位置再进行一次遍历
 <span class="token comment">// 正序循环删除，删除操作后将索引值减1</span>
@@ -1169,25 +1169,25 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">// [1, 2, 2, 1]</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>多选框数组，每一项可以通过created(){}方法生成</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 注意你实现的功能，是否是：<strong>想点击哪一个就，哪一个就实现功能</strong>，请注意<strong>哪一个</strong>。<code>item.</code>或者<code>[index]</code>或者<code>(index)</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 reduce()其实第三个值是index，<strong>可能有用到</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 map() <strong>可以将每一项变成我们想要的东西</strong>,给回我们一个想要的数组</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>添加/切换样式</strong>，<strong>写成对象的形式，可以有多个类</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>template   里面只能有一个div</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>获取数组最后一项</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js">arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span></code></pre>
 
@@ -1200,17 +1200,17 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5.6</span> <span class="token operator">&lt;&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5.6</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>对象转数组</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js">Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>步进器方法，两个方法结构相同，只是作用于同一个数据，可以写成同一个方法，典型案例：加减数据的方法，</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token function">stepFn</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">stepFn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">stepFn</span><span class="token punctuation">(</span><span class="token parameter">step<span class="token punctuation">,</span>index</span><span class="token punctuation">)</span><span class="token punctuation">{</span>需要计算的数据 <span class="token operator">+=</span> step<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>给底层数据对象属性的时候，也可以在created函数里面设置<code>this.$set(要修改的数组，要修改的下标(对象的属性创建)，要修改的值(对象的值))</code>方法</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// Object.defineProperty()不支持引用类型数据的数据劫持 (触发不了set)</span></code></pre>
 
@@ -1218,40 +1218,40 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p><strong>👍👍👍在Vue2.0中，单独修改数组的某个元素的时候，触发不了视图层的修改。使用$set()方法来修改元素，才能起到双向数据绑定的作用。</strong></p>
 </blockquote>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>底层数据，引用某个数据时，需要在前面加上<code>this.</code></strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <code>v-for</code>区域中，每一项数据也可以用<code>v-for</code>，<strong>注意：</strong>如果是表格<code>td</code>进行<code>v-for</code>,<code>td</code>会变多，牢记那个需要变多，就在那里<code>v-for</code>,可以在一个<code>td</code>里面<code>span</code>进行<code>v-for</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>双向绑定的时候，可以将底层数据的变量写在模板旁边，看看手动修改是否是对应的值</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>v-model的值可以是数组，数组[index]  绑定</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>单独修改数组的某个元素的时候注意：触发不了视图层的修改。使用$set(要修改的数组,要修改的下标,要修改成的值)方法来修改元素，才能起到双向数据绑定的作用。</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 不能有两个默认导出，默认导出可以也写成按需导出</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 cdn 内容分发网络</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 不能用<code>body</code>做为容器。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 实例化之前是类。</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>hash模式</strong>：<code>#</code>利用的是锚跳转</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>离散数据：0，1</strong>（性别，学历）</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>回归数据：0，0.1，0.2，…，1</strong>（年龄，体重）</p>
 </li>
 </ul>
@@ -1278,22 +1278,22 @@ cdn 内容分发网络</p>
 <p>使用了开发版本，打开控制台会出现以下的提示</p>
 <hr>
 <h3 id="vue2项目"><a href="#vue2项目" class="headerlink" title="vue2项目"></a>vue2项目</h3><ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 辅助函数<code>mapState，mapGetters写在computed，mapMutations和mapActions写在methods</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 main.js⽂件是程序的<strong>⼊⼝⽂件</strong>，加载各种<strong>公共组件</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 两个框<strong>交替出现</strong><code>v-model</code>值取反</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 函数体里调用函数，函数有return，但是不会终止在函数体里面调用函数代码的下面的代码，需要对调用的函数进行判断，<code>return false</code>or <code>return true</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 不是某个组件特有的，就放到app.vue</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <code>import ... from './.../...'</code>   <code>from</code>后面是路径的就是导入其他路径的模板注意是默认导入还是按需导入  ;  <code>from</code>后面是模块名的就是第三方模块；</p>
 <pre class="language-js" data-language="js"><code class="language-js">默认导出
 <span class="token keyword">export</span> <span class="token keyword">default</span> 数据
@@ -1305,7 +1305,7 @@ main.js⽂件是程序的<strong>⼊⼝⽂件</strong>，加载各种<strong>公
 按需导入
 <span class="token keyword">import</span> <span class="token punctuation">{</span> 数据 <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'模块/路径'</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> </p>
+<li><p><input disabled="" type="checkbox"> </p>
 <pre><code class="js">封装思路：
 1.调用者需要什么功能（那些参数）
 2.再去书写组件/函数内部的逻辑
@@ -1334,61 +1334,61 @@ main.js⽂件是程序的<strong>⼊⼝⽂件</strong>，加载各种<strong>公
       		    变量不为空，需要前面的；||</code></pre>
 </code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 vue 图片路径需要<code>require</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>template</strong> 不会生成标签，但是不能加<code>:key</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <span class="github-emoji"><span>🔑</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f511.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><strong>:key 加在需要遍历的那一项元素里面</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 路由跳转会调用created</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 如果只是<strong>地址栏的参数变化</strong>，组件是不会重新加载，可以<strong>添加监听或者组件重载，组件内更新守卫解决</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 点击类的添加：可以用<code>index</code>与当前的<code>index</code>比较</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 在js中，如果要调用仓库的方法的，先导入<code>store</code>，再异步方法调用<code>dispatch</code>，方法调用<code>commit</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 子路由别加<code>/</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>防抖动是将多次执行变为最后一次执行，节流是将多次执行变成每隔一段时间执行。</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 进度条：是否到达底部可加载的数据位置：视图高度 - 滚动高度 &gt;= 文档高度( -需要到达范围的高度 )</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 给一个标签点击事件 <strong>点击一次切换一种状态，点击第二次切换第二种状态</strong>，可以取反</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <code>router-link</code> 最终会被渲染为a标签，果想让它转换成其他的标签，就需要添加<code>tag</code>属性</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 在入口函数全局注册了，就不需要在组件里再引用了，可以直接使用</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 post 没有缓存</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>导入第三方组件，修改样式，通过控制台进行选中类名修改</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 路由改变，但是组件被复用，可以使用<strong>组件内路由更新守卫</strong></p>
 </li>
 </ul>
 <hr>
 <h3 id="this指向的问题"><a href="#this指向的问题" class="headerlink" title="this指向的问题"></a><strong>this指向的问题</strong></h3><ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>原生的this，注意：</strong>如果返回值是<strong>函数</strong>，里面需要用到外边的数组什么的，记得这个数组是谁的数组，需要<strong>this</strong>，而且这个<strong>this是谁</strong>，需要清楚，被返回的函数内的this，是否有这个数组，没有就在外边，将<code>this_=this</code>。用<code>this_</code></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>vue中的this，注意</strong>：</p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">//1.ES5的普通函数写法，这里的this指向app,指向vue实例</span>
 <span class="token comment">// 调用时被决定。根据调用我的人（谁调用我，我的this就指向谁）</span>
@@ -1406,16 +1406,16 @@ post 没有缓存</p>
 <span class="token comment">// 箭头函数是定义时的父级执行上下文。</span>
 <span class="token keyword">this</span><span class="token punctuation">.</span>sList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>sResultList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>fn.apply(this) 将fn里面的this指向，指向括号里面的，参数是传给拥有着的(括号外的fn)</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>fn.bind()()，只是改变this指向,如果需要调用函数的时候，就需要在后面加上()</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>fn.apple()和fn.call()如果是用方法的话，就会直接调用。</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>this指向，如果是多重的嵌套，就取最近调用的那个变量</strong></p>
 <blockquote>
 <p>定时器里面的回调函数如果是<strong>匿名函数</strong>：this指向window；(可以在外层将this指向that)</p>
@@ -1535,56 +1535,56 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <hr>
 <h3 id="Uni-App"><a href="#Uni-App" class="headerlink" title="Uni-App"></a>Uni-App</h3><ul>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 微信小程序：触发事件的方法不能传递参数，需要<code>data-</code>，或者利用事件对象取值。而 uni-app 可以直接()传值</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <strong>某些组件只是用作渲染的框架，数据多在父组件</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 函数(没有function)也可以直接用</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 page页面，用小程序的生命函数，组件用vue生命函数</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 标签的属性和方法是vue</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 组件不需要注册与显示</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 props第二种写法，默认值是空数组，需要写成函数返回空数组</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 不同的事件触发的结果相同，可考虑用同一个方法调用</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 样式：父盒子给高度为<code>0</code>，上内边距为<code>100%</code>，里面子盒子给绝对定位，可以放图片</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=uniapp&amp;spm=1001.2101.3001.7020">uniapp</a>置顶滚动条。自定义页面滚动条的位置：</p>
 <pre class="language-js" data-language="js"><code class="language-js">uni<span class="token punctuation">.</span><span class="token function">pageScrollTo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token literal-property property">scrollTop</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
     <span class="token literal-property property">duration</span><span class="token operator">:</span> <span class="token number">300</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 const可以改变里面的单个值，但是不能修改整个</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <code>$event</code> <strong>是自带的一个事件对象(可用于是否需要传递自己需要的参数，同时还要有事件对象)</strong></p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 微信小程序的背景图片：只能是网络路径</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 <code>vue</code>图片引用：切记<code>require</code>（uniapp同）</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 微信小程序：<code>100%</code>的问题</p>
 </li>
-<li><p><input disabled type="checkbox"> 
+<li><p><input disabled="" type="checkbox"> 
 微信小程序：props对象写法，第二属性的<code>key:</code>是value；uniapp的第二属性<code>key</code>：是default</p>
 </li>
 </ul>
@@ -2249,7 +2249,7 @@ fn1 <span class="token operator">=</span> fn<span class="token punctuation">;</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">198k</span>
+                        class="white-color">198.2k</span>
             
             
             

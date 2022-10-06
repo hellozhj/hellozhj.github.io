@@ -489,13 +489,14 @@ this 指向问题">
 <p>④ 在定时器中， this指向window</p>
 <p>⑤ 在事件中，this 指向事件源</p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903805587619854#heading-3">this 指向问题</a></p>
-<h4 id="如何准确判断this指向的是什么？"><a href="#如何准确判断this指向的是什么？" class="headerlink" title="如何准确判断this指向的是什么？"></a>如何准确判断this指向的是什么？</h4><ol>
+<h4 id="如何准确判断this指向的是什么？"><a href="#如何准确判断this指向的是什么？" class="headerlink" title="如何准确判断this指向的是什么？"></a>如何准确判断this指向的是什么？</h4><p><strong>函数在执行的时候处于那种状态：</strong></p>
+<ol>
 <li>函数是否在new中调用(new绑定)，如果是，那么this绑定的是新创建的对象。</li>
-<li>函数是否通过call,apply调用，或者使用了bind(即硬绑定)，如果是，那么this绑定的就是指定的对象。</li>
-<li>函数是否在某个上下文对象中调用(隐式绑定)，如果是的话，this绑定的是那个上下文对象。一般是obj.foo()</li>
+<li>函数是否通过call,apply调用，或者使用了bind(即<strong>硬绑定</strong>)，如果是，那么this绑定的就是指定的对象。</li>
+<li>函数是否在某个上下文对象中调用(<strong>隐式绑定</strong>)，如果是的话，this绑定的是那个上下文对象。一般是obj.foo()；如果<code>let fn = obj.foo; fn()</code>隐式绑定this丢失，默认绑定。</li>
 <li>如果以上都不是，那么使用<strong>默认绑定</strong>。如果在严格模式下，则<strong>绑定到undefined，否则绑定到全局对象。</strong></li>
-<li>如果把null或者undefined作为this的绑定对象传入call、apply或者bind，这些值在调用时会被忽略，实际应用的是默认绑定规则。</li>
-<li>如果是箭头函数，箭头函数的this继承的是外层代码块的this。</li>
+<li>如果把<strong>null或者undefined</strong>作为this的绑定对象传入call、apply或者bind，这些值在调用时会被忽略，实际应用的是默认绑定规则。</li>
+<li>如果是箭头函数，<strong>箭头函数的this继承的永远是定义的时候的外层代码块的this。（外层没有就继续向上寻找）</strong></li>
 </ol>
 <h3 id="this指向的问题"><a href="#this指向的问题" class="headerlink" title="this指向的问题"></a><strong>this指向的问题</strong></h3><p><strong>vue中的this，注意</strong>：</p>
 <pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">//1.ES5的普通函数写法，这里的this指向app,指向vue实例</span>
@@ -511,7 +512,7 @@ this 指向问题">
 <span class="token keyword">this</span><span class="token punctuation">.</span>sList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>app<span class="token punctuation">.</span>sResultList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 
 <span class="token comment">//4.既是匿名函数又是箭头函数中的this，匿名函数没有自己的this，它的this继承来的，也可以说这里的this指向跟上一级的this指向相同，即vue实例</span>
-<span class="token comment">// 箭头函数是定义时的父级执行上下文。</span>
+<span class="token comment">// 箭头函数是定义时的父级执行上下文。箭头函数中的this继承于外层代码库中的this.</span>
 <span class="token keyword">this</span><span class="token punctuation">.</span>sList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>sResultList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
 <p><strong>fn.apply(this) 将fn里面的this指向，指向括号里面的，参数是传给拥有着的(括号外的fn)</strong></p>
@@ -1170,7 +1171,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">198k</span>
+                        class="white-color">198.2k</span>
             
             
             

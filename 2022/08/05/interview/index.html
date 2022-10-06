@@ -462,7 +462,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    25k
+                    25.2k
                 </div>
                 
 
@@ -1013,6 +1013,20 @@ IE：内容 = content + padding + border
 <hr>
 <h4 id="写过自定义指令吗-原理是什么"><a href="#写过自定义指令吗-原理是什么" class="headerlink" title="写过自定义指令吗 原理是什么"></a>写过自定义指令吗 原理是什么</h4><p>本质上：装饰器，vue对html元素的扩展，增加自定义功能，vue编译dom，会找到指令对象，执行相关方法；</p>
 <p>五个生命函数：bind，inserted，update，componentUpdated，unbind</p>
+<blockquote>
+<ol>
+<li><p>bind：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</p>
+</li>
+<li><p>inserted：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</p>
+</li>
+<li><p>update：被绑定于元素所在的模板更新时调用，而无论绑定值是否变化。通过比较更新前后的绑定值，可以忽略不必要的模板更新。</p>
+</li>
+<li><p>componentUpdated：被绑定元素所在模板完成一次更新周期时调用。</p>
+</li>
+<li><p>unbind：只调用一次，指令与元素解绑时调用。</p>
+</li>
+</ol>
+</blockquote>
 <p>原理：</p>
 <blockquote>
 <p>ast语法树，遇到指令给当前的元素添加 <code>directives </code>属性</p>
@@ -1053,10 +1067,10 @@ IE：内容 = content + padding + border
 <h4 id="简述-Vue-的生命周期"><a href="#简述-Vue-的生命周期" class="headerlink" title="简述 Vue 的生命周期"></a>简述 Vue 的生命周期</h4><p>创建前/后，载入前/后，更新前/后，销毁前/后（常用有8）</p>
 <ul>
 <li><strong>beforeCreated：</strong>data，methods等属性还未被创建,可执行安装插件操作，例如vue.use(vuex)</li>
-<li><strong>created：</strong>data，methods中未操作dom的方法可以正常使用，DOM结点还未渲染，发送axios请求。</li>
+<li><strong>created：</strong>data，methods中<strong>未操作dom的方法</strong>可以正常使用，DOM结点还未渲染，发送axios请求。</li>
 <li><strong>beforeMount：</strong>虚拟DOM已经生成，但还未挂载到真实DOM，无法获取DOM结点。</li>
 <li><strong>mounted：</strong>DOM树上已经存在结点，页面渲染成功，我们也可以执行操作DOM操作了，也可以执行发送请求等业务。</li>
-<li><strong>beforeCreated：</strong>当响应式数据(data)发生变化时，页面重新渲染数据之前</li>
+<li><strong>beforeupdate：</strong>当响应式数据(data)发生变化时，页面重新渲染数据之前</li>
 <li><strong>updated：</strong>页面渲染完过后</li>
 <li><strong>beforeDestroy：</strong>组件销毁之前，解除一些全局或自定义事件</li>
 <li><strong>destoryed：</strong>生命周期销毁</li>
@@ -1072,7 +1086,7 @@ IE：内容 = content + padding + border
 <h4 id="第一次页面加载会触发哪几个钩子？4"><a href="#第一次页面加载会触发哪几个钩子？4" class="headerlink" title="第一次页面加载会触发哪几个钩子？4"></a>第一次页面加载会触发哪几个钩子？4</h4><hr>
 <h4 id="Vue实现数据双向绑定的原理"><a href="#Vue实现数据双向绑定的原理" class="headerlink" title="Vue实现数据双向绑定的原理:"></a>Vue实现数据双向绑定的原理:</h4><p>通过<code>Object.defineProperty()</code>对数据劫持结合发布订阅模式，实现。</p>
 <hr>
-<h4 id="Vuex刷新页面数据丢失怎么解决？（Vuex数据持久化存储）"><a href="#Vuex刷新页面数据丢失怎么解决？（Vuex数据持久化存储）" class="headerlink" title="Vuex刷新页面数据丢失怎么解决？（Vuex数据持久化存储）"></a>Vuex刷新页面数据丢失怎么解决？（Vuex数据持久化存储）</h4><p>Vuex<strong>本质</strong>：一个保存在<strong>内存中的对象</strong></p>
+<h4 id="Vuex刷新页面数据丢失怎么解？（Vuex数据持久化存储）"><a href="#Vuex刷新页面数据丢失怎么解？（Vuex数据持久化存储）" class="headerlink" title="Vuex刷新页面数据丢失怎么解？（Vuex数据持久化存储）"></a>Vuex刷新页面数据丢失怎么解？（Vuex数据持久化存储）</h4><p>Vuex<strong>本质</strong>：一个保存在<strong>内存中的对象</strong></p>
 <blockquote>
 <p>法一：vuex数据保存到浏览器中(三个缓存)</p>
 <p>法二：页面刷新再次请求数据</p>
@@ -1403,7 +1417,7 @@ IE：内容 = content + padding + border
 <h4 id="简述ajax原理和XmlHttpRequest对象"><a href="#简述ajax原理和XmlHttpRequest对象" class="headerlink" title="简述ajax原理和XmlHttpRequest对象"></a>简述ajax原理和XmlHttpRequest对象</h4><p>ajax原理：通过XmlHttpRequest对象来向服务器发起请求，响应回来的数据，可以在js进行处理，用js来操作dom。</p>
 <p>XmlHttpRequest是ajax的核心机制，异步请求，向服务器提出请求和处理响应，不阻塞用户。</p>
 <hr>
-<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id><a href="#" class="headerlink" title></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
+<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
 <h4 id="（了解）一个tcp接连能发几个http请求？"><a href="#（了解）一个tcp接连能发几个http请求？" class="headerlink" title="（了解）一个tcp接连能发几个http请求？"></a>（了解）一个tcp接连能发几个http请求？</h4><p>http0.1 默认一次tcp，http请求之后就会断开</p>
 <p>http1.1请求头配置：keep-alive=true，tcp连接不断开(2小时)，一个tcp一时间支持一个http请求</p>
 <p>http2.0 多路复用技术 Multiplexing，tcp并发多个http请求</p>
@@ -3168,7 +3182,7 @@ responseText <span class="token operator">--</span><span class="token operator">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">198k</span>
+                        class="white-color">198.2k</span>
             
             
             
