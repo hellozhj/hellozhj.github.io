@@ -462,7 +462,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    25.2k
+                    25.4k
                 </div>
                 
 
@@ -488,7 +488,7 @@ IE：内容 = content + padding + border
 <hr>
 <h4 id="行内元素："><a href="#行内元素：" class="headerlink" title="行内元素："></a>行内元素：</h4><pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>del</span><span class="token punctuation">&gt;</span></span></code></pre>
 
-<h4 id="行内块元素："><a href="#行内块元素：" class="headerlink" title="行内块元素："></a>行内块元素：</h4><pre class="language-html" data-language="html"><code class="language-html">img、textarea、input</code></pre>
+<h4 id="行内块元素："><a href="#行内块元素：" class="headerlink" title="行内块元素："></a>行内块元素：</h4><pre class="language-html" data-language="html"><code class="language-html">img、textarea、input、button、select、td、th</code></pre>
 
 <h4 id="块级元素："><a href="#块级元素：" class="headerlink" title="块级元素："></a>块级元素：</h4><pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>address</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>center</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>~<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>、<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
 
@@ -520,7 +520,7 @@ IE：内容 = content + padding + border
 <p>rem：相对于根 html 元素(字体大小)，其他元素rem</p>
 <p>vw/vh：相当于屏幕的宽度和高度的 1%，宽度用%，高度vh</p>
 <hr>
-<h4 id="什么是SPA？"><a href="#什么是SPA？" class="headerlink" title="什么是SPA？"></a>什么是SPA？</h4><p>单页面web应用。只初始化加载html，js，css。不会因为用户的操作，进行页面的重新加载跳转，利用js动态的切换html元素。UI用户交互。展示逻辑先加载，利于内容的切换。</p>
+<h4 id="什么是SPA？"><a href="#什么是SPA？" class="headerlink" title="什么是SPA？"></a>什么是SPA？</h4><p>单页面web应用。加载单个HTML页面，只在页面初始化加载相应的html，js，css。不会因为用户的操作，进行页面的重新加载跳转，利用js动态的切换html元素。UI用户交互。展示逻辑先加载，利于内容的切换。</p>
 <p>优点：前后端的分离；</p>
 <p>缺点：不利于SEO，首页加载相对慢，导航不可用</p>
 <hr>
@@ -529,16 +529,16 @@ IE：内容 = content + padding + border
 <hr>
 <h4 id="重绘与重排："><a href="#重绘与重排：" class="headerlink" title="重绘与重排："></a>重绘与重排：</h4><p>1.重绘：元素外观改变，浏览器重新绘制，常见：background，visibility，outline</p>
 <p>2.重排：渲染树重新计算，常见：几何属性，节点，offset，client系列，改浏览器大小</p>
-<p>区别：1.重绘不一定重排。</p>
+<p>区别：1.重绘不一定重排。<strong>重绘不一定需要重排（比如颜色的改变），重排必然导致重绘</strong>（比如改变网页位置）</p>
 <p>减小重排：</p>
 <blockquote>
 <p>1.样式修改，多次合一次</p>
-<p>2.多次重排，<code>position</code>为ab，fixed</p>
+<p>2.多次重排，<code>position</code>为ab，fixed，脱离文档流</p>
 <p>3.内存操作节点，完成再添加文档</p>
-<p>4.复杂操作，节点隐藏</p>
+<p>4.复杂操作，可以将其display属性设置为none使其隐藏</p>
 </blockquote>
 <hr>
-<h4 id="解释下浮动和它的工作原理？清除浮动的方法"><a href="#解释下浮动和它的工作原理？清除浮动的方法" class="headerlink" title="解释下浮动和它的工作原理？清除浮动的方法"></a>解释下浮动和它的工作原理？清除浮动的方法</h4><p>浮动：脱离文档流，不占空间，停留(遇到两种)</p>
+<h4 id="解释下浮动和它的工作原理？清除浮动的方法"><a href="#解释下浮动和它的工作原理？清除浮动的方法" class="headerlink" title="解释下浮动和它的工作原理？清除浮动的方法"></a>解释下浮动和它的工作原理？清除浮动的方法</h4><p>浮动：脱离文档流，不占空间，父级边界或者同级浮动元素停留(遇到两种)</p>
 <p>清除浮动的方法：</p>
 <blockquote>
 <p>1.浮动元素后面空标签：clear:both，(有弊端)</p>
@@ -565,7 +565,8 @@ IE：内容 = content + padding + border
 <hr>
 <h4 id="空元素：内容：br，meta，hr，link，input，img"><a href="#空元素：内容：br，meta，hr，link，input，img" class="headerlink" title="空元素：内容：br，meta，hr，link，input，img"></a>空元素：内容：br，meta，hr，link，input，img</h4><hr>
 <h4 id="如何实现浏览器内多个标签页之间的通讯："><a href="#如何实现浏览器内多个标签页之间的通讯：" class="headerlink" title="如何实现浏览器内多个标签页之间的通讯："></a>如何实现浏览器内多个标签页之间的通讯：</h4><p>1.定时器+cookie；使用定时器刷新，检查cookie(同域可读)是否被修改(浪费资源)</p>
-<p>2.<code>localstorage</code>:非当前页面修改<code>localstorage</code>时触发。</p>
+<p>2.<code>localstorage</code>:非当前页面修改<code>localstorage</code>时触发。<strong>事件监听</strong></p>
+<p>(ps：session是会话级的存储空间，每个标签页都是单独的）。</p>
 <hr>
 <h4 id="为什么要初始化css样式："><a href="#为什么要初始化css样式：" class="headerlink" title="为什么要初始化css样式："></a>为什么要初始化css样式：</h4><p>1.浏览器差异，标签默认值不同</p>
 <p>2.提高编码质量</p>
@@ -573,7 +574,7 @@ IE：内容 = content + padding + border
 <h4 id="css3新增的伪类有那些-5"><a href="#css3新增的伪类有那些-5" class="headerlink" title="css3新增的伪类有那些:5"></a>css3新增的伪类有那些:5</h4><hr>
 <h4 id="对canvas，svg，webgl的理解："><a href="#对canvas，svg，webgl的理解：" class="headerlink" title="对canvas，svg，webgl的理解："></a>对<code>canvas</code>，<code>svg</code>，<code>webgl</code>的理解：</h4><p>1.h5新增加元素对象，画布，js有api，2d，不依赖，高数据帧率</p>
 <p>2.<code>SVG</code>给数据可以绘制点，线，图，基于XML标记语言，矢量图，底数据帧率，图形图表</p>
-<p>3.<code>WebGL</code>，3d绘图，第三方库</p>
+<p>3.<code>WebGL</code>，3d绘图，第三方库three.js</p>
 <hr>
 <h4 id="浏览器如何渲染UI？"><a href="#浏览器如何渲染UI？" class="headerlink" title="浏览器如何渲染UI？"></a>浏览器如何渲染UI？</h4><p>1.html，解析，DOM树</p>
 <p>2.css，解析，规则</p>
@@ -584,7 +585,9 @@ IE：内容 = content + padding + border
 <h4 id="em、rem区别："><a href="#em、rem区别：" class="headerlink" title="em、rem区别："></a>em、rem区别：</h4><p>em：相对于当前对象→相对(继承)父级元素字体大小→相对于浏览器默认</p>
 <p>rem：相对于根元素HTML的字体大小</p>
 <hr>
-<h4 id="解释cssprites-精灵图-如可使用："><a href="#解释cssprites-精灵图-如可使用：" class="headerlink" title="解释cssprites(精灵图)如可使用："></a>解释cssprites(精灵图)如可使用：</h4><p>小图整合到大图上，减轻服务器图片数量请求</p>
+<h4 id="解释cssprites-精灵图-如可使用："><a href="#解释cssprites-精灵图-如可使用：" class="headerlink" title="解释cssprites(精灵图)如可使用："></a>解释cssprites(精灵图)如可使用：</h4><p>小图整合到大图上，减轻服务器图片数量请求，<strong>background背景定位技术技巧布局网页背景</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js">background<span class="token operator">-</span>position<span class="token operator">:</span> <span class="token operator">-</span>480px <span class="token operator">-</span>558px<span class="token punctuation">;</span></code></pre>
+
 <hr>
 <h4 id="伪类和伪元素的区别："><a href="#伪类和伪元素的区别：" class="headerlink" title="伪类和伪元素的区别："></a>伪类和伪元素的区别：</h4><p>伪类：</p>
 <blockquote>
@@ -623,10 +626,10 @@ IE：内容 = content + padding + border
 <h4 id="常见的浏览器内核：4"><a href="#常见的浏览器内核：4" class="headerlink" title="常见的浏览器内核：4"></a>常见的浏览器内核：4</h4><p>trident：ie；Gecko；Presto；Webkit：谷歌</p>
 <hr>
 <h4 id="一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验："><a href="#一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验：" class="headerlink" title="一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验："></a>一个页面上有大量的图片，加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验：</h4><blockquote>
-<p>1.路由懒加载</p>
+<p>1.图片懒加载</p>
 <p>2.图片预加载(幻灯片，相册)</p>
-<p>3.压缩图</p>
-<p>4.缩略图</p>
+<p>3.缩略图</p>
+<p>（4）如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。</p>
 </blockquote>
 <hr>
 <h4 id="seo优化："><a href="#seo优化：" class="headerlink" title="seo优化："></a>seo优化：</h4><blockquote>
@@ -639,18 +642,22 @@ IE：内容 = content + padding + border
 <p>7.提高网站速度</p>
 </blockquote>
 <hr>
-<h4 id="实现0-5px边框：3"><a href="#实现0-5px边框：3" class="headerlink" title="实现0.5px边框：3"></a>实现0.5px边框：3</h4><p>1.<br>2.<br>3. </p>
+<h4 id="实现0-5px边框：3"><a href="#实现0-5px边框：3" class="headerlink" title="实现0.5px边框：3"></a>实现0.5px边框：3</h4><ol>
+<li><strong>border+border-image+linear-gradient的方式</strong></li>
+<li><strong>伪元素+background-image的方式</strong></li>
+<li><strong>定位+伪元素+transfrom缩放(scale)的方式</strong></li>
+</ol>
 <hr>
 <h4 id="less-和-sass-的区别："><a href="#less-和-sass-的区别：" class="headerlink" title="less 和 sass 的区别："></a>less 和 sass 的区别：</h4><p>less：基于js，客户端处理；<code>@</code>；没有输出设置；不支持条件语句</p>
-<p>sass：基于ruby，服务器处理；<code>$</code>；4种输出选项(nested，compact，compressed，expanded)；支持条件语句(if,else,for)</p>
+<p>sass：基于ruby，服务器处理；<code>$</code>；4种输出选项(nested，compact，compressed，expanded)；支持条件语句(if,else)<code>for()</code>循环</p>
 <hr>
 <h4 id="了解-xhtml和html有什么区别"><a href="#了解-xhtml和html有什么区别" class="headerlink" title="(了解)xhtml和html有什么区别:"></a>(了解)xhtml和html有什么区别:</h4><p>功能：xhtml 兼容各大浏览器，手机，pda，</p>
 <p>书写：xhtml语法更严谨</p>
 <ol>
 <li>标签小写；</li>
-<li>标签成对</li>
-<li>标签顺序，先进后出</li>
-<li>所有属性使用双引号</li>
+<li>标签成对；</li>
+<li>标签顺序，先进后出；</li>
+<li>所有属性使用双引号；</li>
 <li>不允许使用target=”_blank”(改写为rel=”external”，并搭配JavaScript实现此效果)</li>
 </ol>
 <hr>
@@ -1615,6 +1622,7 @@ IE：内容 = content + padding + border
 <p>webpack：全部加载，在启动开发服务器时先打包完再启动开发服务器</p>
 <pre class="language-js" data-language="js"><code class="language-js">webpack会先打包，然后启动开发服务器，请求服务器时直接给予打包结果。
 而vite是直接启动开发服务器，请求哪个模块再对该模块进行实时编译。
+
 由于现代浏览器本身就支持<span class="token constant">ES</span> Module，会自动向依赖的Module发出请求。vite充分利用这一点，将开发环境下的模块文件，就作为浏览器要执行的文件，而不是像webpack那样进行打包合并。
 由于vite在启动的时候不需要打包，也就意味着不需要分析模块的依赖、不需要编译，因此启动速度非常快。当浏览器请求某个模块时，再根据需要对模块内容进行编译。这种按需动态编译的方式，极大的缩减了编译时间，项目越复杂、模块越多，vite的优势越明显。
 在<span class="token constant">HMR</span>方面，当改动了一个模块后，仅需让浏览器重新请求该模块即可，不像webpack那样需要把该模块的相关依赖模块全部编译一次，效率更高。
@@ -3182,7 +3190,7 @@ responseText <span class="token operator">--</span><span class="token operator">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">198.2k</span>
+                        class="white-color">198.4k</span>
             
             
             
