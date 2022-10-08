@@ -462,7 +462,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    26.3k
+                    27.2k
                 </div>
                 
 
@@ -2748,6 +2748,83 @@ responseText <span class="token operator">--</span><span class="token operator">
 <li><p>使用var 定义变量还会提升变量声明</p>
 </li>
 </ul>
+<hr>
+<h4 id="布局有那些？"><a href="#布局有那些？" class="headerlink" title="布局有那些？"></a>布局有那些？</h4><p><img src="/2022/08/05/interview/%E5%B8%83%E5%B1%80-1665214708504.png" alt="布局"></p>
+<hr>
+<h4 id="页面实现字体大小10px"><a href="#页面实现字体大小10px" class="headerlink" title="页面实现字体大小10px"></a>页面实现字体大小10px</h4><pre class="language-js" data-language="js"><code class="language-js"><span class="token punctuation">.</span>font10px <span class="token punctuation">{</span>
+    font<span class="token operator">-</span>size<span class="token operator">:</span> 12px<span class="token punctuation">;</span>
+    <span class="token literal-property property">transform</span> <span class="token operator">:</span> <span class="token function">scale</span><span class="token punctuation">(</span><span class="token number">0.83</span><span class="token punctuation">,</span><span class="token number">0.83</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<hr>
+<h4 id="transition和animation的区别"><a href="#transition和animation的区别" class="headerlink" title="transition和animation的区别"></a>transition和animation的区别</h4><ul>
+<li><p>transition是<strong>过渡属性</strong>，强调过渡，他的实现需要触发一个事件;过渡只有一组（两个：开始-结束）关键帧。</p>
+</li>
+<li><p>animation是<strong>动画属性</strong>，他的实现不需要触发事件，设定好时间之后可以自己执行，且可以循环一个动画（设置多个关键帧）。</p>
+<blockquote>
+<p>animation-fill-mode:forwards这个属性可以在动画完成后将动画最后的状态应用到元素上</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h4 id="v-model的原理简单描述"><a href="#v-model的原理简单描述" class="headerlink" title="v-model的原理简单描述"></a>v-model的原理简单描述</h4><p>语法糖，<strong>v-model 可以用 value 属性和input事件来代替</strong></p>
+<p><strong>双向数据绑定的原理</strong></p>
+<hr>
+<h4 id="vue-过滤器的理解"><a href="#vue-过滤器的理解" class="headerlink" title="vue 过滤器的理解"></a>vue 过滤器的理解</h4><ol>
+<li>过滤器的作用:用于文本格式化,仅仅作为格式化操作,不做复杂的业务处理</li>
+<li>过滤器的使用方式:通过管道符号(|)来使用</li>
+<li>过滤器的使用位置:mustache插值和v-bing的表达式</li>
+</ol>
+<hr>
+<h4 id="dist文件夹"><a href="#dist文件夹" class="headerlink" title="dist文件夹"></a>dist文件夹</h4><p><strong>给服务器用的最终发布版本。</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js">css文件夹下的<span class="token punctuation">.</span>css文件是项目要用到的css文件<span class="token punctuation">,</span>当你做webpack打包的时候，会把所有的css样式打包到这里
+css文件夹下的<span class="token punctuation">.</span>css<span class="token punctuation">.</span>map文件是一个Source map文件，Source map就是一个信息文件，里面储存着位置信息。也就是说，转换后的代码的每一个位置，所对应的转换前的位置。目的是帮助我们调试被压缩过的css代码，只是方便我们开发的时候做调试使用。
+js文件夹下的<span class="token punctuation">.</span>js<span class="token punctuation">.</span>map依然是Source map文件，方便我们开发时调试js代码使用。
+app<span class="token punctuation">.</span>js文件里放的是项目中各个页面的逻辑代码
+manifest<span class="token punctuation">.</span>js文件可以理解为webpack打包生成的一个配置文件，我们一般不需要关心它
+vendor<span class="token punctuation">.</span>js放的是各个页面各个组件公用的一些代码
+index<span class="token punctuation">.</span>html使我们前端代码入口的一个html文件</code></pre>
+
+<hr>
+<h4 id="axios中断请求"><a href="#axios中断请求" class="headerlink" title="axios中断请求"></a>axios中断请求</h4><ul>
+<li>CancelToken ；</li>
+<li>AbortController；</li>
+</ul>
+<hr>
+<h4 id="微信扫码登录流程"><a href="#微信扫码登录流程" class="headerlink" title="微信扫码登录流程"></a>微信扫码登录流程</h4><p><img src="/2022/08/05/interview/2015b5775f4a8e08030dffde6862766d.jpeg" alt="微信扫码登录流程"></p>
+<hr>
+<h4 id="项目中的产生的错误怎么监听和处理"><a href="#项目中的产生的错误怎么监听和处理" class="headerlink" title="项目中的产生的错误怎么监听和处理"></a>项目中的产生的错误怎么监听和处理</h4><ul>
+<li>try catch</li>
+<li>Promise.catch()</li>
+<li>window.onerror</li>
+<li>window.addEventListener(‘error’,(error)=&gt;{console.log(error)})</li>
+</ul>
+<hr>
+<h4 id="webpack的优化"><a href="#webpack的优化" class="headerlink" title="webpack的优化"></a>webpack的优化</h4><ul>
+<li><p>优化loader配置：est、include、exclude三个配置项来缩⼩loader的处理范围</p>
+</li>
+<li><p>压缩CSS和HTML</p>
+</li>
+<li><p>tree shaking</p>
+</li>
+<li><p>作⽤域提升（Scope Hoisting）分析出模块之间的依赖关系，尽可能地把模块放到同⼀个函数中</p>
+</li>
+<li><p>代码分割</p>
+<pre class="language-js" data-language="js"><code class="language-js">项目包含第三方依赖库以及自己写的代码，打包出的文件会比较大，在用户访问系统的时候，由于请求的资源比较大，所以会响应的比较慢，造成页面渲染缓慢，影响用户体验。
+代码分割以后，chunk会相应的变小，用户访问时，只需返回此页面相关chunk，再加上浏览器的并行请求策略，从而加快系统响应速度，优化用户体验。</code></pre></li>
+</ul>
+<hr>
+<h4 id="冒泡排序和快速排序"><a href="#冒泡排序和快速排序" class="headerlink" title="冒泡排序和快速排序"></a>冒泡排序和快速排序</h4><ul>
+<li>冒泡排序：<strong>相邻两个数进行比较，符合条件的 情况下 交换位置</strong></li>
+<li>快速排序：<ul>
+<li>找出数组的中间值，取出来，改变了原数组；</li>
+<li>将已经改变之后的数组进行循环遍历和这个取出来的中间值进行比较，小于中间值的 都统一打包放在一个数组中(l),反之放在另外一个数组中(r) [l mid r]最后将这些数组进行合并得到一个新的数组。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="赋值、浅拷贝、深拷贝"><a href="#赋值、浅拷贝、深拷贝" class="headerlink" title="赋值、浅拷贝、深拷贝"></a>赋值、浅拷贝、深拷贝</h4><p><img src="/2022/08/05/interview/image-20221008205923949.png" alt="image-20221008205923949"></p>
+<hr>
 
                 
             </div>
@@ -3258,7 +3335,7 @@ responseText <span class="token operator">--</span><span class="token operator">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">199.4k</span>
+                        class="white-color">200.3k</span>
             
             
             
