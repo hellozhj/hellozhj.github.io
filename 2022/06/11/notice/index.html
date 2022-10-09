@@ -1256,7 +1256,8 @@ cdn 内容分发网络</p>
 </li>
 </ul>
 <hr>
-<h3 id="路由守卫的相关问题"><a href="#路由守卫的相关问题" class="headerlink" title="路由守卫的相关问题"></a>路由守卫的相关问题</h3><ol>
+<h3 id="路由守卫的相关问题"><a href="#路由守卫的相关问题" class="headerlink" title="路由守卫的相关问题"></a>路由守卫的相关问题</h3><p><strong>vue-cli构建的项目，路由文件中的路由都是顶级组件的子路由，顶级组件要给路由出口</strong></p>
+<ol>
 <li>一般使用路由守卫的场景是用户权限控制。虽然可以使用组件的生命周期完成这个功能。但使用路由守卫更加的高效。因为它的执行比组件的的实例化更早。也就是说，只要路由守卫不通过，组件连实例化都不会进行。大大的加速控制流程与减少资源的消耗。</li>
 <li>什么路由：通过不同的地址，显示不同的页面或者执行不同的方法。</li>
 <li>Vue的路由就是通过地址，显示不同的页面组件。让用户觉得他已经进行了跳转。实际上是并没有跳转的。也路由是实现单页面多应用的方式。</li>
@@ -2249,7 +2250,7 @@ fn1 <span class="token operator">=</span> fn<span class="token punctuation">;</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">202.8k</span>
+                        class="white-color">209.8k</span>
             
             
             

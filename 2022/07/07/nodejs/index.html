@@ -6,12 +6,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="NodeJs, Evedward">
     <meta name="description" content="NodeJs - 总结
-nvm命令（命令行在管理员状态下运行）
-nvm ls        查看当前的电脑上下载了哪些 node 版本
-
-nvm install     下载指定版本的node
-
-nvm use       切换指定的nod">
+nvm方式安装安装nvmNVM(Node version Manager) 一个用于管理Node多版本的工具。
+首先nvm也是一个软件，为什么要使用nvm安装呢？因为node的版本实在太多了，更新的速度也非常快，将来">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -464,7 +460,7 @@ nvm use       切换指定的nod">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.4k
+                    11.3k
                 </div>
                 
 
@@ -485,237 +481,352 @@ nvm use       切换指定的nod">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="NodeJs-总结"><a href="#NodeJs-总结" class="headerlink" title="NodeJs - 总结"></a>NodeJs - 总结</h1><p><img src="/2022/07/07/nodejs/image-20210315174139590.png" alt="流程图"></p>
-<h3 id="nvm命令（命令行在管理员状态下运行）"><a href="#nvm命令（命令行在管理员状态下运行）" class="headerlink" title="nvm命令（命令行在管理员状态下运行）"></a>nvm命令（命令行在管理员状态下运行）</h3><ul>
-<li><p>nvm ls        查看当前的电脑上下载了哪些 node 版本</p>
+<h2 id="nvm方式安装"><a href="#nvm方式安装" class="headerlink" title="nvm方式安装"></a>nvm方式安装</h2><h4 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装nvm</h4><p>NVM(Node version Manager) 一个用于管理Node多版本的工具。</p>
+<p>首先nvm也是一个软件，为什么要使用nvm安装呢？因为node的版本实在太多了，更新的速度也非常快，将来在开发中我们可能在维护着一个老项目，它使用的node版本是比较低的，而可能我们现在又在开发着一个新项目，这个新项目使用的node版本极大可能与老项目不同，我们就要在一个电脑上存在多个不同的node版本————nvm可以帮我实现这个需求。</p>
+<p>首先我们需要先下载nvm的安装包</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">下载</a></p>
+<p>然后直接安装(如果自己之前安装过node，需要先卸载之前安装的node)</p>
+<p><img src="/2022/07/07/nodejs/image-20210315141126570-1665323802010.png" alt="image-20210315141126570"></p>
+<p><img src="/2022/07/07/nodejs/image-20210315141455584-1665323802012.png" alt="image-20210315141455584"></p>
+<h4 id="设置nvm的镜像地址"><a href="#设置nvm的镜像地址" class="headerlink" title="设置nvm的镜像地址"></a>设置nvm的镜像地址</h4><p>打开nvm的安装目录，一般在下面类似的目录(如果有同学自己另外安装了目录，自己打开对应的目录)</p>
+<p><img src="/2022/07/07/nodejs/image-20210315142118929-1665323802012.png" alt="image-20210315142118929"></p>
+<p>打开里面的<code>settings.txt</code>,可以对里面的镜像地址进行设置，可以把下面的两行复制到最后</p>
+<pre class="language-none"><code class="language-none">node_mirror: https://npm.taobao.org/mirrors/node/
+npm_mirror: https://npm.taobao.org/mirrors/npm/</code></pre>
+
+<p>最终如下面的效果：</p>
+<p><img src="/2022/07/07/nodejs/image-20210315142344596-1665323802011.png" alt="image-20210315142344596"></p>
+<p>因为默认情况下，nvm帮我们下载node环境的时候会到国外的地址下载，我们可以手动改为国内的。不过有时候国内的镜像有时候会崩，如果下载过慢，也可以尝试把这两行删除，再重新下载。</p>
+<img src="/2022/07/07/nodejs/../../真 · 学习资料/狼/6.NodeJs/assets/image-20210315142720911.png" alt="image-20210315142720911" style="zoom:50%;">
+
+<p>当然如果运气实在太差，就跟运气好的同桌要一份，放到你自己的安装目录下就好了。</p>
+<p><img src="/2022/07/07/nodejs/image-20210315150800711-1665323802012.png" alt="image-20210315150800711"></p>
+<h4 id="使用nvm安装node"><a href="#使用nvm安装node" class="headerlink" title="使用nvm安装node"></a>使用nvm安装node</h4><p>还是打开cmd(命令行工具)</p>
+<p>首先输入 <code>nvm list</code> 看看是否已经下载了。</p>
+<p><img src="/2022/07/07/nodejs/image-20210315143105436-1665323802012.png" alt="image-20210315143105436"></p>
+<p><img src="/2022/07/07/nodejs/image-20210315142955882-1665323802012.png" alt="image-20210315142955882"></p>
+<p>不管有没有安装过，都可以进行下载和安装，对应的命令是： <span style="color:yellowgreen;font-weight:bold;">nvm install 指定版本</span>  如：</p>
+<p><img src="/2022/07/07/nodejs/image-20210315144037620-1665323802012.png" alt="image-20210315144037620"></p>
+<p>然后我们在cmd里面输入查看已经安装的版本的命令 <span style="color:yellowgreen;font-weight:bold;">nvm list</span></p>
+<p><img src="/2022/07/07/nodejs/image-20210315144208270-1665323802012.png" alt="image-20210315144208270"></p>
+<p>接着想切换哪个版本，就使用切换的命令 <span style="color:yellowgreen;font-weight:bold;">nvm use 指定版本</span></p>
+<p><img src="/2022/07/07/nodejs/image-20210315144336595-1665323802012.png" alt="image-20210315144336595"></p>
+<p>此时在cmd里面输入 <span style="color:yellowgreen;font-weight:bold;">node -v</span> 就可以查看当前的node版本</p>
+<p><img src="/2022/07/07/nodejs/image-20210315144504362-1665323802012.png" alt="image-20210315144504362"></p>
+<blockquote>
+<p>小结：</p>
+<ol>
+<li><p>nvm是一个版本管理工具，安装的时候不能安装在中文目录下</p>
 </li>
-<li><p>nvm install     下载指定版本的node</p>
-</li>
-<li><p>nvm use       切换指定的node版本</p>
-</li>
-<li><p>nvm version     查看当前安装 nvm 的版本</p>
-</li>
-<li><p>nvm root       查看nvm的安装目录</p>
-</li>
-<li><p>nvm uninstall    卸载</p>
-</li>
-<li><p>node -v       查看当前使用 node 的版本</p>
-</li>
-<li><p>node       用于执行js代码</p>
-<p>node js文件的路径  —&gt;  node  ./a/b/c/xx.js</p>
-</li>
-<li><p>环境变量</p>
-<p>快速连接到一个执行程序(.exe/.cmd)一种功能</p>
-</li>
-<li><p>知识点</p>
-<p>*    服务器的工作原理</p>
-<p>*      1. 浏览器根据ip找到服务器的主机</p>
-<p>*      2. 根据端口找到服务器软件</p>
-<p>*      3. 判断请求的类型(静态/动态)</p>
-<p>*        静态  —&gt;  读取文件  —&gt; 响应</p>
-<p>*        动态  —&gt;  操作数据库..  —&gt; 响应</p>
-</li>
-</ul>
-<h3 id="使用http实现一个极其简单的服务器"><a href="#使用http实现一个极其简单的服务器" class="headerlink" title="使用http实现一个极其简单的服务器"></a>使用http实现一个极其简单的服务器</h3><ol>
-<li>引入http 模块</li>
-<li>创建一个服务器对象</li>
-<li>监听端口和ip</li>
-<li>监听浏览器请求服务器事件</li>
-<li>响应数据回浏览器</li>
+<li><p>nvm主要命令</p>
+<ol>
+<li>nvm version 			查看nvm版本</li>
+<li>nvm list                查看当前安装的所有node版本</li>
+<li>nvm install node版本     安装指定版本的node环境</li>
+<li>nvm use node版本         切换指定版本的node环境</li>
 </ol>
-<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 1， 引入http 模块</span>
-<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这个写法是node里面比较特殊的写法，目前大家就习惯一下就好</span>
-<span class="token comment">// 2， 创建一个服务器对象</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 3， 监听端口和ip</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span><span class="token string">'192.168.12.131'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 4， 监听浏览器请求服务器事件</span>
-server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
-    <span class="token comment">// 5， 响应数据回浏览器</span>
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"&lt;h1&gt;helloworld&lt;/h1&gt;"</span><span class="token punctuation">)</span>
+</li>
+<li><p>如果下载过慢可以自己更改镜像地址，也可以向同桌要一份已经下载好的</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="直接安装Node"><a href="#直接安装Node" class="headerlink" title="直接安装Node"></a>直接安装Node</h3><p>这个方式我们不推荐，但是如果有同学用不了nvm，只能先使用这个方式先用着</p>
+<p>首先到<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">对应网站</a>下载安装包</p>
+<p><img src="/2022/07/07/nodejs/image-20210315145030331-1665323802012.png" alt="image-20210315145030331"></p>
+<p>之后就是无脑点下一步就可以了。</p>
+<h2 id="Node环境使用"><a href="#Node环境使用" class="headerlink" title="Node环境使用"></a>Node环境使用</h2><h3 id="repl运行环境-知道就行"><a href="#repl运行环境-知道就行" class="headerlink" title="repl运行环境(知道就行)"></a>repl运行环境(知道就行)</h3><p>node给我们提供了一个”REPL”运行环境 </p>
+<p>【r = read】  读取用户输入的文字</p>
+<p>【e = eval】  执行用户输入了内容</p>
+<p>【p = print】 输出执行结果</p>
+<p>【l = loop】  循环执行上面的流程</p>
+<p>我们只需要在cmd或者运行里面输入 “node”,就可以进入repl运行环境，可以在这个环境下写代码。</p>
+<p><img src="/2022/07/07/nodejs/image-20210315151105489-1665323802013.png" alt="image-20210315151105489"></p>
+<h3 id="在js文件中写代码"><a href="#在js文件中写代码" class="headerlink" title="在js文件中写代码"></a>在js文件中写代码</h3><p>毫无疑问，repl的方式肯定不方便，不是我们最常用的方式，所以我们正常都是在编辑器里把代码写好，然后再执行。</p>
+<p>我们直接在vscode里面写一个文件</p>
+<p><img src="/2022/07/07/nodejs/image-20210315151944850-1665323802013.png" alt="image-20210315151944850"></p>
+<p>执行这个文件的方式有很多，但是归根到底都是一样的，就是要通过命令窗口(cmd/powershell)调用node环境执行它。</p>
+<h4 id="方式1-cmd执行"><a href="#方式1-cmd执行" class="headerlink" title="方式1 - cmd执行"></a>方式1 - cmd执行</h4><p>1,打开文件所在目录</p>
+<p><img src="/2022/07/07/nodejs/image-20210315152118788-1665323802013.png" alt="image-20210315152118788"></p>
+<p>2，在地址栏上点击并输入cmd回车</p>
+<p><img src="/2022/07/07/nodejs/image-20210315152154149-1665323802013.png" alt="image-20210315152154149"></p>
+<p>3,在弹出来的cmd窗口里面输入 <span style="color:yellowgreen;">node 指定文件</span></p>
+<p><img src="/2022/07/07/nodejs/image-20210315152450272-1665323802013.png" alt="image-20210315152450272"></p>
+<p>4,回车之后就能看到结果</p>
+<p><img src="/2022/07/07/nodejs/image-20210315152604438-1665323802013.png" alt="image-20210315152604438"></p>
+<h4 id="方式2-在编辑器的终端执行"><a href="#方式2-在编辑器的终端执行" class="headerlink" title="方式2 - 在编辑器的终端执行"></a>方式2 - 在编辑器的终端执行</h4><p>在vscode里面通过 “终端” -&gt; “新终端”  ，或者使用快捷键 <code>ctrl + ~</code> 打开vscode的命令行窗口</p>
+<p><img src="/2022/07/07/nodejs/image-20210315152841445-1665323802013.png" alt="image-20210315152841445"></p>
+<p><img src="/2022/07/07/nodejs/image-20210315152907165-1665323802013.png" alt="image-20210315152907165"></p>
+<p>在终端里面也是使用node命令执行文件</p>
+<p><img src="/2022/07/07/nodejs/image-20210315153134879-1665323802013.png" alt="image-20210315153134879"></p>
+<blockquote>
+<p>小结：</p>
+<ol>
+<li>重点掌握使用node命令执行js文件</li>
+<li>无论是在cmd还是在vscode的终端里面执行，本质都就在使用命令调用node环境进行解析执行</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="服务器代码"><a href="#服务器代码" class="headerlink" title="服务器代码"></a>服务器代码</h2><p>由上述的内容我们知道，服务器要能让浏览器访问，至少要告诉别人两个重要的东西：ip+端口，所以我们如果要使用nodejs写一个服务器，肯定要有这些要素。</p>
+<h4 id="NodeJS实现一个服务器的代码"><a href="#NodeJS实现一个服务器的代码" class="headerlink" title="NodeJS实现一个服务器的代码"></a>NodeJS实现一个服务器的代码</h4><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 引入http协议，node里面已经帮我们封装好了关于这部分的API</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<span class="token comment">// 2. 创建一个服务器对象</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 3. 绑定ip和端口</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">)</span>
+<span class="token comment">// 4. 服务器对象监听浏览器的请求</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span>response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+	<span class="token comment">// 5. 响应数据回浏览器</span>
+  response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'&lt;h1&gt;hello world!!!&lt;/h1&gt;'</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
-<h3 id="从文件中读取内容"><a href="#从文件中读取内容" class="headerlink" title="从文件中读取内容"></a>从文件中读取内容</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 引入fs模块</span>
+<p>通过上面的5行代码，我们就使用nodejs编写了一个服务器软件，只要开启起来，就能让浏览器请求，并得到返回的数据了。</p>
+<h4 id="中文乱码问题"><a href="#中文乱码问题" class="headerlink" title="中文乱码问题"></a>中文乱码问题</h4><p>练习的过程中，可能会写一些中文返回给浏览器，于是发现了中文会在浏览器中乱码。我们可以定位到肯定是编码格式不对的问题，所以我们需要通过一些特殊的方式告诉浏览器编码格式。http协议中规定，我们可以在响应头中返回数据解析方式和数据的编码格式。</p>
+<pre class="language-js" data-language="js"><code class="language-js">response<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span><span class="token string">'text/html;charset=utf-8'</span><span class="token punctuation">)</span>
+response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'&lt;h1&gt;你好，世界！！！&lt;/h1&gt;'</span><span class="token punctuation">)</span></code></pre>
+
+<h4 id="返回静态数据"><a href="#返回静态数据" class="headerlink" title="返回静态数据"></a>返回静态数据</h4><p>目前为止，我们已经可以实现服务器和浏览器的通信了，但是我们发现，返回的内存太过于简单了，也不像是我们平时开发的静态资源，所以我们需要用到fs模块来把我们写好的静态资源读取出来，并返回给浏览器。</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<span class="token comment">// 引入fs模块</span>
 <span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
-<span class="token comment">// 使用 readFile 方法 读取内容</span>
-<span class="token comment">// 从文件里面读取出来东西，默认是 buffer - 缓冲/缓存 ， 需要进行转换才能展示</span>
-<span class="token comment">// 如果在使用 readFile的时候，没有给指定的 编码格式，就是得到 缓冲</span>
-<span class="token comment">// 如果指定编码，并且正确，才能看到内容</span>
-fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'./views/03-index.html'</span><span class="token punctuation">,</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
-<span class="token comment">// fs.readFile('./views/03-index.html',"base64",(err,data)=&gt;{    </span>
-    <span class="token comment">// err 是读取出错</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// data 就是读取到的数据</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span>response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token comment">// 读取出来指定的文件</span>
+  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'./views/index.html'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+   <span class="token comment">// 调用 响应回浏览器的方法把页面内容返回浏览器 </span>
+    response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
-<h3 id="响应html回到浏览器"><a href="#响应html回到浏览器" class="headerlink" title="响应html回到浏览器"></a>响应html回到浏览器</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 引入模块一般都放在最前面</span>
-<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这个写法是node里面比较特殊的写法，目前大家就习惯一下就好</span>
-<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 2， 创建一个服务器对象</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 3， 监听端口和ip</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 4， 监听浏览器请求服务器事件</span>
-server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token comment">// 先使用fs 读取 html 里面的内容</span>
-  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">"./views/03-index.html"</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 使用res.end 响应回浏览器</span>
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="根据请求url返回不同的静态资源"><a href="#根据请求url返回不同的静态资源" class="headerlink" title="根据请求url返回不同的静态资源"></a>根据请求url返回不同的静态资源</h4><p> 如果要根据不同的url来返回不同的静态资源，那么就要在最开始的时候约定好，浏览器发什么url回服务器，服务器就返回对应的数据</p>
+<p>我们暂时约定： 如果请求 <span style="color:hotpink;">‘/views/index.html’</span> 我们就从服务器返回 index页面的内容</p>
+<p>如果请求 <span style="color:hotpink;">‘/css/index.css’</span> 我们就从服务器返回 index.css 的内容</p>
+<p>如果请求 <span style="color:hotpink;">‘/views/list.html’</span>  我们就从服务器返回 list页面的内容</p>
+<p>首先我们需要在服务器端把请求的url获取到：</p>
+<pre class="language-js" data-language="js"><code class="language-js">server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span>response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token comment">// 得到浏览器请求的url</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
-<h3 id="区分请求"><a href="#区分请求" class="headerlink" title="区分请求"></a>区分请求</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token comment">// req - request</span>
-  <span class="token comment">// res - response</span>
-  <span class="token comment">// 区分请求</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 该属性就是 端口后面的所有内容</span>
-  <span class="token comment">// response 是响应对象，所以我们调用了 响应对象的 end 方法，把请求结束了，并响应回浏览器</span>
-  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"1123123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<h3 id="统一处理静态资源"><a href="#统一处理静态资源" class="headerlink" title="统一处理静态资源"></a>统一处理静态资源</h3><ul>
-<li>目标： 希望把所有的静态都能统一管理，而不是每个静态都要判断</li>
-<li>思路： url 就是 完整的 要读取的资源的路径</li>
-<li>url : /views/index.html</li>
-<li>读取的时候  __dirname + /views/index.html</li>
-<li>就可以使用 url 代替 可以变化的路径部分</li>
-</ul>
-<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-
-  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<h3 id="判断是否静态资源"><a href="#判断是否静态资源" class="headerlink" title="判断是否静态资源"></a>判断是否静态资源</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token comment">// 目标： 希望可以把静态请求和动态请求分开</span>
-  <span class="token comment">// 思路： 把静态资源放在一些固定的 文件夹里面   views /  assets</span>
-  <span class="token comment">// 此时当用户请求静态资源的时候，一定是以这些文件夹开头</span>
-  <span class="token comment">// 只要判断， 请求 是否是 以 指定的文件夹开头就行</span>
-  <span class="token comment">// if(req.url 是否 以 /views 开头或者以 /assets 开头)</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/views</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/assets</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-      res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>所以我们只需要在request事件里面判断请求的url，并读取不同的资源返回即可</p>
+<pre class="language-js" data-language="js"><code class="language-js">server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span>response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token comment">// 返回index.html</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">'/views/index.html'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// fs读取index.html , response.end() 返回</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+  <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">'/views/list.html'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// fs读取list.html , response.end() 返回     </span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">'/css/index.css'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// fs读取index.css , response.end() 返回           </span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
-<h3 id="path模块"><a href="#path模块" class="headerlink" title="path模块"></a>path模块</h3><ul>
-<li>在node里面使用相对路径，是存在一定的安全隐患的</li>
-<li>./  是基于 node 命令的 执行目录的</li>
-<li>D:/a/b/c  node a.jg  —-&gt; ./   就是c目录</li>
-<li>建议在node里面写绝对路径 ， 使用path 模块解决路径的问题</li>
-</ul>
-<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="统一返回静态资源"><a href="#统一返回静态资源" class="headerlink" title="统一返回静态资源"></a>统一返回静态资源</h4><p>到此为止我们发现了一定的规则，我们fs读取的路径，事实上和我们约定的请求url是一样的，所以我们可以直接修改为</p>
+<pre class="language-js" data-language="js"><code class="language-js">server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span>response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>__dirname<span class="token operator">+</span>request<span class="token punctuation">.</span>url<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
-<span class="token comment">// console.log(__dirname); // __dirname 是node提供的一个 变量，可以得到当前的js所有的绝对目录</span>
+<p>但是这样有一个问题，我们能访问到这个网站下的所有资源，这样不安全，所以我们约定，只有几个固定的，用来放静态资源的文件夹才能被访问</p>
+<pre class="language-js" data-language="js"><code class="language-js">server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span>response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token comment">// 请求的url要以 /views 开关，才是静态请求</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/views</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  	fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>__dirname<span class="token operator">+</span>request<span class="token punctuation">.</span>url<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>   
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
-<span class="token comment">// 然后再使用这个绝对目录 和 相对路径进行拼接</span>
-<span class="token comment">// const res = path.join(__dirname, "a", "b", "c");</span>
-<span class="token keyword">const</span> res <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"./views/03-index.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="处理动态数据"><a href="#处理动态数据" class="headerlink" title="处理动态数据"></a>处理动态数据</h3><p>相比于静态资源来说，动态数据的请求会有很多，而且每个的功能和处理的逻辑都不尽相同，所以每个处理动态数据的接口就只能单独写了。原理也是和之前一样，通过判断不同的URL来判断浏览器要服务器做什么。我们管这种处理动态请求的方式称呼为 ： <strong>接口</strong></p>
+<p>约定好：如果浏览器请求的是 <span style="color:yellowgreen;">‘/getArticles’</span> , 就是要获取文章的列表，我们就返回一个数组给浏览器。那么我们的代码要这么写：</p>
+<pre class="language-js" data-language="js"><code class="language-js">server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span>response</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token comment">// 判断url</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>reqeust<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">'/getArticles'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 返回一个数组给浏览器 - 但是不能直接返回一个数组，要先把数组转换为字符串，否则会报错</span>
+    <span class="token keyword">let</span> json <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token literal-property property">title</span><span class="token operator">:</span><span class="token string">'标题1'</span><span class="token punctuation">,</span><span class="token literal-property property">content</span><span class="token operator">:</span><span class="token string">'内容1'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token literal-property property">title</span><span class="token operator">:</span><span class="token string">'标题2'</span><span class="token punctuation">,</span><span class="token literal-property property">content</span><span class="token operator">:</span><span class="token string">'内容2'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token literal-property property">title</span><span class="token operator">:</span><span class="token string">'标题3'</span><span class="token punctuation">,</span><span class="token literal-property property">content</span><span class="token operator">:</span><span class="token string">'内容3'</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+    response<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
-<span class="token comment">// const res = path.resolve(__dirname, "./views/03-index.html");</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<h3 id="通过绝对路径找到html"><a href="#通过绝对路径找到html" class="headerlink" title="通过绝对路径找到html"></a>通过绝对路径找到html</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 引入模块一般都放在最前面</span>
-<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这个写法是node里面比较特殊的写法，目前大家就习惯一下就好</span>
-<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 2， 创建一个服务器对象</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 3， 监听端口和ip</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 4， 监听浏览器请求服务器事件</span>
-server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token comment">// 先使用fs 读取 html 里面的内容</span>
-  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>
-    path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"./views/03-index.html"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token string">"utf-8"</span><span class="token punctuation">,</span>
-    <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment">// 使用res.end 响应回浏览器</span>
-      res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<h3 id="响应动态数据"><a href="#响应动态数据" class="headerlink" title="响应动态数据"></a>响应动态数据</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">/**
- *  目标： 响应一些动态数据回到浏览器
- *
- */</span>
-<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token comment">//  服务器接收到请求，除了静态资源，就是动态请求</span>
-  <span class="token comment">// 动态请求有： 登录 / 注册 / 文章列表 / 分布请求  / 评论 / 评论列表 ...</span>
-  <span class="token comment">//   登录的逻辑：  ,  用户名和密码是否正确 ..</span>
-  <span class="token comment">//   注册的逻辑 ： 判断用户名是否合法 ， 用户名是否已经存在 ...</span>
-  <span class="token comment">//   获取文章列表 ： 获取哪种文章 ， 到数据库里面根据一定的条件获取</span>
-  <span class="token comment">//   获取文章详情 ： 根据id到数据库里找</span>
-  <span class="token comment">//   ...</span>
-  <span class="token comment">//   动态请求每个请求都需要单独处理 ， 只能一个一个判断</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">"/login"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">//   一般在后端会响应回来一个 json 格式的对象</span>
-    <span class="token comment">// 里面包含： code - 业务代码 , 不同的数字代表不同的状态 ， msg -- 业务消息 ， data --- 响应回来的数据</span>
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
-      <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-        <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
-        <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">"ok"</span><span class="token punctuation">,</span>
-        <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-          <span class="token literal-property property">token</span><span class="token operator">:</span> <span class="token string">"531ga654fg35adfg4a3dfg1as35df1"</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<p>此时我们只要在页面中写ajax请求，请求这个接口，就能得到一个数组。</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span><span class="token string">'http://127.0.0.1:8080/getArticles'</span><span class="token punctuation">,</span>
+    <span class="token function">success</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">// 服务器给我们的是一个字符串，先把字符串转换为数组</span>
+      <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+      <span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">''</span>
+      arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        str <span class="token operator">+=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;li&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>e<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/li&gt;</span><span class="token template-punctuation string">`</span></span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">"/register"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"用户名不合法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token comment">//   ...</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#parent'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
 
-<h3 id="npm的用法"><a href="#npm的用法" class="headerlink" title="npm的用法"></a>npm的用法</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">/**
- *  npm 是一个用于下载 删除  node第三方包的工具
- *      使用步骤：
- *          1. npm init -y         作用：创建一个package.json文件，里面用于记录当前的项目的信息，只需要在一开始创建项目的时候使用1次
- *          2. npm install 第三方库的名称
- *          3. 使用第三方库  去 npmjs.com 去查看对应的文档
- *
- *
- *  其它命令
- *      npm uninstall 包名
- *
- *
- *  依赖模式
- *      下载的用于实现项目功能的第三方库也叫依赖
- *
- *      全局依赖
- *          可能任何一个项目都需要使用的工具 ，比如： nodemon
- *              npm i -g 包
- *      开发依赖
- *          在开发阶段需要用，但是在项目上线后不用了 ，比如： less
- *              npm i -D 包  /   npm i --save-dev 包
- *      生产依赖
- *          项目上线之后也要使用的功能 ， 比如 jquery , 随着项目在浏览器里面访问需要使用到的 库
- *              npm i -S 包  /   npm i --save 包
- */</span></code></pre>
+<h3 id="network开发者工具"><a href="#network开发者工具" class="headerlink" title="network开发者工具"></a>network开发者工具</h3><p>我们已经可以得到从服务器响应给我们的动态数据了，但是请求响应有时候并不总是一帆风顺，所以我们需要借助一些工具对我们的请求和响应进行观察，让我们对这个过程中的细节更加了如指掌。</p>
+<p>network开发工具就是这样一个工具。下面我们给大家反这个工具的使用讲解一下。</p>
+<p>每当浏览器发生一次请求和响应，我们都可以在里面监视到。首先打开F12，找到 <code>network</code> 工具选项</p>
+<p><img src="/2022/07/07/nodejs/networktools-1665325327423.png"></p>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="模块化的必要性"><a href="#模块化的必要性" class="headerlink" title="模块化的必要性"></a>模块化的必要性</h3><p>通过之前的学习，我们知道在处理动态请求的时候，我们需要判断不同的url来处理不同的请求，这个时候会有一个问题：一个网站的接口肯定是很多的，如果都写在一个js文件里面，代码多了会很不好扩展和维护。不仅仅是我们写接口的时候，但凡是代码，肯定会越写越多，如果全放在一个js文件里面，无疑是不合适的。</p>
+<p>所以我们把代码分到多个js文件里面，势在必行。但是有一个问题，我们怎么对这些代码进行分割呢？这个时候有一个思想： <strong>模块化</strong></p>
+<h3 id="模块化的概念及作用"><a href="#模块化的概念及作用" class="headerlink" title="模块化的概念及作用"></a>模块化的概念及作用</h3><p>代码的模块化，要求我们以功能为界限，把代码分割到不同的js文件里面，以达到随意组合，随意拆分，易于理解，易于扩展，易于维护，易于复用等目的。</p>
+<p>其实我们之前使用的fs和path等，已经使用了模块化的思想。当我们需要操作文件时，我们找到fs模块，当我们需要处理目录时，我们找来了path模块，当我们需要和浏览器通信时，找来了http模块……我们可以做到随意组合，当我们在别的地方要用，也可能重复使用这些或者别的模块，每个模块中的功能单一了，代码自然就相对简洁了，也就提升了代码的可读性和可以性……</p>
+<p>打个比方，一个程序好比是一个自行车，我们把我们的代码模块化成为每个轮子，铃铛，坐鞍，把手…..，如果要给这台自行车添加电动功能，只需要在原来的基础上添加电池的马达(易于扩展),如果它的铃铛坏了，我们就换个新的(易于维护)，如果我们想把它的轮子用于另一台车上，也是可行的(易于复用)…..</p>
+<p>所以模块化这个思想，是非常好用的，我们要掌握好。</p>
+<h3 id="模块化的实现"><a href="#模块化的实现" class="headerlink" title="模块化的实现"></a>模块化的实现</h3><p>在js发展的历程中，模块化的标准出现过4个</p>
+<ul>
+<li>AMD</li>
+<li>CMD</li>
+<li>CommonJS</li>
+<li>ES Module</li>
+</ul>
+<p>其中AMD和CMD历史久远，在此我们就不进行讲解了，有兴趣的同学自行百度。</p>
+<p><a href="">参考:AMD、CMD、CommonJs、ES6的对比</a></p>
+<p>我们重点学习CommonJS和ES Module，CommonJS是Node环境原生支持的，有时候我们在开发中还会用到，而ES Module是JS官方推出的方式，目前在项目中已经广泛使用。</p>
+<h4 id="CommonJS模块化"><a href="#CommonJS模块化" class="headerlink" title="CommonJS模块化"></a>CommonJS模块化</h4><p>模块化的语法分为导出和导入两部分，下面都是固定语法，大家熟记并使用熟练就好了。</p>
+<h5 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h5><pre class="language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> 导出的数据 <span class="token punctuation">}</span>
+或者
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>键 <span class="token operator">=</span> 导出的数据
+或者
+exports<span class="token punctuation">.</span>键 <span class="token operator">=</span> 导出的数据</code></pre>
 
-<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><pre class="language-js" data-language="js"><code class="language-js">CommonJS的模块化标准 有两部分内容
+<p>其中 <code>module.exports</code> 和 <code>exports</code> 在最开始是同一个对象，并且js模块最终是以module.exports指向的对象为准，所以在使用CommonJS模块化的写法的时候，要注意：</p>
+<ol>
+<li>exports 不能重新赋值，无效</li>
+<li>module.exports 重新赋值后，导出的对象就变成了这个对象</li>
+</ol>
+<h5 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h5><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> 模块名称 <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'指定模块路径或者模块名称'</span><span class="token punctuation">)</span></code></pre>
+
+<p>如：a.js</p>
+<pre class="language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>add<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">add</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">}</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>reduce <span class="token operator">=</span> reduce
+<span class="token keyword">function</span> <span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">-</span> b <span class="token punctuation">}</span></code></pre>
+
+<p>b.js</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./a.js'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// { add,reduce }</span></code></pre>
+
+<p>我们就可以把之前的代码变成模块化的写法，拆分出来</p>
+<p>router.js</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 把动态请求的功能放在这个router.js里面</span>
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">'/getArticle'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>文章数据<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token operator">===</span><span class="token string">'/login'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>登录结果<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// TODO</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>server.js</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token comment">// 导入router.js里面导入的函数</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">ruquire</span><span class="token punctuation">(</span><span class="token string">'./router.js'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/views</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">[</span>
+            res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+      	<span class="token comment">// 调用函数处理动态数据</span>
+        <span class="token function">router</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>res<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
+
+<h4 id="ES-Module-俗称es6模块化"><a href="#ES-Module-俗称es6模块化" class="headerlink" title="ES Module(俗称es6模块化)"></a>ES Module(俗称es6模块化)</h4><h5 id="导出："><a href="#导出：" class="headerlink" title="导出："></a>导出：</h5><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 默认导出</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> 要导出的对象
+
+<span class="token comment">// 按需导出</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> 要导出的数据 <span class="token punctuation">}</span></code></pre>
+
+<blockquote>
+<p>注意： </p>
+<ol>
+<li>默认导出只能写1次</li>
+<li>多次按需导出会最终导出一个对象，是js文件里面所有按需导出的数据的集合</li>
+</ol>
+</blockquote>
+<h5 id="导入-1"><a href="#导入-1" class="headerlink" title="导入"></a>导入</h5><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 默认导入</span>
+<span class="token keyword">import</span> 模块名 <span class="token keyword">from</span> <span class="token string">'模块或者路径'</span>
+
+<span class="token comment">// 按需导入</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>数据 <span class="token punctuation">,</span> 数据 <span class="token operator">...</span><span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'模块或者路径'</span>
+
+<span class="token comment">// 混合导入</span>
+<span class="token keyword">import</span> 模块名<span class="token punctuation">,</span><span class="token punctuation">{</span>数据 <span class="token punctuation">,</span> 数据 <span class="token operator">...</span><span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'模块或者路径'</span></code></pre>
+
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>默认导入的名称不用和导出的那你一样</li>
+<li>按需导入的数据名称要和按需导出的数据名称要一样</li>
+<li>按需导入可以部分导入</li>
+</ol>
+</blockquote>
+<p>如：</p>
+<p>a.js</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 默认导出</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> add
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token punctuation">}</span>
+<span class="token comment">// 按需导出</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> add <span class="token punctuation">,</span> reduce <span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">reduce</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">-</span> b <span class="token punctuation">}</span></code></pre>
+
+<p>b.js</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 默认导入</span>
+<span class="token keyword">import</span> fn <span class="token keyword">from</span> <span class="token string">'./a.js'</span>
+<span class="token comment">// 按需导入</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>add<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'a.js'</span>
+<span class="token comment">// 混合导入</span>
+<span class="token keyword">import</span> fn<span class="token punctuation">,</span><span class="token punctuation">{</span>add<span class="token punctuation">,</span>reduce<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./a.js'</span></code></pre>
+
+<blockquote>
+<p>注意：</p>
+<ol>
+<li><p>后期我们使用ES Module的写法非常多，所以一定要掌握好</p>
+</li>
+<li><p>node环境下默认不支持ES Module的语法，需要：</p>
+<p>a. 保证node版本在13及以上</p>
+<p>b. 要使用.mjs结尾才能正常使用</p>
+</li>
+</ol>
+</blockquote>
+<p>相比于CommonJS而言，ES Module在浏览器中也可以直接使用</p>
+<p>a.js</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">}</span></code></pre>
+
+<p>b.js</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> add <span class="token keyword">from</span> <span class="token string">'a.js'</span></code></pre>
+
+<p>html代码</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b.js<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>在浏览器里面使用ES Module的时候，注意一定要加上type=”module”属性，以及需要以服务器环境打开页面，比如在vscode里面使用live server插件打开，不然无法执行。</p>
+<blockquote>
+<p>了解一下就行，正常开发中我们不会使用这种用法的。</p>
+</blockquote>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><pre class="language-js" data-language="js"><code class="language-js">CommonJS的模块化标准 有两部分内容
  <span class="token operator">*</span>      导出
  <span class="token operator">*</span>          module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> 数据 <span class="token punctuation">}</span>
  <span class="token operator">*</span>          module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>数据 <span class="token operator">=</span> 值
@@ -818,6 +929,431 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">import</span> obj<span class="token punctuation">,</span> <span class="token punctuation">{</span> fn <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./04-a.mjs"</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<hr>
+<h2 id="包管理工具"><a href="#包管理工具" class="headerlink" title="包管理工具"></a>包管理工具</h2><p>经过了之前的学习，我们已经掌握了如何实现浏览器和服务器的通信，不过相信大家已经有一个疑问了，我们自己又写前端，又写后端的情况下，如果什么都自己来完成，肯定会效率非常低，我们之前已经有过在前端代码里面使用插件实现效果的经验，那么我们在node里面有没有这种类似的做法呢？</p>
+<p>有！Node除了本身自己的功能强大之外，周边衍生出来的生态圈同样强大 ———— NodeJS拥有数量非常庞大的插件，只不过我们把它们称为**”第三方模块”**</p>
+<p>并且在Node当中，使用这些第三方模块也十分简单，因为Node中集成了管理这些第三方模块的工具，我们称为“<strong>包管理工具</strong>”</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>node中自带的包管理工具叫 NPM(Node Package Manager)，其实说白了无非也是一个软件，只是我们在安装Node的时候就已经”捆绑”安装了。只需要在cmd中输入 <code>npm -v</code> 就能看到当前的npm的版本号。</p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ol>
+<li>下载并管理项目中使用到的第三方式模块(包)</li>
+<li>发布自己的模块到npmjs平台</li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>步骤1：初始化项目</p>
+<p>在一个项目中初次使用npm，需要先交项目初始化。在自己项目的根目录，打开终端，输入</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">npm init -y</code></pre>
+
+<p>会得到一个package.json文件，文件描述了我们整个node项目的基本信息。</p>
+<p>步骤2：下载需要使用的第三方模块</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">npm install 模块名称
+例如：
+npm install colors</code></pre>
+
+<p>下载完成我们会发现在根目录下多了一个node_modules文件，里面就是我们下载下来的模块。</p>
+<p>步骤3：在<a target="_blank" rel="noopener" href="https://npmjs.com/">https://npmjs.com</a> 查找对应的文档学习如何使用下载下来的模块。</p>
+<p>这部分内容由老师上课演示并带领大家学习。</p>
+<h3 id="npm安装模式"><a href="#npm安装模式" class="headerlink" title="npm安装模式"></a>npm安装模式</h3><p>npm安装第三方模块有三种方式：</p>
+<ol>
+<li>全局依赖方式 - 一次安装，在任何项目都能用，一般是方便项目构建的工具</li>
+<li>生产依赖方式 - 上线需要依赖的模块</li>
+<li>开发依赖方式 - 只是在开发的时候使用的模块，上线不需要使用</li>
+</ol>
+<h4 id="各方式安装命令"><a href="#各方式安装命令" class="headerlink" title="各方式安装命令"></a>各方式安装命令</h4><pre class="language-shell" data-language="shell"><code class="language-shell"># 全局安装
+npm install -g 模块    或者   npm install --global 模块
+# 生产依赖安装
+npm install --save-dev 模块 或者  npm install -S 模块
+# 开发依赖安装
+npm install --dev 模块 或者 npm install -D 模块</code></pre>
+
+<h4 id="nodemon"><a href="#nodemon" class="headerlink" title="nodemon"></a>nodemon</h4><p>我们之前每次修改了node代码，都需要重新执行，这样还是比较麻烦的。所以我们推荐大家一个工具 ———— nodemon,它可以在我们保存代码的时候就自动重启代码</p>
+<p>安装：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">npm install -g nodemon</code></pre>
+
+<p>使用</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">nodemon 01.js</code></pre>
+
+<blockquote>
+<p>全局安装了nodemon后，只需要把node命令换成nodemon即可</p>
+</blockquote>
+<h4 id="npm镜像"><a href="#npm镜像" class="headerlink" title="npm镜像"></a>npm镜像</h4><p>如果有同学下载模块很慢，一般就是网络问题。npn默认也是到国外下载包的，所以我们可以手动修改其下载的源</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell"># 配置到淘宝服务器
+npm config set registry https://registry.npm.taobao.org
+# 查看 registry 是否配置正确
+npm config get registry</code></pre>
+
+<h3 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h3><p><code>Yarn</code> 是于 2016 年 10 月 由 Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具，旨在取代 npm 这种包管理工具。</p>
+<p>官网：<br><a target="_blank" rel="noopener" href="https://yarnpkg.com/en/docs">https://yarnpkg.com/en/docs</a></p>
+<p>中文参考链接：<br><a target="_blank" rel="noopener" href="https://yarn.bootcss.com/">https://yarn.bootcss.com/</a></p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>速度超快</li>
+</ul>
+<blockquote>
+<p>yarn 缓存了每个下载过的包，所以再次使用时无需重复下载。 同时利用并行下载以最大化资源利用率，因此安装速度更快。</p>
+</blockquote>
+<ul>
+<li>超级安全</li>
+</ul>
+<blockquote>
+<p>在执行代码之前，yarn 会通过算法校验每个安装包的完整性。</p>
+</blockquote>
+<ul>
+<li>超级可靠</li>
+</ul>
+<blockquote>
+<p>使用详细、简洁的锁文件格式和明确的安装算法，yarn 能够保证在不同系统上无差异的工作。</p>
+</blockquote>
+<p><strong>安装</strong>:</p>
+<p>管理员模式运行cmd   ：<strong>npm install -g yarn</strong></p>
+<p><strong>常用命令</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>npm</th>
+<th>yarn</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>npm init -y</td>
+<td>yarn init -y</td>
+</tr>
+<tr>
+<td>npm install react –save</td>
+<td>yarn add react</td>
+</tr>
+<tr>
+<td>npm uninstall react –save</td>
+<td>yarn remove react</td>
+</tr>
+<tr>
+<td>npm install react –save-dev</td>
+<td>yarn add react –dev</td>
+</tr>
+<tr>
+<td>npm update –save</td>
+<td>yarn upgrade</td>
+</tr>
+<tr>
+<td>npm install -g nodemon</td>
+<td>yarn global add nodemon</td>
+</tr>
+</tbody></table>
+<p><strong>yarn 全局安装后，命令不生效</strong></p>
+<p>背景：</p>
+<ol>
+<li>执行 <code>yarn global add nodemon 后，重启 </code>bash……`， vue 命令依然不生效</li>
+<li>而 npm 全局安装（npm install -g nodemon）后，命令生效</li>
+</ol>
+<p>解决办法：</p>
+<p>1.执行如下命令，得出 yarn 全局安装的命令所处的安装目录</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">yarn global bin </code></pre>
+
+<p>2.复制安装目录至电脑的环境变量中<br><img src="/2022/07/07/nodejs/2018110718150477-1665325327423.png"></p>
+<p>3.重新启动终端，发现全局命令行可以生效了</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>我们发现使用yarn和npm，都要先把项目初始化，而初始化的结果就是生成一个package.json文件。这个文件到底有什么用？</p>
+<ol>
+<li>记录了你这个项目的主要信息</li>
+<li>可以明确项目的依赖，将来即使把node_modules删除了，也可以通过这个文件找回</li>
+<li>声明简短的命令，来代替复杂的命令</li>
+<li>…</li>
+</ol>
+<blockquote>
+<p>小结：</p>
+<ol>
+<li>包管理工具是我们在后面的学习，以后的工具中一定会用到的，所以一定要会使用</li>
+<li>每个项目一定要检查有没有 package.json ，如果没有，一定要先 init</li>
+<li>node_modules文件夹里面就是我们下载的第三方模块，在传输代码的时候要记得排除这部分</li>
+<li>将来在工作中，yarn或者npm都可能会使用，要熟悉对应的命令</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="nvm命令（命令行在管理员状态下运行）"><a href="#nvm命令（命令行在管理员状态下运行）" class="headerlink" title="nvm命令（命令行在管理员状态下运行）"></a>nvm命令（命令行在管理员状态下运行）</h3><ul>
+<li><p>nvm ls        查看当前的电脑上下载了哪些 node 版本</p>
+</li>
+<li><p>nvm install     下载指定版本的node</p>
+</li>
+<li><p>nvm use       切换指定的node版本</p>
+</li>
+<li><p>nvm version     查看当前安装 nvm 的版本</p>
+</li>
+<li><p>nvm root       查看nvm的安装目录</p>
+</li>
+<li><p>nvm uninstall    卸载</p>
+</li>
+<li><p>node -v       查看当前使用 node 的版本</p>
+</li>
+<li><p>node       用于执行js代码</p>
+<p>node js文件的路径  —&gt;  node  ./a/b/c/xx.js</p>
+</li>
+<li><p>环境变量</p>
+<p>快速连接到一个执行程序(.exe/.cmd)一种功能</p>
+</li>
+<li><p>知识点</p>
+<p>*    服务器的工作原理</p>
+<p>*      1. 浏览器根据ip找到服务器的主机</p>
+<p>*      2. 根据端口找到服务器软件</p>
+<p>*      3. 判断请求的类型(静态/动态)</p>
+<p>*        静态  —&gt;  读取文件  —&gt; 响应</p>
+<p>*        动态  —&gt;  操作数据库..  —&gt; 响应</p>
+</li>
+</ul>
+<hr>
+<h2 id="NodeJS标准库"><a href="#NodeJS标准库" class="headerlink" title="NodeJS标准库"></a>NodeJS标准库</h2><p>在NodeJS中提供了很多的标准库，也就是自带的功能API，我们可以先大概学习一部分和后面课程相关的。</p>
+<h4 id="fs模块"><a href="#fs模块" class="headerlink" title="fs模块"></a>fs模块</h4><p>fs模块，是Node标准库中用于操作计算机上的文件的模块，提供了很多的方法，比如现在我们想从电脑上读取一个HTML文件，把内容返回给浏览器，就需要用到这个模块</p>
+<h5 id="fs读取模块"><a href="#fs读取模块" class="headerlink" title="fs读取模块"></a>fs读取模块</h5><p><img src="/2022/07/07/nodejs/image-20210315155408780-1665324515227.png" alt="image-20210315155408780"></p>
+<p>我们打算读取一下index.html</p>
+<p><img src="/2022/07/07/nodejs/image-20210315155523903-1665324515227.png" alt="image-20210315155523903"></p>
+<p>用法如下：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 引入fs模块 ， node里面几乎所有的标准库都要先引入才能使用</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+<span class="token comment">// 2. 调用readFile方法</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'./page/index.html'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<p>如果我们没有指定options里面的编码，那么默认读取出来的是 <code>&lt;Buffer&gt;</code> ，是一些二进制数据，我们需要指定对应的编码，才能看到结果</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 引入fs模块 ， node里面几乎所有的标准库都要先引入才能使用</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+<span class="token comment">// 2. 调用readFile方法 , 并指定编码</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'./page/index.html'</span><span class="token punctuation">,</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<blockquote>
+<p>注：读取文件是一个异步的过程，因为我们不知道要读取的文件有多大，越大越耗时，所以我们不等待这个讲到动作完成，而是采用异步的方式，给一个回调函数，当它读取完成的时候再执行逻辑。</p>
+</blockquote>
+<h3 id="node命令注意点"><a href="#node命令注意点" class="headerlink" title="node命令注意点"></a>node命令注意点</h3><p>我们在上一步学习读取文件的时候，使用的是相对路径，但是相对路径在node环境里面是存在隐患的。因为在nodejs里面，所有的相对路径的开始位置是你的node命令执行的位置。如下：js文件在一个node文件夹里面</p>
+<p><img src="/2022/07/07/nodejs/image-20210315160926418-1665324515228.png" alt="image-20210315160926418"></p>
+<p>如果你此时在code目录下运行fs.js,就没有问题</p>
+<p><img src="/2022/07/07/nodejs/image-20210315161058900-1665324515228.png" alt="image-20210315161058900"></p>
+<p>因为相对路径的开始目录是从node命令所有的目录开始的，也就是code文件夹，通过 ‘./page/index.html’是能找到指定文件的，所以执行正常</p>
+<p>但是如果我们切换到了node目录下再执行，就会有问题。</p>
+<p><img src="/2022/07/07/nodejs/image-20210315161352848-1665324515228.png" alt="image-20210315161352848"></p>
+<p>因为我们的node命令在node文件夹下执行，fs.js里面的路径’./page/index.html’以node文件平开始查找，肯定找不到html文件，所以报错了。</p>
+<h3 id="path模块"><a href="#path模块" class="headerlink" title="path模块"></a>path模块</h3><p>所以既然在NodeJS里面使用相对路径有一定的风险，有没有好的方式可以解决呢？答案是肯定的。</p>
+<p>我们依然在node目录下写我们的js代码，使用下面的两个方案来解决。</p>
+<img src="/2022/07/07/nodejs/image-20210315162929485.png" alt="image-20210315162929485" style="zoom:50%;">
+
+<h4 id="path-join"><a href="#path-join" class="headerlink" title="path.join"></a>path.join</h4><p>第一种方案可以使用path.join方法配合__dirname常量来实现</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> dir <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'../page/index.html'</span><span class="token punctuation">)</span></code></pre>
+
+<p>其中join的作用是把多个路径片段拼接到一起，并解决不同平台的字符兼容问题。__dirname是得到当前js文件所在目录的API</p>
+<h4 id="path-resolve"><a href="#path-resolve" class="headerlink" title="path.resolve"></a>path.resolve</h4><p>而第二种方案就简单得多，我们只需要给一个相对路径，就能得到一个绝对路径</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> dir <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'../page/index.html'</span><span class="token punctuation">)</span></code></pre>
+
+<p>此时我们再使用fs进行读取就不会出现路径错误了。</p>
+<blockquote>
+<p>小结：</p>
+<ol>
+<li>NodeJS里面提供了非常多的标准库(内置模块)，要学会从文档中学习</li>
+<li>相对路径是基于node命令执行的目录的，所以大家在执行node代码的时候要注意</li>
+<li>建议在用到路径的地方使用path来得到绝对路径再使用</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="使用http实现一个极其简单的服务器"><a href="#使用http实现一个极其简单的服务器" class="headerlink" title="使用http实现一个极其简单的服务器"></a>使用http实现一个极其简单的服务器</h3><ol>
+<li>引入http 模块</li>
+<li>创建一个服务器对象</li>
+<li>监听端口和ip</li>
+<li>监听浏览器请求服务器事件</li>
+<li>响应数据回浏览器</li>
+</ol>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 1， 引入http 模块</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这个写法是node里面比较特殊的写法，目前大家就习惯一下就好</span>
+<span class="token comment">// 2， 创建一个服务器对象</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 3， 监听端口和ip</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span><span class="token string">'192.168.12.131'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 4， 监听浏览器请求服务器事件</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token comment">// 5， 响应数据回浏览器</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"&lt;h1&gt;helloworld&lt;/h1&gt;"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="从文件中读取内容"><a href="#从文件中读取内容" class="headerlink" title="从文件中读取内容"></a>从文件中读取内容</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 引入fs模块</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+<span class="token comment">// 使用 readFile 方法 读取内容</span>
+<span class="token comment">// 从文件里面读取出来东西，默认是 buffer - 缓冲/缓存 ， 需要进行转换才能展示</span>
+<span class="token comment">// 如果在使用 readFile的时候，没有给指定的 编码格式，就是得到 缓冲</span>
+<span class="token comment">// 如果指定编码，并且正确，才能看到内容</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'./views/03-index.html'</span><span class="token punctuation">,</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+<span class="token comment">// fs.readFile('./views/03-index.html',"base64",(err,data)=&gt;{    </span>
+    <span class="token comment">// err 是读取出错</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// data 就是读取到的数据</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="响应html回到浏览器"><a href="#响应html回到浏览器" class="headerlink" title="响应html回到浏览器"></a>响应html回到浏览器</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 引入模块一般都放在最前面</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这个写法是node里面比较特殊的写法，目前大家就习惯一下就好</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2， 创建一个服务器对象</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 3， 监听端口和ip</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 4， 监听浏览器请求服务器事件</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 先使用fs 读取 html 里面的内容</span>
+  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">"./views/03-index.html"</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 使用res.end 响应回浏览器</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3 id="区分请求"><a href="#区分请求" class="headerlink" title="区分请求"></a>区分请求</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// req - request</span>
+  <span class="token comment">// res - response</span>
+  <span class="token comment">// 区分请求</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 该属性就是 端口后面的所有内容</span>
+  <span class="token comment">// response 是响应对象，所以我们调用了 响应对象的 end 方法，把请求结束了，并响应回浏览器</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"1123123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3 id="统一处理静态资源"><a href="#统一处理静态资源" class="headerlink" title="统一处理静态资源"></a>统一处理静态资源</h3><ul>
+<li>目标： 希望把所有的静态都能统一管理，而不是每个静态都要判断</li>
+<li>思路： url 就是 完整的 要读取的资源的路径</li>
+<li>url : /views/index.html</li>
+<li>读取的时候  __dirname + /views/index.html</li>
+<li>就可以使用 url 代替 可以变化的路径部分</li>
+</ul>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3 id="判断是否静态资源"><a href="#判断是否静态资源" class="headerlink" title="判断是否静态资源"></a>判断是否静态资源</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 目标： 希望可以把静态请求和动态请求分开</span>
+  <span class="token comment">// 思路： 把静态资源放在一些固定的 文件夹里面   views /  assets</span>
+  <span class="token comment">// 此时当用户请求静态资源的时候，一定是以这些文件夹开头</span>
+  <span class="token comment">// 只要判断， 请求 是否是 以 指定的文件夹开头就行</span>
+  <span class="token comment">// if(req.url 是否 以 /views 开头或者以 /assets 开头)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/views</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/assets</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3 id="path模块-1"><a href="#path模块-1" class="headerlink" title="path模块"></a>path模块</h3><ul>
+<li>在node里面使用相对路径，是存在一定的安全隐患的</li>
+<li>./  是基于 node 命令的 执行目录的</li>
+<li>D:/a/b/c  node a.jg  —-&gt; ./   就是c目录</li>
+<li>建议在node里面写绝对路径 ， 使用path 模块解决路径的问题</li>
+</ul>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// console.log(__dirname); // __dirname 是node提供的一个 变量，可以得到当前的js所有的绝对目录</span>
+
+<span class="token comment">// 然后再使用这个绝对目录 和 相对路径进行拼接</span>
+<span class="token comment">// const res = path.join(__dirname, "a", "b", "c");</span>
+<span class="token keyword">const</span> res <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"./views/03-index.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// const res = path.resolve(__dirname, "./views/03-index.html");</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3 id="通过绝对路径找到html"><a href="#通过绝对路径找到html" class="headerlink" title="通过绝对路径找到html"></a>通过绝对路径找到html</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 引入模块一般都放在最前面</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这个写法是node里面比较特殊的写法，目前大家就习惯一下就好</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2， 创建一个服务器对象</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 3， 监听端口和ip</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 4， 监听浏览器请求服务器事件</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 先使用fs 读取 html 里面的内容</span>
+  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>
+    path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"./views/03-index.html"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">"utf-8"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// 使用res.end 响应回浏览器</span>
+      res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3 id="响应动态数据"><a href="#响应动态数据" class="headerlink" title="响应动态数据"></a>响应动态数据</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ *  目标： 响应一些动态数据回到浏览器
+ *
+ */</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"192.168.12.131"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"request"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//  服务器接收到请求，除了静态资源，就是动态请求</span>
+  <span class="token comment">// 动态请求有： 登录 / 注册 / 文章列表 / 分布请求  / 评论 / 评论列表 ...</span>
+  <span class="token comment">//   登录的逻辑：  ,  用户名和密码是否正确 ..</span>
+  <span class="token comment">//   注册的逻辑 ： 判断用户名是否合法 ， 用户名是否已经存在 ...</span>
+  <span class="token comment">//   获取文章列表 ： 获取哪种文章 ， 到数据库里面根据一定的条件获取</span>
+  <span class="token comment">//   获取文章详情 ： 根据id到数据库里找</span>
+  <span class="token comment">//   ...</span>
+  <span class="token comment">//   动态请求每个请求都需要单独处理 ， 只能一个一个判断</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">"/login"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//   一般在后端会响应回来一个 json 格式的对象</span>
+    <span class="token comment">// 里面包含： code - 业务代码 , 不同的数字代表不同的状态 ， msg -- 业务消息 ， data --- 响应回来的数据</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
+      <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">"ok"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">token</span><span class="token operator">:</span> <span class="token string">"531ga654fg35adfg4a3dfg1as35df1"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">"/register"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"用户名不合法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//   ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3 id="npm的用法"><a href="#npm的用法" class="headerlink" title="npm的用法"></a>npm的用法</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ *  npm 是一个用于下载 删除  node第三方包的工具
+ *      使用步骤：
+ *          1. npm init -y         作用：创建一个package.json文件，里面用于记录当前的项目的信息，只需要在一开始创建项目的时候使用1次
+ *          2. npm install 第三方库的名称
+ *          3. 使用第三方库  去 npmjs.com 去查看对应的文档
+ *
+ *
+ *  其它命令
+ *      npm uninstall 包名
+ *
+ *
+ *  依赖模式
+ *      下载的用于实现项目功能的第三方库也叫依赖
+ *
+ *      全局依赖
+ *          可能任何一个项目都需要使用的工具 ，比如： nodemon
+ *              npm i -g 包
+ *      开发依赖
+ *          在开发阶段需要用，但是在项目上线后不用了 ，比如： less
+ *              npm i -D 包  /   npm i --save-dev 包
+ *      生产依赖
+ *          项目上线之后也要使用的功能 ， 比如 jquery , 随着项目在浏览器里面访问需要使用到的 库
+ *              npm i -S 包  /   npm i --save 包
+ */</span></code></pre>
 
 
 
@@ -946,7 +1482,26 @@ console<span class="token punctuation">.</span><span class="token function">log<
  *      yarn
  */</span></code></pre>
 
-<h3 id="express"><a href="#express" class="headerlink" title="express"></a>express</h3><pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 引入</span>
+<hr>
+<h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2><p>为了提高开发效率，我们在开发过程中，都会尽量使用别人已经开发好的第三方模块，而我们想要快速实现服务器端的开发，推荐一个当下比较流行的框架：Express</p>
+<p><a target="_blank" rel="noopener" href="http://www.expressjs.com.cn/">Express</a> 作为开发框架，因为它是目前最稳定、使用最广泛，而且 Node.js 官方推荐的唯一一个 Web 开发框架。除了为 http 模块提供了更高层的接口外，还实现了许多功能，其中包括：</p>
+<ul>
+<li>静态文件服务；</li>
+<li>路由控制；</li>
+<li>模板解析支持；</li>
+<li>动态视图；</li>
+<li>用户会话；</li>
+<li>错误控制器；</li>
+<li>插件支持。</li>
+</ul>
+<p>官网：<a target="_blank" rel="noopener" href="http://www.expressjs.com.cn/">http://www.expressjs.com.cn/</a> </p>
+<p>express 是一个基于<code>内置核心 http 模块</code>的，一个<code>第三方的包</code>，专注于 <code>web 服务器</code>的构建。   </p>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ul>
+<li>首先创建一个名为 myapp 的目录，在命令行输入并运行 <strong>yarn init -y</strong> （或者 npm init -y）。 </li>
+<li>使用 **yarn add express ** （或者 npm install express ）安装 Express 包；</li>
+<li>其次在 myapp 目录中，创建一个名为 app.js 的文件，并复制下面示例中的代码。</li>
+</ul>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 引入</span>
 <span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 2. 创建服务器对象</span>
 <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -954,6 +1509,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token comment">// 当访问 url 为 / 的时候</span>
 app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+     <span class="token comment">// 这里的代码在浏览器以get请求/的时候执行，  </span>
+    <span class="token comment">// 这个函数就是用来处理浏览器的 对于/的get请求 的</span>
+    <span class="token comment">// 第一个参数req是请求头对象，里面包含请求头信息</span>
+    <span class="token comment">// 第二个参数res用来做响应</span>
   <span class="token comment">// 响应  hello 回去</span>
   res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1089,8 +1648,32 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
 
 <span class="token comment">// 后期如果真的要写srr , 目前在 外面比较流行的 做法 : Nuxt.js</span></code></pre>
 
+<p><strong>express中的ssr</strong></p>
+<p>express中使模板引擎来实现ssr，而模板也只是已经封装好的第三方模块，我们只要大概结合使用。</p>
+<p>express官方推荐使用pug模板引擎来实现ssr，所以我们要先下载</p>
+<pre class="language-js" data-language="js"><code class="language-js">npm i pug   或者  yarn add pug</code></pre>
 
+<p>然后要设置pug为默认的渲染视图引擎</p>
+<pre class="language-js" data-language="js"><code class="language-js">app<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'view engine'</span><span class="token punctuation">,</span> <span class="token string">'pug'</span><span class="token punctuation">)</span></code></pre>
 
+<p>然后我们在views里面写一个index.pug,输入下面的代码</p>
+<pre class="language-none"><code class="language-none">html
+  head
+    title= title
+  body
+    h1= message</code></pre>
+
+<p>这是pug模板我有的语法，左边是对应的标签，等号后面是对应的js变量，然后我们在请求的时候把数据传入模板引擎，进行渲染</p>
+<pre class="language-js" data-language="js"><code class="language-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 参数1是指要去views里面找index.pug</span>
+  <span class="token comment">// 参数2是要传入pug里面解析的数据</span>
+  res<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Hey'</span><span class="token punctuation">,</span> <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'Hello there!'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<p>此时只要访问<a target="_blank" rel="noopener" href="http://127.0.0.1:3000/%E5%B0%B1%E8%83%BD%E7%9C%8B%E5%88%B0%E6%95%B0%E6%8D%AE%E3%80%82">http://127.0.0.1:3000/就能看到数据。</a></p>
+<p>如果要继续实现更加复杂的效果，就要继续学习pug的特殊用法，如果有兴趣请点击<a target="_blank" rel="noopener" href="https://pugjs.org/api/getting-started.html">【pug官方文档】</a></p>
+<p>当然express也还可以结合其它的模板引擎,<a target="_blank" rel="noopener" href="https://www.expressjs.com.cn/guide/using-template-engines.html">查看</a></p>
+<hr>
 <h3 id="mysql的代码操作"><a href="#mysql的代码操作" class="headerlink" title="mysql的代码操作"></a>mysql的代码操作</h3><p><strong>使用  sql  的语法 来对数据库进行操作</strong></p>
 <p><strong>增</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js">insert into  表格  <span class="token keyword">set</span> key<span class="token operator">=</span>value<span class="token punctuation">,</span>key<span class="token operator">=</span>value</code></pre>
@@ -1789,7 +2372,7 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">202.8k</span>
+                        class="white-color">209.8k</span>
             
             
             
