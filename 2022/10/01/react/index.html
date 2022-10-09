@@ -1220,6 +1220,7 @@ onMouseEnter<span class="token operator">=</span><span class="token punctuation"
 <p>值得注意的是，hook只能使用在函数的最外层，任何别的位置都会报错。</p>
 </blockquote>
 <h3 id="3-自定义hook"><a href="#3-自定义hook" class="headerlink" title="3.自定义hook"></a>3.自定义hook</h3><p>使用hook可以让我们的数据的操作数据的逻辑放在一起，并且可以实现封装，把代码整理地更加易于维护。</p>
+<p><strong>挂钩只能在功能组件的主体(要导出的函数体)内部调用。</strong></p>
 <p>如果在操作数据的过程中有一些比较复杂的逻辑，我们就可以采用自定义hook的方式把这部分逻辑分离出来。</p>
 <pre class="language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">StateHook</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -2046,7 +2047,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <li>在Detail执行this.props.history.goBack()</li>
 </ol>
 <p>即可看到state丢失</p>
-<h2 id="3-React旧版路由教程"><a href="#3-React旧版路由教程" class="headerlink" title="3-React旧版路由教程"></a>3-React旧版路由教程</h2><h3 id="114-x65-x61-x63-116-x2d-x72-x6f-x75-x74-101-114-64-x33-x2e-x32-46-x30"><a href="#114-x65-x61-x63-116-x2d-x72-x6f-x75-x74-101-114-64-x33-x2e-x32-46-x30" class="headerlink" title="react-router@3.2.0"></a><a href="mailto:react-router@3.2.0">react-router@3.2.0</a></h3><h3 id="1、安装react路由"><a href="#1、安装react路由" class="headerlink" title="1、安装react路由"></a>1、安装react路由</h3><pre class="language-shell" data-language="shell"><code class="language-shell">yarn add react-router@3.2.0</code></pre>
+<h2 id="3-React旧版路由教程"><a href="#3-React旧版路由教程" class="headerlink" title="3-React旧版路由教程"></a>3-React旧版路由教程</h2><h3 id="114-x65-97-x63-116-x2d-114-111-x75-x74-x65-x72-64-51-x2e-x32-x2e-48"><a href="#114-x65-97-x63-116-x2d-114-111-x75-x74-x65-x72-64-51-x2e-x32-x2e-48" class="headerlink" title="react-router@3.2.0"></a><a href="mailto:react-router@3.2.0">react-router@3.2.0</a></h3><h3 id="1、安装react路由"><a href="#1、安装react路由" class="headerlink" title="1、安装react路由"></a>1、安装react路由</h3><pre class="language-shell" data-language="shell"><code class="language-shell">yarn add react-router@3.2.0</code></pre>
 
 <h3 id="2、新建App-js文件，引入路由"><a href="#2、新建App-js文件，引入路由" class="headerlink" title="2、新建App.js文件，引入路由"></a>2、新建App.js文件，引入路由</h3><pre class="language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span>
     Router<span class="token punctuation">,</span>
