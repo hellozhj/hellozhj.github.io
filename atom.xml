@@ -6,7 +6,7 @@
   <link href="https://hellozhj.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellozhj.github.io/"/>
-  <updated>2022-10-01T06:33:55.345Z</updated>
+  <updated>2022-10-09T11:29:03.541Z</updated>
   <id>https://hellozhj.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react项目</title>
+    <link href="https://hellozhj.github.io/2022/10/09/react-xiang-mu/"/>
+    <id>https://hellozhj.github.io/2022/10/09/react-xiang-mu/</id>
+    <published>2022-10-09T11:28:25.000Z</published>
+    <updated>2022-10-09T11:29:03.541Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;pre class=&quot;language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+    <category term="React" scheme="https://hellozhj.github.io/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>React</title>
@@ -450,29 +473,6 @@
     
     
     <category term="vue" scheme="https://hellozhj.github.io/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NodeJs</title>
-    <link href="https://hellozhj.github.io/2022/07/07/nodejs/"/>
-    <id>https://hellozhj.github.io/2022/07/07/nodejs/</id>
-    <published>2022-07-07T02:42:25.000Z</published>
-    <updated>2022-10-09T01:17:22.776Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;NodeJs-总结&quot;&gt;&lt;a href=&quot;#NodeJs-总结&quot; class=&quot;headerlink&quot; title=&quot;NodeJs - 总结&quot;&gt;&lt;/a&gt;NodeJs - 总结&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    
-    <category term="NodeJs" scheme="https://hellozhj.github.io/tags/NodeJs/"/>
     
   </entry>
   
