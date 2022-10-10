@@ -462,7 +462,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    27.3k
+                    27.7k
                 </div>
                 
 
@@ -542,8 +542,8 @@ IE：内容 = content + padding + border
 <p>清除浮动的方法：</p>
 <blockquote>
 <p>1.浮动元素后面空标签：clear:both，(有弊端)</p>
-<p>2.超出隐藏</p>
-<p>3.<code>after</code>伪元素，</p>
+<p>2.父元素超出隐藏</p>
+<p>3.<code>after</code>伪元素</p>
 <p>4.浮动外部(父)元素</p>
 </blockquote>
 <hr>
@@ -585,7 +585,7 @@ IE：内容 = content + padding + border
 <h4 id="em、rem区别："><a href="#em、rem区别：" class="headerlink" title="em、rem区别："></a>em、rem区别：</h4><p>em：相对于当前对象→相对(继承)父级元素字体大小→相对于浏览器默认</p>
 <p>rem：相对于根元素HTML的字体大小</p>
 <hr>
-<h4 id="解释cssprites-精灵图-如可使用："><a href="#解释cssprites-精灵图-如可使用：" class="headerlink" title="解释cssprites(精灵图)如可使用："></a>解释cssprites(精灵图)如可使用：</h4><p>小图整合到大图上，减轻服务器图片数量请求，<strong>background背景定位技术技巧布局网页背景</strong></p>
+<h4 id="解释cssprites-精灵图-如可使用："><a href="#解释cssprites-精灵图-如可使用：" class="headerlink" title="解释cssprites(精灵图)如可使用："></a>解释cssprites(精灵图)如可使用：</h4><p>小图整合到大图上减少图片的字节，减轻服务器图片数量请求，<strong>background背景定位技术技巧布局网页背景</strong></p>
 <pre class="language-js" data-language="js"><code class="language-js">background<span class="token operator">-</span>position<span class="token operator">:</span> <span class="token operator">-</span>480px <span class="token operator">-</span>558px<span class="token punctuation">;</span></code></pre>
 
 <hr>
@@ -615,6 +615,7 @@ IE：内容 = content + padding + border
 <p>伪类基于dom元素产生不同状态，dom某一特征</p>
 <p>伪元素创建dom不存在的抽象对象，可以访问到</p>
 </blockquote>
+<p><strong>总结：</strong> 伪类是通过在元素选择器上加⼊伪类改变元素状态，⽽伪元素通过对元素的操作进⾏对元素的改变。</p>
 <hr>
 <h4 id="浏览器的工作原理：7"><a href="#浏览器的工作原理：7" class="headerlink" title="浏览器的工作原理：7"></a>浏览器的工作原理：7</h4><p>1.用户界面；2.浏览器引擎；3.数据存储；4.渲染引擎；5.网络；6.js解释器；7.UI后端</p>
 <img src="/2022/08/05/interview/v2-acb485cbc3d3e140e4ed7863d776abdb_720w.jpg" alt="img" style="zoom:80%;">
@@ -2803,7 +2804,7 @@ index<span class="token punctuation">.</span>html使我们前端代码入口的�
 </ul>
 <hr>
 <h4 id="webpack的优化"><a href="#webpack的优化" class="headerlink" title="webpack的优化"></a>webpack的优化</h4><ul>
-<li><p>优化loader配置：est、include、exclude三个配置项来缩⼩loader的处理范围</p>
+<li><p>优化loader配置：test、include、exclude属性来匹配文件，三个配置项来缩⼩loader的处理范围</p>
 </li>
 <li><p>压缩CSS和HTML</p>
 </li>
@@ -2817,7 +2818,7 @@ index<span class="token punctuation">.</span>html使我们前端代码入口的�
 </ul>
 <hr>
 <h4 id="冒泡排序和快速排序"><a href="#冒泡排序和快速排序" class="headerlink" title="冒泡排序和快速排序"></a>冒泡排序和快速排序</h4><ul>
-<li>冒泡排序：<strong>相邻两个数进行比较，符合条件的 情况下 交换位置</strong></li>
+<li>冒泡排序：<strong>相邻两个数进行比较，符合条件的情况下交换位置</strong></li>
 <li>快速排序：<ul>
 <li>找出数组的中间值，取出来，改变了原数组；</li>
 <li>将已经改变之后的数组进行循环遍历和这个取出来的中间值进行比较，小于中间值的 都统一打包放在一个数组中(l),反之放在另外一个数组中(r) [l mid r]最后将这些数组进行合并得到一个新的数组。</li>
@@ -2827,6 +2828,33 @@ index<span class="token punctuation">.</span>html使我们前端代码入口的�
 <hr>
 <h4 id="赋值、浅拷贝、深拷贝"><a href="#赋值、浅拷贝、深拷贝" class="headerlink" title="赋值、浅拷贝、深拷贝"></a>赋值、浅拷贝、深拷贝</h4><p><img src="/2022/08/05/interview/image-20221008205923949.png" alt="image-20221008205923949"></p>
 <hr>
+<h4 id="rem-和-rpx"><a href="#rem-和-rpx" class="headerlink" title="rem 和 rpx"></a>rem 和 rpx</h4><ul>
+<li><p><strong>rem（移动端）</strong></p>
+<blockquote>
+<p>一般浏览器默认(1em=16px);</p>
+<p>例如：设计稿750px宽度，那么1rem = （750/20）rpx = 37.5px<br>例如：设计稿640px宽度，那么1rem = （640/20）rpx = 32px</p>
+<ol>
+<li><p>使用媒体查询，根据不同设备按比例设置html文字大小，然后页面元素使用rem作为尺寸单位，当html大小改变时，元素也会发生改变，从而达到等比缩放的适配</p>
+</li>
+<li><p>①页面元素的rem值 = 页面元素值（px） / （屏幕宽度 / 划分的份数）</p>
+</li>
+</ol>
+<p>  ②屏幕宽度/划分的份数就是 html font-size(根字号) 的大小</p>
+<p>  <strong>以750的尺寸为例，把屏幕划分为15等份，那么html根字号的大小就是750/15=50px。rem就是元素的px/根子号。100px的宽度就等于100/50=2rem</strong></p>
+</blockquote>
+</li>
+<li><p><strong>rpx（uni-app和微信小程序）</strong></p>
+<blockquote>
+<p>uni-app 规定屏幕基准宽度 750rpx。</p>
+<p><strong>例如</strong>：设计稿750px宽度，ps上量出或者标出的宽度是多少，那么就定义多少rpx，也就是，1px = 1rpx<br><strong>例如</strong>：设计稿640px宽度，根据量出的或者标出的尺寸需要转换一下，1px = 750/640rpx</p>
+<p>公式：  750 * (元素在设计稿中的宽度 / 设计稿主体宽度)</p>
+<pre class="language-js" data-language="js"><code class="language-js">设计稿主体的宽度是 375px<span class="token punctuation">;</span>
+设计稿中一个组件的的宽度是 330px<span class="token punctuation">;</span>
+<span class="token number">750</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">330</span><span class="token operator">/</span><span class="token number">375</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">660</span> rpx<span class="token punctuation">;</span></code></pre>
+
+</blockquote>
+</li>
+</ul>
 
                 
             </div>
@@ -3337,7 +3365,7 @@ index<span class="token punctuation">.</span>html使我们前端代码入口的�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">209.8k</span>
+                        class="white-color">210.2k</span>
             
             
             
