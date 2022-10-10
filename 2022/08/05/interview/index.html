@@ -2831,15 +2831,15 @@ index<span class="token punctuation">.</span>html使我们前端代码入口的�
 <h4 id="rem-和-rpx"><a href="#rem-和-rpx" class="headerlink" title="rem 和 rpx"></a>rem 和 rpx</h4><ul>
 <li><p><strong>rem（移动端）</strong></p>
 <blockquote>
-<p>一般浏览器默认(1em=16px);</p>
+<p>一般浏览器默认(1rem=16px);</p>
 <p>例如：设计稿750px宽度，那么1rem = （750/20）rpx = 37.5px<br>例如：设计稿640px宽度，那么1rem = （640/20）rpx = 32px</p>
 <ol>
 <li><p>使用媒体查询，根据不同设备按比例设置html文字大小，然后页面元素使用rem作为尺寸单位，当html大小改变时，元素也会发生改变，从而达到等比缩放的适配</p>
 </li>
-<li><p>①页面元素的rem值 = 页面元素值（px） / （屏幕宽度 / 划分的份数）</p>
+<li><p>①页面元素的rem值 = 页面元素值（px） / （屏幕宽度  /  划分的份数）</p>
 </li>
 </ol>
-<p>  ②屏幕宽度/划分的份数就是 html font-size(根字号) 的大小</p>
+<p>  ②屏幕宽度 / 划分的份数就是 html font-size(根字号) 的大小</p>
 <p>  <strong>以750的尺寸为例，把屏幕划分为15等份，那么html根字号的大小就是750/15=50px。rem就是元素的px/根子号。100px的宽度就等于100/50=2rem</strong></p>
 </blockquote>
 </li>
@@ -2850,9 +2850,7 @@ index<span class="token punctuation">.</span>html使我们前端代码入口的�
 <p>公式：  750 * (元素在设计稿中的宽度 / 设计稿主体宽度)</p>
 <pre class="language-js" data-language="js"><code class="language-js">设计稿主体的宽度是 375px<span class="token punctuation">;</span>
 设计稿中一个组件的的宽度是 330px<span class="token punctuation">;</span>
-<span class="token number">750</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">330</span><span class="token operator">/</span><span class="token number">375</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">660</span> rpx<span class="token punctuation">;</span></code></pre>
-
-</blockquote>
+<span class="token number">750</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">330</span><span class="token operator">/</span><span class="token number">375</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">660</span> rpx<span class="token punctuation">;</span></code></pre></blockquote>
 </li>
 </ul>
 
