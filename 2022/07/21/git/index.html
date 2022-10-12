@@ -9,10 +9,10 @@
 
 注意一定要切换到自己git分支上再修改文件
 
+二、提交的命名规范
 三、Git概念详细教程
 Git是一个免费的开源分布式版本控制系统，它可以快速高效地处理从小型到大型的项目。
-简单点说就是：git分布式版本控制工具（管理代码版本）。
-常见版本控制系统：">
+简单点说就是：git分布式版本控制工具（管理代码版本）。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -465,7 +465,7 @@ Git是一个免费的开源分布式版本控制系统，它可以快速高效�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.9k
                 </div>
                 
 
@@ -489,6 +489,7 @@ Git是一个免费的开源分布式版本控制系统，它可以快速高效�
 <blockquote>
 <p>注意一定要切换到<strong>自己git分支</strong>上再修改文件</p>
 </blockquote>
+<h2 id="二、提交的命名规范"><a href="#二、提交的命名规范" class="headerlink" title="二、提交的命名规范"></a>二、提交的命名规范</h2><p><img src="/2022/07/21/git/21521dc2a7134d4ce734b21bf720087c.png" alt="提交的命名规范"></p>
 <h2 id="三、Git概念"><a href="#三、Git概念" class="headerlink" title="三、Git概念"></a>三、Git概念</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6974184935804534815">详细教程</a></p>
 <p>Git是一个免费的开源<strong>分布式</strong>版本控制系统，它可以快速高效地处理从小型到大型的项目。</p>
 <p>简单点说就是：git分布式版本控制工具（管理代码版本）。</p>
@@ -632,10 +633,25 @@ git reflog</code></pre>
 <p>补充：远程仓库删除<br><img src="/2022/07/21/git/1649416441474.png" alt="1649416441474"></p>
 <ul>
 <li><p>遇到：解决：git pull origin 分支名 –allow-unrelated-histories 强制更新</p>
-<pre class="language-git" data-language="git"><code class="language-git">hint:<span class="token string">'git push ...)'</span></code></pre>
-</li>
-<li></li>
+<pre class="language-git" data-language="git"><code class="language-git">hint:<span class="token string">'git push ...)'</span></code></pre></li>
 </ul>
+<hr>
+<h3 id="新建仓库，将本地项目push上去"><a href="#新建仓库，将本地项目push上去" class="headerlink" title="新建仓库，将本地项目push上去"></a>新建仓库，将本地项目push上去</h3><ol>
+<li><p>初始化：本地仓库</p>
+<pre class="language-js" data-language="js"><code class="language-js">git init</code></pre>
+</li>
+<li><p>添加到缓存区：</p>
+<pre class="language-js" data-language="js"><code class="language-js">git add <span class="token punctuation">.</span></code></pre>
+</li>
+<li><p>提交到本地分支：</p>
+<pre class="language-js" data-language="js"><code class="language-js">git commit <span class="token operator">-</span>m <span class="token string">''</span></code></pre>
+</li>
+<li><p>关联远程的仓库：</p>
+<pre class="language-js" data-language="js"><code class="language-js">git remote add origin git@gitee<span class="token punctuation">.</span>com<span class="token operator">:</span>evedward<span class="token operator">/</span>opshop<span class="token punctuation">.</span>git</code></pre>
+</li>
+<li><p>push到远程仓库</p>
+<pre class="language-js" data-language="js"><code class="language-js">git push <span class="token operator">-</span>u origin <span class="token string">"master"</span></code></pre></li>
+</ol>
 
                 
             </div>
@@ -1146,7 +1162,7 @@ git reflog</code></pre>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">216.7k</span>
+                        class="white-color">216.8k</span>
             
             
             
