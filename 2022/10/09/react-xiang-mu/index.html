@@ -467,7 +467,7 @@ Proj">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6k
+                    7.8k
                 </div>
                 
 
@@ -1758,6 +1758,342 @@ store<span class="token punctuation">.</span>actionNames<span class="token opera
 
 
 
+<hr>
+<h2 id="Day03"><a href="#Day03" class="headerlink" title="Day03"></a>Day03</h2><h2 id="一、react-redux的异步解决方案redux-thunk"><a href="#一、react-redux的异步解决方案redux-thunk" class="headerlink" title="一、react-redux的异步解决方案redux-thunk"></a>一、react-redux的异步解决方案redux-thunk</h2><p>在store/NumStatus/index.ts中做异步操作：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token function">add1</span><span class="token punctuation">(</span>newState<span class="token operator">:</span><span class="token punctuation">{</span>num<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">}</span><span class="token punctuation">,</span>action<span class="token operator">:</span><span class="token punctuation">{</span>type<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//newState.num++;</span>
+       <span class="token comment">// 会有bug 没有办法达到延迟和修改的效果</span>
+       <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+           newState<span class="token punctuation">.</span>num<span class="token operator">++</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
+       
+   <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+
+<p>会发现这种写法其实达不到想要的异步效果，需要通过redux相关的异步方案来解决（市面上有redux-saga，redux-thunk），今天我们使用redux-thunk来做。</p>
+<p>redux-thunk相比于redux-saga，体积小，灵活，但需要自己手动抽取和封装。但学习成本较低。</p>
+<p>项目目录下安装redux-thunk</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">npm i redux-thunk</code></pre>
+
+<p>在store/index.ts中：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> legacy_createStore<span class="token punctuation">,</span>combineReducers<span class="token punctuation">,</span>applyMiddleware<span class="token punctuation">,</span>compose <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"redux"</span><span class="token punctuation">;</span> <span class="token comment">//rt</span>
+<span class="token keyword">import</span> reduxThunk <span class="token keyword">from</span> <span class="token string">'redux-thunk'</span> <span class="token comment">//rt</span>
+
+<span class="token keyword">import</span> handleArr <span class="token keyword">from</span> <span class="token string">'./ArrStatus/reducer.ts'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> handleNum <span class="token keyword">from</span> <span class="token string">'./NumStatus/reducer.ts'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 组合各个模块的reducers</span>
+<span class="token keyword">const</span> reducers <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    handleArr<span class="token punctuation">,</span>
+    handleNum
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 创建仓库对象，注册reducers</span>
+<span class="token comment">// const store = legacy_createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__());</span>
+
+<span class="token comment">// 判断有没有__REDUX_DEVTOOLS_EXTENSION_COMPOSE__这个模块</span>
+<span class="token keyword">let</span> composeEnhancers <span class="token operator">=</span> window<span class="token punctuation">.</span>__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ <span class="token operator">?</span> window<span class="token punctuation">.</span><span class="token function">__REDUX_DEVTOOLS_EXTENSION_COMPOSE__</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">:</span>compose <span class="token comment">//rt</span>
+
+<span class="token comment">// 把仓库数据，浏览器redux-dev-tools，还有reduxThunk插件关联在store中</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">legacy_createStore</span><span class="token punctuation">(</span>reducers<span class="token punctuation">,</span><span class="token function">composeEnhancers</span><span class="token punctuation">(</span><span class="token function">applyMiddleware</span><span class="token punctuation">(</span>reduxThunk<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//rt</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> store
+<span class="token keyword">export</span> <span class="token keyword">default</span> store</code></pre>
+
+<p>在src/views/Page1.tsx组件中：</p>
+<pre class="language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">const</span> <span class="token function-variable function">changeNum2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token comment">// redux-thunk的写法：</span>
+    <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>dis<span class="token operator">:</span><span class="token builtin">Function</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+            <span class="token function">dis</span><span class="token punctuation">(</span><span class="token punctuation">{</span>type<span class="token operator">:</span><span class="token string">'redu1'</span><span class="token punctuation">,</span>val<span class="token operator">:</span>n<span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 获取sarr数据</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> sarr <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useSelector</span><span class="token punctuation">(</span><span class="token punctuation">(</span>state<span class="token operator">:</span>RootState<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  sarr<span class="token operator">:</span>state<span class="token punctuation">.</span>handleArr<span class="token punctuation">.</span>sarr
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 修改sarr数据</span>
+<span class="token keyword">const</span> <span class="token function-variable function">changeArr</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'sarrpush'</span><span class="token punctuation">,</span>val<span class="token operator">:</span><span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span><span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>home<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">这是Page1页面内容</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>num<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>changeNum<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">同步按钮</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>changeNum2<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">异步按钮</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>但上面这样写就把数据操作和项目业务混在一起了，这也是redux-think本身的缘故，需要自己手动优化封装函数进行优化！！！</p>
+<h2 id="二、手动封装redux-thunk的异步函数"><a href="#二、手动封装redux-thunk的异步函数" class="headerlink" title="二、手动封装redux-thunk的异步函数"></a>二、手动封装redux-thunk的异步函数</h2><p>上面redux-thunk的写法可以看出，dispatch调用传入的是一个actions函数，接下来我们把这个函数抽取到状态管理中作为一个方法的返回值。</p>
+<p>在store/Numstatus/index.ts中的store对象中添加：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token comment">// 优化redux-thunk的异步写法(模仿Vuex的写法)</span>
+   asyncActions<span class="token operator">:</span><span class="token punctuation">{</span>  <span class="token comment">// 只放异步的方法</span>
+       <span class="token function">asyncAdd1</span><span class="token punctuation">(</span>dispatch<span class="token operator">:</span><span class="token builtin">Function</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+               <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>type<span class="token operator">:</span><span class="token string">"add1"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+           <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+
+<p>而src/views/Page1.tsx组件中的changeNum2修改成：</p>
+<pre class="language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> numStatus <span class="token keyword">from</span> <span class="token string">"@/store/NumStatus"</span>
+<span class="token operator">...</span>
+<span class="token operator">...</span>
+<span class="token keyword">const</span> <span class="token function-variable function">changeNum2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    
+    <span class="token comment">// redux-thunk的写法：</span>
+    <span class="token comment">// dispatch((dis:Function)=&gt;{</span>
+    <span class="token comment">//     setTimeout(()=&gt;{</span>
+    <span class="token comment">//         dis({type:'redu1',val:n})</span>
+    <span class="token comment">//     },1000);</span>
+    <span class="token comment">// });</span>
+    <span class="token comment">// 但上面这样写就把数据操作和项目业务混在一起了</span>
+    <span class="token comment">// 优化redux-thunk的异步写法  `</span>
+    <span class="token comment">// dispatch(调用状态管理中的asyncAdd1)</span>
+    <span class="token function">dispatch</span><span class="token punctuation">(</span>numStatus<span class="token punctuation">.</span>asyncActions<span class="token punctuation">.</span>asyncAdd1<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>至此，react状态管理模块的封装完成！</p>
+<h2 id="三、数据交互的解决方案"><a href="#三、数据交互的解决方案" class="headerlink" title="三、数据交互的解决方案"></a>三、数据交互的解决方案</h2><h3 id="3-1、axios封装和apis的抽取"><a href="#3-1、axios封装和apis的抽取" class="headerlink" title="3.1、axios封装和apis的抽取"></a>3.1、axios封装和apis的抽取</h3><p>安装axios</p>
+<pre class="language-none"><code class="language-none">npm i axios</code></pre>
+
+<p>/src下新建request文件夹，并新建index.ts</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span>
+
+<span class="token comment">// 创建axios实例</span>
+<span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// 基本请求路径的抽取</span>
+    baseURL<span class="token operator">:</span><span class="token string">"http://xue.cnkdl.cn:23683"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 这个时间是你每次请求的过期时间，这次请求认为20秒之后这个请求就是失败的</span>
+    timeout<span class="token operator">:</span><span class="token number">20000</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 请求拦截器</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>config<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    
+    <span class="token keyword">return</span> config
+<span class="token punctuation">}</span><span class="token punctuation">,</span>err<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 响应拦截器</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>res<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span>data
+<span class="token punctuation">}</span><span class="token punctuation">,</span>err<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> instance</code></pre>
+
+<p>/src/request下新建api.ts</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token comment">// 统一管理项目中所有的请求路径 api</span>
+<span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">"./index"</span>
+
+<span class="token comment">// 验证码请求</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">captchaAPI</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> request<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/prod-api/captchaImage"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>Login.tsx中：</p>
+<pre class="language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> captchaAPI <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/request/api.ts"</span>
+<span class="token operator">...</span>
+<span class="token operator">...</span>
+	<span class="token comment">// 点击验证码图片的事件函数</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">getCaptchaImg</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token function">captchaAPI</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res<span class="token operator">=&gt;</span><span class="token punctuation">{</span>   <span class="token comment">// 划红色曲线警告</span>
+            <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre>
+
+<h2 id="四、res划红色曲线警告的解决"><a href="#四、res划红色曲线警告的解决" class="headerlink" title="四、res划红色曲线警告的解决"></a>四、res划红色曲线警告的解决</h2><p>res必须为请求回来的类型的数据，需要添加类型。</p>
+<p>建议安装 VSCode的  JSON to TS 扩展。 (快捷键：ctrl+shift+alt+v)</p>
+<p>在浏览器中复制请求到的数据，粘贴，按下ctrl+shift+alt+v，就能得到类型该res数据的类型。起个名字就可以用了！</p>
+<p>在src/types文件夹中新建api.d.ts，把上面生成的类型粘贴进去：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token comment">// 验证码</span>
+<span class="token keyword">interface</span> <span class="token class-name">CaptchAPIRes</span> <span class="token punctuation">{</span>
+    msg<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    img<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    code<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    captchaEnabled<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+    uuid<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Login.tsx中：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">const</span> <span class="token function-variable function">getCaptchaImg</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token function">captchaAPI</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token operator">:</span>CaptchAPIRes<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>   
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>把上面代码换成async+await的写法：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">const</span> <span class="token function-variable function">getCaptchaImg</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token comment">// CaptchaAPI().then((res:CaptchAPIRes)=&gt;{</span>
+    <span class="token comment">//     console.log(res.code);</span>
+    <span class="token comment">// })</span>
+    <span class="token keyword">let</span> captchAPIRes <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">CaptchaAPI</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>captchAPIRes<span class="token punctuation">.</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+<span class="token punctuation">}</span></code></pre>
+
+<h2 id="五、规范化请求中TypeScript的书写"><a href="#五、规范化请求中TypeScript的书写" class="headerlink" title="五、规范化请求中TypeScript的书写"></a>五、规范化请求中TypeScript的书写</h2><p><strong>请求中请求参数和函数类型都需要进行约束！</strong></p>
+<p>src/request/api.ts中：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token comment">// 统一管理项目中所有的请求路径 api</span>
+<span class="token keyword">import</span> request <span class="token keyword">from</span> <span class="token string">"./index"</span>
+
+<span class="token comment">// 验证码请求</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> CaptchaAPI <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>CaptchAPIRes<span class="token operator">&gt;</span> <span class="token operator">=&gt;</span> request<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/prod-api/captchaImage"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h2 id="六、完成点击验证码业务"><a href="#六、完成点击验证码业务" class="headerlink" title="六、完成点击验证码业务"></a>六、完成点击验证码业务</h2><p>Login组件中：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">const</span> <span class="token punctuation">[</span>captchaImg<span class="token punctuation">,</span>setCaptchaImg<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token comment">// 加载完这个组件之后，加载背景</span>
+    <span class="token function">initLoginBg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    window<span class="token punctuation">.</span><span class="token function-variable function">onresize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token function">initLoginBg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	
+    <span class="token function">getCaptchaImg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// 点击验证码图片的事件函数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">getCaptchaImg</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">let</span> captchAPIRes<span class="token operator">:</span>CaptchAPIRes <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">CaptchaAPI</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 1、把图片显示在img上面</span>
+    <span class="token function">setCaptchaImg</span><span class="token punctuation">(</span><span class="token string">"data:image/gif;base64,"</span><span class="token operator">+</span>captchAPIRes<span class="token punctuation">.</span>img<span class="token punctuation">)</span>
+    <span class="token comment">// 2、获取到验证码之后需要保存uuid</span>
+    localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"uuid"</span><span class="token punctuation">,</span>captchAPIRes<span class="token punctuation">.</span>uuid<span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span></code></pre>
+
+<h2 id="七、测试登录请求"><a href="#七、测试登录请求" class="headerlink" title="七、测试登录请求"></a>七、测试登录请求</h2><p>/src/request/api.ts中：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">loginAPI</span> <span class="token operator">=</span> <span class="token punctuation">(</span>params<span class="token operator">:</span>LoginAPIReq<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> request<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/prod-api/login"</span><span class="token punctuation">,</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>/src/types/api.d.ts中：</p>
+<pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token comment">// 登录请求类型</span>
+<span class="token keyword">interface</span> <span class="token class-name">LoginAPIReq</span> <span class="token punctuation">{</span>
+  username<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  password<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  code<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  uuid<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 登录响应类型</span>
+<span class="token keyword">interface</span> <span class="token class-name">LoginAPIRes</span> <span class="token punctuation">{</span>
+  msg<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  code<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  token<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Login.tsx中：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Input<span class="token punctuation">,</span>Space<span class="token punctuation">,</span>Button<span class="token punctuation">,</span>message<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'antd'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CaptchaAPI<span class="token punctuation">,</span>loginAPI <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/request/api.ts"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useNavigate <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span>
+
+<span class="token operator">...</span><span class="token punctuation">.</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>captchaImg<span class="token punctuation">,</span>setCaptchaImg<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> navigateTo <span class="token operator">=</span> <span class="token function">useNavigate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">...</span><span class="token punctuation">.</span>
+<span class="token comment">// 点击登录按钮的事件函数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">gotoLogin</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token comment">// console.log("用户输入的用户名，密码，验证码分别是：",usernameVal,passwordVal,captchaVal);</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>usernameVal<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">||</span> <span class="token operator">!</span>passwordVal<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">||</span> <span class="token operator">!</span>captchaVal<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      message<span class="token punctuation">.</span><span class="token function">warning</span><span class="token punctuation">(</span><span class="token string">'请完整输入信息！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 发起登录请求</span>
+    <span class="token keyword">let</span> <span class="token literal-property property">loginAPIRes</span><span class="token operator">:</span>LoginAPIRes <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">loginAPI</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">username</span><span class="token operator">:</span> usernameVal<span class="token punctuation">,</span>
+      <span class="token literal-property property">password</span><span class="token operator">:</span> passwordVal<span class="token punctuation">,</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> captchaVal<span class="token punctuation">,</span>
+      <span class="token literal-property property">uuid</span><span class="token operator">:</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"uuid"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>loginAPIRes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">if</span><span class="token punctuation">(</span>loginAPIRes<span class="token punctuation">.</span>code<span class="token operator">===</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">// 1、提示操作成功</span>
+      message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">'登录成功！'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// 2、保存token</span>
+      localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"lege-react-management-token"</span><span class="token punctuation">,</span>loginAPIRes<span class="token punctuation">.</span>token<span class="token punctuation">)</span>
+      <span class="token comment">// 3、跳转到/page1页面</span>
+      <span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token string">"/page1"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span></code></pre>
+
+<h2 id="八、手动封装前置路由守卫"><a href="#八、手动封装前置路由守卫" class="headerlink" title="八、手动封装前置路由守卫"></a>八、手动封装前置路由守卫</h2><p>App.tsx中：</p>
+<pre class="language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useEffect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useRoutes<span class="token punctuation">,</span> useLocation<span class="token punctuation">,</span>useNavigate <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">"./router"</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> message <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"antd"</span>
+
+<span class="token comment">// 去往登录页的组件</span>
+<span class="token keyword">function</span> <span class="token function">ToLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> navigateTo <span class="token operator">=</span> <span class="token function">useNavigate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 加载完这个组件之后实现跳转</span>
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token comment">// 加载完组件之后执行这里的代码</span>
+    <span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    message<span class="token punctuation">.</span><span class="token function">warning</span><span class="token punctuation">(</span><span class="token string">"您还没有登录，请登录后再访问！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 去往首页的组件</span>
+<span class="token keyword">function</span> <span class="token function">ToPage1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> navigateTo <span class="token operator">=</span> <span class="token function">useNavigate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 加载完这个组件之后实现跳转</span>
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token comment">// 加载完组件之后执行这里的代码</span>
+    <span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token string">"/page1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    message<span class="token punctuation">.</span><span class="token function">warning</span><span class="token punctuation">(</span><span class="token string">"您已经登录过了！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 手写封装路由守卫</span>
+<span class="token keyword">function</span> <span class="token function">BeforeRouterEnter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> outlet <span class="token operator">=</span> <span class="token function">useRoutes</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/*
+    后台管理系统两种经典的跳转情况：
+    1、如果访问的是登录页面， 并且有token， 跳转到首页
+    2、如果访问的不是登录页面，并且没有token， 跳转到登录页
+    3、其余的都可以正常放行
+  */</span>
+    <span class="token keyword">const</span> location <span class="token operator">=</span> <span class="token function">useLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> token <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"lege-react-management-token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//1、如果访问的是登录页面， 并且有token， 跳转到首页</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>pathname<span class="token operator">===</span><span class="token string">"/login"</span> <span class="token operator">&amp;&amp;</span> token<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">// 这里不能直接用 useNavigate 来实现跳转 ，因为需要BeforeRouterEnter是一个正常的JSX组件</span>
+      <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ToPage1</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//2、如果访问的不是登录页面，并且没有token， 跳转到登录页</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>pathname<span class="token operator">!==</span><span class="token string">"/login"</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>token<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ToLogin</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> outlet
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+
+      </span><span class="token punctuation">{</span><span class="token comment">/* &lt;Link to="/home"&gt;Home&lt;/Link&gt; |
+      &lt;Link to="/about"&gt;About&lt;/Link&gt; |
+      &lt;Link to="/user"&gt;User&lt;/Link&gt; */</span><span class="token punctuation">}</span><span class="token plain-text">
+
+      </span><span class="token punctuation">{</span><span class="token comment">/* 占位符组件，类似于窗口，用来展示组件的，有点像vue中的router-view */</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token punctuation">{</span><span class="token comment">/* &lt;Outlet&gt;&lt;/Outlet&gt; */</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token punctuation">{</span><span class="token comment">/* {outlet} */</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">BeforeRouterEnter</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App
+</code></pre>
+
 
 
 
@@ -2272,7 +2608,7 @@ store<span class="token punctuation">.</span>actionNames<span class="token opera
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">217.2k</span>
+                        class="white-color">219k</span>
             
             
             
