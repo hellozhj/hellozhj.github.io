@@ -465,7 +465,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    27.8k
+                    28.2k
                 </div>
                 
 
@@ -2863,7 +2863,45 @@ index<span class="token punctuation">.</span>html使我们前端代码入口的�
 </li>
 </ul>
 <hr>
-<h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4>
+<h4 id="css-手动写动画最小时间间隔是多少，为什么？"><a href="#css-手动写动画最小时间间隔是多少，为什么？" class="headerlink" title="[css] 手动写动画最小时间间隔是多少，为什么？"></a>[css] 手动写动画最小时间间隔是多少，为什么？</h4><blockquote>
+<p>一般浏览器的刷新频率为每秒60次，所以最小事件间隔为 1/60*1000 约 16.7ms</p>
+</blockquote>
+<hr>
+<h4 id="DOM树和渲染树的区别"><a href="#DOM树和渲染树的区别" class="headerlink" title="DOM树和渲染树的区别"></a>DOM树和渲染树的区别</h4><p>DOM树是包含了所有html节点的树，渲染树是DOM树和CSSOM树组合而成的，最终渲染在页面上的树。</p>
+<hr>
+<h4 id="JavaScript如何实现一个类，怎么实例化这个类"><a href="#JavaScript如何实现一个类，怎么实例化这个类" class="headerlink" title="JavaScript如何实现一个类，怎么实例化这个类"></a>JavaScript如何实现一个类，怎么实例化这个类</h4><ul>
+<li>构造函数法：（<code>this</code> + <code>prototype</code>） – 用 <code>new</code> 关键字 生成实例对象<ul>
+<li>缺点：用到了 <code>this</code> 和 <code>prototype</code>，编写复杂，可读性差</li>
+</ul>
+</li>
+<li>Object.create：用 <code>Object.create()</code> 生成实例对象<ul>
+<li>缺点：不能实现私有属性和私有方法，实例对象之间也不能共享数据</li>
+</ul>
+</li>
+<li>createNew()：（消除 <code>this</code> 和 <code>prototype</code>）<ul>
+<li>优点：容易理解，结构清晰优雅，符合传统的”面向对象编程”的构造</li>
+</ul>
+</li>
+<li>语法糖 <code>class</code>：用 <code>new</code> 关键字 生成实例对象</li>
+</ul>
+<hr>
+<h4 id="函数在调用时作用域才产生定义时作用域"><a href="#函数在调用时作用域才产生定义时作用域" class="headerlink" title="函数在调用时作用域才产生定义时作用域"></a>函数在调用时作用域才产生定义时作用域</h4><blockquote>
+<p>1.调用函数时候，函数<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%BD%9C%E7%94%A8%E5%9F%9F&amp;spm=1001.2101.3001.7020">作用域</a>被创建，函数执行完毕，函数作用域被销毁<br>2.每调用一次函数就会创建一个新的函数作用域，她们之间是相互独立的</p>
+</blockquote>
+<p>函数 fun 仅调用了1次，只创建了一个<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%BD%9C%E7%94%A8%E5%9F%9F&amp;spm=1001.2101.3001.7020">作用域</a>，通过 for 循环分别创建了3个子函数保存在数组arr中，此时子函数并未调用，当for循环结束时，i = 3。</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">fun</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">,</span>arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> funs <span class="token operator">=</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+funs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//3</span>
+funs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//3</span>
+funs<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//3</span></code></pre>
+
+<hr>
+
                 
             </div>
             <hr/>
@@ -3373,7 +3411,7 @@ index<span class="token punctuation">.</span>html使我们前端代码入口的�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">216.8k</span>
+                        class="white-color">217.2k</span>
             
             
             
