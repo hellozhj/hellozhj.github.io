@@ -465,7 +465,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    28.2k
+                    28.3k
                 </div>
                 
 
@@ -1476,7 +1476,7 @@ IE：内容 = content + padding + border
 <h4 id="简述ajax原理和XmlHttpRequest对象"><a href="#简述ajax原理和XmlHttpRequest对象" class="headerlink" title="简述ajax原理和XmlHttpRequest对象"></a>简述ajax原理和XmlHttpRequest对象</h4><p>ajax原理：通过XmlHttpRequest对象来向服务器发起请求，响应回来的数据，可以在js进行处理，用js来操作dom。</p>
 <p>XmlHttpRequest是ajax的核心机制，异步请求，向服务器提出请求和处理响应，不阻塞用户。</p>
 <hr>
-<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id><a href="#" class="headerlink" title></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
+<h4 id="简述JWT（JSON-Web-Token）鉴权的原理"><a href="#简述JWT（JSON-Web-Token）鉴权的原理" class="headerlink" title="简述JWT（JSON Web Token）鉴权的原理"></a>简述JWT（JSON Web Token）鉴权的原理</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="/2022/08/05/interview/jwt.jpg" alt="img"></h4><hr>
 <h4 id="（了解）一个tcp接连能发几个http请求？"><a href="#（了解）一个tcp接连能发几个http请求？" class="headerlink" title="（了解）一个tcp接连能发几个http请求？"></a>（了解）一个tcp接连能发几个http请求？</h4><p>http0.1 默认一次tcp，http请求之后就会断开</p>
 <p>http1.1请求头配置：keep-alive=true，tcp连接不断开(2小时)，一个tcp一时间支持一个http请求</p>
 <p>http2.0 多路复用技术 Multiplexing，tcp并发多个http请求</p>
@@ -2901,6 +2901,24 @@ funs<span class="token punctuation">[</span><span class="token number">1</span><
 funs<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//3</span></code></pre>
 
 <hr>
+<h4 id="H5跳转微信小程序"><a href="#H5跳转微信小程序" class="headerlink" title="H5跳转微信小程序"></a>H5跳转微信小程序</h4><ol>
+<li>微信内嵌H5跳转内部微信小程序页：H5项目中引入SDK；</li>
+<li>微信内嵌H5跳转外部微信小程序页：开放标签wx-open-launch-weapp</li>
+<li>短信跳转微信小程序页：URL Scheme</li>
+<li>云开发静态网站跳转小程序：</li>
+</ol>
+<hr>
+<h4 id="小程序端向h5端跳转"><a href="#小程序端向h5端跳转" class="headerlink" title="小程序端向h5端跳转"></a>小程序端向h5端跳转</h4><p><code>web-view</code>提供了一个<code>src</code>属性,这个<code>src</code>属性就是可以从小程序跳转到指定链接的地止</p>
+<hr>
+<h4 id="小程序端之间怎么跳转"><a href="#小程序端之间怎么跳转" class="headerlink" title="小程序端之间怎么跳转"></a>小程序端之间怎么跳转</h4><p><em>wx.navigateToMiniProgram</em> </p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">toNavigate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    wx<span class="token punctuation">.</span><span class="token function">navigateToMiniProgram</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">appId</span><span class="token operator">:</span> <span class="token string">'wx106ee470bb6fff70'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'pages/index/index'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">extraData</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">foo</span><span class="token operator">:</span> <span class="token string">'bar'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+
 
                 
             </div>
@@ -3411,7 +3429,7 @@ funs<span class="token punctuation">[</span><span class="token number">2</span><
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">219k</span>
+                        class="white-color">219.2k</span>
             
             
             
