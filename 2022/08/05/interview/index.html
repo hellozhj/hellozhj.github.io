@@ -2930,6 +2930,19 @@ funs<span class="token punctuation">[</span><span class="token number">2</span><
 <h4 id="Vuex和Redux的主要区别在哪里？两者各有什么优缺点？"><a href="#Vuex和Redux的主要区别在哪里？两者各有什么优缺点？" class="headerlink" title="Vuex和Redux的主要区别在哪里？两者各有什么优缺点？"></a>Vuex和Redux的主要区别在哪里？两者各有什么优缺点？</h4><p><strong>Redux 使用的是不可变数据，而Vuex的数据是可变的。</strong></p>
 <p>vuex：Vuex是直接修改，而Vuex其实和Vue的原理一样，是通过 getter/setter来比较的</p>
 <p>Redux：Redux每次都是用新的state替换旧的state，Redux 在检测数据变化的时候，是通过 diff 的方式比较差异的</p>
+<hr>
+<h4 id="可视区域"><a href="#可视区域" class="headerlink" title="可视区域"></a>可视区域</h4><ol>
+<li><pre><code class="js">el.offsetTop - document.documentElement.scrollTop &lt;= viewPortHeight
+<pre class="language-none"><code class="language-none">
+2. ```js
+   el.getBoundingClientReact().top &lt;= viewPortHeight</code></pre>
+</code></pre>
+</li>
+<li><pre><code class="js">intersectionRatio &gt; 0 &amp;&amp; intersectionRatio &lt;= 1
+</code></pre>
+</li>
+</ol>
+<hr>
 
                 
             </div>
