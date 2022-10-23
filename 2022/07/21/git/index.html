@@ -520,7 +520,7 @@ Git是一个免费的开源分布式版本控制系统，它可以快速高效�
 <p>创建ssh key  ： ssh-keygen -t rsa -C <a href="mailto:youremail@example.com">youremail@example.com</a><br>按照提示完成三次回车，即可生成 ssh key。<br>本地用户目录下,找到本地文件id_rsa.pub文件的内容<br>复制生成后的 ssh key，设置-&gt; 安全设置 -&gt; SSH公钥 把添加生成的 public key 添加到仓库中。</p>
 </blockquote>
 <h3 id="5-5、Git日常操作"><a href="#5-5、Git日常操作" class="headerlink" title="5.5、Git日常操作"></a>5.5、Git日常操作</h3><pre class="language-shell" data-language="shell"><code class="language-shell">1、 克隆代码（把远程仓库拉取到本地）： git clone 仓库地址
-
+	克隆代码（把远程仓库指定分支拉取到本地）：git clone -b &lt;指定分支名&gt; &lt;远程仓库地址&gt;
 2、 查看仓库状态: git status
 
 3、 提交工作区代码到暂存区 ： git add 文件路径 或者 .(所有文件)  或者 --all
@@ -1162,7 +1162,7 @@ git reflog</code></pre>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">219.9k</span>
+                        class="white-color">220k</span>
             
             
             
