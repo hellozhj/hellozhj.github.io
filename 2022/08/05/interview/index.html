@@ -465,7 +465,7 @@ IE：内容 = content + padding + border
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    29k
+                    29.3k
                 </div>
                 
 
@@ -2943,6 +2943,13 @@ funs<span class="token punctuation">[</span><span class="token number">2</span><
 </li>
 </ol>
 <hr>
+<h4 id="vue2-Watch和vue3-Watch使用和区别"><a href="#vue2-Watch和vue3-Watch使用和区别" class="headerlink" title="vue2 Watch和vue3 Watch使用和区别"></a>vue2 Watch和vue3 Watch使用和区别</h4><p>当使用vue2中的watch配置项监听浅层数据的时候通过默认的监视方，当需要监听的数据是嵌套的数据时，通过配置watch的配置项进行监听。</p>
+<p>当使用vue3的组合式api监听数据的变化时，分为ref定义的响应式数据和reactive定义的数据，ref定义的数据监听还是比较简单的，reactive监听数据的时候分为几种情况：</p>
+<p> 1.当监听的为reactive定义的整个对象时，默认开启深度监听，无法通过deep关闭深度监听，并且无法正确获取oldValue(上一次的值)。</p>
+<p> 2.当监听reactive定义的对象中的某个属性时又分为：</p>
+<p> 普通类型：通过函数返回值的形式监听， 可以正确获取oldValue</p>
+<p> 复杂数据类型（对象or数组): 通过返回值的形式监听，并且需要开启深度监听，无法获取正确的oldValue</p>
+<hr>
 
                 
             </div>
@@ -3453,7 +3460,7 @@ funs<span class="token punctuation">[</span><span class="token number">2</span><
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">220k</span>
+                        class="white-color">221.5k</span>
             
             
             

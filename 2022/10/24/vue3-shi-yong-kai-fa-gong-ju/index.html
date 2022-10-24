@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="隐式转化, Evedward">
-    <meta name="description" content="隐式转化概念：无需程序员手动转化，由编译器自动转换的方式称为隐式转换规则：1.转化成String : + (字符串链接发)2.转换为Number类型：（1） ++/–   （自增自减运算符）（2）+ - * / % （算数运算符）（3）&amp;g">
+    <meta name="keywords" content="vue3实用开发工具, Evedward">
+    <meta name="description" content="Vue3UI库/相关工具/可视化/生态全分享
+1.Web UI库1.   ElementUI Plus一套为开发者、设计师和产品经理准备的基于 Vue 3.0 的桌面端组件库https://element-plus.org/zh-CN/
+2">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
 
     
 
-    <title>隐式转化 | Evedward</title>
+    <title>vue3实用开发工具 | Evedward</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -312,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">隐式转化</h1>
+                    <h1 class="description center-align post-title">vue3实用开发工具</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javascript/">
-                                <span class="chip bg-color">javascript</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -449,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-21
+                    2022-10-24
                 </div>
                 
 
@@ -458,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    380
+                    1.3k
                 </div>
                 
 
@@ -478,9 +480,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="隐式转化"><a href="#隐式转化" class="headerlink" title="隐式转化"></a>隐式转化</h1><p>概念：无需程序员手动转化，由编译器自动转换的方式称为隐式转换<br><strong>规则：</strong><br>1.转化成String : + (字符串链接发)<br>2.转换为Number类型：<br>（1） ++/–   （自增自减<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%BF%90%E7%AE%97%E7%AC%A6&amp;spm=1001.2101.3001.7020">运算符</a>）<br>（2）+ - * / % （算数运算符）<br>（3）&gt; &lt; &gt;= &lt;= == != === !==  (关系运算符)<br>3.转化为<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Boolean&amp;spm=1001.2101.3001.7020">Boolean</a>类型： ！（逻辑非运算符）</p>
-<p><strong>例子总结：</strong><br>\1. 字符串连接符与算术运算符的区分<br>1+‘true’ —-&gt;  String(1) + ‘true’  —-&gt; ‘1true’<br>1+true  —–&gt; 1+Number(true)  —–&gt; 1+1 —-&gt; 2<br>1+undefined —-&gt; 1+Number(undefined ) —-&gt; 1+NaN —–&gt; NaN<br>1+null —&gt; 1+Number(null) —-&gt; 1+0 —–&gt; 1</p>
-<p>\2. 关系运算符：<br><strong>A: 一边是字符串，会将其数据数据类型转化为number之后再做比较</strong><br>‘2’ &gt; 10 —-&gt; Number(‘2’) &gt; 10 —-&gt; 2&gt; 10 —–&gt; false<br><strong>B：两边都是字符串，会根据字符串对应的unicode编码转化为数字，利用charCodeAt转化对应的编码</strong><br>‘2’ &gt; ‘10’ —–&gt; ‘2’.charCodeAt() &gt;  ‘10’.charCodeAt()  —–&gt; 50 &gt; 49  —–&gt; true<br><strong>C: 多个字符按照从左向右的规则比较</strong><br>‘abc’ &gt; ‘b’ —–&gt; ‘a’.charCodeAt() &gt;  ‘b’.charCodeAt()  —–&gt; 97 &gt; 98  —–&gt; false<br>‘abc’ &gt; ‘aad’ —-&gt;  ‘a’.charCodeAt() &gt; ‘a’.charCodeAt(),相等，继续比较 —-&gt;  ‘b’.charCodeAt() &gt; ‘a’.charCodeAt() —-&gt; 98 &gt; 97 —-&gt; true<br><strong>D: 无规则模式：</strong><br>(1) undefine和null:既相等又自等<br>undefined == undefined  —-&gt; true<br>undefined == null  —-&gt; true<br>null == null  —-&gt; true<br>(2) NaN与任何数据比较都是NaN,包括自身<br>NaN == NaN —-&gt; false<br>3.复杂数据类型的转换。valueOf() —&gt; String() —-&gt; Number()<br>[1,2] == ‘1,2’ —-&gt; [1,2].valueOf() = [1,2] —–&gt; [1,2].toString() =’1,2’ —–&gt;’ 1,2’ == ‘1,2’  —–&gt; true</p>
+                <h1 id="Vue3"><a href="#Vue3" class="headerlink" title="Vue3"></a>Vue3</h1><p>UI库/相关工具/可视化/生态全分享</p>
+<h2 id="1-Web-UI库"><a href="#1-Web-UI库" class="headerlink" title="1.Web UI库"></a>1.Web UI库</h2><h3 id="1-ElementUI-Plus"><a href="#1-ElementUI-Plus" class="headerlink" title="1.   ElementUI Plus"></a>1.   ElementUI Plus</h3><p>一套为开发者、设计师和产品经理准备的基于 Vue 3.0 的桌面端组件库<br><a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/">https://element-plus.org/zh-CN/</a></p>
+<h3 id="2-Ant-Design-of-Vue"><a href="#2-Ant-Design-of-Vue" class="headerlink" title="2.    Ant Design of Vue"></a>2.    Ant Design of Vue</h3><p>Ant Design 的 Vue 实现，开发和服务于企业级后台产品<br><a target="_blank" rel="noopener" href="https://www.antdv.com/docs/vue/introduce-cn">https://www.antdv.com/docs/vue/introduce-cn</a></p>
+<h3 id="3-BalmUI"><a href="#3-BalmUI" class="headerlink" title="3.    BalmUI"></a>3.    BalmUI</h3><p>基于谷歌的 Material Design，附带 Vue 插件和指令，以及从简单到复杂的高度可定制组件<br><a target="_blank" rel="noopener" href="https://next-material.balmjs.com/">https://next-material.balmjs.com/</a></p>
+<h3 id="4-Naive-UI"><a href="#4-Naive-UI" class="headerlink" title="4.    Naive UI"></a>4.    Naive UI</h3><p>图森Vue3的组件库，文档完整，我项目中经常使用<br><a target="_blank" rel="noopener" href="https://www.naiveui.com/zh-CN/os-theme">https://www.naiveui.com/zh-CN/os-theme</a></p>
+<h3 id="5-arco-design"><a href="#5-arco-design" class="headerlink" title="5.    arco.design"></a>5.    arco.design</h3><p>字节跳动企业级产品设计系统，支持React和Vue双版本<br><a target="_blank" rel="noopener" href="https://arco.design/">https://arco.design/</a></p>
+<h3 id="6-Quasar"><a href="#6-Quasar" class="headerlink" title="6,     Quasar"></a>6,     Quasar</h3><p>轻松构建高性能和高质量的Vue.js 3用户界面，好用，但没有中文文档<br><a target="_blank" rel="noopener" href="https://quasar.dev/">https://quasar.dev/</a></p>
+<h3 id="7-iDUX"><a href="#7-iDUX" class="headerlink" title="7.      iDUX"></a>7.      iDUX</h3><p>Vue3.x 的 UI 组件库，完全使用 TypeScript 开发<br><a target="_blank" rel="noopener" href="https://idux.site/">https://idux.site/</a></p>
+<h3 id="8-TDesign"><a href="#8-TDesign" class="headerlink" title="8.     TDesign"></a>8.     TDesign</h3><p>腾讯业务团队在服务业务过程中沉淀的一套企业级设计体系<br><a target="_blank" rel="noopener" href="https://tdesign.tencent.com/">https://tdesign.tencent.com/</a><br><a target="_blank" rel="noopener" href="https://tdesign.tencent.com/vue-next/overview">https://tdesign.tencent.com/vue-next/overview</a></p>
+<h3 id="9-PrimeVue"><a href="#9-PrimeVue" class="headerlink" title="9.      PrimeVue"></a>9.      PrimeVue</h3><p>易于使用、多功能、高性能的 Vue UI 组件库<br><a target="_blank" rel="noopener" href="https://www.primefaces.org/primevue/">https://www.primefaces.org/primevue/</a></p>
+<h3 id="10-DevUI"><a href="#10-DevUI" class="headerlink" title="10.    DevUI"></a>10.    DevUI</h3><p>华为基于 Vue3 和 DevUI 设计的 UI 组件<br><a target="_blank" rel="noopener" href="https://vue-devui.github.io/">https://vue-devui.github.io/</a></p>
+<h3 id="11-vuestic-ui"><a href="#11-vuestic-ui" class="headerlink" title="11.     vuestic-ui"></a>11.     vuestic-ui</h3><p>Vue 3 的免费和开源 UI 库 ,UI非常好看，并且有可用后台管理界面。<br><a target="_blank" rel="noopener" href="https://vuestic.dev/">https://vuestic.dev/</a></p>
+<h3 id="12-Headless-UI"><a href="#12-Headless-UI" class="headerlink" title="12.     Headless UI"></a>12.     Headless UI</h3><p>完全无样式、完全可访问的 UI 组件，旨在与 Tailwind CSS 完美集成。<br><a target="_blank" rel="noopener" href="https://headlessui.com/">https://headlessui.com/</a></p>
+<h3 id="13-View-UI-Plus"><a href="#13-View-UI-Plus" class="headerlink" title="13.      View UI Plus"></a>13.      View UI Plus</h3><p>基于 Vue.js 3 的企业级 UI 组件库和前端解决方案<br><a target="_blank" rel="noopener" href="https://www.iviewui.com/">https://www.iviewui.com/</a></p>
+<h2 id="2-移动UI库"><a href="#2-移动UI库" class="headerlink" title="2.移动UI库"></a>2.移动UI库</h2><h3 id="14-Vant"><a href="#14-Vant" class="headerlink" title="14.       Vant"></a>14.       Vant</h3><p>有赞轻量、可靠的移动端组件库<br><a target="_blank" rel="noopener" href="https://vant-contrib.gitee.io/vant/#/zh-CN">https://vant-contrib.gitee.io/vant/#/zh-CN</a></p>
+<h3 id="15-NutUI"><a href="#15-NutUI" class="headerlink" title="15.      NutUI"></a>15.      NutUI</h3><p>京东风格的轻量级移动端 Vue 组件库，非常适合移动端电商使用。<br><a target="_blank" rel="noopener" href="https://nutui.jd.com/#/">https://nutui.jd.com/#/</a></p>
+<h3 id="16-Varlet"><a href="#16-Varlet" class="headerlink" title="16.     Varlet"></a>16.     Varlet</h3><p>Material 风格移动端组件库 ，文档非常齐全。<br><a target="_blank" rel="noopener" href="https://varlet.gitee.io/varlet-ui/#/zh-CN/home">https://varlet.gitee.io/varlet-ui/#/zh-CN/home</a></p>
+<h3 id="17-nutui-bingo"><a href="#17-nutui-bingo" class="headerlink" title="17.       nutui-bingo"></a>17.       nutui-bingo</h3><p>京东基于 NutUI 的抽奖组件库，助力营销活动和小游戏场景。<br><a target="_blank" rel="noopener" href="https://nutui.jd.com/bingo/#/">https://nutui.jd.com/bingo/#/</a></p>
+<h2 id="3-相关工具"><a href="#3-相关工具" class="headerlink" title="3.相关工具"></a>3.相关工具</h2><h3 id="18-unplugin-vue-components"><a href="#18-unplugin-vue-components" class="headerlink" title="18.      unplugin-vue-components"></a>18.      unplugin-vue-components</h3><p>antfu 按需组件自动导入，开箱即用地支持 Vue 2 和 Vue 3，Tree-shakable，只注册你使用的组件，附有流行UI 库的内置解析器。<br><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/unplugin-vue-components">https://www.npmjs.com/package/unplugin-vue-components</a></p>
+<h3 id="19-vuex-persistedstate"><a href="#19-vuex-persistedstate" class="headerlink" title="19.      vuex-persistedstate"></a>19.      vuex-persistedstate</h3><p>在页面重新加载之间保持并重载您的 Vuex 状态<br><a target="_blank" rel="noopener" href="https://github.com/robinvdvleuten/vuex-persistedstate">https://github.com/robinvdvleuten/vuex-persistedstate</a></p>
+<h3 id="20-vuex-persist"><a href="#20-vuex-persist" class="headerlink" title="20.       vuex-persist"></a>20.       vuex-persist</h3><p>支持 Typescript 的Vuex插件，它能够将应用程序的状态保存到持久存储中，例如 Cookies 或 localStorage<br><a target="_blank" rel="noopener" href="https://championswimmer.in/vuex-persist/">https://championswimmer.in/vuex-persist/</a></p>
+<h3 id="21-vueuse-x2F-gesture"><a href="#21-vueuse-x2F-gesture" class="headerlink" title="21.      @vueuse/gesture"></a>21.      @vueuse/gesture</h3><p>手势库，使应用程序具有交互性<br><a target="_blank" rel="noopener" href="https://gesture.vueuse.org/">https://gesture.vueuse.org/</a></p>
+<h3 id="22-unplugin-auto-import"><a href="#22-unplugin-auto-import" class="headerlink" title="22.      unplugin-auto-import"></a>22.      unplugin-auto-import</h3><p>antfu 自动导入 Vite、Webpack、Rollup 和 esbuild 的 API。支持 TypeScript。<br><a target="_blank" rel="noopener" href="https://github.com/antfu/unplugin-auto-import">https://github.com/antfu/unplugin-auto-import</a></p>
+<h3 id="23-pinia-plugin-persistedstate"><a href="#23-pinia-plugin-persistedstate" class="headerlink" title="23.     pinia-plugin-persistedstate"></a>23.     pinia-plugin-persistedstate</h3><p>Pinia 商店的可配置持久性<br><a target="_blank" rel="noopener" href="https://github.com/prazdevs/pinia-plugin-persistedstate">https://github.com/prazdevs/pinia-plugin-persistedstate</a></p>
+<h3 id="24-https-vue-termui-dev"><a href="#24-https-vue-termui-dev" class="headerlink" title="24.     https://vue-termui.dev/"></a>24.     <a target="_blank" rel="noopener" href="https://vue-termui.dev/">https://vue-termui.dev/</a></h3><p>一个基于 Vue.js 的终端 UI 框架，可让您轻松构建现代终端应用程序<br><a target="_blank" rel="noopener" href="https://vue-termui.dev/">https://vue-termui.dev/</a></p>
+<h2 id="4-可视化"><a href="#4-可视化" class="headerlink" title="4.可视化"></a>4.可视化</h2><h3 id="25-Pdfvuer"><a href="#25-Pdfvuer" class="headerlink" title="25.    Pdfvuer"></a>25.    Pdfvuer</h3><p>DF 查看器，使用 Mozilla 的 PDF.js，支持 Vue2 和 Vue3<br><a target="_blank" rel="noopener" href="https://arkokoley.github.io/pdfvuer/">https://arkokoley.github.io/pdfvuer/</a></p>
+<h3 id="26-vue3-marquee"><a href="#26-vue3-marquee" class="headerlink" title="26.      vue3-marquee"></a>26.      vue3-marquee</h3><p>无缝滚动组件<br><a target="_blank" rel="noopener" href="https://vue3-marquee.vercel.app/">https://vue3-marquee.vercel.app/</a></p>
+<h3 id="27-Vue-ECharts"><a href="#27-Vue-ECharts" class="headerlink" title="27.     Vue-ECharts"></a>27.     Vue-ECharts</h3><p>百度ECharts 的 Vue.js 组件。 配置参考Echarts官方 基于 ECharts v5+ 开发，适用于Vue.js 2/3。<br><a target="_blank" rel="noopener" href="https://vue-echarts.dev/">https://vue-echarts.dev/</a></p>
+<h3 id="28-iconpark"><a href="#28-iconpark" class="headerlink" title="28.     iconpark"></a>28.     iconpark</h3><p>字节跳动出品，将一个SVG图标转化为多个主题，并生成React图标，Vue图标，svg图标<br><a target="_blank" rel="noopener" href="https://iconpark.oceanengine.com/home">https://iconpark.oceanengine.com/home</a></p>
+<h2 id="5-插件"><a href="#5-插件" class="headerlink" title="5.插件"></a>5.插件</h2><h3 id="29-vue-multiselect-next"><a href="#29-vue-multiselect-next" class="headerlink" title="29.    vue-multiselect-next"></a>29.    vue-multiselect-next</h3><p>Vue.js 的通用选择/多选/标记组件<br><a target="_blank" rel="noopener" href="https://vue-multiselect.js.org/">https://vue-multiselect.js.org/</a></p>
+<h3 id="30-vue-print-nb"><a href="#30-vue-print-nb" class="headerlink" title="30.     vue-print-nb"></a>30.     vue-print-nb</h3><p>用于印刷、简单、快速、方便、轻便的指令包装器<br><a target="_blank" rel="noopener" href="https://github.com/Power-kxLee/vue-print-nb">https://github.com/Power-kxLee/vue-print-nb</a></p>
+<h3 id="31-vue-i18n-next"><a href="#31-vue-i18n-next" class="headerlink" title="31.      vue-i18n-next"></a>31.      vue-i18n-next</h3><p>Vue3的国际化插件<br><a target="_blank" rel="noopener" href="https://vue-i18n.intlify.dev/">https://vue-i18n.intlify.dev/</a></p>
+<h3 id="32-vue-cropper"><a href="#32-vue-cropper" class="headerlink" title="32.     vue-cropper"></a>32.     vue-cropper</h3><p>简单的vue图片裁剪插件<br><a target="_blank" rel="noopener" href="http://github.xyxiao.cn/vue-cropper/example/">http://github.xyxiao.cn/vue-cropper/example/</a></p>
+<h3 id="33-Vue-Grid-Layout"><a href="#33-Vue-Grid-Layout" class="headerlink" title="33.     Vue Grid Layout"></a>33.     Vue Grid Layout</h3><p>Vue.js 的网格布局系统<br><a target="_blank" rel="noopener" href="https://jbaysolutions.github.io/">https://jbaysolutions.github.io/</a></p>
+<h3 id="34-Vue-Qrcode-Reader"><a href="#34-Vue-Qrcode-Reader" class="headerlink" title="34.     Vue Qrcode Reader"></a>34.     Vue Qrcode Reader</h3><p>允许在不离开浏览器的情况下检测和解码二维码<br><a target="_blank" rel="noopener" href="https://gruhn.github.io/vue-qrcode-reader/">https://gruhn.github.io/vue-qrcode-reader/</a></p>
+<h3 id="35-Makeit-Captcha"><a href="#35-Makeit-Captcha" class="headerlink" title="35.     Makeit Captcha"></a>35.     Makeit Captcha</h3><p>基于 Vue3 + Vite + Canvas 开发的滑块验证码，动态生成验证滑块，结合后端的二次校验，能有效的避免被抓取模拟验证<a target="_blank" rel="noopener" href="https://admin.makeit.vip/components/captcha">https://admin.makeit.vip/components/captcha</a></p>
+<h3 id="36-vue3-clipboard"><a href="#36-vue3-clipboard" class="headerlink" title="36.     vue3-clipboard"></a>36.     vue3-clipboard</h3><p>Vue 3 的 clipboard.js<br><a target="_blank" rel="noopener" href="https://github.com/soerenmartius/vue3-clipboard">https://github.com/soerenmartius/vue3-clipboard</a></p>
+<h3 id="37-vue-draggable"><a href="#37-vue-draggable" class="headerlink" title="37.       vue.draggable"></a>37.       vue.draggable</h3><p>基于Sortable.js的Vue 3拖放组件<br><a target="_blank" rel="noopener" href="https://sortablejs.github.io/vue.draggable.next/#/simple">https://sortablejs.github.io/vue.draggable.next/#/simple</a></p>
+<h3 id="38-BetterScroll"><a href="#38-BetterScroll" class="headerlink" title="38.        BetterScroll"></a>38.        BetterScroll</h3><p>解决移动端（已支持 PC）各种滚动场景需求的插件。<br><a target="_blank" rel="noopener" href="https://better-scroll.github.io/docs/zh-CN/">https://better-scroll.github.io/docs/zh-CN/</a></p>
+<h2 id="6-相关生态"><a href="#6-相关生态" class="headerlink" title="6.相关生态"></a>6.相关生态</h2><h3 id="39-Vue-插件库"><a href="#39-Vue-插件库" class="headerlink" title="39.    Vue 插件库"></a>39.    Vue 插件库</h3><p><a target="_blank" rel="noopener" href="https://www.vue365.cn/">https://www.vue365.cn/</a></p>
+<h3 id="40-Pinia"><a href="#40-Pinia" class="headerlink" title="40.     Pinia"></a>40.     Pinia</h3><p>轻量级状态管理库，API 设计更接近Vuex 5的提案<br><a target="_blank" rel="noopener" href="https://pinia.vuejs.org/">https://pinia.vuejs.org/</a></p>
+<h3 id="41-Nuxt-Modules"><a href="#41-Nuxt-Modules" class="headerlink" title="41.     Nuxt Modules"></a>41.     Nuxt Modules</h3><p>Nuxt 发现我们的模块列表以增强您的Nuxt 项目<br><a target="_blank" rel="noopener" href="https://modules.nuxtjs.org/">https://modules.nuxtjs.org/</a></p>
+<h3 id="42-Nuxt-3"><a href="#42-Nuxt-3" class="headerlink" title="42.      Nuxt 3"></a>42.      Nuxt 3</h3><p>轻量级应用框架,可用来创建服务端渲染 (SSR) 应用<br><a target="_blank" rel="noopener" href="https://v3.nuxtjs.org/">https://v3.nuxtjs.org/</a></p>
+<h3 id="43-vuepress"><a href="#43-vuepress" class="headerlink" title="43.      vuepress"></a>43.      vuepress</h3><p>Vue 驱动的静态网站生成器<br><a target="_blank" rel="noopener" href="https://v2.vuepress.vuejs.org/zh/">https://v2.vuepress.vuejs.org/zh/</a></p>
+<h3 id="44-VueUse"><a href="#44-VueUse" class="headerlink" title="44.      VueUse"></a>44.      VueUse</h3><p>强大的 Vue 组合实用程序集合<br><a target="_blank" rel="noopener" href="https://vueuse.org/">https://vueuse.org/</a></p>
+<h2 id="7-动画"><a href="#7-动画" class="headerlink" title="7.动画"></a>7.动画</h2><h3 id="45-vue-starport"><a href="#45-vue-starport" class="headerlink" title="45.   vue-starport"></a>45.   vue-starport</h3><p>带有动画的跨路由共享组件<br><a target="_blank" rel="noopener" href="https://vue-starport.netlify.app/">https://vue-starport.netlify.app/</a></p>
+<h3 id="46-vueuse-x2F-motion"><a href="#46-vueuse-x2F-motion" class="headerlink" title="46.     @vueuse/motion"></a>46.     @vueuse/motion</h3><p>Vue Composables 让你的组件动起来<br><a target="_blank" rel="noopener" href="https://motion.vueuse.org/">https://motion.vueuse.org/</a></p>
+<h2 id="8-音视频"><a href="#8-音视频" class="headerlink" title="8.音视频"></a>8.音视频</h2><h3 id="47-vueuse-x2F-sound"><a href="#47-vueuse-x2F-sound" class="headerlink" title="47.   @vueuse/sound"></a>47.   @vueuse/sound</h3><p>用于播放音效的 Vue 组合<br><a target="_blank" rel="noopener" href="https://sound.vueuse.org/">https://sound.vueuse.org/</a></p>
+<p><em>XMind: ZEN - Trial Version</em></p>
 
                 
             </div>
@@ -507,7 +555,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellozhj.github.io/2022/06/21/yin-shi-zhuan-hua/">https://hellozhj.github.io/2022/06/21/yin-shi-zhuan-hua/</a>
+                    <a href="https://hellozhj.github.io/2022/10/24/vue3-shi-yong-kai-fa-gong-ju/">https://hellozhj.github.io/2022/10/24/vue3-shi-yong-kai-fa-gong-ju/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,8 +593,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/javascript/">
-                                    <span class="chip bg-color">javascript</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -720,17 +768,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/06/22/javascript-tu/">
+                <a href="/2022/10/24/vue3-shi-yong-kai-fa-gong-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JavaScript图">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="vue3实用开发工具">
                         
-                        <span class="card-title">JavaScript图</span>
+                        <span class="card-title">vue3实用开发工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -740,9 +789,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -751,11 +800,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -769,13 +819,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/21/ji-ben-shu-ju-lei-xing-he-yin-yong-shu-ju-lei-xing/">
+                <a href="/2022/10/10/wei-xin-xiao-cheng-xu-xiang-mu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="基本数据类型和引用数据类型">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="微信小程序项目">
                         
-                        <span class="card-title">基本数据类型和引用数据类型</span>
+                        <span class="card-title">微信小程序项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -786,7 +836,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-10
                             </span>
                         <span class="publish-author">
                             
@@ -799,8 +849,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
                 </div>
