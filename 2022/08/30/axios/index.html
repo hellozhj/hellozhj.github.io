@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta name="keywords" content="axios, Evedward">
     <meta name="description" content="axiosaxios官网
-注意：请求时看清请求方式，是body（参数data）还是query（参数params），有时post参数也有可能是query
-POST：
-
-参数在url上面（query）
-let params = {}  //注：">
+1.get和delete请求传递参数 1.通过传统的url以?的形式传递参数;
+ 2.restful形式传参;
+ 3.通过params形式传递参数;
+# 1. 发送get 请求 
+axios.get(&#39;http:/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -463,7 +463,7 @@ let params = {}  //注：">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    2.8k
                 </div>
                 
 
@@ -484,6 +484,70 @@ let params = {}  //注：">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><p><a target="_blank" rel="noopener" href="http://www.axios-js.com/zh-cn/docs/">axios官网</a></p>
+<h4 id="1-get和delete请求传递参数"><a href="#1-get和delete请求传递参数" class="headerlink" title="1.get和delete请求传递参数"></a>1.get和delete请求传递参数</h4><p> 1.通过传统的url以?的形式传递参数;</p>
+<p> 2.restful形式传参;</p>
+<p> 3.通过params形式传递参数;</p>
+<pre class="language-js" data-language="js"><code class="language-js"># <span class="token number">1.</span> 发送<span class="token keyword">get</span> 请求 
+axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/adata'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ret</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+    #  拿到 ret 是一个对象      所有的对象都存在 ret 的data 属性里面
+    <span class="token comment">// 注意data属性是固定的用法，用于获取后台的实际数据</span>
+    <span class="token comment">// console.log(ret.data)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+# <span class="token number">2.</span>  <span class="token keyword">get</span> 请求传递参数
+# <span class="token number">2.1</span>  通过传统的url  以 <span class="token operator">?</span> 的形式传递参数
+axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/axios?id=123'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ret</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+# <span class="token number">2.2</span>  restful 形式传递参数 
+axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/axios/123'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ret</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+# <span class="token number">2.3</span>  通过params  形式传递参数 
+axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/axios'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">789</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ret</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+#<span class="token number">3</span> axios <span class="token keyword">delete</span> 请求传参     传参的形式和 <span class="token keyword">get</span> 请求一样
+axios<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/axios'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">111</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ret</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<h4 id="2-post和put请求传递参数"><a href="#2-post和put请求传递参数" class="headerlink" title="2.post和put请求传递参数"></a>2.post和put请求传递参数</h4><p> 1.通过选项传递参数;</p>
+<p> 2.通过URLSearchParams传递参数;</p>
+<pre class="language-js" data-language="js"><code class="language-js"># <span class="token number">4</span>  axios 的 post 请求
+# <span class="token number">4.1</span>  通过选项传递参数
+axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/axios'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">uname</span><span class="token operator">:</span> <span class="token string">'lisi'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">pwd</span><span class="token operator">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ret</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+# <span class="token number">4.2</span>  通过 URLSearchParams  传递参数 
+<span class="token keyword">var</span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+params<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'uname'</span><span class="token punctuation">,</span> <span class="token string">'zhangsan'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+params<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'pwd'</span><span class="token punctuation">,</span> <span class="token string">'111'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/axios'</span><span class="token punctuation">,</span> params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ret</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+#<span class="token number">5</span>  axios put 请求传参   和 post 请求一样 
+axios<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000/axios/123'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">uname</span><span class="token operator">:</span> <span class="token string">'lisi'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">pwd</span><span class="token operator">:</span> <span class="token number">123</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ret</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+
+
 <p><strong>注意：</strong>请求时看清请求方式，是<code>body</code>（参数data）还是<code>query</code>（参数params），有时post参数也有可能是<code>query</code></p>
 <p><strong>POST：</strong></p>
 <ul>
@@ -1494,7 +1558,7 @@ axios<span class="token punctuation">.</span><span class="token function">put</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">222.3k</span>
+                        class="white-color">222.7k</span>
             
             
             
